@@ -47,7 +47,7 @@ googleAnalytics = "UA-97457476-9"
 
 ## Social Accounts
 [params.social]
-    github = "https://github.com/easystats/easystats"
+    github = "easystats/easystats"
     # instagram = "<username>"
     # xing = "<username>"
     # linkedin = "<username>"
