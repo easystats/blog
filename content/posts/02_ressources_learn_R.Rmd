@@ -1,0 +1,20 @@
+---
+title: "Ressources and documentation to learn R"
+author: "Makowski, D. and Lüdecke, D"
+date: 2019-02-22
+categories: ["R", "ressources"]
+tags: ["R", "easystats", "ressources", "learning"]
+summary: This post provides link to some useful ressources to learn R.
+---
+
+## Guides
+
+Here are some links to get started with R:
+
+- 
+
+## Stay tuned
+
+Here are some links of blogs and such to keep in touch with this evolving field:\
+
+- [**r-bloggers**](https://www.r-bloggers.com/)
