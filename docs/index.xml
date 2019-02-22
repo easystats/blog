@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,8 +17,34 @@
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/01_installingr/</guid>
-      <description>Install R and R Studio  Go here: https://cloud.r-project.org/ Download the last version for your OS Install it Go here: https://www.rstudio.com/products/rstudio/download/#download Download the right version for your OS Install it Start R studio  Install the easystats packages The easystats packages can be installed at once. If you wish to do so, enter one of the following in the console and press enter:
-install.packages(&amp;quot;devtools&amp;quot;) library(devtools) devtools::install_github(&amp;quot;easystats/easystats&amp;quot;)  Once the packages are installed, you can load them all by putting the following at the beginning of every script:</description>
+      <description>
+
+&lt;h2 id=&#34;install-r-and-r-studio&#34;&gt;Install R and R Studio&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Go here: &lt;a href=&#34;https://cloud.r-project.org/&#34;&gt;https://cloud.r-project.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download the last version for your OS&lt;/li&gt;
+&lt;li&gt;Install it&lt;/li&gt;
+&lt;li&gt;Go here: &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/#download&#34;&gt;https://www.rstudio.com/products/rstudio/download/#download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download the right version for your OS&lt;/li&gt;
+&lt;li&gt;Install it&lt;/li&gt;
+&lt;li&gt;Start R studio&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;install-the-easystats-packages&#34;&gt;Install the easystats packages&lt;/h2&gt;
+
+&lt;p&gt;The easystats packages can be installed at once. If you wish to do so, enter one of the following in the console and press enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;devtools&amp;quot;)
+library(devtools)
+devtools::install_github(&amp;quot;easystats/easystats&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the packages are installed, you can load them all by putting the following at the beginning of every script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(easystats)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -27,8 +53,13 @@ install.packages(&amp;quot;devtools&amp;quot;) library(devtools) devtools::insta
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/people/</guid>
-      <description>People that contributed to the project currently include:
- Dominique Makowski Daniel Lüdecke  </description>
+      <description>&lt;p&gt;People that contributed to the project currently include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;Dominique Makowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/strengejacke&#34;&gt;Daniel Lüdecke&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -37,7 +68,8 @@ install.packages(&amp;quot;devtools&amp;quot;) library(devtools) devtools::insta
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/easystats/</guid>
-      <description>easystats is a suite of R packages designed to work together to make the user of advanced statistical techniques easy.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; is a suite of R packages designed to make the use of advanced statistical techniques easy.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
