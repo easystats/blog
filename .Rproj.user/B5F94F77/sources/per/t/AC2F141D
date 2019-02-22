@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1550761327479.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2215960210",
+    "id" : "AC2F141D",
+    "lastKnownWriteTime" : 1550803167,
+    "last_content_update" : 1550803167,
+    "path" : "C:/Users/Dom/Dropbox/RECHERCHE/N/easystats/blog/config.toml",
+    "project_path" : "config.toml",
+    "properties" : {
+        "cursorPosition" : "26,34",
+        "scrollLine" : "21"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "toml"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on easystats</title>
+    <link>/categories/r/</link>
+    <description>Recent content in R on easystats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing R and easystats</title>
+      <link>/posts/01_installingr/</link>
+      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/01_installingr/</guid>
+      <description>Install R and R Studio  Go here: https://cloud.r-project.org/ Download the last version for your OS Install it Go here: https://www.rstudio.com/products/rstudio/download/#download Download the right version for your OS Install it Start R studio  Install the easystats packages The easystats packages can be installed at once. If you wish to do so, enter one of the following in the console and press enter:
+install.packages(&amp;quot;devtools&amp;quot;) library(devtools) devtools::install_github(&amp;quot;easystats/easystats&amp;quot;)  Once the packages are installed, you can load them all by putting the following at the beginning of every script:</description>
+    </item>
+    
+  </channel>
+</rss>
