@@ -6,10 +6,21 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ressources and documentation to learn R</title>
+      <link>/posts/02_ressources_learn_r/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/02_ressources_learn_r/</guid>
+      <description>GuidesHere are some links to get started with R:
+R for DatascienceQuick-RDatacampEdX coursesStay tunedHere are some links of blogs and such to keep in touch with this evolving field:
+r-bloggers</description>
+    </item>
     
     <item>
       <title>Installing R and easystats</title>
