@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,9 +17,28 @@
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/02_ressources_learn_r/</guid>
-      <description>GuidesHere are some links to get started with R:
-R for DatascienceQuick-RDatacampEdX coursesStay tunedHere are some links of blogs and such to keep in touch with this evolving field:
-r-bloggers</description>
+      <description>
+
+
+&lt;div id=&#34;guides&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Guides&lt;/h2&gt;
+&lt;p&gt;Here are some links to get started with R:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;&lt;strong&gt;R for Datascience&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statmethods.net/r-tutorial/index.html&#34;&gt;&lt;strong&gt;Quick-R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.datacamp.com/&#34;&gt;&lt;strong&gt;Datacamp&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.edx.org/learn/r-programming&#34;&gt;&lt;strong&gt;EdX courses&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;Here are some links of blogs and such to keep in touch with this evolving field:&lt;br /&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/&#34;&gt;&lt;strong&gt;r-bloggers&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -28,8 +47,34 @@
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/01_installingr/</guid>
-      <description>Install R and R Studio  Go here: https://cloud.r-project.org/ Download the last version for your OS Install it Go here: https://www.rstudio.com/products/rstudio/download/#download Download the right version for your OS Install it Start R studio  Install the easystats packages The easystats packages can be installed at once. If you wish to do so, enter one of the following in the console and press enter:
-install.packages(&amp;quot;devtools&amp;quot;) library(devtools) devtools::install_github(&amp;quot;easystats/easystats&amp;quot;)  Once the packages are installed, you can load them all by putting the following at the beginning of every script:</description>
+      <description>
+
+&lt;h2 id=&#34;install-r-and-r-studio&#34;&gt;Install R and R Studio&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Go here: &lt;a href=&#34;https://cloud.r-project.org/&#34;&gt;https://cloud.r-project.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download the last version for your OS&lt;/li&gt;
+&lt;li&gt;Install it&lt;/li&gt;
+&lt;li&gt;Go here: &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/#download&#34;&gt;https://www.rstudio.com/products/rstudio/download/#download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download the right version for your OS&lt;/li&gt;
+&lt;li&gt;Install it&lt;/li&gt;
+&lt;li&gt;Start R studio&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;install-the-easystats-packages&#34;&gt;Install the easystats packages&lt;/h2&gt;
+
+&lt;p&gt;The easystats packages can be installed at once. If you wish to do so, enter one of the following in the console and press enter:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;devtools&amp;quot;)
+library(devtools)
+devtools::install_github(&amp;quot;easystats/easystats&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the packages are installed, you can load them all by putting the following at the beginning of every script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(easystats)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>
