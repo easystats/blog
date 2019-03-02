@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Enough with the heatmaps! Easy visualisations of correlations</title>
+      <link>/posts/03_correlation_graph/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/03_correlation_graph/</guid>
+      <description>Recently, Daniel (author of great packages such as sjPlot and ggeffects) and I (from the psycho package), decided to unite our forces to provide flexible, stable and lightweight tools for facilitating data analysis. The easystats project, altough in very active developpement, already contains some useful functions.
+One of such can help creating pretty correlation graphs and plots. correlation is a small package designedreturning correlations in a format that can easily be feed into</description>
+    </item>
+    
+    <item>
       <title>Ressources and documentation to learn R</title>
       <link>/posts/02_ressources_learn_r/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>

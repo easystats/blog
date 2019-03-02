@@ -1,0 +1,196 @@
+---
+title: "Enough with the heatmaps! Easy visualisations of correlations"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-02-22
+categories: ["R", "correlation"]
+tags: ["R", "easystats", "correlation", "plot", "graph", "ggraph", "corrplot", "radar chart", "spider plot"]
+summary: This post shows how to easily create correlation graph plots with the use of the correlation package.
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+Recently, [Daniel](https://github.com/strengejacke) (author of great packages such as [sjPlot](https://github.com/strengejacke/sjPlot) and [ggeffects](https://github.com/strengejacke/ggeffects)) and I (from the [psycho](https://github.com/neuropsychology/psycho.R) package), decided to unite our forces to provide **flexible, stable and lightweight** tools for facilitating data analysis. The [easystats](https://github.com/easystats) project, altough in very active developpement, already contains some useful functions.
+
+One of such can help creating **pretty correlation graphs and plots**. [correlation](https://github.com/easystats/correlation) is a small package designedreturning correlations in a format that can easily be feed into 
+
+## Packages
+
+As the [**correlation**](https://github.com/easystats/correlation) package is not (yet) on CRAN, you need to install it from github:
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+install.packages("devtools")
+devtools::install_github("easystats/correlation")
+library(correlation)
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(correlation)
+```
+
+
+Let's also install [**report**](https://github.com/easystats/report), another package from the *easystats* project.
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+install.packages("devtools")
+devtools::install_github("easystats/report")
+library(report)
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(report)
+```
+
+These other packages will be used for data and plotting.
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(forcats)
+library(psych)
+library(ggplot2)
+library(tidygraph)
+library(ggraph)
+library(plotly)
+```
+
+
+
+
+## The data
+
+From `psych`'s description: 
+
+> State Anxiety was measured two-three times in 11 studies at the Personality-Motivation-Cognition laboratory. Here are item responses for 11 studies (9 repeated twice, 2 repeated three times). In all studies, the first occasion was before a manipulation. In some studies, caffeine, or movies or incentives were then given to some of the participants before the second and third STAI was given.
+
+```{r message=FALSE, warning=FALSE}
+# Load the data
+df <- psych::sai %>% 
+  filter(time < 4) %>% 
+  mutate(time = as.factor(time),
+         id = as.character(id)) %>% 
+  select(time, relaxed, joyful, confident, anxious, worrying, upset)
+
+# Report the data
+report(df)
+```
+
+## Correlation
+
+The main function of the *correlation* package is [`correlation()`](https://easystats.github.io/correlation/reference/correlation.html), with which you can tweak the correlation parameters (partial, semi-partial, Bayesian...).
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+# Do the correlation
+cor <- correlation(df)
+
+# Examine the output
+head(cor)
+```
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+cor <- correlation(df)
+
+knitr::kable(head(cor), digits=2)
+```
+
+Contrary to the majority of packages, the `correlation()` function does not return a nice matrix, but rather a dataframe with pairwise correlations as rows. Altough this format will be useful for further plotting, we can always transform it to a **table** using the [`report`](https://github.com/easystats/report) package.
+
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+cor %>% 
+  report() %>% 
+  to_table()
+```
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+cor %>% 
+  report() %>% 
+  to_table() %>% 
+  knitr::kable()
+```
+
+## Heatmaps
+
+Hetmaps can be nicely improved by removing the upper triangular using the `remove_triangular()` function.
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+p <- cor %>% 
+  remove_triangular() %>% 
+  ggplot(aes(x=Parameter1, y=Parameter2, fill=r)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "#d50000", high = "#00C853") +
+  theme_minimal() +
+  theme(axis.title = element_blank()) 
+ggplotly(p)
+```
+
+## Bar plots
+
+But enough with the heatmaps! There are other ways to present correlations. For instance, bar charts:
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+p <- cor %>% 
+  filter(Parameter1 != Parameter2) %>%
+  ggplot(aes(x=Parameter1, y=r, fill=r)) +
+  geom_bar(stat="identity") +
+  scale_fill_gradient2(low = "#d50000", high = "#00C853") +
+  theme_minimal() +
+  theme(axis.title.x = element_blank()) +
+  facet_wrap(~Parameter2) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1))
+ggplotly(p)
+```
+
+
+## Radar chart
+
+Or, if we want to get fancier:
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+# Create a small convenience function
+coord_radar <- function (theta = "x", start = 0, direction = 1) 
+{
+    theta <- match.arg(theta, c("x", "y"))
+    r <- if (theta == "x") 
+        "y"
+    else "x"
+    ggproto("CordRadar", CoordPolar, theta = theta, r = r, start = start, 
+        direction = sign(direction),
+        is_linear = function(coord) TRUE)
+}
+
+
+p <- cor %>% 
+  ggplot(aes(x=Parameter1, y=r, group=Parameter2, fill=Parameter2)) +
+  geom_polygon(alpha=0.8, show.legend = FALSE) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank()) +
+  facet_wrap(~Parameter2) +
+  coord_radar() 
+p
+```
+
+
+## Graphs
+
+
+However, one of the most interesting way of visualising correlations is through graphs. This can be done easily using the powerful [**ggraph**](https://github.com/thomasp85/ggraph) package.
+
+
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+set.seed(999)
+cor %>% 
+  remove_triangular() %>% 
+  as_tbl_graph() %>% 
+  ggraph(layout = 'drl') +
+  geom_edge_arc(aes(colour=r), curvature=0.1, edge_width=1) +
+  geom_node_point(color="#607D8B", size=22) +
+  geom_node_text(aes(label = name), colour="white") +
+  scale_edge_color_gradient2(low = "#d50000", high = "#00C853") +
+  theme_graph() +   
+  scale_x_continuous(expand = expand_scale(c(.10, .10))) +
+  scale_y_continuous(expand = expand_scale(c(.10, .10)))
+```
+
+## Interested by the easystats project?
+
+The **easystats** project is very contributor-friendly, just share your ideas, opinions or suggestions on the [issues section](https://github.com/easystats/insight/issues).

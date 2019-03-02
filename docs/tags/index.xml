@@ -12,11 +12,47 @@
     
     
     <item>
+      <title>Correlation</title>
+      <link>/tags/correlation/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/correlation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Corrplot</title>
+      <link>/tags/corrplot/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/corrplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Easystats</title>
       <link>/tags/easystats/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/easystats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ggraph</title>
+      <link>/tags/ggraph/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ggraph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graph</title>
+      <link>/tags/graph/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/graph/</guid>
       <description></description>
     </item>
     
@@ -39,6 +75,15 @@
     </item>
     
     <item>
+      <title>Plot</title>
+      <link>/tags/plot/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
@@ -48,11 +93,29 @@
     </item>
     
     <item>
+      <title>Radar Chart</title>
+      <link>/tags/radar-chart/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/radar-chart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ressources</title>
       <link>/tags/ressources/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ressources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spider Plot</title>
+      <link>/tags/spider-plot/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/spider-plot/</guid>
       <description></description>
     </item>
     
