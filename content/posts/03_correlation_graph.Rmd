@@ -1,7 +1,7 @@
 ---
-title: "Enough with the heatmaps! Easy visualisations of correlations"
+title: "Enough heatmaps! Easy visualisations of correlations"
 author: "Makowski, D. and Lüdecke, D."
-date: 2019-02-22
+date: 2019-03-08
 categories: ["R", "correlation"]
 tags: ["R", "easystats", "correlation", "plot", "graph", "ggraph", "corrplot", "radar chart", "spider plot"]
 summary: This post shows how to easily create correlation graph plots with the use of the correlation package.
@@ -13,7 +13,7 @@ editor_options:
 
 Recently, [Daniel](https://github.com/strengejacke) (author of great packages such as [sjPlot](https://github.com/strengejacke/sjPlot) and [ggeffects](https://github.com/strengejacke/ggeffects)) and I (from the [psycho](https://github.com/neuropsychology/psycho.R) package), decided to unite our forces to provide **flexible, stable and lightweight** tools for facilitating data analysis. The [easystats](https://github.com/easystats) project, altough in very active developpement, already contains some useful functions.
 
-One of such can help creating **pretty correlation graphs and plots**. [correlation](https://github.com/easystats/correlation) is a small package designedreturning correlations in a format that can easily be feed into 
+One of such can help creating **pretty correlation graphs and plots**. [correlation](https://github.com/easystats/correlation) is a small package designed to compute correlations in a format that can easily be fed into plotting packages.
 
 ## Packages
 
