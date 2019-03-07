@@ -150,7 +150,7 @@ df <- data.frame()
 for(distribution in c("normal", "beta", "binomial", "chi", "exponential", "F", "gamma", "lognormal", "poisson", "t", "uniform", "weibull")){
   for(i in 1:100){
     
-    size <- round(runif(1, 10, 5000))
+    size <- round(runif(1, 10, 10000))
     location <- runif(1, 0.01, 10)
     scale <- runif(1, 0.02, 10)
     
