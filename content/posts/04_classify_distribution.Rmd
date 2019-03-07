@@ -1,0 +1,305 @@
+---
+title: "Classify Distributions using Machine Learning"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-02-22
+categories: ["R", "parameters"]
+tags: ["R", "easystats", "distribution", "machine learning", "classify", "parameters"]
+summary: This post demonstrates the use of machine learning to predict the distirbution type.
+editor_options: 
+  chunk_output_type: console
+---
+
+# Introduction
+
+Trying to classify the distribution family of data.
+
+# Methods
+
+
+## Distributions Description
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+library(ggplot2)
+library(parameters)
+library(bayestestR)
+
+distributions <- data.frame()
+size <-  1000
+for(location in seq(0.01, 10, length.out = 5)){
+  for(scale in seq(0.02, 10, length.out = 5)){
+    x <- parameters::normalize(as.data.frame(density(rnorm(size, location, scale), n=100)))
+    x$distribution <- "normal"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rbeta(size, location, scale), n=100)))
+    x$distribution <- "beta"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rbinom(size, round(location)+1, scale/10^(nchar(round(scale)))), n=100)))
+    x$distribution <- "binomial"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rchisq(size, location, scale), n=100)))
+    x$distribution <- "chi"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rexp(size, scale), n=100)))
+    x$distribution <- "exponential"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rf(size, location, scale), n=100)))
+    x$distribution <- "F"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rgamma(size, location, scale), n=100)))
+    x$distribution <- "gamma"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rlnorm(size, location, scale), n=100)))
+    x$distribution <- "lognormal"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rpois(size, location), n=100)))
+    x$distribution <- "poisson"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rt(size, location, scale), n=100)))
+    x$distribution <- "t"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(runif(size, location, location*2), n=100)))
+    x$distribution <- "uniform"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+    
+    x <- parameters::normalize(as.data.frame(density(rweibull(size, location, scale), n=100)))
+    x$distribution <- "weibull"
+    x$location <- location
+    x$scale <- scale
+    distributions <- rbind(distributions, x)
+  }
+}
+
+ggplot(distributions, aes(x=x, y=y, colour=distribution)) +
+  geom_line(size=1) +
+  facet_grid(location ~ scale) +
+  theme_classic()
+```
+
+
+## Data Generation
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+set.seed(333)
+library(bayestestR)
+library(parameters)
+
+generate_distribution <- function(family="normal", size=1000, noise=0, location=0, scale=1){
+  if(family == "normal"){
+    x <- rnorm(size, location, scale)
+  } else if(family == "beta"){
+    x <- rbeta(size, location, scale)
+  } else if(family == "binomial"){
+    x <- rbinom(size, round(location)+1, scale/10^(nchar(round(scale))))
+  } else if(family == "chi"){
+    x <- rchisq(size, location, scale)
+  } else if(family == "exponential"){
+    x <- rexp(size, scale)
+  } else if(family == "F"){
+    x <- rf(size, location, scale+0.1)
+  } else if(family == "gamma"){
+    x <- rgamma(size, location, scale)
+  } else if(family == "lognormal"){
+    x <- rlnorm(size, location, scale)
+  } else if(family == "poisson"){
+    x <- rpois(size, location)
+  } else if(family == "t"){
+    x <- rt(size, location, scale)
+  } else if(family == "uniform"){
+    x <- runif(size, location, location*2)
+  } else if(family == "weibull"){
+    x <- rweibull(size, location, scale)
+  }
+  return(x)
+}
+
+
+
+df <- data.frame()
+for(distribution in c("normal", "beta", "binomial", "chi", "exponential", "F", "gamma", "lognormal", "poisson", "t", "uniform", "weibull")){
+  for(i in 1:100){
+    
+    size <- round(runif(1, 10, 5000))
+    location <- runif(1, 0.01, 10)
+    scale <- runif(1, 0.02, 10)
+    
+    x <- generate_distribution(distribution, size=size, location=location, scale=scale)
+    
+    # Extract features
+    data <- data.frame(
+      "Mean" = mean(x),
+      "SD" = sd(x),
+      "Median" = median(x),
+      "MAD" = mad(x, constant=1),
+      "Mean_Median_Distance" = mean(x) - median(x),
+      "Mean_Mode_Distance" = mean(x) - bayestestR::map_estimate(x),
+      "SD_MAD_Distance" = sd(x) - mad(x, constant=1),
+      "Mode" = bayestestR::map_estimate(x),
+      "Range" = diff(range(x)) / sd(x),
+      "IQR" = stats::IQR(x),
+      "Skewness" = skewness(x),
+      "Kurtosis" = kurtosis(x),
+      "Smoothness_Cor" = parameters::smoothness(density(x)$y, method="cor"),
+      "Smoothness_Diff" = parameters::smoothness(density(x)$y, method="cor")
+    )
+    
+    density_df <- as.data.frame(t(parameters::normalize(density(x, n=20)$y)))
+    names(density_df) <- paste0("Density_", 1:ncol(density_df))
+    
+    data <- cbind(data, density_df)
+    data$Distribution <- distribution
+    df <- rbind(df, data)
+  }
+}
+```
+
+## Data Preparation
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+set.seed(333)
+library(caret)
+
+# Data clearning
+df <- na.omit(df)
+infinite <- is.infinite(rowSums(df[sapply(df, is.numeric)]))
+df <- df[!infinite, ]
+
+# Data partitioning
+trainIndex <- caret::createDataPartition(df$Distribution, p=0.8, list = FALSE)
+train <- df[ trainIndex,]
+test  <- df[-trainIndex,]
+
+
+# Parameters
+fitControl <- caret::trainControl(## 10-fold CV
+                           method = "repeatedcv",
+                           number = 10,
+                           ## repeated ten times
+                           repeats = 10,
+                           classProbs = TRUE,
+                           returnData = FALSE,
+                           trim=TRUE)
+```
+
+
+## Models Creation
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+set.seed(333)
+# Training
+model_rf <- caret::train(Distribution ~ ., data = train, 
+                 method = "rf", 
+                 trControl = fitControl)
+
+model_nb <- caret::train(Distribution ~ ., data = train, 
+                 method = "nb", 
+                 trControl = fitControl)
+
+model_xgbTree <- caret::train(Distribution ~ ., data = train,
+                 method = "xgbTree",
+                 trControl = fitControl)
+
+model_svmPoly <- caret::train(Distribution ~ ., data = train, 
+                 method = "svmPoly", 
+                 trControl = fitControl)
+
+model_nnet <- caret::train(Distribution ~ ., data = train, 
+                 method = "nnet", 
+                 trControl = fitControl)
+
+model_dnn <- caret::train(Distribution ~ ., data = train, 
+                 method = "dnn", 
+                 trControl = fitControl)
+```
+
+# Results
+
+## Compare Models
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+# collect resamples
+results <- resamples(list("RandomForest" = model_rf, 
+                          "NaiveBayes"=model_nb,
+                          "xgbTree" = model_xgbTree,
+                          "SVM" = model_svmPoly,
+                          "Nnet" = model_nnet
+                          "DeepNnet" = model_dnn))
+
+# summarize the distributions
+summary(results)
+# dot plots of results
+dotplot(results)
+
+# Size
+object.size(model_rf)
+```
+
+
+## Inspect Best model
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+library(ggplot2)
+
+model <- model_rf
+
+# Performance
+test$pred <- predict(model, test)
+confusion <- confusionMatrix(data = test$pred, reference = as.factor(test$Distribution), mode = "prec_recall")
+knitr::kable(data.frame("Performance" = confusion$overall))
+
+knitr::kable(confusion$table)
+
+# Figure
+perf <-  as.data.frame(confusion$byClass)[c("Sensitivity", "Specificity")]
+perf$Distribution <- gsub("Class: ", "", row.names(perf))
+perf <- reshape(perf, varying = list(c("Sensitivity", "Specificity")), timevar = "Type", idvar = "Distribution", direction = "long", v.names = "Metric")
+perf$Type <- ifelse(perf$Type == 1, "Sensitivity", "Specificity")
+
+
+ggplot(perf, aes(x=Distribution, y=Metric, fill=Type)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  geom_hline(aes(yintercept=0.5), linetype="dotted") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Features
+features <- caret::varImp(model, scale = TRUE)
+plot(features)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+# Open this RMD within parameters project
+# This stores this file as sysdata.Rda
+classify_distribution <- model
+usethis::use_data(classify_distribution, overwrite = TRUE, internal = TRUE)
+```
