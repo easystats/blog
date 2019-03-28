@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/04_report_correlation/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/03_report_anova/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/02_ressources_learn_r/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url>
@@ -28,13 +38,31 @@
   </url>
   
   <url>
+    <loc>/tags/anova/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/apa/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>/tags/correlations/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/easystats/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,19 +86,31 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/report/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/report/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,14 +127,20 @@
   </url>
   
   <url>
+    <loc>/tags/results/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

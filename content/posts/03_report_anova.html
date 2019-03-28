@@ -1,0 +1,77 @@
+---
+title: "The end of errors in ANOVA reporting"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-03-28
+categories: ["R", "report"]
+tags: ["R", "easystats", "report", "ANOVA", "APA", "results"]
+summary: This post shows how to create formatted reports for ANOVAs.
+---
+
+
+
+<p><strong>Psychological science is still massively using analysis of variance (ANOVA)</strong>. Despite its relative simplicity, I am very often confronted to <strong>errors in its reporting</strong>, for instance in student’s theses or manuscripts, or even published papers (See the excellent <a href="http://statcheck.io/">statcheck</a> to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.</p>
+<p><strong>How to end it?</strong></p>
+<p>We believe that this could be solved (at least, partially) by the <strong>default implementation of current best practices of statistical reporting</strong>. A tool that automatically transforms a statistical result into a copy/pastable text. Of course, this automation cannot be suitable for each and every advanced usage, but could be satisfying for a substantial proportion of use cases. <strong>Implementing this unified, end-user oriented pipeline is the goal of the <a href="https://github.com/easystats/report">report</a> package.</strong></p>
+<div id="install-report" class="section level1">
+<h1>Install report</h1>
+<p><code>report</code> is part of the new <a href="https://github.com/easystats"><em>easystats</em></a> suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from <a href="https://github.com/easystats/report">github</a>.</p>
+<pre class="r"><code>devtools::install_github(&quot;easystats/report&quot;)  # Install the latest psycho version
+
+library(report)  # Load the package</code></pre>
+</div>
+<div id="fit-an-anova" class="section level1">
+<h1>Fit an anova</h1>
+<p>Let’s start by doing a traditional ANOVA with <em>Sepal.Length</em> (the length of the sepals of some flowers) as dependent variable, and the <em>Species</em> as categorical predictor.</p>
+<pre class="r"><code>aov_results &lt;- aov(Sepal.Length ~ Species, data=iris)  # Fit the ANOVA</code></pre>
+</div>
+<div id="formatted-output" class="section level1">
+<h1>Formatted output</h1>
+<p>The <code>report</code> package include a single function, namely <code>report()</code>, that can be applied to an ANOVA object to format its content.</p>
+<pre class="r"><code>report(aov_results)</code></pre>
+<pre><code>The ANOVA suggests that:
+
+  - The effect of Species is significant (F(2, 147) = 119.26, p &lt; .001) and can
+be considered as large (Omega squared = 0.61).</code></pre>
+<p>It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see <a href="https://academic.oup.com/hcr/article-abstract/28/4/612/4331349">Levine et al. 2002</a>, <a href="http://journals.sagepub.com/doi/abs/10.1177/0013164404264848">Pierce et al. 2004</a>) as well as its <a href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">interpretation</a> and presents the results in an APA-compatible way.</p>
+<p>Note that a table-output is also available:</p>
+<pre class="r"><code>aov_results %&gt;% 
+  report() %&gt;% 
+  to_table()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="right">Sum_Squares</th>
+<th align="right">DoF</th>
+<th align="right">Mean_Square</th>
+<th align="right">F</th>
+<th align="right">p</th>
+<th align="right">Omega_Squared_partial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Species</td>
+<td align="right">63.21</td>
+<td align="right">2</td>
+<td align="right">31.61</td>
+<td align="right">119.26</td>
+<td align="right">0</td>
+<td align="right">0.61</td>
+</tr>
+<tr class="even">
+<td align="left">Residuals</td>
+<td align="right">38.96</td>
+<td align="right">147</td>
+<td align="right">0.27</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="evolution" class="section level1">
+<h1>Evolution</h1>
+<p>Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. <strong>The goal of this package is to flexibly adaptive to new changes and good practices evolution</strong>. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an <a href="https://github.com/easystats/report/issues">issue</a>, or even better, try to implement them yourself by <a href="https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md">contributing</a> to the code.</p>
+</div>

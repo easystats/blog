@@ -1,0 +1,59 @@
+---
+title: "Formatted correlation output with effect sizes"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-03-28
+categories: ["R", "report"]
+tags: ["R", "easystats", "report", "correlations", "APA", "results"]
+summary: This post shows how to create formatted reports for correlation tests
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. **The new [report](https://github.com/easystats/report) package was designed specifically to do this job**.
+
+
+# Install report
+
+`report` is part of the new [*easystats*](https://github.com/easystats) suite of packages. However, as it is not (yet) on CRAN, you'll need to install it directly from [github](https://github.com/easystats/report).
+
+```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+devtools::install_github("easystats/report")  # Install the latest psycho version
+
+library(report)  # Load the package
+```
+```{r fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, include=FALSE, results='markup'}
+library(report)  # Load the package
+```
+
+
+
+# Do a correlation
+```{r, fig.width=7, fig.height=4.5, eval = TRUE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+df <- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results <- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
+```
+
+
+# Formatted output
+
+The `report` package include a single function, namely `report()`, that can be applied to a correlation to format its content.
+
+```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='asis', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+report(cor_results)
+```
+```{r, fig.width=7, fig.height=4.5, eval = TRUE, results='markup', fig.align='center', message=FALSE, warning=FALSE, echo=FALSE}
+report(cor_results) %>% to_text(width=80)
+```
+
+
+The formatted output includes the **direction**, **effect size** (interpreted by default using **[Cohen's (1988)](https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r)** rules of thumb) and **confidence intervals**. Now, you can just copy and paste this line into your report and focus on more important things.
+
+
+
+# Evolution
+
+Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. **The goal of this package is to flexibly adaptive to new changes and good practices evolution**. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an [issue](https://github.com/easystats/report/issues), or even better, try to implement them yourself by [contributing](https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md) to the code. 

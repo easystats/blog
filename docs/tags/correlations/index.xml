@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Correlations on easystats</title>
+    <link>/tags/correlations/</link>
+    <description>Recent content in Correlations on easystats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/correlations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/04_report_correlation/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/04_report_correlation/</guid>
+      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
+    </item>
+    
+  </channel>
+</rss>

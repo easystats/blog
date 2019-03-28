@@ -6,15 +6,42 @@
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Anova</title>
+      <link>/tags/anova/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/anova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apa</title>
+      <link>/tags/apa/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/apa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correlations</title>
+      <link>/tags/correlations/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/correlations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Easystats</title>
       <link>/tags/easystats/</link>
-      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/easystats/</guid>
       <description></description>
@@ -41,9 +68,18 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Report</title>
+      <link>/tags/report/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/report/</guid>
       <description></description>
     </item>
     
@@ -53,6 +89,15 @@
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ressources/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Results</title>
+      <link>/tags/results/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/results/</guid>
       <description></description>
     </item>
     

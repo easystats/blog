@@ -1,0 +1,77 @@
+---
+title: "The end of errors in ANOVA reporting"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-03-28
+categories: ["R", "report"]
+tags: ["R", "easystats", "report", "ANOVA", "APA", "results"]
+summary: This post shows how to create formatted reports for ANOVAs.
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+**Psychological science is still massively using analysis of variance (ANOVA)**. Despite its relative simplicity, I am very often confronted to **errors in its reporting**, for instance in student's theses or manuscripts, or even published papers (See the excellent [statcheck](http://statcheck.io/) to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.
+
+**How to end it?**
+
+We believe that this could be solved (at least, partially) by the **default implementation of current best practices of statistical reporting**. A tool that automatically transforms a statistical result into a copy/pastable text. Of course, this automation cannot be suitable for each and every advanced usage, but could be satisfying for a substantial proportion of use cases. **Implementing this unified, end-user oriented pipeline is the goal of the [report](https://github.com/easystats/report) package.**
+
+# Install report
+
+`report` is part of the new [*easystats*](https://github.com/easystats) suite of packages. However, as it is not (yet) on CRAN, you'll need to install it directly from [github](https://github.com/easystats/report).
+
+```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+devtools::install_github("easystats/report")  # Install the latest psycho version
+
+library(report)  # Load the package
+```
+```{r fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, include=FALSE, results='markup'}
+library(report)  # Load the package
+```
+
+# Fit an anova
+
+Let's start by doing a traditional ANOVA with *Sepal.Length* (the length of the sepals of some flowers) as dependent variable, and the *Species* as categorical predictor.
+
+```{r, fig.width=7, fig.height=4.5, eval = TRUE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+aov_results <- aov(Sepal.Length ~ Species, data=iris)  # Fit the ANOVA
+```
+
+
+# Formatted output
+
+The `report` package include a single function, namely `report()`, that can be applied to an ANOVA object to format its content.
+
+```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
+report(aov_results)
+```
+```{r, fig.width=7, fig.height=4.5, eval = TRUE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE, echo=FALSE}
+report(aov_results) %>% to_text(width=80)
+```
+
+It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see [Levine et al. 2002](https://academic.oup.com/hcr/article-abstract/28/4/612/4331349), [Pierce et al. 2004](http://journals.sagepub.com/doi/abs/10.1177/0013164404264848)) as well as its [interpretation](http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize) and presents the results in an APA-compatible way.
+
+Note that a table-output is also available:
+
+
+```{r eval=FALSE, fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA}
+aov_results %>% 
+  report() %>% 
+  to_table()
+```
+```{r echo=FALSE, fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, results='asis'}
+aov_results %>% 
+  report() %>% 
+  to_table() %>% 
+  knitr::kable(digits=2)
+```
+
+
+# Evolution
+
+Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. **The goal of this package is to flexibly adaptive to new changes and good practices evolution**. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an [issue](https://github.com/easystats/report/issues), or even better, try to implement them yourself by [contributing](https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md) to the code. 
+
+
