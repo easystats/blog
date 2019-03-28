@@ -15,10 +15,22 @@ Here are some links to get started with R:
 - [**Quick-R**](https://www.statmethods.net/r-tutorial/index.html)
 - [**Datacamp**](https://www.datacamp.com/)
 - [**EdX courses**](https://www.edx.org/learn/r-programming)
+- [**YaRrr! The Pirate’s Guide to R**](https://bookdown.org/ndphillips/YaRrr/)
+- [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
 
 ## Stay tuned
 
-Here are some links of blogs and such to keep in touch with this evolving field:\
+Here are some links of blogs and such to keep in touch with this evolving field:
 
 - [**r-bloggers**](https://www.r-bloggers.com/)
 
+## Miscellaenous
+
+This section contains more scoe-focused ressources:
+
+- [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
+
+
+## Contribute
+
+You can contribute to this post by adding more ressources [here](https://github.com/easystats/blog/blob/master/content/posts/02_ressources_learn_R.Rmd).

@@ -205,11 +205,14 @@
         </span>
         <span >
         
-        GuidesHere are some links to get started with R:
-R for DatascienceQuick-RDatacampEdX coursesStay tunedHere are some links of blogs and such to keep in touch with this evolving field:
-r-bloggers
+        GuidesHere are some links to get started with R:
+R for DatascienceQuick-RDatacampEdX coursesYaRrr! The Pirate’s Guide to RLearnR Youtube ChannelStay tunedHere are some links of blogs and such to keep in touch with this evolving field:
+r-bloggersMiscellaenousThis section contains more scoe-focused ressources:
+Interpretable Machine Learning bookContributeYou can contribute to this post by adding more ressources here.
         
         </span>
+        
+          ... <a class="read-more-symbol" href="./posts/02_ressources_learn_r/">➦</a>
         
         </div>
         
@@ -232,6 +235,28 @@ install.packages(&quot;devtools&quot;) library(devtools) devtools::install_githu
         </span>
         
           ... <a class="read-more-symbol" href="./posts/01_installingr/">➦</a>
+        
+        </div>
+        
+     
+      
+        
+      
+      <div class="post-list__item">
+        <span class="item__title--big">
+          <a href="./posts/04_classify_distribution/" ></a>
+        </span>
+        <span class="item__date">
+          Jan 1, 0001
+        </span>
+        <span >
+        
+        IntroductionTrying to classify the distribution family of data.
+MethodsParameters and Packageslibrary(ggplot2)library(plotly)library(parameters)library(bayestestR)library(report)library(caret)library(parallel)library(doParallel)set.seed(333)Distributions Descriptiondistributions &lt;- data.frame()size &lt;- 1000for(location in round(seq(0.01, 10, length.out = 5), digits=2)){for(scale in round(seq(0.02, 10, length.out = 5), digits=2)){x &lt;- parameters::normalize(as.data.frame(density(rnorm(size, location, scale), n=100)))x$distribution &lt;- &quot;normal&quot;x$location &lt;- locationx$scale &lt;- scaledistributions &lt;- rbind(distributions, x)x &lt;- parameters::normalize(as.
+        
+        </span>
+        
+          ... <a class="read-more-symbol" href="./posts/04_classify_distribution/">➦</a>
         
         </div>
         
