@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ressources on easystats</title>
-    <link>/tags/ressources/</link>
-    <description>Recent content in Ressources on easystats</description>
+    <title>Reports on easystats</title>
+    <link>/tags/reports/</link>
+    <description>Recent content in Reports on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/ressources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/reports/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ressources and documentation to learn R</title>
-      <link>/ressources/02_ressources_learn_r/</link>
-      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>/ressources/ressources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/ressources/02_ressources_learn_r/</guid>
+      <guid>/ressources/ressources/</guid>
       <description>GuidesHere are some links to get started with R:
 R for DatascienceQuick-RDatacampEdX coursesYaRrr! The Pirate’s Guide to RLearnR Youtube ChannelStay tunedHere are some links of blogs and such to keep in touch with this evolving field:
 r-bloggersMiscellaenousThis section contains more scoe-focused ressources:

@@ -69,3 +69,8 @@ googleAnalytics = "UA-97457476-9"
     identifier = "portfolio"
     weight = 200
     url = "/portfolio/"
+[[menu.main]]
+    name = "Ressources"
+    identifier = "ressources"
+    weight = 200
+    url = "/ressources/"

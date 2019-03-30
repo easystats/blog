@@ -3,23 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/04_report_correlation/</loc>
+    <loc>/posts/02_report_correlation/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/03_report_anova/</loc>
+    <loc>/posts/01_report_anova/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/02_ressources_learn_r/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/01_installingr/</loc>
-    <lastmod>2019-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -30,10 +20,6 @@
   <url>
     <loc>/portfolio/easystats/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/04_classify_distribution/</loc>
   </url>
   
   <url>
@@ -71,21 +57,7 @@
   </url>
   
   <url>
-    <loc>/categories/easystats/</loc>
-    <lastmod>2019-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/installation/</loc>
-    <lastmod>2019-02-21T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/learning/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/ressources/</loc>
   </url>
   
   <url>
@@ -115,18 +87,6 @@
   <url>
     <loc>/categories/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/ressources/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ressources/</loc>
-    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

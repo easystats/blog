@@ -13,10 +13,10 @@
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/04_report_correlation/</link>
+      <link>/posts/02_report_correlation/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/04_report_correlation/</guid>
+      <guid>/posts/02_report_correlation/</guid>
       <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
     </item>
     
