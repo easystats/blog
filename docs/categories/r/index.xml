@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,53 @@
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/02_report_correlation/</guid>
-      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
+      <description>
+
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Do a correlation&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>correlations</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
     </item>
     
     <item>
@@ -26,7 +72,94 @@
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/01_report_anova/</guid>
-      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
+      <description>
+
+
+&lt;p&gt;&lt;strong&gt;Psychological science is still massively using analysis of variance (ANOVA)&lt;/strong&gt;. Despite its relative simplicity, I am very often confronted to &lt;strong&gt;errors in its reporting&lt;/strong&gt;, for instance in student’s theses or manuscripts, or even published papers (See the excellent &lt;a href=&#34;http://statcheck.io/&#34;&gt;statcheck&lt;/a&gt; to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to end it?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We believe that this could be solved (at least, partially) by the &lt;strong&gt;default implementation of current best practices of statistical reporting&lt;/strong&gt;. A tool that automatically transforms a statistical result into a copy/pastable text. Of course, this automation cannot be suitable for each and every advanced usage, but could be satisfying for a substantial proportion of use cases. &lt;strong&gt;Implementing this unified, end-user oriented pipeline is the goal of the &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package.&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fit-an-anova&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Fit an anova&lt;/h1&gt;
+&lt;p&gt;Let’s start by doing a traditional ANOVA with &lt;em&gt;Sepal.Length&lt;/em&gt; (the length of the sepals of some flowers) as dependent variable, and the &lt;em&gt;Species&lt;/em&gt; as categorical predictor.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results &amp;lt;- aov(Sepal.Length ~ Species, data=iris)  # Fit the ANOVA&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to an ANOVA object to format its content.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(aov_results)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
+
+  - The effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001) and can
+be considered as large (Omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
+&lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
+  report() %&amp;gt;% 
+  to_table()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Sum_Squares&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;DoF&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Mean_Square&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;F&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;p&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Omega_Squared_partial&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Species&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;63.21&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;31.61&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;119.26&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.61&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Residuals&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;38.96&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;147&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.27&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>ANOVA</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
     </item>
     
   </channel>

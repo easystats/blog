@@ -23,6 +23,7 @@ Here are some links of blogs and such to keep in touch with this
 evolving field:
 
   - [**r-bloggers**](https://www.r-bloggers.com/)
+  - [**r-weekly**](https://rweekly.org )
 
 ## Miscellaenous
 
