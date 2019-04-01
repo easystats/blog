@@ -15,7 +15,7 @@ options(knitr.kable.NA = '')
 
 
 
-The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language's popularity. Howover, **this diversity makes it hard for developpers** that want to create tools that work with different types of models. Indeed, the way to access models' internal information (such as **parameters names**, **formula**, **data**, etc.) is **not unified**, forcing the developpers to spend some time figuring out how to do it for each model type.
+The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language's popularity. However, **this diversity makes it hard for developpers** that want to create tools that work with different types of models. Indeed, the way to access models' internal information (such as **parameters names**, **formulae**, **data**, etc.) is **not unified**, forcing the developpers to spend some time figuring out how to do it for each model type.
 
 **This time is over!**
 
@@ -78,6 +78,6 @@ find_algorithm(model)
 
 Moreover, `insight` also includes function to deal with **Bayesian models** (`get_priors()`) and **mixed models** (`find_random()`).
 
-`insight` works on a high number of models (see the [**list here**](https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models)), and **continue to grow thanks to your suggestions**! As *easystats* is a new project in active developpment, do not hesitate to contact us if **you want to get involved :)**
+`insight` works on a high number of models (see the [**list here**](https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models)), and **continue to grow thanks to your suggestions**! As *easystats* is a new project in active development, do not hesitate to contact us if **you want to get involved :)**
 
 - **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
