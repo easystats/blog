@@ -12,11 +12,94 @@
     
     
     <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/02_report_correlation/</link>
+      <title>A unified syntax for accessing models&#39; information</title>
+      <link>/posts/insight_presentation/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/02_report_correlation/</guid>
+      <guid>/posts/insight_presentation/</guid>
+      <description>
+
+
+&lt;p&gt;The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. Howover, &lt;strong&gt;this diversity makes it hard for developpers&lt;/strong&gt; that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as &lt;strong&gt;parameters names&lt;/strong&gt;, &lt;strong&gt;formula&lt;/strong&gt;, &lt;strong&gt;data&lt;/strong&gt;, etc.) is &lt;strong&gt;not unified&lt;/strong&gt;, forcing the developpers to spend some time figuring out how to do it for each model type.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This time is over!&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;insight&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Insight&lt;/h2&gt;
+&lt;p&gt;Recently, we (&lt;a href=&#34;https://github.com/strengejacke&#34;&gt;DL&lt;/a&gt; and &lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;DM&lt;/a&gt;) have decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; project, a set of packages designed to make your life easier (currently a very work in progress). However, in order to create these packages and functions, &lt;strong&gt;we needed a basis&lt;/strong&gt;, a stable cornerstone, that would allow the unified way of accessing models information.&lt;/p&gt;
+&lt;p&gt;And &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;&lt;strong&gt;&lt;code&gt;insight&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; was born.&lt;/p&gt;
+&lt;p&gt;The goal of insight is to provide tools to help an &lt;strong&gt;easy, intuitive and consistent accesss&lt;/strong&gt; to information contained in various models. Indeed, although there are generic functions to get information and data from models, many modelling-functions from different packages do not provide such methods to access these information. The insight package aims at closing this gap by providing functions that work for (almost) any model.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; can be installed as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;insight&amp;quot;)  # Install from CRAN
+library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;Let’s see how it works on a very simple regression model:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model &amp;lt;- lm(Sepal.Length ~ Species, data=iris)&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &lt;strong&gt;parameters&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; $conditional
+&amp;gt; [1] &amp;quot;(Intercept)&amp;quot;       &amp;quot;Speciesversicolor&amp;quot; &amp;quot;Speciesvirginica&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &lt;strong&gt;outcome’s name&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_response(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; [1] &amp;quot;Sepal.Length&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &lt;strong&gt;formula&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_formula(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; $conditional
+&amp;gt; Sepal.Length ~ Species&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &lt;strong&gt;variables in the formula&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_variables(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; $response
+&amp;gt; [1] &amp;quot;Sepal.Length&amp;quot;
+&amp;gt; 
+&amp;gt; $conditional
+&amp;gt; [1] &amp;quot;Species&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Find the &lt;strong&gt;algorithm&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_algorithm(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; $algorithm
+&amp;gt; [1] &amp;quot;OLS&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Moreover, &lt;code&gt;insight&lt;/code&gt; also includes function to deal with &lt;strong&gt;Bayesian models&lt;/strong&gt; (&lt;code&gt;get_priors()&lt;/code&gt;) and &lt;strong&gt;mixed models&lt;/strong&gt; (&lt;code&gt;find_random()&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; works on a high number of models (see the &lt;a href=&#34;https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models&#34;&gt;&lt;strong&gt;list here&lt;/strong&gt;&lt;/a&gt;), and &lt;strong&gt;continue to grow thanks to your suggestions&lt;/strong&gt;! As &lt;em&gt;easystats&lt;/em&gt; is a new project in active developpment, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>insight</category>
+      
+            <category>access</category>
+      
+            <category>models</category>
+      
+            <category>data</category>
+      
+      
+            <category>R</category>
+      
+            <category>insight</category>
+      
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation/</guid>
       <description>
 
 
@@ -68,10 +151,10 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/posts/01_report_anova/</link>
+      <link>/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/01_report_anova/</guid>
+      <guid>/posts/report_anova/</guid>
       <description>
 
 

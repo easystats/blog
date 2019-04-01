@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Access</title>
+      <link>/tags/access/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/access/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Anova</title>
       <link>/tags/anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
@@ -39,11 +48,38 @@
     </item>
     
     <item>
+      <title>Data</title>
+      <link>/tags/data/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Easystats</title>
       <link>/tags/easystats/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/easystats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Insight</title>
+      <link>/tags/insight/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/insight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Models</title>
+      <link>/tags/models/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/models/</guid>
       <description></description>
     </item>
     

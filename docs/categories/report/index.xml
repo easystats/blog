@@ -13,10 +13,10 @@
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/02_report_correlation/</link>
+      <link>/posts/report_correlation/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/02_report_correlation/</guid>
+      <guid>/posts/report_correlation/</guid>
       <description>
 
 
@@ -68,10 +68,10 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/posts/01_report_anova/</link>
+      <link>/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/01_report_anova/</guid>
+      <guid>/posts/report_anova/</guid>
       <description>
 
 
