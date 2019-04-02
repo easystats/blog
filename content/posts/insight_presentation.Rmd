@@ -1,7 +1,7 @@
 ---
 title: "A unified syntax for accessing models' information"
 author: "Lüdecke, D. and Makowski, D."
-date: 2019-03-28
+date: 2019-04-03
 categories: ["R", "insight"]
 tags: ["R", "easystats", "insight", "access", "models", "data"]
 ---
@@ -15,7 +15,7 @@ options(knitr.kable.NA = '')
 
 
 
-The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language's popularity. However, **this diversity makes it hard for developpers** that want to create tools that work with different types of models. Indeed, the way to access models' internal information (such as **parameters names**, **formulae**, **data**, etc.) is **not unified**, forcing the developpers to spend some time figuring out how to do it for each model type.
+The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language's popularity. However, **this diversity makes it hard for developpers** that want to create tools that work with different types of models. Indeed, the way to access models' internal information (such as **parameters names**, **formulae**, **data**, etc.) is **not unified**, forcing the developers to spend some time figuring out how to do it for each model type.
 
 **This time is over!**
 

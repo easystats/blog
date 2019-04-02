@@ -1,7 +1,7 @@
 ---
 title: "Formatted correlation output with effect sizes"
 author: "Makowski, D. and Lüdecke, D."
-date: 2019-03-28
+date: 2019-03-25
 categories: ["R", "report"]
 tags: ["R", "easystats", "report", "correlations", "APA", "results"]
 summary: This post shows how to create formatted reports for correlation tests
