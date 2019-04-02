@@ -38,14 +38,5 @@
       <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
     </item>
     
-    <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/report_correlation.utf8/</link>
-      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/report_correlation.utf8/</guid>
-      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
-    </item>
-    
   </channel>
 </rss>
