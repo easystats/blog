@@ -1,0 +1,83 @@
+---
+title: "A unified syntax for accessing models' information"
+author: "Lüdecke, D. and Makowski, D."
+date: 2019-04-02
+categories: ["R", "insight"]
+tags: ["R", "easystats", "insight", "access", "models", "data"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+
+
+
+The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language's popularity. However, **this diversity makes it hard for developpers** that want to create tools that work with different types of models. Indeed, the way to access models' internal information (such as **parameters names**, **formulae**, **data**, etc.) is **not unified**, forcing the developers to spend some time figuring out how to do it for each model type.
+
+**This time is over!**
+
+## Insight
+
+Recently, [we](https://github.com/orgs/easystats/people) have decided to collaborate around the new [easystats](https://github.com/easystats) project, a set of packages designed to make your life easier (currently very work in progress). However, in order to create these packages and functions, **we needed a basis**, a stable cornerstone, that would allow the unified way of accessing models information. 
+
+And [**`insight`**](https://github.com/easystats/insight) was born.
+
+The goal of insight is to provide tools to help an **easy, intuitive and consistent accesss** to information contained in various models. Indeed, although there are generic functions to get information and data from models, many modelling-functions from different packages do not provide such methods to access these information. The insight package aims at closing this gap by providing functions that work for (almost) any model.
+
+`insight` can be installed as follows:
+
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+install.packages("insight")  # Install from CRAN
+library(insight)  # Load the package
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(insight) 
+```
+
+## Example
+
+Let's see how it works on a very simple regression model:
+
+```{r message=FALSE, warning=FALSE}
+model <- lm(Sepal.Length ~ Species, data=iris)
+```
+
+- Find the **parameters**:
+
+```{r message=FALSE, warning=FALSE, comment=">"}
+find_parameters(model)
+```
+
+- Find the **outcome's name**:
+
+```{r message=FALSE, warning=FALSE, comment=">"}
+find_response(model)
+```
+
+- Find the **formula**:
+
+```{r message=FALSE, warning=FALSE, comment=">"}
+find_formula(model)
+```
+
+- Find the **variables in the formula**:
+
+```{r message=FALSE, warning=FALSE, comment=">"}
+find_variables(model)
+```
+
+- Find the **algorithm**:
+
+```{r message=FALSE, warning=FALSE, comment=">"}
+find_algorithm(model)
+```
+
+
+Moreover, `insight` also includes functions to deal with **Bayesian** (`get_priors()`) and **mixed models** (`find_random()`).
+
+`insight` works on a high number of models (see the [**list here**](https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models)), and **continue to grow thanks to your suggestions**! As *easystats* is a new project in active development, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

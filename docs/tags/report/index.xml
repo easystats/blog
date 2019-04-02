@@ -12,21 +12,30 @@
     
     
     <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/02_report_correlation/</link>
+      <title>The end of errors in ANOVA reporting</title>
+      <link>/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/02_report_correlation/</guid>
+      <guid>/posts/report_anova/</guid>
+      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation/</guid>
       <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
     </item>
     
     <item>
-      <title>The end of errors in ANOVA reporting</title>
-      <link>/posts/01_report_anova/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation.utf8/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/01_report_anova/</guid>
-      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
+      <guid>/posts/report_correlation.utf8/</guid>
+      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
     </item>
     
   </channel>

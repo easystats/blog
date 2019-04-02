@@ -12,66 +12,11 @@
     
     
     <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/02_report_correlation/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/02_report_correlation/</guid>
-      <description>
-
-
-&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
-&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Install report&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
-
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Do a correlation&lt;/h1&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
-cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Formatted output&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Evolution&lt;/h1&gt;
-&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
-&lt;/div&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>report</category>
-      
-            <category>correlations</category>
-      
-            <category>APA</category>
-      
-            <category>results</category>
-      
-      
-            <category>R</category>
-      
-            <category>report</category>
-      
-    </item>
-    
-    <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/posts/01_report_anova/</link>
+      <link>/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/01_report_anova/</guid>
+      <guid>/posts/report_anova/</guid>
       <description>
 
 
@@ -150,6 +95,123 @@ be considered as large (Omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
             <category>report</category>
       
             <category>ANOVA</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation/</guid>
+      <description>
+
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Do a correlation&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>correlations</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation.utf8/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation.utf8/</guid>
+      <description>
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;do-a-correlation&#34;&gt;Do a correlation&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;report(cor_results)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## The Pearson&#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen&amp;rsquo;s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+
+&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
+
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>correlations</category>
       
             <category>APA</category>
       

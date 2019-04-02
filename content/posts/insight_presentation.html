@@ -1,0 +1,63 @@
+---
+title: "A unified syntax for accessing models' information"
+author: "Lüdecke, D. and Makowski, D."
+date: 2019-04-02
+categories: ["R", "insight"]
+tags: ["R", "easystats", "insight", "access", "models", "data"]
+---
+
+
+
+<p>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, <strong>this diversity makes it hard for developpers</strong> that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as <strong>parameters names</strong>, <strong>formulae</strong>, <strong>data</strong>, etc.) is <strong>not unified</strong>, forcing the developers to spend some time figuring out how to do it for each model type.</p>
+<p><strong>This time is over!</strong></p>
+<div id="insight" class="section level2">
+<h2>Insight</h2>
+<p>Recently, <a href="https://github.com/orgs/easystats/people">we</a> have decided to collaborate around the new <a href="https://github.com/easystats">easystats</a> project, a set of packages designed to make your life easier (currently very work in progress). However, in order to create these packages and functions, <strong>we needed a basis</strong>, a stable cornerstone, that would allow the unified way of accessing models information.</p>
+<p>And <a href="https://github.com/easystats/insight"><strong><code>insight</code></strong></a> was born.</p>
+<p>The goal of insight is to provide tools to help an <strong>easy, intuitive and consistent accesss</strong> to information contained in various models. Indeed, although there are generic functions to get information and data from models, many modelling-functions from different packages do not provide such methods to access these information. The insight package aims at closing this gap by providing functions that work for (almost) any model.</p>
+<p><code>insight</code> can be installed as follows:</p>
+<pre class="r"><code>install.packages(&quot;insight&quot;)  # Install from CRAN
+library(insight)  # Load the package</code></pre>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>Let’s see how it works on a very simple regression model:</p>
+<pre class="r"><code>model &lt;- lm(Sepal.Length ~ Species, data=iris)</code></pre>
+<ul>
+<li>Find the <strong>parameters</strong>:</li>
+</ul>
+<pre class="r"><code>find_parameters(model)</code></pre>
+<pre><code>&gt; $conditional
+&gt; [1] &quot;(Intercept)&quot;       &quot;Speciesversicolor&quot; &quot;Speciesvirginica&quot;</code></pre>
+<ul>
+<li>Find the <strong>outcome’s name</strong>:</li>
+</ul>
+<pre class="r"><code>find_response(model)</code></pre>
+<pre><code>&gt; [1] &quot;Sepal.Length&quot;</code></pre>
+<ul>
+<li>Find the <strong>formula</strong>:</li>
+</ul>
+<pre class="r"><code>find_formula(model)</code></pre>
+<pre><code>&gt; $conditional
+&gt; Sepal.Length ~ Species</code></pre>
+<ul>
+<li>Find the <strong>variables in the formula</strong>:</li>
+</ul>
+<pre class="r"><code>find_variables(model)</code></pre>
+<pre><code>&gt; $response
+&gt; [1] &quot;Sepal.Length&quot;
+&gt; 
+&gt; $conditional
+&gt; [1] &quot;Species&quot;</code></pre>
+<ul>
+<li>Find the <strong>algorithm</strong>:</li>
+</ul>
+<pre class="r"><code>find_algorithm(model)</code></pre>
+<pre><code>&gt; $algorithm
+&gt; [1] &quot;OLS&quot;</code></pre>
+<p>Moreover, <code>insight</code> also includes functions to deal with <strong>Bayesian</strong> (<code>get_priors()</code>) and <strong>mixed models</strong> (<code>find_random()</code>).</p>
+<p><code>insight</code> works on a high number of models (see the <a href="https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models"><strong>list here</strong></a>), and <strong>continue to grow thanks to your suggestions</strong>! As <em>easystats</em> is a new project in active development, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
