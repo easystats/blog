@@ -1,7 +1,7 @@
 ---
 title: "A unified syntax for accessing models' information"
 author: "Lüdecke, D. and Makowski, D."
-date: 2019-04-03
+date: 2019-04-02
 categories: ["R", "insight"]
 tags: ["R", "easystats", "insight", "access", "models", "data"]
 ---
@@ -21,7 +21,7 @@ The richness and variety of packages for building and fitting statistical models
 
 ## Insight
 
-Recently, we ([DL](https://github.com/strengejacke) and [DM](https://github.com/DominiqueMakowski)) have decided to collaborate around the new [easystats](https://github.com/easystats) project, a set of packages designed to make your life easier (currently a very work in progress). However, in order to create these packages and functions, **we needed a basis**, a stable cornerstone, that would allow the unified way of accessing models information. 
+Recently, [we](https://github.com/orgs/easystats/people) have decided to collaborate around the new [easystats](https://github.com/easystats) project, a set of packages designed to make your life easier (currently very work in progress). However, in order to create these packages and functions, **we needed a basis**, a stable cornerstone, that would allow the unified way of accessing models information. 
 
 And [**`insight`**](https://github.com/easystats/insight) was born.
 
@@ -76,7 +76,7 @@ find_algorithm(model)
 ```
 
 
-Moreover, `insight` also includes function to deal with **Bayesian models** (`get_priors()`) and **mixed models** (`find_random()`).
+Moreover, `insight` also includes functions to deal with **Bayesian** (`get_priors()`) and **mixed models** (`find_random()`).
 
 `insight` works on a high number of models (see the [**list here**](https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models)), and **continue to grow thanks to your suggestions**! As *easystats* is a new project in active development, do not hesitate to contact us if **you want to get involved :)**
 

@@ -6,7 +6,7 @@
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,17 +14,17 @@
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
       <link>/posts/insight_presentation/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/insight_presentation/</guid>
       <description>
 
 
-&lt;p&gt;The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. Howover, &lt;strong&gt;this diversity makes it hard for developpers&lt;/strong&gt; that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as &lt;strong&gt;parameters names&lt;/strong&gt;, &lt;strong&gt;formula&lt;/strong&gt;, &lt;strong&gt;data&lt;/strong&gt;, etc.) is &lt;strong&gt;not unified&lt;/strong&gt;, forcing the developpers to spend some time figuring out how to do it for each model type.&lt;/p&gt;
+&lt;p&gt;The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, &lt;strong&gt;this diversity makes it hard for developpers&lt;/strong&gt; that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as &lt;strong&gt;parameters names&lt;/strong&gt;, &lt;strong&gt;formulae&lt;/strong&gt;, &lt;strong&gt;data&lt;/strong&gt;, etc.) is &lt;strong&gt;not unified&lt;/strong&gt;, forcing the developers to spend some time figuring out how to do it for each model type.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;This time is over!&lt;/strong&gt;&lt;/p&gt;
 &lt;div id=&#34;insight&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Insight&lt;/h2&gt;
-&lt;p&gt;Recently, we (&lt;a href=&#34;https://github.com/strengejacke&#34;&gt;DL&lt;/a&gt; and &lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;DM&lt;/a&gt;) have decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; project, a set of packages designed to make your life easier (currently a very work in progress). However, in order to create these packages and functions, &lt;strong&gt;we needed a basis&lt;/strong&gt;, a stable cornerstone, that would allow the unified way of accessing models information.&lt;/p&gt;
+&lt;p&gt;Recently, &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;we&lt;/a&gt; have decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; project, a set of packages designed to make your life easier (currently very work in progress). However, in order to create these packages and functions, &lt;strong&gt;we needed a basis&lt;/strong&gt;, a stable cornerstone, that would allow the unified way of accessing models information.&lt;/p&gt;
 &lt;p&gt;And &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;&lt;strong&gt;&lt;code&gt;insight&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; was born.&lt;/p&gt;
 &lt;p&gt;The goal of insight is to provide tools to help an &lt;strong&gt;easy, intuitive and consistent accesss&lt;/strong&gt; to information contained in various models. Indeed, although there are generic functions to get information and data from models, many modelling-functions from different packages do not provide such methods to access these information. The insight package aims at closing this gap by providing functions that work for (almost) any model.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;insight&lt;/code&gt; can be installed as follows:&lt;/p&gt;
@@ -67,48 +67,11 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_algorithm(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; $algorithm
 &amp;gt; [1] &amp;quot;OLS&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Moreover, &lt;code&gt;insight&lt;/code&gt; also includes function to deal with &lt;strong&gt;Bayesian models&lt;/strong&gt; (&lt;code&gt;get_priors()&lt;/code&gt;) and &lt;strong&gt;mixed models&lt;/strong&gt; (&lt;code&gt;find_random()&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; works on a high number of models (see the &lt;a href=&#34;https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models&#34;&gt;&lt;strong&gt;list here&lt;/strong&gt;&lt;/a&gt;), and &lt;strong&gt;continue to grow thanks to your suggestions&lt;/strong&gt;! As &lt;em&gt;easystats&lt;/em&gt; is a new project in active developpment, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Moreover, &lt;code&gt;insight&lt;/code&gt; also includes functions to deal with &lt;strong&gt;Bayesian&lt;/strong&gt; (&lt;code&gt;get_priors()&lt;/code&gt;) and &lt;strong&gt;mixed models&lt;/strong&gt; (&lt;code&gt;find_random()&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; works on a high number of models (see the &lt;a href=&#34;https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models&#34;&gt;&lt;strong&gt;list here&lt;/strong&gt;&lt;/a&gt;), and &lt;strong&gt;continue to grow thanks to your suggestions&lt;/strong&gt;! As &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/posts/report_correlation/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/report_correlation/</guid>
-      <description>
-
-
-&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
-&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Install report&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
-
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Do a correlation&lt;/h1&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
-cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Formatted output&lt;/h1&gt;
-&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Evolution&lt;/h1&gt;
-&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -188,6 +151,87 @@ be considered as large (Omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
 &lt;h1&gt;Evolution&lt;/h1&gt;
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation/</guid>
+      <description>
+
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+&lt;div id=&#34;install-report&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Do a correlation&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatted-output&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation.utf8/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation.utf8/</guid>
+      <description>
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;do-a-correlation&#34;&gt;Do a correlation&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;report(cor_results)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## The Pearson&#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen&amp;rsquo;s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+
+&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
+
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 </description>
     </item>
     
