@@ -1,0 +1,38 @@
+---
+title: "Describe and understand Bayesian models and posteriors using bayestestR"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-04-11
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "posterior", "rstanarm", "brms"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+
+
+
+
+## bayestestR
+
+
+
+`bayestestR` can be installed as follows:
+
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+install.packages("bayestestR")  # Install the package
+library(bayestestR)  # Load it
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(bayestestR) 
+```
+
+## Examples
+
+
+To conclude note that *easystats* is a new project in active development, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
