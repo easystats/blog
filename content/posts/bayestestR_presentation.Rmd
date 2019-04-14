@@ -44,18 +44,29 @@ Let's check whether the effects of my Bayesian regression can be considered as n
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(rstanarm)
-model <- stan_glm(Sepal.Length ~ Species, data=iris)
+model <- stan_glm(mpg ~ wt + cyl + gear + am + hp, data = mtcars)
 ```
 ```{r eval = FALSE, message=FALSE, warning=FALSE}
 # Load the rstanarm package
 library(rstanarm)
 
 # Fit a Bayesian model
-model <- stan_glm(Sepal.Width ~ Species, data=iris)
+model <- stan_glm(mpg ~ wt + cyl + gear + am + hp, data = mtcars)
 ```
 ```{r message=FALSE, warning=FALSE}
 # Do the test
 equivalence_test(model)
+```
+
+Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+ggplot2::theme_set(sjPlot::theme_sjplot2())
+```
+```{r message=FALSE, warning=FALSE}
+# Do the test and plot results
+p <- equivalence_test(model)
+plot(p)
 ```
 
 
