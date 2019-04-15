@@ -18,7 +18,7 @@ include_graphics("https://github.com/easystats/bayestestR/raw/master/man/figures
 ```
 
 
-The **Bayesian framework** is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as [`rstanarm`](https://github.com/stan-dev/rstanarm) or [`brms`](https://github.com/paul-buerkner/brms). However, extracting summary indices from these models to report them in your manuscript can be quite rather challenging, especially for new users.
+The **Bayesian framework** is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as [`rstanarm`](https://github.com/stan-dev/rstanarm) or [`brms`](https://github.com/paul-buerkner/brms). However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
 
 ***To address this, please let us introduce***  [**`bayestestR`**](https://github.com/easystats/bayestestR)**!**
 
