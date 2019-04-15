@@ -39,6 +39,24 @@
     </item>
     
     <item>
+      <title>Bayestestr</title>
+      <link>/tags/bayestestr/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bayestestr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brms</title>
+      <link>/tags/brms/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/brms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Correlations</title>
       <link>/tags/correlations/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
@@ -59,7 +77,7 @@
     <item>
       <title>Easystats</title>
       <link>/tags/easystats/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/easystats/</guid>
       <description></description>
@@ -84,9 +102,18 @@
     </item>
     
     <item>
+      <title>Posterior</title>
+      <link>/tags/posterior/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/posterior/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
@@ -107,6 +134,15 @@
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/results/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rstanarm</title>
+      <link>/tags/rstanarm/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rstanarm/</guid>
       <description></description>
     </item>
     

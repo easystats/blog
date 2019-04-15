@@ -1,7 +1,7 @@
 ---
 title: "Describe and understand Bayesian models and posteriors using bayestestR"
 author: "Makowski, D. and Lüdecke, D."
-date: 2019-04-12
+date: 2019-04-15
 categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR", "posterior", "rstanarm", "brms"]
 ---
@@ -13,11 +13,15 @@ options(knitr.kable.NA = '')
 ```
 
 
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png")
+```
 
 
 The **Bayesian framework** is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as [`rstanarm`](https://github.com/stan-dev/rstanarm) or [`brms`](https://github.com/paul-buerkner/brms). However, extracting summary indices from these models to report them in your manuscript can be quite rather challenging, especially for new users.
 
 ***To address this, please let us introduce***  [**`bayestestR`**](https://github.com/easystats/bayestestR)**!**
+
 
 ## bayestestR
 
@@ -33,9 +37,7 @@ install.packages("bayestestR")  # Install the package
 library(bayestestR)  # Load it
 ```
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-library(bayestestR) 
-
-include_graphics("https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png")
+library(bayestestR)
 ```
 
 ## Example
@@ -60,13 +62,9 @@ equivalence_test(model)
 
 Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.
 
-```{r message=FALSE, warning=FALSE, include=FALSE}
-ggplot2::theme_set(sjPlot::theme_sjplot2())
-```
 ```{r message=FALSE, warning=FALSE}
 # Do the test and plot results
-p <- equivalence_test(model)
-plot(p)
+plot(equivalence_test(model))
 ```
 
 
