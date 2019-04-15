@@ -1,0 +1,82 @@
+---
+title: "Describe and understand Bayesian models and posteriors using bayestestR"
+author: "Makowski, D. and Lüdecke, D."
+date: 2019-04-15
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "posterior", "rstanarm", "brms"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png")
+```
+
+
+The **Bayesian framework** is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as [`rstanarm`](https://github.com/stan-dev/rstanarm) or [`brms`](https://github.com/paul-buerkner/brms). However, extracting summary indices from these models to report them in your manuscript can be quite rather challenging, especially for new users.
+
+***To address this, please let us introduce***  [**`bayestestR`**](https://github.com/easystats/bayestestR)**!**
+
+
+## bayestestR
+
+[We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats**](https://github.com/easystats) **project**, a set of packages designed to make your life *easier* (currently very WIP). As we are also Bayesian enthusiasts, we decided to focus on the development of a package devoted to Bayesian post-processing.
+
+
+The goal of [`bayestestR`](https://github.com/easystats/bayestestR) is to provide lightweight tools to help **processing and understanding Bayesian models and posterior distributions**. It includes several functions used to report and characterise them, such as [**Highest Density Interval (`hdi`)**](https://github.com/easystats/bayestestR#highest-density-interval-hdi---the-credible-interval-ci), the [**highest Maximum A Posteriori (`MAP`)**](https://github.com/easystats/bayestestR#map-estimate) or functions to find a suitable [**ROPE range**](https://github.com/easystats/bayestestR#find-ropes-appropriate-range), compute the [**ROPE percentage**](https://github.com/easystats/bayestestR#rope) or do an [**Equivalence Test**](https://github.com/easystats/bayestestR#equivalence-test). It also includes more exploratory indices, such as the [**Probability of Direction (`pd`)**](https://github.com/easystats/bayestestR#probability-of-direction-pd), a [numeric *equivalent*](https://easystats.github.io/bayestestR/articles/guidelines.html) of the frequentist *p* value.
+
+`bayestestR` can be installed as follows:
+
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+install.packages("bayestestR")  # Install the package
+library(bayestestR)  # Load it
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(bayestestR)
+```
+
+## Example
+
+Let's check whether the effects of my Bayesian regression can be considered as non-negligible. This can be done via the [**equivalence test**](https://easystats.github.io/bayestestR/reference/equivalence_test.html#details).
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(rstanarm)
+model <- stan_glm(mpg ~ wt + cyl + gear + am + hp, data = mtcars)
+```
+```{r eval = FALSE, message=FALSE, warning=FALSE}
+# Load the rstanarm package
+library(rstanarm)
+
+# Fit a Bayesian model
+model <- stan_glm(mpg ~ wt + cyl + gear + am + hp, data = mtcars)
+```
+```{r message=FALSE, warning=FALSE}
+# Do the test
+equivalence_test(model)
+```
+
+Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.
+
+```{r message=FALSE, warning=FALSE}
+# Do the test and plot results
+plot(equivalence_test(model))
+```
+
+
+More details about `bayestestR`'s features are comming soon, stay tuned ;)
+
+- **Don't forget to check out the** [**documentation here**](https://github.com/easystats/bayestestR#documentation) **for more!**
+
+
+## Help us
+
+There is definitely room for improvement, and some new exiting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!
+
+To conclude, note that *easystats* is a new project in active development. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
