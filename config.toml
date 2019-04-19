@@ -20,7 +20,7 @@ googleAnalytics = "UA-97457476-9"
 
 ## Site Settings
 [params]
-    author = "Dominique Makowski & Daniel Lüdecke"
+    author = "Dominique Makowski and Daniel Lüdecke"
     title = "easystats"
     # description = "..."
     authorimage = "/img/logo.png"
