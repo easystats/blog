@@ -12,10 +12,9 @@ Here are some links to get started with R:
   - [**Quick-R**](https://www.statmethods.net/r-tutorial/index.html)
   - [**Datacamp**](https://www.datacamp.com/)
   - [**EdX courses**](https://www.edx.org/learn/r-programming)
-  - [**YaRrr\! The Pirate's Guide to
-    R**](https://bookdown.org/ndphillips/YaRrr/)
-  - [**LearnR Youtube
-    Channel**](https://www.youtube.com/user/TheLearnR/)
+  - [**YaRrr\! The Pirate's Guide to R**](https://bookdown.org/ndphillips/YaRrr/)
+  - [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
+  - [**Yan Holtz's tutorials**](https://www.yan-holtz.com/teaching)
 
 ## Stay tuned
 
@@ -27,10 +26,11 @@ evolving field:
 
 ## Miscellaenous
 
-This section contains more scoe-focused ressources:
+This section contains more scope-focused ressources:
 
   - [**Interpretable Machine Learning
     book**](https://christophm.github.io/interpretable-ml-book/)
+  - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
 
 ## Contribute
 

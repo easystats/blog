@@ -3,7 +3,7 @@ baseurl = "https://easystats.github.io/blog/"
 languageCode = "en"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
-relativeURLs = true
+relativeURLs = false
 enableEmoji = true
 
 title = "easystats"
@@ -21,7 +21,7 @@ googleAnalytics = "UA-97457476-9"
 ## Site Settings
 [params]
     author = "Dominique Makowski & Daniel Lüdecke"
-    title = "Title"
+    title = "easystats"
     # description = "..."
     authorimage = "/img/logo.png"
     dateformat = "Jan 2, 2006"
