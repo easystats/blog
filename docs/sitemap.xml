@@ -3,178 +3,178 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/posts/bayestestr_presentation/</loc>
+    <loc>/posts/bayestestr_presentation/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/insight_presentation/</loc>
+    <loc>/posts/insight_presentation/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/report_anova/</loc>
+    <loc>/posts/report_anova/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/report_correlation/</loc>
+    <loc>/posts/report_correlation/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/people/</loc>
+    <loc>/portfolio/people/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/easystats/</loc>
+    <loc>/portfolio/easystats/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/</loc>
+    <loc>/portfolio/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/access/</loc>
+    <loc>/tags/access/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/anova/</loc>
+    <loc>/tags/anova/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/apa/</loc>
+    <loc>/tags/apa/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/bayestestr/</loc>
+    <loc>/tags/bayestestr/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/bayestestr/</loc>
+    <loc>/categories/bayestestr/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/brms/</loc>
+    <loc>/tags/brms/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/correlations/</loc>
+    <loc>/tags/correlations/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/data/</loc>
+    <loc>/tags/data/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/easystats/</loc>
+    <loc>/tags/easystats/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/insight/</loc>
+    <loc>/tags/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/insight/</loc>
+    <loc>/categories/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/ressources/</loc>
+    <loc>/ressources/</loc>
   </url>
   
   <url>
-    <loc>/blog/tags/models/</loc>
+    <loc>/tags/models/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/posterior/</loc>
+    <loc>/tags/posterior/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/r/</loc>
+    <loc>/tags/r/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/r/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/report/</loc>
+    <loc>/tags/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/report/</loc>
+    <loc>/categories/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/results/</loc>
+    <loc>/tags/results/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/rstanarm/</loc>
+    <loc>/tags/rstanarm/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/</loc>
+    <loc>/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

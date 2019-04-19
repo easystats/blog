@@ -2,147 +2,147 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on easystats</title>
-    <link>/blog/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Access</title>
-      <link>/blog/tags/access/</link>
+      <link>/tags/access/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/access/</guid>
+      <guid>/tags/access/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Anova</title>
-      <link>/blog/tags/anova/</link>
+      <link>/tags/anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/anova/</guid>
+      <guid>/tags/anova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apa</title>
-      <link>/blog/tags/apa/</link>
+      <link>/tags/apa/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/apa/</guid>
+      <guid>/tags/apa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bayestestr</title>
-      <link>/blog/tags/bayestestr/</link>
+      <link>/tags/bayestestr/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/bayestestr/</guid>
+      <guid>/tags/bayestestr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Brms</title>
-      <link>/blog/tags/brms/</link>
+      <link>/tags/brms/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/brms/</guid>
+      <guid>/tags/brms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Correlations</title>
-      <link>/blog/tags/correlations/</link>
+      <link>/tags/correlations/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/correlations/</guid>
+      <guid>/tags/correlations/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data</title>
-      <link>/blog/tags/data/</link>
+      <link>/tags/data/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/data/</guid>
+      <guid>/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Easystats</title>
-      <link>/blog/tags/easystats/</link>
+      <link>/tags/easystats/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/easystats/</guid>
+      <guid>/tags/easystats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Insight</title>
-      <link>/blog/tags/insight/</link>
+      <link>/tags/insight/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/insight/</guid>
+      <guid>/tags/insight/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Models</title>
-      <link>/blog/tags/models/</link>
+      <link>/tags/models/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/models/</guid>
+      <guid>/tags/models/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posterior</title>
-      <link>/blog/tags/posterior/</link>
+      <link>/tags/posterior/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/posterior/</guid>
+      <guid>/tags/posterior/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/blog/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Report</title>
-      <link>/blog/tags/report/</link>
+      <link>/tags/report/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/report/</guid>
+      <guid>/tags/report/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Results</title>
-      <link>/blog/tags/results/</link>
+      <link>/tags/results/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/results/</guid>
+      <guid>/tags/results/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstanarm</title>
-      <link>/blog/tags/rstanarm/</link>
+      <link>/tags/rstanarm/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/rstanarm/</guid>
+      <guid>/tags/rstanarm/</guid>
       <description></description>
     </item>
     

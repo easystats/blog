@@ -3,7 +3,7 @@ baseurl = "https://easystats.github.io/blog/"
 languageCode = "en"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
-relativeURLs = false
+relativeURLs = true
 enableEmoji = true
 
 title = "easystats"
