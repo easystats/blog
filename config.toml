@@ -1,5 +1,5 @@
 ## Basic Configuration
-baseurl = "https://easystats.github.io/blog/docs"
+baseurl = "https://easystats.github.io/blog/"
 languageCode = "en"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"

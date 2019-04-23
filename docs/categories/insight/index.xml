@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Insight on easystats</title>
-    <link>/blog/docs/categories/insight/</link>
+    <link>/blog/categories/insight/</link>
     <description>Recent content in Insight on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/docs/categories/insight/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/categories/insight/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/docs/posts/insight_presentation/</link>
+      <link>/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/docs/posts/insight_presentation/</guid>
+      <guid>/blog/posts/insight_presentation/</guid>
       <description>
 
 
