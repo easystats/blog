@@ -1,9 +1,9 @@
 ## Basic Configuration
-baseurl = "https://easystats.github.io/blog/"
+baseurl = "https://easystats.github.io/blog/docs"
 languageCode = "en"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
-relativeURLs = true
+relativeURLs = false
 enableEmoji = true
 
 title = "easystats"
