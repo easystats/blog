@@ -46,16 +46,16 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [25.15 50.08]
-##           wt  rejected      0.00 % [-4.65 -0.73]
-##          cyl undecided     37.91 % [-2.17  0.63]
-##         gear undecided     39.33 % [-2.72  2.39]
-##           am undecided     17.02 % [-2.19  5.14]
+##  (Intercept)  rejected      0.00 % [24.58 49.46]
+##           wt  rejected      0.00 % [-4.60 -0.66]
+##          cyl undecided     36.96 % [-2.15  0.52]
+##         gear undecided     40.02 % [-2.71  2.11]
+##           am undecided     17.39 % [-1.98  5.23]
 ##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;

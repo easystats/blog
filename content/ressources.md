@@ -24,9 +24,9 @@ evolving field:
   - [**r-bloggers**](https://www.r-bloggers.com/)
   - [**r-weekly**](https://rweekly.org )
 
-## Miscellaenous
+## Miscellaneous
 
-This section contains more scope-focused ressources:
+This section contains more scope-focused resources:
 
   - [**Interpretable Machine Learning
     book**](https://christophm.github.io/interpretable-ml-book/)
@@ -34,5 +34,5 @@ This section contains more scope-focused ressources:
 
 ## Contribute
 
-You can contribute to this post by adding more ressources
+You can contribute to this post by adding more resources
 [here](https://github.com/easystats/blog/master/content/ressources.md).
