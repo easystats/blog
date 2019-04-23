@@ -1,0 +1,50 @@
+---
+title: "How to easily generate a perfectly normal distribution"
+author: "easystats"
+date: 2019-04-25
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "rnorm", "normal", "gaussian"]
+---
+
+
+
+<p>Many times, for instance when teaching, I needed to quickly and simply generate a <strong>perfectly normally distributed sample</strong> to illustrate or show some of its characteristics.</p>
+<p>This is now very easy to do with the new <a href="https://github.com/easystats/bayestestR"><code>bayestestR</code></a> package, which includes the <a href="https://easystats.github.io/bayestestR/reference/rnorm_perfect.html"><code>rnorm_perfect</code></a> function. This function is very similar to the classic <code>rnorm</code> (same arguments), with the difference that the generated sample is <em>perfectly</em> normal.</p>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p><code>bayestestR</code> can be installed as follows:</p>
+<pre class="r"><code>install.packages(&quot;bayestestR&quot;)  # Install the package
+library(bayestestR)  # Load it</code></pre>
+<pre class="r"><code># Generate a perfect sample
+x &lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
+
+# Visualise it
+library(tidyverse)
+
+x %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame() %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()</code></pre>
+<p><img src="/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.</p>
+<pre class="r"><code>x %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame() %&gt;% 
+  mutate(outlier = ifelse(x &gt; 2, &quot;Extreme&quot;, &quot;Not extreme&quot;)) %&gt;% 
+  ggplot(aes(x=x, y=y, fill=outlier)) +
+  geom_ribbon(aes(ymin=0, ymax=y)) +
+  theme_classic()</code></pre>
+<p><img src="/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="bayestestr-and-easystats" class="section level2">
+<h2>bayestestR and easystats</h2>
+<p>More details about <code>bayestestR</code>’s features are comming soon, stay tuned ;)</p>
+<ul>
+<li><strong>Don’t forget to check out the</strong> <a href="https://github.com/easystats/bayestestR#documentation"><strong>documentation here</strong></a> <strong>for more!</strong></li>
+</ul>
+<p>Feel free to let us know how we could further improve this package! Also, note that <a href="https://github.com/easystats/easystats"><em>easystats</em></a>, the project supporting <code>bayestestR</code> is in active development. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>

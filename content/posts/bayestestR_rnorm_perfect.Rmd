@@ -14,7 +14,7 @@ options(knitr.kable.NA = '')
 
 
 
-Many times, for instance when teaching, I needed to quickly and simply generate a perfectly **perfectly normally distributed sample** to illustrate or show some of its characteristics.
+Many times, for instance when teaching, I needed to quickly and simply generate a **perfectly normally distributed sample** to illustrate or show some of its characteristics.
 
 This is now very easy to do with the new [`bayestestR`](https://github.com/easystats/bayestestR) package, which includes the [`rnorm_perfect`](https://easystats.github.io/bayestestR/reference/rnorm_perfect.html) function. This function is very similar to the classic `rnorm` (same arguments), with the difference that the generated sample is *perfectly* normal.
 
@@ -44,7 +44,7 @@ x %>%
   geom_line()
 ```
 
-We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviation.
+We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.
 
 ```{r message=FALSE, warning=FALSE,}
 x %>% 

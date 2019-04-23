@@ -6,10 +6,62 @@
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to easily generate a perfectly normal distribution</title>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <description>
+
+
+&lt;p&gt;Many times, for instance when teaching, I needed to quickly and simply generate a &lt;strong&gt;perfectly normally distributed sample&lt;/strong&gt; to illustrate or show some of its characteristics.&lt;/p&gt;
+&lt;p&gt;This is now very easy to do with the new &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;code&gt;bayestestR&lt;/code&gt;&lt;/a&gt; package, which includes the &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/rnorm_perfect.html&#34;&gt;&lt;code&gt;rnorm_perfect&lt;/code&gt;&lt;/a&gt; function. This function is very similar to the classic &lt;code&gt;rnorm&lt;/code&gt; (same arguments), with the difference that the generated sample is &lt;em&gt;perfectly&lt;/em&gt; normal.&lt;/p&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bayestestR&lt;/code&gt; can be installed as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;bayestestR&amp;quot;)  # Install the package
+library(bayestestR)  # Load it&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
+x &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
+
+# Visualise it
+library(tidyverse)
+
+x %&amp;gt;% 
+  density() %&amp;gt;%  # Compute density function
+  as.data.frame() %&amp;gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
+  density() %&amp;gt;%  # Compute density function
+  as.data.frame() %&amp;gt;% 
+  mutate(outlier = ifelse(x &amp;gt; 2, &amp;quot;Extreme&amp;quot;, &amp;quot;Not extreme&amp;quot;)) %&amp;gt;% 
+  ggplot(aes(x=x, y=y, fill=outlier)) +
+  geom_ribbon(aes(ymin=0, ymax=y)) +
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
+&lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Feel free to let us know how we could further improve this package! Also, note that &lt;a href=&#34;https://github.com/easystats/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt;, the project supporting &lt;code&gt;bayestestR&lt;/code&gt; is in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
