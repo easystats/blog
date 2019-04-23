@@ -1,0 +1,69 @@
+---
+title: "How to easily generate a perfectly normal distribution"
+author: "easystats"
+date: 2019-04-24
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "rnorm", "normal", "gaussian"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+
+
+Many times, for instance when teaching, I needed to quickly and simply generate a **perfectly normally distributed sample** to illustrate or show some of its characteristics.
+
+This is now very easy to do with the new [`bayestestR`](https://github.com/easystats/bayestestR) package, which includes the [`rnorm_perfect`](https://easystats.github.io/bayestestR/reference/rnorm_perfect.html) function. This function is very similar to the classic `rnorm` (same arguments), with the difference that the generated sample is *perfectly* normal.
+
+
+## Example
+
+`bayestestR` can be installed as follows:
+
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+install.packages("bayestestR")  # Install the package
+library(bayestestR)  # Load it
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(bayestestR)
+```
+```{r message=FALSE, warning=FALSE,}
+# Generate a perfect sample
+x <- rnorm_perfect(n = 100, mean = 0, sd = 1)
+
+# Visualise it
+library(tidyverse)
+
+x %>% 
+  density() %>%  # Compute density function
+  as.data.frame() %>% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()
+```
+
+We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.
+
+```{r message=FALSE, warning=FALSE,}
+x %>% 
+  density() %>%  # Compute density function
+  as.data.frame() %>% 
+  mutate(outlier = ifelse(x > 2, "Extreme", "Not extreme")) %>% 
+  ggplot(aes(x=x, y=y, fill=outlier)) +
+  geom_ribbon(aes(ymin=0, ymax=y)) +
+  theme_classic()
+```
+
+## bayestestR and easystats
+
+
+More details about `bayestestR`'s features are comming soon, stay tuned ;)
+
+- **Don't forget to check out the** [**documentation here**](https://github.com/easystats/bayestestR#documentation) **for more!**
+
+
+Feel free to let us know how we could further improve this package! Also, note that [*easystats*](https://github.com/easystats/easystats), the project supporting `bayestestR` is in active development. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

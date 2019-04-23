@@ -34,7 +34,7 @@ googleAnalytics = "UA-97457476-9"
 
     # https://highlightjs.org
     highlightjs = true
-    highlightjsstyle = "github"
+    highlightjsstyle = "monokai-sublime"
 
     # please choose either GraphComment or Disqus or Utterances
     #GraphCommentId = "..."

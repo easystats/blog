@@ -41,7 +41,7 @@
     <item>
       <title>Bayestestr</title>
       <link>/blog/tags/bayestestr/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/bayestestr/</guid>
       <description></description>
@@ -77,9 +77,18 @@
     <item>
       <title>Easystats</title>
       <link>/blog/tags/easystats/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/easystats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gaussian</title>
+      <link>/blog/tags/gaussian/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/tags/gaussian/</guid>
       <description></description>
     </item>
     
@@ -102,6 +111,15 @@
     </item>
     
     <item>
+      <title>Normal</title>
+      <link>/blog/tags/normal/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/tags/normal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Posterior</title>
       <link>/blog/tags/posterior/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
@@ -113,7 +131,7 @@
     <item>
       <title>R</title>
       <link>/blog/tags/r/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/r/</guid>
       <description></description>
@@ -134,6 +152,15 @@
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/results/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rnorm</title>
+      <link>/blog/tags/rnorm/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/tags/rnorm/</guid>
       <description></description>
     </item>
     
