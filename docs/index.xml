@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>easystats</title>
-    <link>/blog/</link>
+    <link>https://easystats.github.io/blog/</link>
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -38,7 +38,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
   density() %&amp;gt;%  # Compute density function
@@ -47,7 +47,7 @@ x %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
@@ -65,10 +65,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -98,16 +98,16 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [24.58 49.46]
-##           wt  rejected      0.00 % [-4.60 -0.66]
-##          cyl undecided     36.96 % [-2.15  0.52]
-##         gear undecided     40.02 % [-2.71  2.11]
-##           am undecided     17.39 % [-1.98  5.23]
+##  (Intercept)  rejected      0.00 % [25.07 50.23]
+##           wt  rejected      0.00 % [-4.64 -0.82]
+##          cyl undecided     38.23 % [-2.18  0.53]
+##         gear undecided     38.62 % [-2.88  2.12]
+##           am undecided     17.36 % [-1.83  5.35]
 ##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
@@ -126,10 +126,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -191,10 +191,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -220,7 +220,7 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
 
   - The effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001) and can
-be considered as large (Omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
+be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
@@ -269,10 +269,10 @@ be considered as large (Omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>
 
 
@@ -306,10 +306,10 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
     
     <item>
       <title>People</title>
-      <link>/blog/portfolio/people/</link>
+      <link>https://easystats.github.io/blog/portfolio/people/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/portfolio/people/</guid>
+      <guid>https://easystats.github.io/blog/portfolio/people/</guid>
       <description>&lt;p&gt;People that contributed to the project currently include:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -321,20 +321,20 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
     
     <item>
       <title>easystats</title>
-      <link>/blog/portfolio/easystats/</link>
+      <link>https://easystats.github.io/blog/portfolio/easystats/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/portfolio/easystats/</guid>
+      <guid>https://easystats.github.io/blog/portfolio/easystats/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; is a suite of R packages designed to make the use of advanced statistical techniques easy.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Learn R</title>
-      <link>/blog/ressources/</link>
+      <link>https://easystats.github.io/blog/ressources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/ressources/</guid>
+      <guid>https://easystats.github.io/blog/ressources/</guid>
       <description>
 
 &lt;h2 id=&#34;guides&#34;&gt;Guides&lt;/h2&gt;

@@ -2,174 +2,174 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on easystats</title>
-    <link>/blog/tags/</link>
+    <link>https://easystats.github.io/blog/tags/</link>
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Access</title>
-      <link>/blog/tags/access/</link>
+      <link>https://easystats.github.io/blog/tags/access/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/access/</guid>
+      <guid>https://easystats.github.io/blog/tags/access/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Anova</title>
-      <link>/blog/tags/anova/</link>
+      <link>https://easystats.github.io/blog/tags/anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/anova/</guid>
+      <guid>https://easystats.github.io/blog/tags/anova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apa</title>
-      <link>/blog/tags/apa/</link>
+      <link>https://easystats.github.io/blog/tags/apa/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/apa/</guid>
+      <guid>https://easystats.github.io/blog/tags/apa/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bayestestr</title>
-      <link>/blog/tags/bayestestr/</link>
+      <link>https://easystats.github.io/blog/tags/bayestestr/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/bayestestr/</guid>
+      <guid>https://easystats.github.io/blog/tags/bayestestr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Brms</title>
-      <link>/blog/tags/brms/</link>
+      <link>https://easystats.github.io/blog/tags/brms/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/brms/</guid>
+      <guid>https://easystats.github.io/blog/tags/brms/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Correlations</title>
-      <link>/blog/tags/correlations/</link>
+      <link>https://easystats.github.io/blog/tags/correlations/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/correlations/</guid>
+      <guid>https://easystats.github.io/blog/tags/correlations/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data</title>
-      <link>/blog/tags/data/</link>
+      <link>https://easystats.github.io/blog/tags/data/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/data/</guid>
+      <guid>https://easystats.github.io/blog/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Easystats</title>
-      <link>/blog/tags/easystats/</link>
+      <link>https://easystats.github.io/blog/tags/easystats/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/easystats/</guid>
+      <guid>https://easystats.github.io/blog/tags/easystats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gaussian</title>
-      <link>/blog/tags/gaussian/</link>
+      <link>https://easystats.github.io/blog/tags/gaussian/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/gaussian/</guid>
+      <guid>https://easystats.github.io/blog/tags/gaussian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Insight</title>
-      <link>/blog/tags/insight/</link>
+      <link>https://easystats.github.io/blog/tags/insight/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/insight/</guid>
+      <guid>https://easystats.github.io/blog/tags/insight/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Models</title>
-      <link>/blog/tags/models/</link>
+      <link>https://easystats.github.io/blog/tags/models/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/models/</guid>
+      <guid>https://easystats.github.io/blog/tags/models/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Normal</title>
-      <link>/blog/tags/normal/</link>
+      <link>https://easystats.github.io/blog/tags/normal/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/normal/</guid>
+      <guid>https://easystats.github.io/blog/tags/normal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posterior</title>
-      <link>/blog/tags/posterior/</link>
+      <link>https://easystats.github.io/blog/tags/posterior/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/posterior/</guid>
+      <guid>https://easystats.github.io/blog/tags/posterior/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/blog/tags/r/</link>
+      <link>https://easystats.github.io/blog/tags/r/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/r/</guid>
+      <guid>https://easystats.github.io/blog/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Report</title>
-      <link>/blog/tags/report/</link>
+      <link>https://easystats.github.io/blog/tags/report/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/report/</guid>
+      <guid>https://easystats.github.io/blog/tags/report/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Results</title>
-      <link>/blog/tags/results/</link>
+      <link>https://easystats.github.io/blog/tags/results/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/results/</guid>
+      <guid>https://easystats.github.io/blog/tags/results/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rnorm</title>
-      <link>/blog/tags/rnorm/</link>
+      <link>https://easystats.github.io/blog/tags/rnorm/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/rnorm/</guid>
+      <guid>https://easystats.github.io/blog/tags/rnorm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstanarm</title>
-      <link>/blog/tags/rstanarm/</link>
+      <link>https://easystats.github.io/blog/tags/rstanarm/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/rstanarm/</guid>
+      <guid>https://easystats.github.io/blog/tags/rstanarm/</guid>
       <description></description>
     </item>
     
