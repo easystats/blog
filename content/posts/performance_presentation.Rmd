@@ -40,26 +40,36 @@ library(performance)  # Load it
 library(performance)
 ```
 
-## Example
-
-Let's compute **all available** indices of performance appropriate for a given model. This can be done via the [**model_performance**](https://easystats.github.io/performance/reference/model_performance.html).
-
+## Examples
 
 ### Mixed Models
+
+First, we calculate the r-squared value and intra-class correlation coefficient (ICC) for a mixed model, using [**r2()**](https://easystats.github.io/performance/reference/r2.html) and [**icc()**](https://easystats.github.io/performance/reference/icc.html). `r2()` internally calls the appropriate function for the given model. In case of mixed models this will be [**r2_nakagawa()**](https://easystats.github.io/performance/reference/r2_nakagawa.html). `r2_nakagawa()` computes the marginal and conditional r-squared values, while `icc()` calculates an adjusted and conditional ICC, both based on the proposals from *Nakagawa et al. 2017*. For more details on the computation of the variances, see [**get_variance()**](https://easystats.github.io/insight/reference/get_variance.html).
 
 ```{r message=FALSE, warning=FALSE}
 # Load the lme4 package
 library(lme4)
 
 # Fit a mixed model
-model <- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+model1 <- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 
-# Compute performance indices
-model_performance(model)
+# compute R2, based on Nakagawa et al. 2017
+r2(model1)
+
+# compute intra-class correlation coefficient (ICC)
+icc(model1)
 ```
 
+Now let's compute **all available** indices of performance appropriate for a given model. This can be done via the [**model_performance()**](https://easystats.github.io/performance/reference/model_performance.html).
+
+```{r message=FALSE, warning=FALSE}
+# Compute all performance indices
+model_performance(model1)
+```
 
 ### Bayesian Mixed Models
+
+For Bayesian mixed models, we have the same features available (r-squared, ICC, ...). In this example, we focus on the output from `model_performance()` only.
 
 ```{r eval = FALSE, message=FALSE, warning=FALSE}
 # Load the rstanarm package
@@ -76,7 +86,6 @@ library(rstanarm)
 junk <- capture.output(model <- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris))
 model_performance(model)
 ```
-
 
 
 More details about `performance`'s features are comming soon, stay tuned ;)
