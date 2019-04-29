@@ -51,20 +51,20 @@ First, we calculate the r-squared value and intra-class correlation coefficient 
 library(lme4)
 
 # Fit a mixed model
-model1 <- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+model <- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 
 # compute R2, based on Nakagawa et al. 2017
-r2(model1)
+r2(model)
 
 # compute intra-class correlation coefficient (ICC)
-icc(model1)
+icc(model)
 ```
 
 Now let's compute **all available** indices of performance appropriate for a given model. This can be done via the [**model_performance()**](https://easystats.github.io/performance/reference/model_performance.html).
 
 ```{r message=FALSE, warning=FALSE}
 # Compute all performance indices
-model_performance(model1)
+model_performance(model)
 ```
 
 ### Bayesian Mixed Models
