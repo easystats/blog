@@ -67,15 +67,15 @@ Results can also be plotted, to get a better impression of the posterior distrib
 plot(equivalence_test(model))
 ```
 
-
-More details about `bayestestR`'s features are comming soon, stay tuned ;)
-
 - **Don't forget to check out the** [**documentation here**](https://github.com/easystats/bayestestR#documentation) **for more!**
 
 
-## Help us
+More details about `bayestestR`'s features are comming soon, stay tuned ;)
 
-There is definitely room for improvement, and some new exiting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!
+
+## get involved
+
+There is definitely room for improvement, and some new exciting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!
 
 To conclude, note that *easystats* is a new project in active development. Thus, do not hesitate to contact us if **you want to get involved :)**
 
