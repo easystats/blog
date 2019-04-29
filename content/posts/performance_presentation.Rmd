@@ -1,0 +1,93 @@
+---
+title: "Compute R2s and other performance indices for all your models!"
+author: "easystats"
+date: 2019-04-30
+categories: ["R", "performance"]
+tags: ["R", "easystats", "performance", "R2", "ICC", "AIC"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+```
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/performance/raw/master/man/figures/logo.png")
+```
+
+
+Indices of model **performance** (*i.e.*, model quality, goodness of fit, predictive accuracy etc.) are very important, both for model *comparison* and model *description* purposes. However, their computation or extraction for a wide variety of models can be complex. 
+
+***To address this, please let us introduce the ***  [**`performance`**](https://github.com/easystats/performance) ***package!***
+
+
+## performance
+
+[We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats project**](https://github.com/easystats), a set of packages designed to make your life *easier* (currently WIP). This project encompasses several packages, devoted for instance to [model access](https://github.com/easystats/insight) or [Bayesian analysis](https://github.com/easystats/bayestestR), as well as [indices of model performance](https://github.com/easystats/performance).
+
+
+The goal of [`performance`](https://github.com/easystats/performance) is to provide lightweight tools to **assess and check the quality of your model**. It includes functions such as [`R2`](https://easystats.github.io/performance/reference/r2.html) for many models (including logistic, mixed and Bayesian models), [`ICC`](https://easystats.github.io/performance/reference/icc.html) or helpers to check [`convergence`](https://easystats.github.io/performance/reference/check_convergence.html), [`overdipsersion`](https://easystats.github.io/performance/reference/check_overdispersion.html) or [`zero-inflation`](https://easystats.github.io/performance/reference/check_zeroinflation.html). See the **list of functions** [here](https://easystats.github.io/performance/reference/index.html).
+
+`performance` can be installed as follows:
+
+```{r, eval = FALSE, message=FALSE, warning=FALSE}
+install.packages("performance")  # Install the package
+library(performance)  # Load it
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(performance)
+```
+
+## Example
+
+Let's compute **all available** indices of performance appropriate for a given model. This can be done via the [**model_performance**](https://easystats.github.io/performance/reference/model_performance.html).
+
+
+### Mixed Models
+
+```{r message=FALSE, warning=FALSE}
+# Load the lme4 package
+library(lme4)
+
+# Fit a mixed model
+model <- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# Compute performance indices
+model_performance(model)
+```
+
+
+### Bayesian Mixed Models
+
+```{r eval = FALSE, message=FALSE, warning=FALSE}
+# Load the rstanarm package
+library(rstanarm)
+
+# Fit a Bayesian mixed model
+model <- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# Compute performance indices
+model_performance(model)
+```
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(rstanarm)
+junk <- capture.output(model <- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris))
+model_performance(model)
+```
+
+
+
+More details about `performance`'s features are comming soon, stay tuned ;)
+
+- **Don't forget to check out the** [**documentation here**](https://easystats.github.io/performance/) **for more!**
+
+
+## Help us
+
+There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!
+
+To conclude, note that *easystats* is a new project in active development. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
