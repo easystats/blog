@@ -73,7 +73,7 @@ plot(equivalence_test(model))
 More details about `bayestestR`'s features are comming soon, stay tuned ;)
 
 
-## get involved
+## Get Involved
 
 There is definitely room for improvement, and some new exciting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!
 
