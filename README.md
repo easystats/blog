@@ -10,6 +10,7 @@
 3. Rename this new file
 4. Open `blog.Rproj` in R and then open your new file
 5. Edit your new blogpost (the `Rmd` file) as you want
-6. Run `blogdown::serve_site()`
+6. Run `blogdown::serve_site()` to see it locally
+6. Run `blogdown::build_site()`
 7. Publish this new content on a new github branch named `post-uniquepostname`
 8. Do a PR for this branch to be merged into master
