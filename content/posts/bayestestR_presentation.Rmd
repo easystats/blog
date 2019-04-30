@@ -9,7 +9,9 @@ tags: ["R", "easystats", "bayestestR", "posterior", "rstanarm", "brms"]
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(knitr)
-options(knitr.kable.NA = '')
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
 ```
 
 

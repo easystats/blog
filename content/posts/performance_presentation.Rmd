@@ -9,7 +9,9 @@ tags: ["R", "easystats", "performance", "R2", "ICC", "AIC"]
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(knitr)
-options(knitr.kable.NA = '')
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
 ```
 
 
@@ -46,7 +48,7 @@ library(performance)
 
 First, we calculate the r-squared value and intra-class correlation coefficient (ICC) for a mixed model, using [**r2()**](https://easystats.github.io/performance/reference/r2.html) and [**icc()**](https://easystats.github.io/performance/reference/icc.html). `r2()` internally calls the appropriate function for the given model. In case of mixed models this will be [**r2_nakagawa()**](https://easystats.github.io/performance/reference/r2_nakagawa.html). `r2_nakagawa()` computes the marginal and conditional r-squared values, while `icc()` calculates an adjusted and conditional ICC, both based on the proposals from *Nakagawa et al. 2017*. For more details on the computation of the variances, see [**get_variance()**](https://easystats.github.io/insight/reference/get_variance.html).
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, comment=">"}
 # Load the lme4 package
 library(lme4)
 
@@ -62,7 +64,7 @@ icc(model)
 
 Now let's compute **all available** indices of performance appropriate for a given model. This can be done via the [**model_performance()**](https://easystats.github.io/performance/reference/model_performance.html).
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, comment=">"}
 # Compute all performance indices
 model_performance(model)
 ```
@@ -81,19 +83,20 @@ model <- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 # Compute performance indices
 model_performance(model)
 ```
-```{r message=FALSE, warning=FALSE, echo=FALSE}
+```{r message=FALSE, warning=FALSE, echo=FALSE, comment=">"}
 library(rstanarm)
 junk <- capture.output(model <- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris))
 model_performance(model)
 ```
 
-
-More details about `performance`'s features are comming soon, stay tuned ;)
-
 - **Don't forget to check out the** [**documentation here**](https://easystats.github.io/performance/) **for more!**
 
 
-## Help us
+More details about `performance`'s features are comming soon, stay tuned ;)
+
+
+
+## Get Involved
 
 There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!
 
