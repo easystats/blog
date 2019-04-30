@@ -2,21 +2,106 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on easystats</title>
-    <link>https://easystats.github.io/blog/posts/</link>
+    <link>/blog/posts/</link>
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Compute R2s and other performance indices for all your models!</title>
+      <link>/blog/posts/performance_presentation/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/performance_presentation/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/performance/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Indices of model &lt;strong&gt;performance&lt;/strong&gt; (&lt;em&gt;i.e.&lt;/em&gt;, model quality, goodness of fit, predictive accuracy etc.) are very important, both for model &lt;em&gt;comparison&lt;/em&gt; and model &lt;em&gt;description&lt;/em&gt; purposes. However, their computation or extraction for a wide variety of models can be complex.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;To address this, please let us introduce the &lt;/em&gt;&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;&lt;strong&gt;&lt;code&gt;performance&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;&lt;em&gt;package!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;performance&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;performance&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life &lt;em&gt;easier&lt;/em&gt; (currently WIP). This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model access&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, as well as &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The goal of &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;&lt;code&gt;performance&lt;/code&gt;&lt;/a&gt; is to provide lightweight tools to &lt;strong&gt;assess and check the quality of your model&lt;/strong&gt;. It includes functions such as &lt;a href=&#34;https://easystats.github.io/performance/reference/r2.html&#34;&gt;&lt;code&gt;R2&lt;/code&gt;&lt;/a&gt; for many models (including logistic, mixed and Bayesian models), &lt;a href=&#34;https://easystats.github.io/performance/reference/icc.html&#34;&gt;&lt;code&gt;ICC&lt;/code&gt;&lt;/a&gt; or helpers to check &lt;a href=&#34;https://easystats.github.io/performance/reference/check_convergence.html&#34;&gt;&lt;code&gt;convergence&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://easystats.github.io/performance/reference/check_overdispersion.html&#34;&gt;&lt;code&gt;overdipsersion&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/performance/reference/check_zeroinflation.html&#34;&gt;&lt;code&gt;zero-inflation&lt;/code&gt;&lt;/a&gt;. See the &lt;strong&gt;list of functions&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/reference/index.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;performance&lt;/code&gt; can be installed as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;performance&amp;quot;)  # Install the package
+library(performance)  # Load it&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;div id=&#34;mixed-models&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mixed Models&lt;/h3&gt;
+&lt;p&gt;First, we calculate the r-squared value and intra-class correlation coefficient (ICC) for a mixed model, using &lt;a href=&#34;https://easystats.github.io/performance/reference/r2.html&#34;&gt;&lt;strong&gt;r2()&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/performance/reference/icc.html&#34;&gt;&lt;strong&gt;icc()&lt;/strong&gt;&lt;/a&gt;. &lt;code&gt;r2()&lt;/code&gt; internally calls the appropriate function for the given model. In case of mixed models this will be &lt;a href=&#34;https://easystats.github.io/performance/reference/r2_nakagawa.html&#34;&gt;&lt;strong&gt;r2_nakagawa()&lt;/strong&gt;&lt;/a&gt;. &lt;code&gt;r2_nakagawa()&lt;/code&gt; computes the marginal and conditional r-squared values, while &lt;code&gt;icc()&lt;/code&gt; calculates an adjusted and conditional ICC, both based on the proposals from &lt;em&gt;Nakagawa et al. 2017&lt;/em&gt;. For more details on the computation of the variances, see &lt;a href=&#34;https://easystats.github.io/insight/reference/get_variance.html&#34;&gt;&lt;strong&gt;get_variance()&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load the lme4 package
+library(lme4)
+
+# Fit a mixed model
+model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# compute R2, based on Nakagawa et al. 2017
+r2(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; # R2 for mixed models
+&amp;gt; 
+&amp;gt;   Conditional R2: 0.913
+&amp;gt;      Marginal R2: 0.216&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# compute intra-class correlation coefficient (ICC)
+icc(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; # Intraclass Correlation Coefficient
+&amp;gt; 
+&amp;gt;      Adjusted ICC: 0.889
+&amp;gt;   Conditional ICC: 0.697&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now let’s compute &lt;strong&gt;all available&lt;/strong&gt; indices of performance appropriate for a given model. This can be done via the &lt;a href=&#34;https://easystats.github.io/performance/reference/model_performance.html&#34;&gt;&lt;strong&gt;model_performance()&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Compute all performance indices
+model_performance(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;   AIC BIC R2_conditional R2_marginal ICC_adjusted ICC_conditional RMSE
+&amp;gt; 1 107 119           0.91        0.22         0.89             0.7 0.31&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bayesian-mixed-models&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Bayesian Mixed Models&lt;/h3&gt;
+&lt;p&gt;For Bayesian mixed models, we have the same features available (r-squared, ICC, …). In this example, we focus on the output from &lt;code&gt;model_performance()&lt;/code&gt; only.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load the rstanarm package
+library(rstanarm)
+
+# Fit a Bayesian mixed model
+model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# Compute performance indices
+model_performance(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE R2_Median R2_MAD R2_Mean R2_SD R2_MAP
+&amp;gt; 1  -44      10    87       20      0.47  0.045    0.47 0.046   0.47
+&amp;gt;   R2_CI_low R2_CI_high R2_marginal_Median R2_marginal_MAD R2_marginal_Mean
+&amp;gt; 1       0.4       0.55               0.27           0.045             0.27
+&amp;gt;   R2_marginal_SD R2_marginal_MAP R2_marginal_CI_low R2_marginal_CI_high
+&amp;gt; 1          0.048            0.29               0.19                0.34
+&amp;gt;   R2_LOO_adjusted
+&amp;gt; 1            0.45&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More details about &lt;code&gt;performance&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -38,7 +123,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
   density() %&amp;gt;%  # Compute density function
@@ -47,7 +132,7 @@ x %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
@@ -65,10 +150,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
+      <link>/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
+      <guid>/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -98,24 +183,24 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [25.07 50.23]
-##           wt  rejected      0.00 % [-4.64 -0.82]
-##          cyl undecided     38.23 % [-2.18  0.53]
-##         gear undecided     38.62 % [-2.88  2.12]
-##           am undecided     17.36 % [-1.83  5.35]
+##  (Intercept)  rejected      0.00 % [24.52 49.35]
+##           wt  rejected      0.00 % [-4.50 -0.68]
+##          cyl undecided     37.65 % [-2.24  0.57]
+##         gear undecided     39.83 % [-2.69  2.22]
+##           am undecided     16.84 % [-2.00  5.12]
 ##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;’s features are comming soon, stay tuned ;)&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;help-us&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Help us&lt;/h2&gt;
-&lt;p&gt;There is definitely room for improvement, and some new exiting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!&lt;/p&gt;
 &lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
@@ -126,10 +211,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
+      <link>/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
+      <guid>/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -191,10 +276,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova/</link>
+      <link>/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
+      <guid>/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -269,10 +354,10 @@ be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
+      <link>/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <guid>/blog/posts/report_correlation/</guid>
       <description>
 
 
