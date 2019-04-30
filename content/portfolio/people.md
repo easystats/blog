@@ -12,3 +12,4 @@ People that contributed to the project currently include:
 - [Dominique Makowski](https://github.com/DominiqueMakowski)
 - [Daniel Lüdecke](https://github.com/strengejacke)
 - [Mattan S. Ben-Shachar](https://github.com/mattansb)
+- [Philip Waggoner](https://github.com/pdwaggoner)
