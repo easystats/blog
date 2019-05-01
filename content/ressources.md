@@ -10,7 +10,6 @@ Here are some links to get started with R:
 
   - [**R for Datascience**](https://r4ds.had.co.nz/)
   - [**Quick-R**](https://www.statmethods.net/r-tutorial/index.html)
-  - [**Datacamp**](https://www.datacamp.com/)
   - [**EdX courses**](https://www.edx.org/learn/r-programming)
   - [**YaRrr\! The Pirate's Guide to R**](https://bookdown.org/ndphillips/YaRrr/)
   - [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
@@ -28,8 +27,7 @@ evolving field:
 
 This section contains more scope-focused resources:
 
-  - [**Interpretable Machine Learning
-    book**](https://christophm.github.io/interpretable-ml-book/)
+  - [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
   - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
 
 ## Contribute
