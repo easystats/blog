@@ -14,6 +14,8 @@ Here are some links to get started with R:
   - [**YaRrr\! The Pirate's Guide to R**](https://bookdown.org/ndphillips/YaRrr/)
   - [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
   - [**Yan Holtz's tutorials**](https://www.yan-holtz.com/teaching)
+  - [**Data Visualization: A practical introduction**](https://socviz.co/)
+  
 
 ## Stay tuned
 
@@ -29,6 +31,11 @@ This section contains more scope-focused resources:
 
   - [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
   - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
+
+## For Psychology
+  - [**Learning Statistics with R**](https://learningstatisticswithr.com/)
+  - [**R for Psychological Science**](https://psyr.org/)
+  - [**Statistical Modeling and Mixed Models with R**](https://github.com/singmann/mixed_model_workshop)
 
 ## Contribute
 

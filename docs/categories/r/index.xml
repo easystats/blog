@@ -57,8 +57,8 @@ icc(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now let’s compute &lt;strong&gt;all available&lt;/strong&gt; indices of performance appropriate for a given model. This can be done via the &lt;a href=&#34;https://easystats.github.io/performance/reference/model_performance.html&#34;&gt;&lt;strong&gt;model_performance()&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Compute all performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;   AIC BIC R2_conditional R2_marginal ICC_adjusted ICC_conditional RMSE
-&amp;gt; 1 107 119           0.91        0.22         0.89             0.7 0.31&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;   AIC BIC R2_conditional R2_marginal  ICC RMSE
+&amp;gt; 1 107 119           0.91        0.22 0.89 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-mixed-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Bayesian Mixed Models&lt;/h3&gt;
@@ -71,14 +71,10 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE R2_Median R2_MAD R2_Mean R2_SD R2_MAP
-&amp;gt; 1  -44      10    87       20      0.47  0.045    0.47 0.046   0.47
-&amp;gt;   R2_CI_low R2_CI_high R2_marginal_Median R2_marginal_MAD R2_marginal_Mean
-&amp;gt; 1       0.4       0.55               0.27           0.045             0.27
-&amp;gt;   R2_marginal_SD R2_marginal_MAP R2_marginal_CI_low R2_marginal_CI_high
-&amp;gt; 1          0.048            0.29               0.19                0.34
-&amp;gt;   R2_LOO_adjusted
-&amp;gt; 1            0.45&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE   R2 R2_SE R2_marginal R2_marginal_SE
+&amp;gt; 1  -43      10    87       20 0.47 0.046        0.27          0.048
+&amp;gt;   R2_LOO_adjusted RMSE
+&amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -219,11 +215,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [24.52 49.35]
-##           wt  rejected      0.00 % [-4.50 -0.68]
-##          cyl undecided     37.65 % [-2.24  0.57]
-##         gear undecided     39.83 % [-2.69  2.22]
-##           am undecided     16.84 % [-2.00  5.12]
+##  (Intercept)  rejected      0.00 % [24.75 48.74]
+##           wt undecided      0.03 % [-4.50 -0.60]
+##          cyl undecided     38.60 % [-2.03  0.58]
+##         gear undecided     41.44 % [-2.48  2.19]
+##           am undecided     17.81 % [-1.91  4.96]
 ##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results

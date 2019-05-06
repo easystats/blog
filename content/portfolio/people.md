@@ -3,7 +3,7 @@ date: "2018-06-21"
 description: Join the monster hunters
 layout: portfolio
 link: https://github.com/orgs/easystats/people
-screenshot: warrior.png
+screenshot: ghostbusters.jpg
 title: People
 ---
 

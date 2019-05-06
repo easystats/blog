@@ -45,8 +45,8 @@ icc(model)</code></pre>
 <p>Now let’s compute <strong>all available</strong> indices of performance appropriate for a given model. This can be done via the <a href="https://easystats.github.io/performance/reference/model_performance.html"><strong>model_performance()</strong></a>.</p>
 <pre class="r"><code># Compute all performance indices
 model_performance(model)</code></pre>
-<pre><code>&gt;   AIC BIC R2_conditional R2_marginal ICC_adjusted ICC_conditional RMSE
-&gt; 1 107 119           0.91        0.22         0.89             0.7 0.31</code></pre>
+<pre><code>&gt;   AIC BIC R2_conditional R2_marginal  ICC RMSE
+&gt; 1 107 119           0.91        0.22 0.89 0.31</code></pre>
 </div>
 <div id="bayesian-mixed-models" class="section level3">
 <h3>Bayesian Mixed Models</h3>
@@ -59,14 +59,10 @@ model &lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 
 # Compute performance indices
 model_performance(model)</code></pre>
-<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE R2_Median R2_MAD R2_Mean R2_SD R2_MAP
-&gt; 1  -44      10    87       20      0.47  0.045    0.47 0.046   0.47
-&gt;   R2_CI_low R2_CI_high R2_marginal_Median R2_marginal_MAD R2_marginal_Mean
-&gt; 1       0.4       0.55               0.27           0.045             0.27
-&gt;   R2_marginal_SD R2_marginal_MAP R2_marginal_CI_low R2_marginal_CI_high
-&gt; 1          0.048            0.29               0.19                0.34
-&gt;   R2_LOO_adjusted
-&gt; 1            0.45</code></pre>
+<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE   R2 R2_SE R2_marginal R2_marginal_SE
+&gt; 1  -43      10    87       20 0.47 0.046        0.27          0.048
+&gt;   R2_LOO_adjusted RMSE
+&gt; 1            0.45 0.31</code></pre>
 <ul>
 <li><strong>Don’t forget to check out the</strong> <a href="https://easystats.github.io/performance/"><strong>documentation here</strong></a> <strong>for more!</strong></li>
 </ul>
