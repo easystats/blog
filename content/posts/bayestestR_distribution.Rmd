@@ -1,7 +1,7 @@
 ---
 title: "A perfectly normally distributed sample: Another post?"
 author: "easystats"
-date: 2019-04-24
+date: 2019-05-10
 categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR", "rnorm", "normal", "gaussian"]
 ---
@@ -13,7 +13,7 @@ options(knitr.kable.NA = '')
 ```
 
 
-Recently, we published [a post](https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/) presenting a small convenience function, from the [bayestestR package](https://github.com/easystats/bayestestR). This function, named `rnorm_perfect`, generated an empirical distribution (*i.e.*, vector of values) as close as possible to a desired distribution, in this case the *normal* distribution. 
+Recently, we published [a post](https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/) presenting a small convenience function, from the [bayestestR package](https://github.com/easystats/bayestestR). This function, named `rnorm_perfect`, generated an empirical distribution (*i.e.*, a vector of values) as close as possible to a desired distribution, in this case the **normal distribution**. 
 
 It worked like this:
 
@@ -35,9 +35,9 @@ x %>%
 ```
 
 
-This function's name was initially chosen because of the argument-wise proximity of this function with its random counterpart, `rnorm` (*i.e.*, it has the same arguments, the same order and the same output type). However, we [quickly realised](https://github.com/easystats/bayestestR/issues/86) this this name was not perfect, as indeed the obtained distribution was not *random* (and the `r` in `rnorm` stands for *random*).
+This function's name was initially chosen because of its proximity (argument-wise) with its random counterpart, `rnorm` (*i.e.*, it has the same arguments, the same order and the same output type). However, we [quickly realised](https://github.com/easystats/bayestestR/issues/86) this this name was not perfect (*no pun intended*), as indeed the obtained distribution was not *random* (and the `r` in `rnorm` stands for *random*).
 
-Thus, after discussion, we decided to change it to `distribution_normal` (INSERT LINK). And guess what, we also added other types of "perfect" distributions:
+Thus, after discussion, we decided to change it to `distribution_normal` (INSERT LINK). And guess what, we also used that opportunity to add other types of "perfect" distributions:
 
 
 
@@ -52,24 +52,24 @@ x %>%
   geom_line()
 ```
 
-A few days before this update, we received a small email asking:
+Interestingly, a few days before this update, we received a small email asking:
 
 > Hi, I saw your blog post and wonder how you define a perfectly normal distribution.
 
-We responded, as honestly as we could:
+We responded:
 
 > that's actually a good question. I would say an empirical sample having characteristics as close as possible to a canonic Gaussian distribution.
 
 And just now, after an (ironic?) *"Thanks, most helpful!"*, [this blog post](https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/) is published, which emphasize on the irrelevance of the `r` prefix in the function name. A great timing, as we wanted to share the update that we made! 
 
-Note that the `rnorm_perfect` name will be deprecated in the next version, and ultimately removed to avoid further confusion :)
+Thus, please note that the `rnorm_perfect` name will be deprecated in the next version, and ultimately removed to avoid further confusion :)
 
 
 ## Any other suggestions?
 
-Don't forget, the [easystats project](https://github.com/easystats) (that includes bayestestR) is very open to contributions and suggestions!
+Don't forget, the [easystats project](https://github.com/easystats) (that includes `bayestestR`) is very open to contributions and suggestions!
 
-Thus, if you ever plan on publishing personal correspondence with the response to a falsely naive question, please remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
+Thus, if you ever plan on publishing personal correspondence of a response to a falsely naive question, please remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
 
 
 ## Get involved
