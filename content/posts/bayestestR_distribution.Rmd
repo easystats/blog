@@ -35,7 +35,7 @@ x %>%
 ```
 
 
-This function's name was initially chosen because of its proximity (argument-wise) with its random counterpart, `rnorm` (*i.e.*, it has the same arguments, the same order and the same output type). However, we [quickly realised](https://github.com/easystats/bayestestR/issues/86) this this name was not perfect (*no pun intended*), as indeed the obtained distribution was not *random* (and the `r` in `rnorm` stands for *random*).
+This function's name was initially chosen because of its proximity (argument-wise) with its random counterpart `rnorm` (it has the same arguments, the same order and the same output type). However, we [quickly realised](https://github.com/easystats/bayestestR/issues/86) this this name was not perfect (*no pun intended*), as indeed the obtained distribution was not *random* (and the `r` in `rnorm` stands for *random*).
 
 Thus, after discussion, we decided to change it to [`distribution_normal`](https://easystats.github.io/bayestestR/reference/distribution.html). And guess what, we also used that opportunity to add other types of "perfect" distributions:
 
@@ -60,16 +60,14 @@ We responded:
 
 > that's actually a good question. I would say an empirical sample having characteristics as close as possible to a canonic Gaussian distribution.
 
-After an (ironic?) *"Thanks, most helpful!"*, [this blog post](https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/) got published, which emphasize on the irrelevance of the `r` prefix in the function name. A great timing, as we wanted to share the update that we made! 
+After an (ironic?) *"Thanks, most helpful!"*, [this blog post](https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/) got published, which emphasize on the irrelevance of the `r` prefix in the function name. Thanks to some of the good points raised in this post, we've felt the need to update users on this function.
 
 Thus, please note that the `rnorm_perfect` name will be deprecated in the next version, and ultimately removed to avoid further confusion :)
 
 
 ## Any other suggestions?
 
-Don't forget, the [easystats project](https://github.com/easystats) (that includes `bayestestR`) is very open to contributions and suggestions!
-
-Thus, if you ever plan on publishing personal correspondence of a response to a falsely naive question, please remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
+Don't forget, the [easystats project](https://github.com/easystats) (that includes `bayestestR`) is very open to contributions and suggestions! Remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
 
 
 ## Get involved
