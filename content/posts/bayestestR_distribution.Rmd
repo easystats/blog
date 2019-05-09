@@ -60,7 +60,7 @@ We responded:
 
 > that's actually a good question. I would say an empirical sample having characteristics as close as possible to a canonic Gaussian distribution.
 
-And just now, after an (ironic?) *"Thanks, most helpful!"*, [this blog post](https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/) is published, which emphasize on the irrelevance of the `r` prefix in the function name. A great timing, as we wanted to share the update that we made! 
+After an (ironic?) *"Thanks, most helpful!"*, [this blog post](https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/) got published, which emphasize on the irrelevance of the `r` prefix in the function name. A great timing, as we wanted to share the update that we made! 
 
 Thus, please note that the `rnorm_perfect` name will be deprecated in the next version, and ultimately removed to avoid further confusion :)
 
