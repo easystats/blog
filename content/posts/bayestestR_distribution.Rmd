@@ -67,7 +67,7 @@ Thus, please note that the `rnorm_perfect` name will be deprecated in the next v
 
 ## Any other suggestions?
 
-Don't forget, the [easystats project](https://github.com/easystats) (that includes `bayestestR`) is very open to contributions and suggestions! Remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
+Don't forget, the [easystats project](https://github.com/easystats) (that includes `bayestestR`) is very open to contributions! Remember that you can always [make suggestions](https://github.com/easystats/bayestestR/issues) and contribute to the package, to *actually help* improving it, with the spirit of collaboration, and in the tradition of open science ;)
 
 
 ## Get involved
