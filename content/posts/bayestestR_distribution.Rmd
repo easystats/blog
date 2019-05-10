@@ -37,7 +37,7 @@ x %>%
 
 This function's name was initially chosen because of its proximity (argument-wise) with its random counterpart `rnorm` (it has the same arguments, the same order and the same output type). However, we [quickly realised](https://github.com/easystats/bayestestR/issues/86) this this name was not perfect (*no pun intended*), as indeed the obtained distribution was not *random* (and the `r` in `rnorm` stands for *random*).
 
-Thus, after discussion, we decided to change it to [`distribution_normal`](https://easystats.github.io/bayestestR/reference/distribution.html). And guess what, we also used that opportunity to add other types of "perfect" distributions:
+Thus, after discussion, we decided to change it to [`distribution_normal`](https://easystats.github.io/bayestestR/reference/distribution.html). We also used that opportunity to add other types of "perfect" distributions:
 
 
 
