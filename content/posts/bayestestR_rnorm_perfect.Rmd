@@ -30,7 +30,7 @@ library(bayestestR)  # Load it
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(bayestestR)
 ```
-```{r message=FALSE, warning=FALSE,}
+```{r message=FALSE, warning=FALSE}
 # Generate a perfect sample
 x <- rnorm_perfect(n = 100, mean = 0, sd = 1)
 
@@ -46,7 +46,7 @@ x %>%
 
 We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.
 
-```{r message=FALSE, warning=FALSE,}
+```{r message=FALSE, warning=FALSE}
 x %>% 
   density() %>%  # Compute density function
   as.data.frame() %>% 

@@ -251,16 +251,17 @@ equivalence_test(model)</code></pre>
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [24.75 48.74]
-##           wt undecided      0.03 % [-4.50 -0.60]
-##          cyl undecided     38.60 % [-2.03  0.58]
-##         gear undecided     41.44 % [-2.48  2.19]
-##           am undecided     17.81 % [-1.91  4.96]
+##  (Intercept)  rejected      0.00 % [24.74 49.17]
+##           wt  rejected      0.00 % [-4.52 -0.62]
+##          cyl undecided     37.44 % [-2.07  0.63]
+##         gear undecided     39.52 % [-2.67  2.18]
+##           am undecided     18.50 % [-1.99  5.19]
 ##           hp  accepted    100.00 % [-0.06  0.01]</code></pre>
-<p>Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.</p>
-<pre class="r"><code># Do the test and plot results
-plot(equivalence_test(model))</code></pre>
-<p><img src="/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<!-- Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage. -->
+<!-- ```{r message=FALSE, warning=FALSE} -->
+<!-- # Do the test and plot results -->
+<!-- plot(equivalence_test(model)) -->
+<!-- ``` -->
 <ul>
 <li><strong>Don’t forget to check out the</strong> <a href="https://github.com/easystats/bayestestR#documentation"><strong>documentation here</strong></a> <strong>for more!</strong></li>
 </ul>

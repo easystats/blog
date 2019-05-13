@@ -1,15 +1,16 @@
 ---
-title: "A perfectly normally distributed sample: Another post?"
+title: "A perfectly normally distributed sample: another post?"
 author: "easystats"
-date: 2019-05-10
+date: 2019-05-13
 categories: ["R", "bayestestR"]
-tags: ["R", "easystats", "bayestestR", "rnorm", "normal", "gaussian"]
+tags: ["R", "easystats", "bayestestR", "distribution", "perfect", "gaussian"]
 ---
 
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(knitr)
 options(knitr.kable.NA = '')
+options(digits=2)
 ```
 
 
@@ -43,10 +44,10 @@ Thus, after discussion, we decided to change it to [`distribution_normal`](https
 
 ```{r message=FALSE, warning=FALSE}
 # Generate a perfect sample
-x <- distribution_poisson(n = 100, 1.5)
+x <- distribution_beta(n = 100, 6, 2)
 
 x %>% 
-  estimate_density("logspline") %>% 
+  density() %>% 
   as.data.frame() %>% 
   ggplot(aes(x=x, y=y)) +
   geom_line()
