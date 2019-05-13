@@ -6,10 +6,21 @@
     <description>Recent content in Bayestestr on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A perfectly normally distributed sample: another post?</title>
+      <link>/blog/posts/bayestestr_distribution/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <description>Recently, we published a post presenting a small convenience function, from the bayestestR package. This function, named rnorm_perfect, generated an empirical distribution (i.e., a vector of values) as close as possible to a desired distribution, in this case the normal distribution.
+It worked like this:
+# Generate a perfect samplex &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&amp;gt;% density() %&amp;gt;% # Compute density functionas.</description>
+    </item>
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>

@@ -6,10 +6,86 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A perfectly normally distributed sample: another post?</title>
+      <link>/blog/posts/bayestestr_distribution/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <description>
+
+
+&lt;p&gt;Recently, we published &lt;a href=&#34;https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/&#34;&gt;a post&lt;/a&gt; presenting a small convenience function, from the &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;bayestestR package&lt;/a&gt;. This function, named &lt;code&gt;rnorm_perfect&lt;/code&gt;, generated an empirical distribution (&lt;em&gt;i.e.&lt;/em&gt;, a vector of values) as close as possible to a desired distribution, in this case the &lt;strong&gt;normal distribution&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;It worked like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
+x &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
+
+# Visualise it
+library(tidyverse)
+
+x %&amp;gt;% 
+  density() %&amp;gt;%  # Compute density function
+  as.data.frame() %&amp;gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart &lt;code&gt;rnorm&lt;/code&gt; (it has the same arguments, the same order and the same output type). However, we &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/86&#34;&gt;quickly realised&lt;/a&gt; this this name was not perfect (&lt;em&gt;no pun intended&lt;/em&gt;), as indeed the obtained distribution was not &lt;em&gt;random&lt;/em&gt; (and the &lt;code&gt;r&lt;/code&gt; in &lt;code&gt;rnorm&lt;/code&gt; stands for &lt;em&gt;random&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Thus, after discussion, we decided to change it to &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/distribution.html&#34;&gt;&lt;code&gt;distribution_normal&lt;/code&gt;&lt;/a&gt;. We also used that opportunity to add other types of “perfect” distributions:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
+x &amp;lt;- distribution_beta(n = 100, 6, 2)
+
+x %&amp;gt;% 
+  density() %&amp;gt;% 
+  as.data.frame() %&amp;gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Interestingly, a few days before this update, we received a small email asking:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, I saw your blog post and wonder how you define a perfectly normal distribution.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We responded:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;that’s actually a good question. I would say an empirical sample having characteristics as close as possible to a canonic Gaussian distribution.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;After an (ironic?) &lt;em&gt;“Thanks, most helpful!”&lt;/em&gt;, &lt;a href=&#34;https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/&#34;&gt;this blog post&lt;/a&gt; got published, which emphasize on the irrelevance of the &lt;code&gt;r&lt;/code&gt; prefix in the function name. Thanks to some of the good points raised in this post, we’ve felt the need to update users on this function.&lt;/p&gt;
+&lt;p&gt;Thus, please note that the &lt;code&gt;rnorm_perfect&lt;/code&gt; name will be deprecated in the next version, and ultimately removed to avoid further confusion :)&lt;/p&gt;
+&lt;div id=&#34;any-other-suggestions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Any other suggestions?&lt;/h2&gt;
+&lt;p&gt;Don’t forget, the &lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats project&lt;/a&gt; (that includes &lt;code&gt;bayestestR&lt;/code&gt;) is very open to contributions! Remember that you can always &lt;a href=&#34;https://github.com/easystats/bayestestR/issues&#34;&gt;make suggestions&lt;/a&gt; and contribute to the package, to actually help improving it, with the spirit of collaboration, and in the tradition of open science ;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get involved&lt;/h2&gt;
+&lt;p&gt;Feel free to let us know how we could further improve this package! Also, note that &lt;a href=&#34;https://github.com/easystats/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt;, the project supporting &lt;code&gt;bayestestR&lt;/code&gt; is in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+            <category>distribution</category>
+      
+            <category>perfect</category>
+      
+            <category>gaussian</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
@@ -72,7 +148,7 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -43      10    87       20 0.47 0.046        0.27          0.048
+&amp;gt; 1  -43      10    87       20 0.47 0.045        0.27          0.047
 &amp;gt;   R2_LOO_adjusted RMSE
 &amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -215,16 +291,17 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [24.75 48.74]
-##           wt undecided      0.03 % [-4.50 -0.60]
-##          cyl undecided     38.60 % [-2.03  0.58]
-##         gear undecided     41.44 % [-2.48  2.19]
-##           am undecided     17.81 % [-1.91  4.96]
+##  (Intercept)  rejected      0.00 % [24.74 49.17]
+##           wt  rejected      0.00 % [-4.52 -0.62]
+##          cyl undecided     37.44 % [-2.07  0.63]
+##         gear undecided     39.52 % [-2.67  2.18]
+##           am undecided     18.50 % [-1.99  5.19]
 ##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
-plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;!-- Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage. --&gt;
+&lt;!-- ```{r message=FALSE, warning=FALSE} --&gt;
+&lt;!-- # Do the test and plot results --&gt;
+&lt;!-- plot(equivalence_test(model)) --&gt;
+&lt;!-- ``` --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

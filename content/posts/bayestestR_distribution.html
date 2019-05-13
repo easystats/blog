@@ -1,0 +1,56 @@
+---
+title: "A perfectly normally distributed sample: another post?"
+author: "easystats"
+date: 2019-05-13
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "distribution", "perfect", "gaussian"]
+---
+
+
+
+<p>Recently, we published <a href="https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/">a post</a> presenting a small convenience function, from the <a href="https://github.com/easystats/bayestestR">bayestestR package</a>. This function, named <code>rnorm_perfect</code>, generated an empirical distribution (<em>i.e.</em>, a vector of values) as close as possible to a desired distribution, in this case the <strong>normal distribution</strong>.</p>
+<p>It worked like this:</p>
+<pre class="r"><code># Generate a perfect sample
+x &lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
+
+# Visualise it
+library(tidyverse)
+
+x %&gt;% 
+  density() %&gt;%  # Compute density function
+  as.data.frame() %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()</code></pre>
+<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart <code>rnorm</code> (it has the same arguments, the same order and the same output type). However, we <a href="https://github.com/easystats/bayestestR/issues/86">quickly realised</a> this this name was not perfect (<em>no pun intended</em>), as indeed the obtained distribution was not <em>random</em> (and the <code>r</code> in <code>rnorm</code> stands for <em>random</em>).</p>
+<p>Thus, after discussion, we decided to change it to <a href="https://easystats.github.io/bayestestR/reference/distribution.html"><code>distribution_normal</code></a>. We also used that opportunity to add other types of “perfect” distributions:</p>
+<pre class="r"><code># Generate a perfect sample
+x &lt;- distribution_beta(n = 100, 6, 2)
+
+x %&gt;% 
+  density() %&gt;% 
+  as.data.frame() %&gt;% 
+  ggplot(aes(x=x, y=y)) +
+  geom_line()</code></pre>
+<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Interestingly, a few days before this update, we received a small email asking:</p>
+<blockquote>
+<p>Hi, I saw your blog post and wonder how you define a perfectly normal distribution.</p>
+</blockquote>
+<p>We responded:</p>
+<blockquote>
+<p>that’s actually a good question. I would say an empirical sample having characteristics as close as possible to a canonic Gaussian distribution.</p>
+</blockquote>
+<p>After an (ironic?) <em>“Thanks, most helpful!”</em>, <a href="https://xianblog.wordpress.com/2019/05/09/a-perfectly-normally-distributed-sample/">this blog post</a> got published, which emphasize on the irrelevance of the <code>r</code> prefix in the function name. Thanks to some of the good points raised in this post, we’ve felt the need to update users on this function.</p>
+<p>Thus, please note that the <code>rnorm_perfect</code> name will be deprecated in the next version, and ultimately removed to avoid further confusion :)</p>
+<div id="any-other-suggestions" class="section level2">
+<h2>Any other suggestions?</h2>
+<p>Don’t forget, the <a href="https://github.com/easystats">easystats project</a> (that includes <code>bayestestR</code>) is very open to contributions! Remember that you can always <a href="https://github.com/easystats/bayestestR/issues">make suggestions</a> and contribute to the package, to actually help improving it, with the spirit of collaboration, and in the tradition of open science ;)</p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get involved</h2>
+<p>Feel free to let us know how we could further improve this package! Also, note that <a href="https://github.com/easystats/easystats"><em>easystats</em></a>, the project supporting <code>bayestestR</code> is in active development. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
