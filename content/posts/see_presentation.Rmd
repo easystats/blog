@@ -1,7 +1,7 @@
 ---
-title: "The 'see' package: The visualisation companion of easystats for beautiful figures"
+title: "The 'see' package: beautiful figures for easystats"
 author: "easystats"
-date: 2019-04-30
+date: 2019-05-27
 categories: ["R", "see"]
 tags: ["R", "easystats", "see"]
 ---
@@ -21,36 +21,67 @@ include_graphics("https://github.com/easystats/see/raw/master/man/figures/logo.p
 
 
 
-## see
+## The see package
 
-[We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats project**](https://github.com/easystats), a set of packages designed to make your life *easier*. This project encompasses several packages, devoted for instance to [model access](https://github.com/easystats/insight) or [Bayesian analysis](https://github.com/easystats/bayestestR), [indices of model performance](https://github.com/easystats/performance) or  [visualisation](https://github.com/easystats/see).
+[We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats project**](https://github.com/easystats), a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to [model access](https://github.com/easystats/insight) or [Bayesian analysis](https://github.com/easystats/bayestestR), [indices of model performance](https://github.com/easystats/performance) or [visualisation](https://github.com/easystats/see).
 
-***Without further ado, please let us introduce the latest addition to the easyverse; the ***  [**`see`**](https://github.com/easystats/see) ***package!***
+***Without further ado, please let us introduce the latest addition to the easyverse; the see ackage!***
 
 
-<!-- The goal of [`performance`](https://github.com/easystats/performance) is to provide lightweight tools to **assess and check the quality of your model**. It includes functions such as [`R2`](https://easystats.github.io/performance/reference/r2.html) for many models (including logistic, mixed and Bayesian models), [`ICC`](https://easystats.github.io/performance/reference/icc.html) or helpers to check [`convergence`](https://easystats.github.io/performance/reference/check_convergence.html), [`overdipsersion`](https://easystats.github.io/performance/reference/check_overdispersion.html) or [`zero-inflation`](https://easystats.github.io/performance/reference/check_zeroinflation.html). See the **list of functions** [here](https://easystats.github.io/performance/reference/index.html). -->
+The goal of [`see`](https://github.com/easystats/see) is to be the visualisation companion to other functions and packages in **easystats**. See the **list of functions** [here](https://easystats.github.io/see/reference/index.html). However, it also includes some nice themes and geoms:
 
-`see` can be installed as follows:
-
-```{r, eval = FALSE, message=FALSE, warning=FALSE}
-install.packages("see")  # Install the package
-library(see)  # Load it
-```
-```{r message=FALSE, warning=FALSE, include=FALSE}
-library(see)
-```
 
 ## Examples
 
-<!-- Insert examples -->
+
+- **Better looking points** with **modern theme** and **flat design colours**
+
+```{r warning=FALSE, message=FALSE}
+library(see)
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point2(size=4, alpha=0.5) +
+  scale_color_flat_d() +
+  theme_modern()
+```
 
 
+- **Violin plot** with **blackboard theme** and **material design colours**
+
+```{r warning=FALSE, message=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) + 
+  geom_violindot(fill_dots = "white") + 
+  scale_fill_material_d() +
+  theme_blackboard()
+```
 
 
-- **Don't forget to check out ** [**more examples here**](https://easystats.github.io/see/) **!**
+- **Abyss theme**
 
+```{r warning=FALSE, message=FALSE, eval=FALSE}
+library(bayestestR)
+library(rstanarm)
 
-More details about `see`'s features are comming soon, stay tuned ;)
+model <- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars)
+
+result <- equivalence_test(model, ci = c(.89, .95))
+
+plot(result) +
+  theme_abyss() +
+  scale_fill_flat()
+```
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library(bayestestR)
+library(rstanarm)
+set.seed(333)
+junk <- capture.output(model <- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars, iter=200))
+
+result <- equivalence_test(model, ci = c(.89, .95))
+plot(result) +
+    theme_abyss() +
+    scale_fill_flat()
+```
 
 
 
