@@ -25,10 +25,10 @@ include_graphics("https://github.com/easystats/see/raw/master/man/figures/logo.p
 
 [We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats project**](https://github.com/easystats), a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to [model access](https://github.com/easystats/insight) or [Bayesian analysis](https://github.com/easystats/bayestestR), [indices of model performance](https://github.com/easystats/performance) or [visualisation](https://github.com/easystats/see).
 
-***Without further ado, please let us introduce the latest addition to the easyverse; the see ackage!***
+***Without further ado, please let us introduce the latest addition to the easyverse; the see package!***
 
 
-The goal of [`see`](https://github.com/easystats/see) is to be the visualisation companion to other functions and packages in **easystats**. See the **list of functions** [here](https://easystats.github.io/see/reference/index.html). However, it also includes some nice themes and geoms:
+Essentially, [`see`](https://github.com/easystats/see) is the visualisation companion to other functions and packages in **easystats**. See the **list of functions** [here](https://easystats.github.io/see/reference/index.html). However, it also includes some nice themes and geoms:
 
 
 ## Examples
