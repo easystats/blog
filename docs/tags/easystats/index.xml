@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Easystats on easystats</title>
+    <title>easystats</title>
     <link>/blog/tags/easystats/</link>
-    <description>Recent content in Easystats on easystats</description>
+    <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/easystats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
+      <link>/blog/posts/see_presentation/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/see_presentation/</guid>
+      <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
+Without further ado, please let us introduce the latest addition to the easyverse; the see package!
+Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
+    </item>
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
@@ -70,7 +81,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_anova/</guid>
-      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
+      <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     
     <item>
@@ -79,7 +90,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_correlation/</guid>
-      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
+      <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     
   </channel>

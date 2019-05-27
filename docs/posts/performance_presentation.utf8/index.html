@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.53" />
+<meta name="generator" content="Hugo 0.55.6" />
 
     
     
@@ -31,7 +31,8 @@ performance We have recently decided to collaborate around the new easystats pro
 ***To address this, please let us introduce the *** performance package!
 performance We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/performance_presentation.utf8/" /><meta property="article:published_time" content="2019-04-30T00:00:00&#43;00:00"/>
+<meta property="og:url" content="/blog/posts/performance_presentation.utf8/" />
+<meta property="article:published_time" content="2019-04-30T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-04-30T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
 
 
@@ -47,7 +48,7 @@ performance We have recently decided to collaborate around the new easystats pro
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.9181f25ed2263aeb878ec6f8a84f10c4ebb16150000fca8767308880bdde5ca0.css" integrity="sha256-kYHyXtImOuuHjsb4qE8QxOuxYVAAD8qHZzCIgL3eXKA=">
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
 
 
 <link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -280,8 +281,8 @@ icc(model)
 model_performance(model)
 </code></pre>
 
-<pre><code>&gt;   AIC BIC R2_conditional R2_marginal ICC_adjusted ICC_conditional RMSE
-&gt; 1 107 119           0.91        0.22         0.89             0.7 0.31
+<pre><code>&gt;   AIC BIC R2_conditional R2_marginal  ICC RMSE
+&gt; 1 107 119           0.91        0.22 0.89 0.31
 </code></pre>
 
 <h3 id="bayesian-mixed-models">Bayesian Mixed Models</h3>
@@ -298,14 +299,10 @@ model &lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 model_performance(model)
 </code></pre>
 
-<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE R2_Median R2_MAD R2_Mean R2_SD R2_MAP
-&gt; 1  -43      10    87       20      0.47  0.043    0.47 0.044   0.48
-&gt;   R2_CI_low R2_CI_high R2_marginal_Median R2_marginal_MAD R2_marginal_Mean
-&gt; 1       0.4       0.54               0.27           0.044             0.26
-&gt;   R2_marginal_SD R2_marginal_MAP R2_marginal_CI_low R2_marginal_CI_high
-&gt; 1          0.047            0.28                0.2                0.34
-&gt;   R2_LOO_adjusted
-&gt; 1            0.45
+<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
+&gt; 1  -43      10    87       20   86 0.47 0.044        0.27          0.046
+&gt;   R2_LOO_adjusted RMSE
+&gt; 1            0.46 0.31
 </code></pre>
 
 <ul>
