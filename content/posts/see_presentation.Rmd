@@ -1,0 +1,94 @@
+---
+title: "The 'see' package: beautiful figures for easystats"
+author: "easystats"
+date: 2019-05-27
+categories: ["R", "see"]
+tags: ["R", "easystats", "see"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+```
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/see/raw/master/man/figures/logo.png")
+```
+
+
+
+## The see package
+
+[We](https://github.com/orgs/easystats/people) have recently decided to collaborate around the new [**easystats project**](https://github.com/easystats), a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to [model access](https://github.com/easystats/insight) or [Bayesian analysis](https://github.com/easystats/bayestestR), [indices of model performance](https://github.com/easystats/performance) or [visualisation](https://github.com/easystats/see).
+
+***Without further ado, please let us introduce the latest addition to the easyverse; the see package!***
+
+
+Essentially, [`see`](https://github.com/easystats/see) is the visualisation companion to other functions and packages in **easystats**. See the **list of functions** [here](https://easystats.github.io/see/reference/index.html). However, it also includes some nice themes and geoms:
+
+
+## Examples
+
+
+- **Better looking points** with **modern theme** and **flat design colours**
+
+```{r warning=FALSE, message=FALSE}
+library(see)
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point2(size=4, alpha=0.5) +
+  scale_color_flat_d() +
+  theme_modern()
+```
+
+
+- **Violin plot** with **blackboard theme** and **material design colours**
+
+```{r warning=FALSE, message=FALSE}
+ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) + 
+  geom_violindot(fill_dots = "white") + 
+  scale_fill_material_d() +
+  theme_blackboard()
+```
+
+
+- **Abyss theme**
+
+```{r warning=FALSE, message=FALSE, eval=FALSE}
+library(bayestestR)
+library(rstanarm)
+
+model <- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars)
+
+result <- equivalence_test(model, ci = c(.89, .95))
+
+plot(result) +
+  theme_abyss() +
+  scale_fill_flat()
+```
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+library(bayestestR)
+library(rstanarm)
+set.seed(333)
+junk <- capture.output(model <- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars, iter=200))
+
+result <- equivalence_test(model, ci = c(.89, .95))
+plot(result) +
+    theme_abyss() +
+    scale_fill_flat()
+```
+
+
+
+## Get Involved
+
+There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!
+
+To conclude, note that *easystats* is a new project in active development. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

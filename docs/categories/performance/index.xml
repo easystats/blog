@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Performance on easystats</title>
+    <title>performance on easystats</title>
     <link>/blog/categories/performance/</link>
-    <description>Recent content in Performance on easystats</description>
+    <description>Recent content in performance on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Apr 2019 00:00:00 +0000</lastBuildDate>
@@ -71,8 +70,8 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -43      10    87       20 0.47 0.045        0.27          0.047
+&lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
+&amp;gt; 1  -43      10    87       20   87 0.47 0.045        0.27          0.047
 &amp;gt;   R2_LOO_adjusted RMSE
 &amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;

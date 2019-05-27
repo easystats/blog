@@ -3,8 +3,103 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/categories/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/r/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/r/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/see_presentation/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/easystats/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/see/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/see/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/posts/bayestestr_distribution/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/bayestestr/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/bayestestr/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/distribution/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/gaussian/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/perfect/</loc>
+    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/aic/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -13,8 +108,44 @@
   </url>
   
   <url>
+    <loc>/blog/tags/icc/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/r2/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/performance/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/performance/</loc>
+    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/posts/bayestestr_rnorm_perfect/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/normal/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/rnorm/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,33 +154,26 @@
   </url>
   
   <url>
+    <loc>/blog/tags/brms/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/posterior/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/rstanarm/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/posts/insight_presentation/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/report_anova/</loc>
-    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/report_correlation/</loc>
-    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/portfolio/people/</loc>
-    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/portfolio/easystats/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/portfolio/</loc>
-    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -59,8 +183,26 @@
   </url>
   
   <url>
-    <loc>/blog/tags/aic/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
+    <loc>/blog/tags/data/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/insight/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/insight/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/models/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -77,149 +219,18 @@
   </url>
   
   <url>
-    <loc>/blog/tags/bayestestr/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/blog/posts/report_anova/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/bayestestr/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/brms/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/correlations/</loc>
-    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/data/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/distribution/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/easystats/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/gaussian/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/icc/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/insight/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/insight/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/ressources/</loc>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/models/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/normal/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/perfect/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/performance/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/performance/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/posterior/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/r/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/r/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/r2/</loc>
-    <lastmod>2019-04-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/report/</loc>
+    <loc>/blog/categories/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/categories/report/</loc>
+    <loc>/blog/tags/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -231,27 +242,33 @@
   </url>
   
   <url>
-    <loc>/blog/tags/rnorm/</loc>
-    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+    <loc>/blog/posts/report_correlation/</loc>
+    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/correlations/</loc>
+    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/blog/tags/rstanarm/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/blog/portfolio/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/blog/portfolio/people/</loc>
+    <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/blog/portfolio/easystats/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/ressources/</loc>
   </url>
   
 </urlset>

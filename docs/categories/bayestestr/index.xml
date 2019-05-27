@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bayestestr on easystats</title>
+    <title>bayestestR on easystats</title>
     <link>/blog/categories/bayestestr/</link>
-    <description>Recent content in Bayestestr on easystats</description>
+    <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
@@ -191,13 +190,13 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ##   ROPE: [-0.60 0.60]
 ## 
-##    Parameter        H0 inside ROPE       95% HDI
-##  (Intercept)  rejected      0.00 % [24.74 49.17]
-##           wt  rejected      0.00 % [-4.52 -0.62]
-##          cyl undecided     37.44 % [-2.07  0.63]
-##         gear undecided     39.52 % [-2.67  2.18]
-##           am undecided     18.50 % [-1.99  5.19]
-##           hp  accepted    100.00 % [-0.06  0.01]&lt;/code&gt;&lt;/pre&gt;
+##    Parameter        H0 inside ROPE       89% HDI
+##  (Intercept)  rejected      0.00 % [27.29 47.29]
+##           wt  rejected      0.00 % [-4.22 -1.06]
+##          cyl undecided     36.76 % [-1.94  0.30]
+##         gear undecided     42.07 % [-2.27  1.71]
+##           am undecided     18.81 % [-1.10  4.58]
+##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage. --&gt;
 &lt;!-- ```{r message=FALSE, warning=FALSE} --&gt;
 &lt;!-- # Do the test and plot results --&gt;
