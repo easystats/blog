@@ -27,7 +27,7 @@ include_graphics("https://raw.githubusercontent.com/easystats/bayestestR/master/
 
 # The problem with null effects
 
-Say you fit an ANOVA model, predicting the time it take to solve a puzzle from its shape (round / square) and whether it was colorful or black and white, and found that one of estimated effects, in this case the interaction, was not significant. Say even that it was as not-significant as can be, with $p=1.00$!
+Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with $p=1.00$!
 
 ```{r freq_model}
 options(contrasts = c('contr.sum', 'contr.poly'))
@@ -38,7 +38,7 @@ aov_model <- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
 summary(aov_model)
 ```
 
-You look at your data, as you were taught to do, and it really seem like there *isn't* an interaction:
+You look at your data, as you were taught to do, and it really seems like there *is no* moderated association at all:
 ```{r plot_data,message=FALSE, warning=FALSE, echo=FALSE}
 pd <- position_dodge(0.7)
 ggplot(puzzles,aes(color,RT, color = shape, group = shape)) +
@@ -46,9 +46,9 @@ ggplot(puzzles,aes(color,RT, color = shape, group = shape)) +
   stat_summary(position = pd)
 ```
 
-But what doe this mean? **Can you infer that there is no interaction?** Are the two simple effects of color truly identical?
+But what does this mean? **Can you infer that there is no (relevant) interaction?** Are the two simple effects of color truly identical?
 
-Classical statistics has no answer for us here - when the p value is less than alpha (typically 5%) we can reject the null hypothesis, but when $p>.05$, even a lot bigger than 5%, classical statistics do not allow to infer that the null is true. For this, we need to go Bayesian!
+Classical statistics has no answer for us here - when the p-value is less than alpha (typically 5%) we can reject the null hypothesis, but when $p>.05$, even a lot bigger than 5%, classical statistics do not allow to infer that the null is true. For this, we need to go Bayesian!
 
 # Quantifying evidence for the null
 
@@ -75,13 +75,15 @@ junk <- capture.output(
 
 ```
 
-Using the fantastic `emmeans` package, we can explore and extract estimates from our fitted model. For example, we can estimate the main effect for color:
+Using the fantastic **emmeans** package, we can explore and extract estimates from our fitted model. For example, we can estimate the main effect for color:
 
 ```{r main_color, message=FALSE}
 c_color_main <- pairs(emmeans(stan_model, ~ color))
 c_color_main
 ```
+
 We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:
+
 ```{r color_contrast}
 em_color_simple <- emmeans(stan_model, ~color * shape)
 pairs(em_color_simple, by = "shape") # simple effects for color
@@ -92,9 +94,10 @@ c_color_shape_interaction <- contrast(em_color_simple, interaction = c("pairwise
 c_color_all <- rbind(c_color_main,c_color_shape_interaction)
 c_color_all
 ```
+
 As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence for the null?
 
-One way to do that is by calculating a Bayes factor, comparing a model with an interaction and a model without an interaction. Though this is something you can do with `bayesfactor_models`, we'll use a close approximation using the Savage-Dickey density ratio. For this, we will need to prior draws of our estimates / contrasts of interest: 
+One way to do that is by calculating a Bayes factor, comparing a model with an interaction and a model without interaction. Though this is something you can do with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio. For this, we will need the prior draws of our estimates / contrasts of interest: 
 
 
 ```{r prior_sh, eval=FALSE}
@@ -114,9 +117,10 @@ junk <- capture.output(prior_model <- update(stan_model, prior_PD = TRUE))
 prior_c_color_all <- update(c_color_all,post.beta = as.matrix(insight::get_parameters(prior_model)))
 prior_c_color_all
 ```
+
 Estimates based on priors are small (with more samples these will tend towards 0) and their HDI is more spread-out.
 
-We can use the `describe_posterior` to... well... describe our estimates posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor!
+We can use the `describe_posterior()` to... well... describe our estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor!
 
 ```{r dataframe}
 posterior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(c_color_all)))
@@ -139,6 +143,6 @@ kable(describe_posterior(posterior_samples,
                    test = c("bf"), bf_prior = prior_samples))
 ```
 
-These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, and that a model without an interaction is ~1/0.25=4 times more likely than a model *with* an interaction!
+These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, and that a model *without* an interaction is ~1/0.25=4 times more likely than a model *with* an interaction!
 
 
