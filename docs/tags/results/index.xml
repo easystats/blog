@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>results on easystats</title>
-    <link>https://easystats.github.io/blog/tags/results/</link>
+    <link>/blog/tags/results/</link>
     <description>Recent content in results on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://easystats.github.io/blog/tags/results/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/tags/results/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova/</link>
+      <link>/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
+      <guid>/blog/posts/report_anova/</guid>
       <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
+      <link>/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <guid>/blog/posts/report_correlation/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     

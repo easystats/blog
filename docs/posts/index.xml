@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on easystats</title>
-    <link>https://easystats.github.io/blog/posts/</link>
+    <link>/blog/posts/</link>
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
+      <link>/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
+      <guid>/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -38,7 +38,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_point2(size=4, alpha=0.5) +
   scale_color_flat_d() +
   theme_modern()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -46,7 +46,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_violindot(fill_dots = &amp;quot;white&amp;quot;) + 
   scale_fill_material_d() +
   theme_blackboard()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -60,7 +60,7 @@ result &amp;lt;- equivalence_test(model, ci = c(.89, .95))
 plot(result) +
   theme_abyss() +
   scale_fill_flat()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;
@@ -75,10 +75,10 @@ plot(result) +
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
+      <link>/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
+      <guid>/blog/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -95,7 +95,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart &lt;code&gt;rnorm&lt;/code&gt; (it has the same arguments, the same order and the same output type). However, we &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/86&#34;&gt;quickly realised&lt;/a&gt; this this name was not perfect (&lt;em&gt;no pun intended&lt;/em&gt;), as indeed the obtained distribution was not &lt;em&gt;random&lt;/em&gt; (and the &lt;code&gt;r&lt;/code&gt; in &lt;code&gt;rnorm&lt;/code&gt; stands for &lt;em&gt;random&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Thus, after discussion, we decided to change it to &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/distribution.html&#34;&gt;&lt;code&gt;distribution_normal&lt;/code&gt;&lt;/a&gt;. We also used that opportunity to add other types of “perfect” distributions:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
@@ -106,7 +106,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Interestingly, a few days before this update, we received a small email asking:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, I saw your blog post and wonder how you define a perfectly normal distribution.&lt;/p&gt;
@@ -133,10 +133,10 @@ x %&amp;gt;%
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
+      <link>/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
+      <guid>/blog/posts/performance_presentation/</guid>
       <description>
 
 
@@ -192,7 +192,7 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -44      10    87       20   87 0.47 0.046        0.26          0.048
+&amp;gt; 1  -44      10    87       20   87 0.47 0.046        0.27          0.049
 &amp;gt;   R2_LOO_adjusted RMSE
 &amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -214,10 +214,10 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -239,7 +239,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
   density() %&amp;gt;%  # Compute density function
@@ -248,7 +248,7 @@ x %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
@@ -266,10 +266,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
+      <link>/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
+      <guid>/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -299,16 +299,16 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  rejected      0.00 % [26.31 46.87]
-##           wt  rejected      0.00 % [-4.26 -1.06]
-##          cyl undecided     36.84 % [-1.95  0.38]
-##         gear undecided     42.49 % [-2.29  1.68]
-##           am undecided     18.25 % [-1.48  4.32]
-##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
+##  (Intercept)  rejected      0.00 % [27.18 46.99]
+##           wt  rejected      0.00 % [-4.22 -1.03]
+##          cyl undecided     35.83 % [-1.86  0.35]
+##         gear undecided     43.86 % [-2.12  1.61]
+##           am undecided     19.07 % [-1.23  4.32]
+##           hp  accepted    100.00 % [-0.05  0.01]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -327,10 +327,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
+      <link>/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
+      <guid>/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -392,10 +392,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova/</link>
+      <link>/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
+      <guid>/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -470,10 +470,10 @@ be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
+      <link>/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <guid>/blog/posts/report_correlation/</guid>
       <description>
 
 
