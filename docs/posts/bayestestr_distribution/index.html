@@ -31,7 +31,7 @@ It worked like this:
 It worked like this:
 # Generate a perfect samplex &lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&gt;% density() %&gt;% # Compute density functionas." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/bayestestr_distribution/" />
+<meta property="og:url" content="/posts/bayestestr_distribution/" />
 <meta property="article:published_time" content="2019-05-13T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
 
@@ -48,10 +48,10 @@ It worked like this:
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
 
 
-<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
 
 
 
@@ -74,14 +74,14 @@ It worked like this:
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -100,7 +100,7 @@ It worked like this:
 		 
 			 
 				<li>
-					<a href="/blog/posts/">
+					<a href="/posts/">
 						<span>Posts</span>
 					</a>
 				</li>
@@ -108,7 +108,7 @@ It worked like this:
 		 
 			 
 				<li>
-					<a href="/blog/portfolio/">
+					<a href="/portfolio/">
 						<span>About</span>
 					</a>
 				</li>
@@ -116,8 +116,8 @@ It worked like this:
 		 
 			 
 				<li>
-					<a href="/blog/ressources/">
-						<span>Ressources</span>
+					<a href="/resources/">
+						<span>Resources</span>
 					</a>
 				</li>
 			 
@@ -179,10 +179,10 @@ It worked like this:
           in
           
           
-              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              <a class="badge badge-category" href="/categories/r">R</a>
               •
           
-              <a class="badge badge-category" href="/blog/categories/bayestestr">BAYESTESTR</a>
+              <a class="badge badge-category" href="/categories/bayestestr">BAYESTESTR</a>
               
           
       
@@ -194,22 +194,22 @@ It worked like this:
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="/blog/tags/r">r</a>
+          <a class="badge badge-tag" href="/tags/r">r</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/easystats">easystats</a>
+          <a class="badge badge-tag" href="/tags/easystats">easystats</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/bayestestr">bayestestr</a>
+          <a class="badge badge-tag" href="/tags/bayestestr">bayestestr</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/distribution">distribution</a>
+          <a class="badge badge-tag" href="/tags/distribution">distribution</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/perfect">perfect</a>
+          <a class="badge badge-tag" href="/tags/perfect">perfect</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/gaussian">gaussian</a>
+          <a class="badge badge-tag" href="/tags/gaussian">gaussian</a>
           
       
     
@@ -239,7 +239,7 @@ x %&gt;%
   as.data.frame() %&gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()</code></pre>
-<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart <code>rnorm</code> (it has the same arguments, the same order and the same output type). However, we <a href="https://github.com/easystats/bayestestR/issues/86">quickly realised</a> this this name was not perfect (<em>no pun intended</em>), as indeed the obtained distribution was not <em>random</em> (and the <code>r</code> in <code>rnorm</code> stands for <em>random</em>).</p>
 <p>Thus, after discussion, we decided to change it to <a href="https://easystats.github.io/bayestestR/reference/distribution.html"><code>distribution_normal</code></a>. We also used that opportunity to add other types of “perfect” distributions:</p>
 <pre class="r"><code># Generate a perfect sample
@@ -250,7 +250,7 @@ x %&gt;%
   as.data.frame() %&gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()</code></pre>
-<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Interestingly, a few days before this update, we received a small email asking:</p>
 <blockquote>
 <p>Hi, I saw your blog post and wonder how you define a perfectly normal distribution.</p>
@@ -278,13 +278,13 @@ x %&gt;%
 
 <div class="navigation navigation-single">
     
-    <a href="/blog/posts/performance_presentation/" class="navigation-prev">
+    <a href="/posts/performance_presentation/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
       <span class="navigation-tittle">Compute R2s and other performance indices for all your models!</span>
     </a>
     
     
-    <a href="/blog/posts/see_presentation/" class="navigation-next">
+    <a href="/posts/see_presentation/" class="navigation-next">
       <span class="navigation-tittle">The &#39;see&#39; package: beautiful figures for easystats</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

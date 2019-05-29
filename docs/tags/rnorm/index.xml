@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rnorm on easystats</title>
-    <link>/blog/tags/rnorm/</link>
+    <link>/tags/rnorm/</link>
     <description>Recent content in rnorm on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/rnorm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/rnorm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/posts/bayestestr_rnorm_perfect/</guid>
       <description>Many times, for instance when teaching, I needed to quickly and simply generate a perfectly normally distributed sample to illustrate or show some of its characteristics.
 This is now very easy to do with the new bayestestR package, which includes the rnorm_perfect function. This function is very similar to the classic rnorm (same arguments), with the difference that the generated sample is perfectly normal.
 ExamplebayestestR can be installed as follows:</description>

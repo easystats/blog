@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on easystats</title>
-    <link>/blog/portfolio/</link>
+    <link>/portfolio/</link>
     <description>Recent content in About on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>People</title>
-      <link>/blog/portfolio/people/</link>
+      <link>/portfolio/people/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/portfolio/people/</guid>
+      <guid>/portfolio/people/</guid>
       <description>People that contributed to the project currently include:
  Dominique Makowski Daniel Lüdecke Mattan S. Ben-Shachar Philip Waggoner  </description>
     </item>
     
     <item>
       <title>easystats</title>
-      <link>/blog/portfolio/easystats/</link>
+      <link>/portfolio/easystats/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/portfolio/easystats/</guid>
+      <guid>/portfolio/easystats/</guid>
       <description>easystats is a suite of R packages designed to make the use of advanced statistical techniques easy.</description>
     </item>
     

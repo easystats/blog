@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bayestestR on easystats</title>
-    <link>/blog/categories/bayestestr/</link>
+    <link>/categories/bayestestr/</link>
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/bayestestr/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -32,7 +32,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart &lt;code&gt;rnorm&lt;/code&gt; (it has the same arguments, the same order and the same output type). However, we &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/86&#34;&gt;quickly realised&lt;/a&gt; this this name was not perfect (&lt;em&gt;no pun intended&lt;/em&gt;), as indeed the obtained distribution was not &lt;em&gt;random&lt;/em&gt; (and the &lt;code&gt;r&lt;/code&gt; in &lt;code&gt;rnorm&lt;/code&gt; stands for &lt;em&gt;random&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Thus, after discussion, we decided to change it to &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/distribution.html&#34;&gt;&lt;code&gt;distribution_normal&lt;/code&gt;&lt;/a&gt;. We also used that opportunity to add other types of “perfect” distributions:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
@@ -43,7 +43,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Interestingly, a few days before this update, we received a small email asking:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, I saw your blog post and wonder how you define a perfectly normal distribution.&lt;/p&gt;
@@ -88,10 +88,10 @@ x %&amp;gt;%
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -113,7 +113,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
   density() %&amp;gt;%  # Compute density function
@@ -122,7 +122,7 @@ x %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
@@ -158,10 +158,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -191,17 +191,16 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  rejected      0.00 % [27.29 47.29]
-##           wt  rejected      0.00 % [-4.22 -1.06]
-##          cyl undecided     36.76 % [-1.94  0.30]
-##         gear undecided     42.07 % [-2.27  1.71]
-##           am undecided     18.81 % [-1.10  4.58]
+##  (Intercept)  rejected      0.00 % [27.22 47.29]
+##           wt  rejected      0.00 % [-4.33 -1.15]
+##          cyl undecided     36.90 % [-1.91  0.27]
+##         gear undecided     42.46 % [-2.22  1.75]
+##           am undecided     18.79 % [-1.21  4.54]
 ##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
-&lt;!-- Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage. --&gt;
-&lt;!-- ```{r message=FALSE, warning=FALSE} --&gt;
-&lt;!-- # Do the test and plot results --&gt;
-&lt;!-- plot(equivalence_test(model)) --&gt;
-&lt;!-- ``` --&gt;
+&lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
+plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

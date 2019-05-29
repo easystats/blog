@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on easystats</title>
-    <link>/blog/tags/r/</link>
+    <link>/tags/r/</link>
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>/blog/posts/see_presentation/</link>
+      <link>/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/see_presentation/</guid>
+      <guid>/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
@@ -24,10 +24,10 @@ Essentially, see is the visualisation companion to other functions and packages 
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>/posts/bayestestr_distribution/</guid>
       <description>Recently, we published a post presenting a small convenience function, from the bayestestR package. This function, named rnorm_perfect, generated an empirical distribution (i.e., a vector of values) as close as possible to a desired distribution, in this case the normal distribution.
 It worked like this:
 # Generate a perfect samplex &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&amp;gt;% density() %&amp;gt;% # Compute density functionas.</description>
@@ -35,21 +35,32 @@ It worked like this:
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation/</link>
+      <link>/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_presentation/</guid>
+      <guid>/posts/performance_presentation/</guid>
       <description>Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
 To address this, please let us introduce the  performance package!
 performanceWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP).</description>
     </item>
     
     <item>
+      <title>Compute R2s and other performance indices for all your models!</title>
+      <link>/posts/performance_presentation.knit/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/performance_presentation.knit/</guid>
+      <description>Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
+***To address this, please let us introduce the *** performance package!
+performance We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP).</description>
+    </item>
+    
+    <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/posts/bayestestr_rnorm_perfect/</guid>
       <description>Many times, for instance when teaching, I needed to quickly and simply generate a perfectly normally distributed sample to illustrate or show some of its characteristics.
 This is now very easy to do with the new bayestestR package, which includes the rnorm_perfect function. This function is very similar to the classic rnorm (same arguments), with the difference that the generated sample is perfectly normal.
 ExamplebayestestR can be installed as follows:</description>
@@ -57,10 +68,10 @@ ExamplebayestestR can be installed as follows:</description>
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>/posts/bayestestr_presentation/</guid>
       <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
 To address this, please let us introduce bayestestR!
 bayestestRWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
@@ -68,28 +79,37 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>/posts/report_anova/</guid>
       <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>/posts/report_correlation/</guid>
+      <description>This post shows how to create formatted reports for correlation tests</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/posts/report_correlation.knit/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/report_correlation.knit/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     

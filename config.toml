@@ -1,5 +1,5 @@
 ## Basic Configuration
-baseurl = "https://easystats.github.io/blog/"
+baseurl = "https://easystats.github.io/"
 languageCode = "en"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 publishDir = "docs"
@@ -71,7 +71,7 @@ googleAnalytics = "UA-97457476-9"
     weight = 200
     url = "/portfolio/"
 [[menu.main]]
-    name = "Ressources"
-    identifier = "ressources"
+    name = "Resources"
+    identifier = "resources"
     weight = 200
-    url = "/ressources/"
+    url = "/resources/"

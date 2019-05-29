@@ -37,6 +37,7 @@ This section contains more scope-focused resources:
   - [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
   - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
   - [**Data Visualization: A practical introduction**](https://socviz.co/)
+  - [**GAMs in R**](https://noamross.github.io/gams-in-r-course/)
   
 
 ## For Psychology

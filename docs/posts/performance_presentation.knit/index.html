@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Compute R2s and other performance indices for all your models! • easystats</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compute R2s and other performance indices for all your models!"/>
+<meta name="twitter:description" content="Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
+***To address this, please let us introduce the *** performance package!
+performance We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP)."/>
+
+<meta property="og:title" content="Compute R2s and other performance indices for all your models!" />
+<meta property="og:description" content="Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
+***To address this, please let us introduce the *** performance package!
+performance We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/performance_presentation.knit/" />
+<meta property="article:published_time" content="2019-04-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-30T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="/">easystats</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">easystats</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/portfolio/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/resources/">
+						<span>Resources</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/easystats/easystats" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 easystats
+  
+    <a href="https://github.com/easystats/easystats">GPL-3.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Compute R2s and other performance indices for all your models!</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Apr 30, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/r">R</a>
+              •
+          
+              <a class="badge badge-category" href="/categories/performance">PERFORMANCE</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/r">r</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/easystats">easystats</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/performance">performance</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/r2">r2</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/icc">icc</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/aic">aic</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p><img src="https://github.com/easystats/performance/raw/master/man/figures/logo.png" width="200px" /></p>
+
+<p>Indices of model <strong>performance</strong> (<em>i.e.</em>, model quality, goodness of fit, predictive accuracy etc.) are very important, both for model <em>comparison</em> and model <em>description</em> purposes. However, their computation or extraction for a wide variety of models can be complex.</p>
+
+<p>***To address this, please let us introduce the ***  <a href="https://github.com/easystats/performance"><strong><code>performance</code></strong></a> <strong><em>package!</em></strong></p>
+
+<h2 id="performance">performance</h2>
+
+<p><a href="https://github.com/orgs/easystats/people">We</a> have recently decided to collaborate around the new <a href="https://github.com/easystats"><strong>easystats project</strong></a>, a set of packages designed to make your life <em>easier</em> (currently WIP). This project encompasses several packages, devoted for instance to <a href="https://github.com/easystats/insight">model access</a> or <a href="https://github.com/easystats/bayestestR">Bayesian analysis</a>, as well as <a href="https://github.com/easystats/performance">indices of model performance</a>.</p>
+
+<p>The goal of <a href="https://github.com/easystats/performance"><code>performance</code></a> is to provide lightweight tools to <strong>assess and check the quality of your model</strong>. It includes functions such as <a href="https://easystats.github.io/performance/reference/r2.html"><code>R2</code></a> for many models (including logistic, mixed and Bayesian models), <a href="https://easystats.github.io/performance/reference/icc.html"><code>ICC</code></a> or helpers to check <a href="https://easystats.github.io/performance/reference/check_convergence.html"><code>convergence</code></a>, <a href="https://easystats.github.io/performance/reference/check_overdispersion.html"><code>overdipsersion</code></a> or <a href="https://easystats.github.io/performance/reference/check_zeroinflation.html"><code>zero-inflation</code></a>. See the <strong>list of functions</strong> <a href="https://easystats.github.io/performance/reference/index.html">here</a>.</p>
+
+<p><code>performance</code> can be installed as follows:</p>
+
+<pre><code class="language-r">install.packages(&quot;performance&quot;)  # Install the package
+library(performance)  # Load it
+</code></pre>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="mixed-models">Mixed Models</h3>
+
+<p>First, we calculate the r-squared value and intra-class correlation coefficient (ICC) for a mixed model, using <a href="https://easystats.github.io/performance/reference/r2.html"><strong>r2()</strong></a> and <a href="https://easystats.github.io/performance/reference/icc.html"><strong>icc()</strong></a>. <code>r2()</code> internally calls the appropriate function for the given model. In case of mixed models this will be <a href="https://easystats.github.io/performance/reference/r2_nakagawa.html"><strong>r2_nakagawa()</strong></a>. <code>r2_nakagawa()</code> computes the marginal and conditional r-squared values, while <code>icc()</code> calculates an adjusted and conditional ICC, both based on the proposals from <em>Nakagawa et al. 2017</em>. For more details on the computation of the variances, see <a href="https://easystats.github.io/insight/reference/get_variance.html"><strong>get_variance()</strong></a>.</p>
+
+<pre><code class="language-r"># Load the lme4 package
+library(lme4)
+
+# Fit a mixed model
+model &lt;- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# compute R2, based on Nakagawa et al. 2017
+r2(model)
+</code></pre>
+
+<pre><code>&gt; # R2 for mixed models
+&gt; 
+&gt;   Conditional R2: 0.913
+&gt;      Marginal R2: 0.216
+</code></pre>
+
+<pre><code class="language-r"># compute intra-class correlation coefficient (ICC)
+icc(model)
+</code></pre>
+
+<pre><code>&gt; # Intraclass Correlation Coefficient
+&gt; 
+&gt;      Adjusted ICC: 0.889
+&gt;   Conditional ICC: 0.697
+</code></pre>
+
+<p>Now let&rsquo;s compute <strong>all available</strong> indices of performance appropriate for a given model. This can be done via the <a href="https://easystats.github.io/performance/reference/model_performance.html"><strong>model_performance()</strong></a>.</p>
+
+<pre><code class="language-r"># Compute all performance indices
+model_performance(model)
+</code></pre>
+
+<pre><code>&gt;   AIC BIC R2_conditional R2_marginal  ICC RMSE
+&gt; 1 107 119           0.91        0.22 0.89 0.31
+</code></pre>
+
+<h3 id="bayesian-mixed-models">Bayesian Mixed Models</h3>
+
+<p>For Bayesian mixed models, we have the same features available (r-squared, ICC, &hellip;). In this example, we focus on the output from <code>model_performance()</code> only.</p>
+
+<pre><code class="language-r"># Load the rstanarm package
+library(rstanarm)
+
+# Fit a Bayesian mixed model
+model &lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
+
+# Compute performance indices
+model_performance(model)
+</code></pre>
+
+<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
+&gt; 1  -43      10    87       20   87 0.47 0.046        0.27          0.048
+&gt;   R2_LOO_adjusted RMSE
+&gt; 1            0.45 0.31
+</code></pre>
+
+<ul>
+<li><strong>Don&rsquo;t forget to check out the</strong> <a href="https://easystats.github.io/performance/"><strong>documentation here</strong></a> <strong>for more!</strong></li>
+</ul>
+
+<p>More details about <code>performance</code>&rsquo;s features are comming soon, stay tuned ;)</p>
+
+<h2 id="get-involved">Get Involved</h2>
+
+<p>There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!</p>
+
+<p>To conclude, note that <em>easystats</em> is a new project in active development. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/bayestestr_rnorm_perfect/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">How to easily generate a perfectly normal distribution</span>
+    </a>
+    
+    
+    <a href="/posts/performance_presentation/" class="navigation-next">
+      <span class="navigation-tittle">Compute R2s and other performance indices for all your models!</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97457476-9', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
