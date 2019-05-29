@@ -26,7 +26,7 @@ x %&gt;%
   as.data.frame() %&gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()</code></pre>
-<p><img src="/blogposts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.</p>
 <pre class="r"><code>x %&gt;% 
   density() %&gt;%  # Compute density function
@@ -35,7 +35,7 @@ x %&gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()</code></pre>
-<p><img src="/blogposts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="bayestestr-and-easystats" class="section level2">
 <h2>bayestestR and easystats</h2>
