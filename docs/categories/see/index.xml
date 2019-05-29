@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>see on easystats</title>
-    <link>/categories/see/</link>
+    <link>https://easystats.github.io/blog/categories/see/</link>
     <description>Recent content in see on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/categories/see/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/see/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>/posts/see_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/see_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -38,7 +38,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_point2(size=4, alpha=0.5) +
   scale_color_flat_d() +
   theme_modern()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blogposts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -46,7 +46,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_violindot(fill_dots = &amp;quot;white&amp;quot;) + 
   scale_fill_material_d() +
   theme_blackboard()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blogposts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -60,7 +60,7 @@ result &amp;lt;- equivalence_test(model, ci = c(.89, .95))
 plot(result) +
   theme_abyss() +
   scale_fill_flat()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blogposts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;

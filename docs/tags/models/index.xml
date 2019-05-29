@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>models on easystats</title>
-    <link>/tags/models/</link>
+    <link>https://easystats.github.io/blog/tags/models/</link>
     <description>Recent content in models on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/models/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/models/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
