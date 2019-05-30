@@ -1,7 +1,7 @@
 ---
-title: "Estimating and testing Bayesian models with 'emmeans' and 'bayestestR'"
+title: "Testing Contrasts from Bayesian Models with 'emmeans' and 'bayestestR'"
 author: "easystats"
-date: 2030-01-01
+date: 2019-06-06
 categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR"]
 ---
@@ -17,6 +17,7 @@ library(rstanarm)
 library(emmeans)
 library(bayestestR)
 library(ggplot2)
+library(ggbeeswarm)
 ```
 
 
@@ -25,7 +26,7 @@ include_graphics("https://raw.githubusercontent.com/easystats/bayestestR/master/
 ```
 
 
-# The problem with null effects
+# The Problem with Null Effects
 
 Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with $p=1.00$!
 
@@ -38,22 +39,23 @@ aov_model <- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
 summary(aov_model)
 ```
 
-You look at your data, as you were taught to do, and it really seems like the effect of color *is not* moderated by shape (and vice versa):
+You look at your data, as you were taught to do, and it really does seems like the effect of color *is not* moderated by shape (and vice versa):
 ```{r plot_data,message=FALSE, warning=FALSE, echo=FALSE}
-pd <- position_dodge(0.2)
+pd <- position_dodge(0.4)
 ggplot(puzzles,aes(color,RT, color = shape, group = shape)) +
-  stat_summary(position = pd, geom = "errorbar", color = "black", size = 0.7, width = 0.2) +
+  geom_beeswarm(dodge.width = 0.4, color = "black", shape = 16, alpha = 0.2) + 
+  stat_summary(position = pd, geom = "errorbar", color = "black", size = 1, width = 0.2) +
   stat_summary(position = pd, geom = "line", size = 1) +
-  stat_summary(position = pd, geom = "point", size = 2) +
+  stat_summary(position = pd, geom = "point", size = 2, shape = 21, stroke = 2, fill = "black") +
   # stat_summary(position = pd, size = 1) + 
   NULL
 ```
 
-But what does this mean? **Can you infer that there is no (relevant) interaction?** Are the two simple effects of color truly identical?
+But what does this mean? **Can you infer that there isn't interaction?** Are the two simple effects of color truly identical?
 
-Classical statistics has no answer for us here - when the p-value is less than alpha (typically 5%) we can reject the null hypothesis, but when $p>.05$, even a lot bigger than 5%, classical statistics do not allow to infer that the null is true. For this, we need to go Bayesian!
+Classical statistics has no answer for us here - when the p-value is less than alpha (typically 5%) we can reject the null hypothesis, but when $p>.05$, even a lot bigger than 5%, classical (frequentists) statistics do not allow to infer that the null is true. For this, we need to go Bayesian!
 
-# Quantifying evidence for the null
+# Going Bayesian
 
 One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a Bayesian model equivalent to the repeated measures ANOVA above:
 
@@ -99,9 +101,11 @@ c_color_all <- rbind(c_color_main,
 c_color_all
 ```
 
-As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence for the null?
+As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence *for the null*?
 
-One way to do that is by calculating a Bayes factor, comparing a model with an interaction and a model without an interaction. Though this is something you can do with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio. For this, we will need the prior draws of our estimates / contrasts of interest: 
+## Quantifying Evidence for the Null
+
+One way to quantify evidence in the Bayesian framework is to calculate a [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. For this, we will need the prior draws of our estimates / contrasts of interest: 
 
 
 ```{r prior_sh, eval=FALSE}
