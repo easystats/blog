@@ -62,7 +62,7 @@ One of the (many) strengths of Bayesian statistics is its ability to support the
 ```{r model_sh, eval=FALSE}
 library(rstanarm)
 stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
-                        prior = cauchy(0,c(sqrt(2)/2,sqrt(2)/2,0.5)), # as per Rouder et al., 2012
+                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
                         prior_intercept = student_t(3,0,10),          # weakly informative
                         prior_aux = exponential(.1),                  # weakly informative
                         prior_covariance = decov(1,1,1,1))            # weakly informative
@@ -72,7 +72,7 @@ stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 set.seed(333)
 junk <- capture.output(
   stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
-                        prior = cauchy(0,c(sqrt(2)/2,sqrt(2)/2,0.5)),
+                        prior = cauchy(0,0.5),
                         prior_intercept = student_t(3,0,10),
                         prior_aux = exponential(.1),
                         prior_covariance = decov(1,1,1,1))
@@ -132,8 +132,8 @@ As expected, estimates based on prior draws are small (with more samples these w
 We can use the `describe_posterior()` to... well... describe our estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor!
 
 ```{r dataframe}
-posterior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(c_color_all)))
-prior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(prior_c_color_all)))
+posterior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(c_color_all, names = FALSE)))
+prior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(prior_c_color_all, names = FALSE)))
 
 # for convenience
 colnames(posterior_samples) <- colnames(prior_samples) <- c("Color (main effect)", "Interaction (diff of diffs)")
@@ -152,7 +152,7 @@ kable(describe_posterior(posterior_samples,
                    test = c("bayesfactor"), bf_prior = prior_samples))
 ```
 
-These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, **and** that a model *without* an interaction is ~1/0.22=4.5 times more likely than a model *with* an interaction! But... note that a Bayes factor of 4.5 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf), which come to show that even a p-value of 1.0 does not necessarily mean the data strongly supports the null.
+These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, **and** that a model *without* an interaction is ~1/0.25=4 times more likely than a model *with* an interaction! But... note that a Bayes factor of 4 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf), which come to show that even a p-value of 1.0 does not necessarily mean the data strongly supports the null.
 
 Happy Bayesing!
 
