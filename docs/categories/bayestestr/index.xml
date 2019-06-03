@@ -5,10 +5,69 @@
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Become a Bayesian master with bayestestR (0.2)</title>
+      <link>/blog/posts/bayestestr_v2/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_v2/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;bayestestr-0.2-is-here&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;bayestestR 0.2 is here!&lt;/h2&gt;
+&lt;p&gt;As you might have heard from &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;previous posts&lt;/a&gt;, &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;we&lt;/a&gt; have recently started to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a suite of packages designed to make your life easier. One of the packages, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;, has just been updated on CRAN.&lt;/p&gt;
+&lt;p&gt;And this release is &lt;strong&gt;so packed with new features&lt;/strong&gt; and &lt;strong&gt;improvements&lt;/strong&gt; that it would be impossible to present them all in one post! We have added the computation of different types of &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factors (BF)&lt;/strong&gt;&lt;/a&gt;, new &lt;a href=&#34;https://github.com/easystats/see#bayestestr&#34;&gt;&lt;strong&gt;plotting methods&lt;/strong&gt;&lt;/a&gt; (available in the &lt;code&gt;see&lt;/code&gt; package), a new meta-function, &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/describe_posterior.html&#34;&gt;&lt;code&gt;describe_posterior&lt;/code&gt;&lt;/a&gt;, that computes &lt;strong&gt;everything at once&lt;/strong&gt;, and more…&lt;/p&gt;
+&lt;p&gt;We also improved the &lt;strong&gt;documentation&lt;/strong&gt;, with new &lt;strong&gt;tutorials&lt;/strong&gt; and &lt;strong&gt;articles&lt;/strong&gt; so that Bayesian analysis can hold no secrets from you. Check them out:&lt;/p&gt;
+&lt;div id=&#34;tutorials&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Tutorials&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;Get Started with Bayesian Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/example1.html&#34;&gt;Example 1: Initiation to Bayesian models&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;articles&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Articles&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/credible_interval.html&#34;&gt;Credible Intervals (CIs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/probability_of_direction.html&#34;&gt;Probability of Direction (pd)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html&#34;&gt;Region of Practical Equivalence (ROPE)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;Bayes Factors (BF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesEstimationComparison.html&#34;&gt;Comparison of Point-Estimates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesExistenceComparison.html&#34;&gt;Comparison of Indices of Effect Existence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/guidelines.html&#34;&gt;Reporting Guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are also some &lt;a href=&#34;https://easystats.github.io/bayestestR/news/index.html&#34;&gt;&lt;strong&gt;breaking changes&lt;/strong&gt;&lt;/a&gt;, make sure you check them out!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;join-the-team&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Join the team&lt;/h2&gt;
+&lt;p&gt;You’ve spotted &lt;strong&gt;an error&lt;/strong&gt;, &lt;strong&gt;a bug&lt;/strong&gt;, &lt;strong&gt;a typo in the documentation&lt;/strong&gt;? Please help us by opening an &lt;a href=&#34;https://github.com/easystats/bayestestR/issues&#34;&gt;issue&lt;/a&gt; or by making a pull request. There is definitely room for improvement. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;Also note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. So don’t hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt; (you can send one of &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;us&lt;/a&gt; an email saying, for example, &lt;strong&gt;“leeet me iiiin”&lt;/strong&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
@@ -191,12 +250,12 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  rejected      0.00 % [27.18 46.99]
-##           wt  rejected      0.00 % [-4.22 -1.03]
-##          cyl undecided     35.83 % [-1.86  0.35]
-##         gear undecided     43.86 % [-2.12  1.61]
-##           am undecided     19.07 % [-1.23  4.32]
-##           hp  accepted    100.00 % [-0.05  0.01]&lt;/code&gt;&lt;/pre&gt;
+##  (Intercept)  rejected      0.00 % [27.91 47.58]
+##           wt  rejected      0.00 % [-4.24 -1.18]
+##          cyl undecided     37.66 % [-1.85  0.34]
+##         gear undecided     42.43 % [-2.12  1.85]
+##           am undecided     18.79 % [-1.29  4.46]
+##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;

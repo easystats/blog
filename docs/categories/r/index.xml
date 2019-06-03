@@ -5,10 +5,69 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Become a Bayesian master with bayestestR (0.2)</title>
+      <link>/blog/posts/bayestestr_v2/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_v2/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;bayestestr-0.2-is-here&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;bayestestR 0.2 is here!&lt;/h2&gt;
+&lt;p&gt;As you might have heard from &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;previous posts&lt;/a&gt;, &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;we&lt;/a&gt; have recently started to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a suite of packages designed to make your life easier. One of the packages, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;, has just been updated on CRAN.&lt;/p&gt;
+&lt;p&gt;And this release is &lt;strong&gt;so packed with new features&lt;/strong&gt; and &lt;strong&gt;improvements&lt;/strong&gt; that it would be impossible to present them all in one post! We have added the computation of different types of &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factors (BF)&lt;/strong&gt;&lt;/a&gt;, new &lt;a href=&#34;https://github.com/easystats/see#bayestestr&#34;&gt;&lt;strong&gt;plotting methods&lt;/strong&gt;&lt;/a&gt; (available in the &lt;code&gt;see&lt;/code&gt; package), a new meta-function, &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/describe_posterior.html&#34;&gt;&lt;code&gt;describe_posterior&lt;/code&gt;&lt;/a&gt;, that computes &lt;strong&gt;everything at once&lt;/strong&gt;, and more…&lt;/p&gt;
+&lt;p&gt;We also improved the &lt;strong&gt;documentation&lt;/strong&gt;, with new &lt;strong&gt;tutorials&lt;/strong&gt; and &lt;strong&gt;articles&lt;/strong&gt; so that Bayesian analysis can hold no secrets from you. Check them out:&lt;/p&gt;
+&lt;div id=&#34;tutorials&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Tutorials&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;Get Started with Bayesian Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/example1.html&#34;&gt;Example 1: Initiation to Bayesian models&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;articles&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Articles&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/credible_interval.html&#34;&gt;Credible Intervals (CIs)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/probability_of_direction.html&#34;&gt;Probability of Direction (pd)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html&#34;&gt;Region of Practical Equivalence (ROPE)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;Bayes Factors (BF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesEstimationComparison.html&#34;&gt;Comparison of Point-Estimates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesExistenceComparison.html&#34;&gt;Comparison of Indices of Effect Existence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/guidelines.html&#34;&gt;Reporting Guidelines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are also some &lt;a href=&#34;https://easystats.github.io/bayestestR/news/index.html&#34;&gt;&lt;strong&gt;breaking changes&lt;/strong&gt;&lt;/a&gt;, make sure you check them out!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;join-the-team&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Join the team&lt;/h2&gt;
+&lt;p&gt;You’ve spotted &lt;strong&gt;an error&lt;/strong&gt;, &lt;strong&gt;a bug&lt;/strong&gt;, &lt;strong&gt;a typo in the documentation&lt;/strong&gt;? Please help us by opening an &lt;a href=&#34;https://github.com/easystats/bayestestR/issues&#34;&gt;issue&lt;/a&gt; or by making a pull request. There is definitely room for improvement. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;Also note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. So don’t hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt; (you can send one of &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;us&lt;/a&gt; an email saying, for example, &lt;strong&gt;“leeet me iiiin”&lt;/strong&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
@@ -222,7 +281,7 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -44      10    87       20   87 0.47 0.046        0.27          0.049
+&amp;gt; 1  -43      10    87       20   87 0.47 0.044        0.27          0.048
 &amp;gt;   R2_LOO_adjusted RMSE
 &amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -365,12 +424,12 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  rejected      0.00 % [27.18 46.99]
-##           wt  rejected      0.00 % [-4.22 -1.03]
-##          cyl undecided     35.83 % [-1.86  0.35]
-##         gear undecided     43.86 % [-2.12  1.61]
-##           am undecided     19.07 % [-1.23  4.32]
-##           hp  accepted    100.00 % [-0.05  0.01]&lt;/code&gt;&lt;/pre&gt;
+##  (Intercept)  rejected      0.00 % [27.91 47.58]
+##           wt  rejected      0.00 % [-4.24 -1.18]
+##          cyl undecided     37.66 % [-1.85  0.34]
+##         gear undecided     42.43 % [-2.12  1.85]
+##           am undecided     18.79 % [-1.29  4.46]
+##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
@@ -523,7 +582,7 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
 
   - The effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001) and can
-be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
+be considered as large (partial omega squared = ).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
@@ -538,7 +597,7 @@ be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
 &lt;th align=&#34;right&#34;&gt;Mean_Square&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;F&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;p&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Omega_Squared_partial&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Omega_Sq_partial&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -622,6 +681,68 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;h1&gt;Evolution&lt;/h1&gt;
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>correlations</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/blog/posts/report_correlation.knit/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/report_correlation.knit/</guid>
+      <description>
+
+&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
+
+library(report)  # Load the package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;do-a-correlation&#34;&gt;Do a correlation&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;report(cor_results)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## The Pearson&#39;s product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen&amp;rsquo;s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+
+&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
+
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 </description>
       
             <category>R</category>
