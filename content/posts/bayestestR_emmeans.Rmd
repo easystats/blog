@@ -80,7 +80,7 @@ junk <- capture.output(
 
 ```
 
-Using the fantastic **`emmeans`** package, we can explore and extract marginal effects from our fitted model. For example, we can estimate the main effect for color:
+Using the fantastic **`emmeans`** package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:
 
 ```{r main_color, message=FALSE}
 c_color_main <- pairs(emmeans(stan_model, ~ color))
@@ -94,65 +94,39 @@ em_color_simple <- emmeans(stan_model, ~color * shape)
 pairs(em_color_simple, by = "shape") # simple effects for color
 
 c_color_shape_interaction <- contrast(em_color_simple, interaction = c("pairwise","pairwise"))
-
-# combine all estimates of interest to one object:
-c_color_all <- rbind(c_color_main,
-                     c_color_shape_interaction)
-c_color_all
+c_color_shape_interaction
 ```
 
 As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence *for the null*?
 
 ## Quantifying Evidence for the Null
 
-One way to quantify evidence in the Bayesian framework is to calculate a [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. For this, we will need the prior draws of our estimates / contrasts of interest: 
-
-
-```{r prior_sh, eval=FALSE}
-# sample from the prior:
-prior_model <- update(stan_model, prior_PD = TRUE)
-
-# update the emmeans object:
-prior_c_color_all <- update(c_color_all,
-                            post.beta = as.matrix(insight::get_parameters(prior_model)))
-prior_c_color_all
-```
-```{r prior, echo=FALSE, message=FALSE, warning=FALSE}
-# sample from the prior:
-set.seed(444)
-junk <- capture.output(prior_model <- update(stan_model, prior_PD = TRUE))
-
-# update the emmeans object:
-prior_c_color_all <- update(c_color_all,post.beta = as.matrix(insight::get_parameters(prior_model)))
-prior_c_color_all
-```
-
-As expected, estimates based on prior draws are small (with more samples these will tend towards 0) and their HDI is more spread-out.
-
-We can use the `describe_posterior()` to... well... describe our estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor!
-
-```{r dataframe}
-posterior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(c_color_all, names = FALSE)))
-prior_samples <- as.data.frame(as.matrix(as.mcmc.emmGrid(prior_c_color_all, names = FALSE)))
-
-# for convenience
-colnames(posterior_samples) <- colnames(prior_samples) <- c("Color (main effect)", "Interaction (diff of diffs)")
-```
+One way to quantify evidence in the Bayesian framework is to calculate a [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use `describe_posterior()` to... well... describe our estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will neew to pass the original model via `bf_prior` to allow the extraction or prior draw.)
 
 ```{r describe_posterior_sh, eval=FALSE}
-describe_posterior(posterior_samples,
+# combine all estimates of interest to one object:
+c_color_all <- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+describe_posterior(c_color_all,
                    estimate = "median", dispersion = TRUE,
                    ci = .9, ci_method = "hdi",
-                   test = c("bayesfactor"), bf_prior = prior_samples)
+                   test = c("bayesfactor"),
+                   bf_prior = stan_model)
 ```
-```{r describe_posterior, echo=FALSE}
-kable(describe_posterior(posterior_samples,
+```{r describe_posterior, echo=FALSE, message=FALSE}
+c_color_all <- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+kable(describe_posterior(c_color_all,
                    estimate = "median", dispersion = TRUE,
                    ci = .9, ci_method = "hdi",
-                   test = c("bayesfactor"), bf_prior = prior_samples))
+                   test = c("bayesfactor"), bf_prior = stan_model))
 ```
 
-These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, **and** that a model *without* an interaction is ~1/0.25=4 times more likely than a model *with* an interaction! But... note that a Bayes factor of 4 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf), which come to show that even a p-value of 1.0 does not necessarily mean the data strongly supports the null.
+These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, **and** that a model *without* an interaction is ~1/0.22=4.5 times more likely than a model *with* an interaction! But... note that a Bayes factor of 4.5 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf), which come to show that even a p-value of 1.0 does not necessarily mean the data strongly supports the null.
 
 Happy Bayesing!
 
