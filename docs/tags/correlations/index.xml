@@ -20,5 +20,14 @@
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/blog/posts/report_correlation.knit/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/report_correlation.knit/</guid>
+      <description>This post shows how to create formatted reports for correlation tests</description>
+    </item>
+    
   </channel>
 </rss>
