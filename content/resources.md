@@ -38,6 +38,7 @@ This section contains more scope-focused resources:
   - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
   - [**Data Visualization: A practical introduction**](https://socviz.co/)
   - [**GAMs in R**](https://noamross.github.io/gams-in-r-course/)
+  - [**Mixed Models in R**](https://m-clark.github.io/mixed-models-with-R/)
   
 
 ## For Psychology
