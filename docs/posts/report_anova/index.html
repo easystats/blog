@@ -27,7 +27,7 @@
 <meta property="og:title" content="The end of errors in ANOVA reporting" />
 <meta property="og:description" content="This post shows how to create formatted reports for ANOVAs." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/report_anova/" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/report_anova/" />
 <meta property="article:published_time" content="2019-03-28T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-03-28T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
 
@@ -70,14 +70,14 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -244,7 +244,7 @@ library(report)  # Load the package</code></pre>
 <pre><code>The ANOVA suggests that:
 
   - The effect of Species is significant (F(2, 147) = 119.26, p &lt; .001) and can
-be considered as large (partial omega squared = ).</code></pre>
+be considered as large (partial omega squared = 0.61).</code></pre>
 <p>It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see <a href="https://academic.oup.com/hcr/article-abstract/28/4/612/4331349">Levine et al. 2002</a>, <a href="http://journals.sagepub.com/doi/abs/10.1177/0013164404264848">Pierce et al. 2004</a>) as well as its <a href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">interpretation</a> and presents the results in an APA-compatible way.</p>
 <p>Note that a table-output is also available:</p>
 <pre class="r"><code>aov_results %&gt;% 

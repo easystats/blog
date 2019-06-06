@@ -1,21 +1,186 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on easystats</title>
-    <link>/blog/categories/r/</link>
+    <link>https://easystats.github.io/blog/categories/r/</link>
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/bayestestR/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;the-problem-with-null-effects&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Problem with Null Effects&lt;/h1&gt;
+&lt;p&gt;Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; = 1.00&lt;/strong&gt;!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.poly&amp;#39;))
+
+data(&amp;quot;puzzles&amp;quot;, package = &amp;quot;BayesFactor&amp;quot;)
+aov_model &amp;lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
+
+summary(aov_model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Error: ID
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
+## Residuals 11    226    20.6               
+## 
+## Error: ID:shape
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)  
+## shape      1   12.0   12.00    7.54  0.019 *
+## Residuals 11   17.5    1.59                 
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## Error: ID:color
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)   
+## color      1   12.0   12.00    13.9 0.0033 **
+## Residuals 11    9.5    0.86                  
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## Error: ID:shape:color
+##             Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
+## shape:color  1    0.0    0.00       0      1
+## Residuals   11   30.5    2.77&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You look at your data, as you were taught to do, and it really does seems like the effect of color &lt;em&gt;is not&lt;/em&gt; moderated by shape (and vice versa):
+&lt;img src=&#34;https://easystats.github.io/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;But what does this mean? &lt;strong&gt;Can you infer that there isn’t interaction?&lt;/strong&gt; Are the two simple effects of color truly identical?&lt;/p&gt;
+&lt;p&gt;Classical statistics has no answer for us here - when the &lt;em&gt;p&lt;/em&gt;-value is less than alpha (typically 5%) we can reject the null hypothesis, but when &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; &amp;gt; .05&lt;/strong&gt;, even a lot bigger than 5%, classical (frequentists) statistics &lt;strong&gt;do not allow to infer that the null is true&lt;/strong&gt;. For this, we need to go Bayesian!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;going-bayesian&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Going Bayesian&lt;/h1&gt;
+&lt;p&gt;One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a &lt;strong&gt;Bayesian mixed model equivalent to the repeated measures ANOVA&lt;/strong&gt; above, manually specifying weakly informative priors on its effects:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rstanarm)
+stan_model &amp;lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior_intercept = student_t(3,0,10),          # weakly informative
+                        prior_aux = exponential(.1),                  # weakly informative
+                        prior_covariance = decov(1,1,1,1))            # weakly informative&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using the fantastic &lt;strong&gt;&lt;code&gt;emmeans&lt;/code&gt;&lt;/strong&gt; package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_main &amp;lt;- pairs(emmeans(stan_model, ~ color))
+c_color_main&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.896     -1.68    -0.101
+## 
+## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;em_color_simple &amp;lt;- emmeans(stan_model, ~color * shape)
+pairs(em_color_simple, by = &amp;quot;shape&amp;quot;) # simple effects for color&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## shape = round:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.892     -1.91     0.232
+## 
+## shape = square:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.910     -2.02     0.128
+## 
+## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_shape_interaction &amp;lt;- contrast(em_color_simple, interaction = c(&amp;quot;pairwise&amp;quot;,&amp;quot;pairwise&amp;quot;))
+c_color_shape_interaction&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square   0.0312      -1.4      1.53
+## 
+## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
+&lt;div id=&#34;quantifying-evidence-for-the-null&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Quantifying Evidence for the Null&lt;/h2&gt;
+&lt;p&gt;One way to quantify evidence in the Bayesian framework is to calculate a &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factor&lt;/strong&gt;&lt;/a&gt; - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with &lt;code&gt;bayesfactor_models()&lt;/code&gt;, we’ll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;version 0.2.1, available on GitHub&lt;/a&gt;) &lt;code&gt;describe_posterior()&lt;/code&gt; to… well… describe our &lt;code&gt;emmeans&lt;/code&gt; estimates’ posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via &lt;code&gt;bf_prior&lt;/code&gt; to allow the extraction or prior draw.)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# combine all estimates of interest to one object:
+c_color_all &amp;lt;- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+describe_posterior(c_color_all,
+                   estimate = &amp;quot;median&amp;quot;, dispersion = TRUE,
+                   ci = .9, ci_method = &amp;quot;hdi&amp;quot;,
+                   test = c(&amp;quot;bayesfactor&amp;quot;),
+                   bf_prior = stan_model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  contrast              color_pairwise        shape_pairwise estimate
+##  color - monochromatic .                     .                -0.896
+##  .                     color - monochromatic round - square    0.031
+##  lower.HPD upper.HPD
+##      -1.68    -0.101
+##      -1.40     1.534
+## 
+## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Median&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;MAD&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;CI&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;CI_low&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;CI_high&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;BF&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;color - monochromatic, ., .&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.896&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.400&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-1.53&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.206&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.223&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;., color - monochromatic, round - square&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.031&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.755&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-1.17&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.227&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.216&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These Bayes factors reveal that a model with a main effect for color is &lt;strong&gt;~3&lt;/strong&gt; times more likely than a model without this effect, &lt;strong&gt;and&lt;/strong&gt; that a model &lt;em&gt;without&lt;/em&gt; an interaction is &lt;strong&gt;~1/0.22 = 4.5&lt;/strong&gt; times more likely than a model &lt;em&gt;with&lt;/em&gt; an interaction! But… note that a Bayes factor of 4.5 is considered only &lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf&#34;&gt;moderate evidence in favor of the null effect&lt;/a&gt;. As we can see, &lt;strong&gt;a &lt;em&gt;p&lt;/em&gt;-value of 1.0 does not necessarily mean the data strongly supports the null&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Happy Bayesing!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;join-easystats&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;join easystats&lt;/h2&gt;
+&lt;p&gt;Note that &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt; is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
+    
+    <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>/blog/posts/bayestestr_v2/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
       <description>
 
 
@@ -71,10 +236,10 @@
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>/blog/posts/see_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/see_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -146,10 +311,10 @@ plot(result) +
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -222,10 +387,10 @@ x %&amp;gt;%
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>
 
 
@@ -281,9 +446,9 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -43      10    87       20   87 0.47 0.044        0.27          0.048
+&amp;gt; 1  -43      10    87       20   87 0.47 0.044        0.27          0.045
 &amp;gt;   R2_LOO_adjusted RMSE
-&amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; 1            0.46 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -321,10 +486,10 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -391,10 +556,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -424,11 +589,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  rejected      0.00 % [27.91 47.58]
-##           wt  rejected      0.00 % [-4.24 -1.18]
-##          cyl undecided     37.66 % [-1.85  0.34]
-##         gear undecided     42.43 % [-2.12  1.85]
-##           am undecided     18.79 % [-1.29  4.46]
+##  (Intercept)  rejected      0.00 % [27.54 46.96]
+##           wt  rejected      0.00 % [-4.22 -1.12]
+##          cyl undecided     33.50 % [-1.93  0.23]
+##         gear undecided     43.13 % [-2.17  1.65]
+##           am undecided     18.96 % [-0.93  4.70]
 ##           hp  accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -470,10 +635,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -553,10 +718,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -582,7 +747,7 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
 
   - The effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001) and can
-be considered as large (partial omega squared = ).&lt;/code&gt;&lt;/pre&gt;
+be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
@@ -649,10 +814,10 @@ be considered as large (partial omega squared = ).&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>
 
 
@@ -681,68 +846,6 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;h1&gt;Evolution&lt;/h1&gt;
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>report</category>
-      
-            <category>correlations</category>
-      
-            <category>APA</category>
-      
-            <category>results</category>
-      
-      
-            <category>R</category>
-      
-            <category>report</category>
-      
-    </item>
-    
-    <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation.knit/</link>
-      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/posts/report_correlation.knit/</guid>
-      <description>
-
-&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
-
-&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
-
-library(report)  # Load the package
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;do-a-correlation&#34;&gt;Do a correlation&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;df &amp;lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
-cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
-
-&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;report(cor_results)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;## The Pearson&#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen&amp;rsquo;s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
-
-&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
-
-&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 </description>
       
             <category>R</category>
