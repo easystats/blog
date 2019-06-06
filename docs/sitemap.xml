@@ -3,50 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/posts/bayestestr_v2/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/categories/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/posts/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/categories/r/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/tags/r/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/tags/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/bayestestr/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/bayestestr/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/easystats/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/posts/see_presentation/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/easystats/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -64,18 +81,6 @@
   <url>
     <loc>/blog/posts/bayestestr_distribution/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/bayestestr/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/bayestestr/</loc>
-    <lastmod>2019-05-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -247,6 +252,11 @@
   </url>
   
   <url>
+    <loc>/blog/posts/report_correlation.knit/</loc>
+    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/tags/correlations/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -268,7 +278,7 @@
   </url>
   
   <url>
-    <loc>/blog/ressources/</loc>
+    <loc>/blog/resources/</loc>
   </url>
   
 </urlset>

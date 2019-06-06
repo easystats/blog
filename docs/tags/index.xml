@@ -6,7 +6,7 @@
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>R</title>
       <link>/blog/tags/r/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>bayestestR</title>
+      <link>/blog/tags/bayestestr/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/tags/bayestestr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>easystats</title>
       <link>/blog/tags/easystats/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/easystats/</guid>
       <description></description>
@@ -35,15 +44,6 @@
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/see/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bayestestR</title>
-      <link>/blog/tags/bayestestr/</link>
-      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/tags/bayestestr/</guid>
       <description></description>
     </item>
     

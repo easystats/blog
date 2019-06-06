@@ -17,19 +17,19 @@
     
     
 
-<title>The end of errors in ANOVA reporting • easystats</title>
+<title>Formatted correlation output with effect sizes • easystats</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The end of errors in ANOVA reporting"/>
-<meta name="twitter:description" content="This post shows how to create formatted reports for ANOVAs."/>
+<meta name="twitter:title" content="Formatted correlation output with effect sizes"/>
+<meta name="twitter:description" content="This post shows how to create formatted reports for correlation tests"/>
 
-<meta property="og:title" content="The end of errors in ANOVA reporting" />
-<meta property="og:description" content="This post shows how to create formatted reports for ANOVAs." />
+<meta property="og:title" content="Formatted correlation output with effect sizes" />
+<meta property="og:description" content="This post shows how to create formatted reports for correlation tests" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/report_anova/" />
-<meta property="article:published_time" content="2019-03-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-03-28T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+<meta property="og:url" content="/blog/posts/report_correlation.knit/" />
+<meta property="article:published_time" content="2019-03-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-03-25T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
 
 
     
@@ -160,13 +160,13 @@
             
     <article>
   <header>
-    <h1>The end of errors in ANOVA reporting</h1>
+    <h1>Formatted correlation output with effect sizes</h1>
     
     
 <div class="post__meta">
     
     
-      <i class="fas fa-calendar-alt"></i> Mar 28, 2019
+      <i class="fas fa-calendar-alt"></i> Mar 25, 2019
     
     
     
@@ -199,7 +199,7 @@
           <a class="badge badge-tag" href="/blog/tags/report">report</a>
            
       
-          <a class="badge badge-tag" href="/blog/tags/anova">anova</a>
+          <a class="badge badge-tag" href="/blog/tags/correlations">correlations</a>
            
       
           <a class="badge badge-tag" href="/blog/tags/apa">apa</a>
@@ -211,7 +211,7 @@
     
     
     <br/>
-    <i class="fas fa-clock"></i> 3 min read
+    <i class="fas fa-clock"></i> 2 min read
 </div>
 
 
@@ -221,87 +221,48 @@
   <div class="post">
     
 
+<p>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. <strong>The new <a href="https://github.com/easystats/report">report</a> package was designed specifically to do this job</strong>.</p>
 
-<p><strong>Psychological science is still massively using analysis of variance (ANOVA)</strong>. Despite its relative simplicity, I am very often confronted to <strong>errors in its reporting</strong>, for instance in student’s theses or manuscripts, or even published papers (See the excellent <a href="http://statcheck.io/">statcheck</a> to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.</p>
-<p><strong>How to end it?</strong></p>
-<p>We believe that this could be solved (at least, partially) by the <strong>default implementation of current best practices of statistical reporting</strong>. A tool that automatically transforms a statistical result into a copy/pastable text. Of course, this automation cannot be suitable for each and every advanced usage, but could be satisfying for a substantial proportion of use cases. <strong>Implementing this unified, end-user oriented pipeline is the goal of the <a href="https://github.com/easystats/report">report</a> package.</strong></p>
-<div id="install-report" class="section level1">
-<h1>Install report</h1>
-<p><code>report</code> is part of the new <a href="https://github.com/easystats"><em>easystats</em></a> suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from <a href="https://github.com/easystats/report">github</a>.</p>
-<pre class="r"><code>devtools::install_github(&quot;easystats/report&quot;)  # Install the latest psycho version
+<h1 id="install-report">Install report</h1>
 
-library(report)  # Load the package</code></pre>
-</div>
-<div id="fit-an-anova" class="section level1">
-<h1>Fit an anova</h1>
-<p>Let’s start by doing a traditional ANOVA with <em>Sepal.Length</em> (the length of the sepals of some flowers) as dependent variable, and the <em>Species</em> as categorical predictor.</p>
-<pre class="r"><code>aov_results &lt;- aov(Sepal.Length ~ Species, data=iris)  # Fit the ANOVA</code></pre>
-</div>
-<div id="formatted-output" class="section level1">
-<h1>Formatted output</h1>
-<p>The <code>report</code> package include a single function, namely <code>report()</code>, that can be applied to an ANOVA object to format its content.</p>
-<pre class="r"><code>report(aov_results)</code></pre>
-<pre><code>The ANOVA suggests that:
+<p><code>report</code> is part of the new <a href="https://github.com/easystats"><em>easystats</em></a> suite of packages. However, as it is not (yet) on CRAN, you&rsquo;ll need to install it directly from <a href="https://github.com/easystats/report">github</a>.</p>
 
-  - The effect of Species is significant (F(2, 147) = 119.26, p &lt; .001) and can
-be considered as large (partial omega squared = ).</code></pre>
-<p>It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see <a href="https://academic.oup.com/hcr/article-abstract/28/4/612/4331349">Levine et al. 2002</a>, <a href="http://journals.sagepub.com/doi/abs/10.1177/0013164404264848">Pierce et al. 2004</a>) as well as its <a href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">interpretation</a> and presents the results in an APA-compatible way.</p>
-<p>Note that a table-output is also available:</p>
-<pre class="r"><code>aov_results %&gt;% 
-  report() %&gt;% 
-  to_table()</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Parameter</th>
-<th align="right">Sum_Squares</th>
-<th align="right">DoF</th>
-<th align="right">Mean_Square</th>
-<th align="right">F</th>
-<th align="right">p</th>
-<th align="right">Omega_Sq_partial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Species</td>
-<td align="right">63.21</td>
-<td align="right">2</td>
-<td align="right">31.61</td>
-<td align="right">119.26</td>
-<td align="right">0</td>
-<td align="right">0.61</td>
-</tr>
-<tr class="even">
-<td align="left">Residuals</td>
-<td align="right">38.96</td>
-<td align="right">147</td>
-<td align="right">0.27</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="evolution" class="section level1">
-<h1>Evolution</h1>
+<pre><code class="language-r">devtools::install_github(&quot;easystats/report&quot;)  # Install the latest psycho version
+
+library(report)  # Load the package
+</code></pre>
+
+<h1 id="do-a-correlation">Do a correlation</h1>
+
+<pre><code class="language-r">df &lt;- iris  # Load the traditional iris dataset into an object called df (for dataframe)
+cor_results &lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correlation and store its result
+</code></pre>
+
+<h1 id="formatted-output">Formatted output</h1>
+
+<p>The <code>report</code> package include a single function, namely <code>report()</code>, that can be applied to a correlation to format its content.</p>
+
+<pre><code class="language-r">report(cor_results)
+</code></pre>
+
+<pre><code>## The Pearson's product-moment correlation between df$Sepal.Length and
+## df$Petal.Length is positive, significant and large (r = 0.87, p &lt; .001).
+</code></pre>
+
+<p>The formatted output includes the <strong>direction</strong>, <strong>effect size</strong> (interpreted by default using <strong><a href="https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r">Cohen&rsquo;s (1988)</a></strong> rules of thumb) and <strong>confidence intervals</strong>. Now, you can just copy and paste this line into your report and focus on more important things.</p>
+
+<h1 id="evolution">Evolution</h1>
+
 <p>Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. <strong>The goal of this package is to flexibly adaptive to new changes and good practices evolution</strong>. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an <a href="https://github.com/easystats/report/issues">issue</a>, or even better, try to implement them yourself by <a href="https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md">contributing</a> to the code.</p>
-</div>
 
   </div>
   
 
 <div class="navigation navigation-single">
     
-    <a href="/blog/posts/report_correlation/" class="navigation-prev">
-      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+    
+    <a href="/blog/posts/report_correlation/" class="navigation-next">
       <span class="navigation-tittle">Formatted correlation output with effect sizes</span>
-    </a>
-    
-    
-    <a href="/blog/posts/insight_presentation/" class="navigation-next">
-      <span class="navigation-tittle">A unified syntax for accessing models&#39; information</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>
     

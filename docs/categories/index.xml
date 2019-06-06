@@ -5,7 +5,7 @@
     <description>Recent content in Categories on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,9 +13,20 @@
     <item>
       <title>R</title>
       <link>/blog/categories/r/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/categories/r/</guid>
+      <description></description>
+      
+      
+    </item>
+    
+    <item>
+      <title>bayestestR</title>
+      <link>/blog/categories/bayestestr/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/categories/bayestestr/</guid>
       <description></description>
       
       
@@ -27,17 +38,6 @@
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/categories/see/</guid>
-      <description></description>
-      
-      
-    </item>
-    
-    <item>
-      <title>bayestestR</title>
-      <link>/blog/categories/bayestestr/</link>
-      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/categories/bayestestr/</guid>
       <description></description>
       
       

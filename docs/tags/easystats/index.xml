@@ -6,10 +6,20 @@
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/easystats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Become a Bayesian master with bayestestR (0.2)</title>
+      <link>/blog/posts/bayestestr_v2/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_v2/</guid>
+      <description>bayestestR 0.2 is here!As you might have heard from previous posts, we have recently started to collaborate around the new easystats project, a suite of packages designed to make your life easier. One of the packages, bayestestR, has just been updated on CRAN.
+And this release is so packed with new features and improvements that it would be impossible to present them all in one post! We have added the computation of different types of Bayes factors (BF), new plotting methods (available in the see package), a new meta-function, describe_posterior, that computes everything at once, and more…</description>
+    </item>
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
@@ -90,6 +100,15 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_correlation/</guid>
+      <description>This post shows how to create formatted reports for correlation tests</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>/blog/posts/report_correlation.knit/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/report_correlation.knit/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     
