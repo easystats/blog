@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39; • easystats</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;"/>
+<meta name="twitter:description" content="The Problem with Null Effects Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with *p* = 1.00!
+options(contrasts = c(&#39;contr.sum&#39;, &#39;contr."/>
+
+<meta property="og:title" content="Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;" />
+<meta property="og:description" content="The Problem with Null Effects Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with *p* = 1.00!
+options(contrasts = c(&#39;contr.sum&#39;, &#39;contr." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/posts/bayestestr_emmeans.knit/" />
+<meta property="article:published_time" content="2019-06-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-06T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="/blog/">easystats</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">easystats</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/blog/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/portfolio/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/resources/">
+						<span>Resources</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/easystats/easystats" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 easystats
+  
+    <a href="https://github.com/easystats/easystats">GPL-3.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Jun 6, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              •
+          
+              <a class="badge badge-category" href="/blog/categories/bayestestr">BAYESTESTR</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/blog/tags/r">r</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/easystats">easystats</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/bayestestr">bayestestr</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 5 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+<p><img src="https://raw.githubusercontent.com/easystats/bayestestR/master/man/figures/logo.png" width="200px" /></p>
+
+<h1 id="the-problem-with-null-effects">The Problem with Null Effects</h1>
+
+<p>Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with *<strong>p* = 1.00</strong>!</p>
+
+<pre><code class="language-r">options(contrasts = c('contr.sum', 'contr.poly'))
+
+data(&quot;puzzles&quot;, package = &quot;BayesFactor&quot;)
+aov_model &lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
+
+summary(aov_model)
+</code></pre>
+
+<pre><code>## 
+## Error: ID
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Residuals 11    226    20.6               
+## 
+## Error: ID:shape
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## shape      1   12.0   12.00    7.54  0.019 *
+## Residuals 11   17.5    1.59                 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Error: ID:color
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)   
+## color      1   12.0   12.00    13.9 0.0033 **
+## Residuals 11    9.5    0.86                  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Error: ID:shape:color
+##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## shape:color  1    0.0    0.00       0      1
+## Residuals   11   30.5    2.77
+</code></pre>
+
+<p>You look at your data, as you were taught to do, and it really does seems like the effect of color <em>is not</em> moderated by shape (and vice versa):
+<img src="bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
+
+<p>But what does this mean? <strong>Can you infer that there isn&rsquo;t interaction?</strong> Are the two simple effects of color truly identical?</p>
+
+<p>Classical statistics has no answer for us here - when the <em>p</em>-value is less than alpha (typically 5%) we can reject the null hypothesis, but when *<strong>p* &gt; .05</strong>, even a lot bigger than 5%, classical (frequentists) statistics <strong>do not allow to infer that the null is true</strong>. For this, we need to go Bayesian!</p>
+
+<h1 id="going-bayesian">Going Bayesian</h1>
+
+<p>One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a <strong>Bayesian mixed model equivalent to the repeated measures ANOVA</strong> above, manually specifying weakly informative priors on its effects:</p>
+
+<pre><code class="language-r">library(rstanarm)
+stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior_intercept = student_t(3,0,10),          # weakly informative
+                        prior_aux = exponential(.1),                  # weakly informative
+                        prior_covariance = decov(1,1,1,1))            # weakly informative
+</code></pre>
+
+<p>Using the fantastic <strong><code>emmeans</code></strong> package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:</p>
+
+<pre><code class="language-r">c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
+c_color_main
+</code></pre>
+
+<pre><code>##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.896     -1.68    -0.101
+## 
+## HPD interval probability: 0.95
+</code></pre>
+
+<p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
+
+<pre><code class="language-r">em_color_simple &lt;- emmeans(stan_model, ~color * shape)
+pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color
+</code></pre>
+
+<pre><code>## shape = round:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.892     -1.91     0.232
+## 
+## shape = square:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.910     -2.02     0.128
+## 
+## HPD interval probability: 0.95
+</code></pre>
+
+<pre><code class="language-r">c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
+c_color_shape_interaction
+</code></pre>
+
+<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square   0.0312      -1.4      1.53
+## 
+## HPD interval probability: 0.95
+</code></pre>
+
+<p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
+
+<h2 id="quantifying-evidence-for-the-null">Quantifying Evidence for the Null</h2>
+
+<p>One way to quantify evidence in the Bayesian framework is to calculate a <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html"><strong>Bayes factor</strong></a> - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with <code>bayesfactor_models()</code>, we&rsquo;ll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from <a href="https://github.com/easystats/bayestestR">version 0.2.1, available on GitHub</a>) <code>describe_posterior()</code> to&hellip; well&hellip; describe our <code>emmeans</code> estimates&rsquo; posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via <code>bf_prior</code> to allow the extraction or prior draw.)</p>
+
+<pre><code class="language-r"># combine all estimates of interest to one object:
+c_color_all &lt;- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+describe_posterior(c_color_all,
+                   estimate = &quot;median&quot;, dispersion = TRUE,
+                   ci = .9, ci_method = &quot;hdi&quot;,
+                   test = c(&quot;bayesfactor&quot;),
+                   bf_prior = stan_model)
+</code></pre>
+
+<pre><code>##  contrast              color_pairwise        shape_pairwise estimate
+##  color - monochromatic .                     .                -0.896
+##  .                     color - monochromatic round - square    0.031
+##  lower.HPD upper.HPD
+##      -1.68    -0.101
+##      -1.40     1.534
+## 
+## HPD interval probability: 0.95
+</code></pre>
+
+<pre><code> Parameter                                   Median     MAD   CI   CI_low   CI_high      BF
+</code></pre>
+
+<hr />
+
+<p>2    color - monochromatic, ., .                 -0.896   0.400   90    -1.53    -0.206   3.223
+1    ., color - monochromatic, round - square     0.031   0.755   90    -1.17     1.227   0.216</p>
+
+<p>These Bayes factors reveal that a model with a main effect for color is <strong>~3</strong> times more likely than a model without this effect, <strong>and</strong> that a model <em>without</em> an interaction is <strong>~<sup>1</sup>&frasl;<sub>0</sub>.22 = 4.5</strong> times more likely than a model <em>with</em> an interaction! But&hellip; note that a Bayes factor of 4.5 is considered only <a href="https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf">moderate evidence in favor of the null effect</a>. As we can see, <strong>a <em>p</em>-value of 1.0 does not necessarily mean the data strongly supports the null</strong>.</p>
+
+<p>Happy Bayesing!</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/blog/posts/bayestestr_v2/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Become a Bayesian master with bayestestR (0.2)</span>
+    </a>
+    
+    
+    <a href="/blog/posts/bayestestr_emmeans/" class="navigation-next">
+      <span class="navigation-tittle">Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97457476-9', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

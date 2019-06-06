@@ -1,0 +1,135 @@
+---
+title: "Testing Contrasts from Bayesian Models with 'emmeans' and 'bayestestR'"
+author: "easystats"
+date: 2019-06-06
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits = 3,
+        dpi = 450)
+
+library(rstanarm)
+library(emmeans)
+library(bayestestR)
+library(ggplot2)
+library(ggbeeswarm)
+```
+
+
+# The Problem with Null Effects
+
+Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with ***p* = 1.00**!
+
+```{r freq_model}
+options(contrasts = c('contr.sum', 'contr.poly'))
+
+data("puzzles", package = "BayesFactor")
+aov_model <- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
+
+summary(aov_model)
+```
+
+You look at your data, as you were taught to do, and it really does seems like the effect of color *is not* moderated by shape (and vice versa):
+```{r plot_data,message=FALSE, warning=FALSE, echo=FALSE}
+pd <- position_dodge(0.4)
+ggplot(puzzles,aes(color,RT, color = shape, group = shape)) +
+  geom_beeswarm(dodge.width = 0.4, color = "black", shape = 16, alpha = 0.2) + 
+  stat_summary(position = pd, geom = "errorbar", color = "black", size = 1, width = 0.2) +
+  stat_summary(position = pd, geom = "line", size = 1) +
+  stat_summary(position = pd, geom = "point", size = 2, shape = 21, stroke = 2, fill = "black") +
+  # stat_summary(position = pd, size = 1) + 
+  NULL
+```
+
+But what does this mean? **Can you infer that there isn't interaction?** Are the two simple effects of color truly identical?
+
+Classical statistics has no answer for us here - when the *p*-value is less than alpha (typically 5%) we can reject the null hypothesis, but when ***p* > .05**, even a lot bigger than 5%, classical (frequentists) statistics **do not allow to infer that the null is true**. For this, we need to go Bayesian!
+
+# Going Bayesian
+
+One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a **Bayesian mixed model equivalent to the repeated measures ANOVA** above, manually specifying weakly informative priors on its effects:
+
+```{r model_sh, eval=FALSE}
+library(rstanarm)
+stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior_intercept = student_t(3,0,10),          # weakly informative
+                        prior_aux = exponential(.1),                  # weakly informative
+                        prior_covariance = decov(1,1,1,1))            # weakly informative
+```
+
+```{r model, echo=FALSE}
+set.seed(333)
+junk <- capture.output(
+  stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,0.5),
+                        prior_intercept = student_t(3,0,10),
+                        prior_aux = exponential(.1),
+                        prior_covariance = decov(1,1,1,1))
+)
+
+```
+
+Using the fantastic **`emmeans`** package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:
+
+```{r main_color, message=FALSE}
+c_color_main <- pairs(emmeans(stan_model, ~ color))
+c_color_main
+```
+
+We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:
+
+```{r color_contrast}
+em_color_simple <- emmeans(stan_model, ~color * shape)
+pairs(em_color_simple, by = "shape") # simple effects for color
+
+c_color_shape_interaction <- contrast(em_color_simple, interaction = c("pairwise","pairwise"))
+c_color_shape_interaction
+```
+
+As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence *for the null*?
+
+## Quantifying Evidence for the Null
+
+One way to quantify evidence in the Bayesian framework is to calculate a [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from [version 0.2.1, available on GitHub](https://github.com/easystats/bayestestR)) `describe_posterior()` to... well... describe our `emmeans` estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via `bf_prior` to allow the extraction or prior draw.)
+
+```{r describe_posterior_sh, eval=FALSE}
+# combine all estimates of interest to one object:
+c_color_all <- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+describe_posterior(c_color_all,
+                   estimate = "median", dispersion = TRUE,
+                   ci = .9, ci_method = "hdi",
+                   test = c("bayesfactor"),
+                   bf_prior = stan_model)
+```
+```{r describe_posterior, echo=FALSE, message=FALSE}
+c_color_all <- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+kable(describe_posterior(c_color_all,
+                   estimate = "median", dispersion = TRUE,
+                   ci = .9, ci_method = "hdi",
+                   test = c("bayesfactor"), bf_prior = stan_model))
+```
+
+These Bayes factors reveal that a model with a main effect for color is **~3** times more likely than a model without this effect, **and** that a model *without* an interaction is **~1/0.22 = 4.5** times more likely than a model *with* an interaction! But... note that a Bayes factor of 4.5 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf). As we can see, **a *p*-value of 1.0 does not necessarily mean the data strongly supports the null**.
+
+Happy Bayesing!
+
+
+
+## join easystats
+
+Note that [***easystats***](https://github.com/easystats) is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
+

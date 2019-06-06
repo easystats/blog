@@ -1,0 +1,150 @@
+---
+title: "Testing Contrasts from Bayesian Models with 'emmeans' and 'bayestestR'"
+author: "easystats"
+date: 2019-06-06
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR"]
+---
+
+
+
+<div id="the-problem-with-null-effects" class="section level1">
+<h1>The Problem with Null Effects</h1>
+<p>Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with <strong><em>p</em> = 1.00</strong>!</p>
+<pre class="r"><code>options(contrasts = c(&#39;contr.sum&#39;, &#39;contr.poly&#39;))
+
+data(&quot;puzzles&quot;, package = &quot;BayesFactor&quot;)
+aov_model &lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
+
+summary(aov_model)</code></pre>
+<pre><code>## 
+## Error: ID
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Residuals 11    226    20.6               
+## 
+## Error: ID:shape
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## shape      1   12.0   12.00    7.54  0.019 *
+## Residuals 11   17.5    1.59                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Error: ID:color
+##           Df Sum Sq Mean Sq F value Pr(&gt;F)   
+## color      1   12.0   12.00    13.9 0.0033 **
+## Residuals 11    9.5    0.86                  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Error: ID:shape:color
+##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## shape:color  1    0.0    0.00       0      1
+## Residuals   11   30.5    2.77</code></pre>
+<p>You look at your data, as you were taught to do, and it really does seems like the effect of color <em>is not</em> moderated by shape (and vice versa):
+<img src="/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
+<p>But what does this mean? <strong>Can you infer that there isn’t interaction?</strong> Are the two simple effects of color truly identical?</p>
+<p>Classical statistics has no answer for us here - when the <em>p</em>-value is less than alpha (typically 5%) we can reject the null hypothesis, but when <strong><em>p</em> &gt; .05</strong>, even a lot bigger than 5%, classical (frequentists) statistics <strong>do not allow to infer that the null is true</strong>. For this, we need to go Bayesian!</p>
+</div>
+<div id="going-bayesian" class="section level1">
+<h1>Going Bayesian</h1>
+<p>One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a <strong>Bayesian mixed model equivalent to the repeated measures ANOVA</strong> above, manually specifying weakly informative priors on its effects:</p>
+<pre class="r"><code>library(rstanarm)
+stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior_intercept = student_t(3,0,10),          # weakly informative
+                        prior_aux = exponential(.1),                  # weakly informative
+                        prior_covariance = decov(1,1,1,1))            # weakly informative</code></pre>
+<p>Using the fantastic <strong><code>emmeans</code></strong> package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:</p>
+<pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
+c_color_main</code></pre>
+<pre><code>##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.896     -1.68    -0.101
+## 
+## HPD interval probability: 0.95</code></pre>
+<p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
+<pre class="r"><code>em_color_simple &lt;- emmeans(stan_model, ~color * shape)
+pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
+<pre><code>## shape = round:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.892     -1.91     0.232
+## 
+## shape = square:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.910     -2.02     0.128
+## 
+## HPD interval probability: 0.95</code></pre>
+<pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
+c_color_shape_interaction</code></pre>
+<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square   0.0312      -1.4      1.53
+## 
+## HPD interval probability: 0.95</code></pre>
+<p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
+<div id="quantifying-evidence-for-the-null" class="section level2">
+<h2>Quantifying Evidence for the Null</h2>
+<p>One way to quantify evidence in the Bayesian framework is to calculate a <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html"><strong>Bayes factor</strong></a> - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with <code>bayesfactor_models()</code>, we’ll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from <a href="https://github.com/easystats/bayestestR">version 0.2.1, available on GitHub</a>) <code>describe_posterior()</code> to… well… describe our <code>emmeans</code> estimates’ posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via <code>bf_prior</code> to allow the extraction or prior draw.)</p>
+<pre class="r"><code># combine all estimates of interest to one object:
+c_color_all &lt;- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+
+describe_posterior(c_color_all,
+                   estimate = &quot;median&quot;, dispersion = TRUE,
+                   ci = .9, ci_method = &quot;hdi&quot;,
+                   test = c(&quot;bayesfactor&quot;),
+                   bf_prior = stan_model)</code></pre>
+<pre><code>##  contrast              color_pairwise        shape_pairwise estimate
+##  color - monochromatic .                     .                -0.896
+##  .                     color - monochromatic round - square    0.031
+##  lower.HPD upper.HPD
+##      -1.68    -0.101
+##      -1.40     1.534
+## 
+## HPD interval probability: 0.95</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Parameter</th>
+<th align="right">Median</th>
+<th align="right">MAD</th>
+<th align="right">CI</th>
+<th align="right">CI_low</th>
+<th align="right">CI_high</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td align="left">color - monochromatic, ., .</td>
+<td align="right">-0.896</td>
+<td align="right">0.400</td>
+<td align="right">90</td>
+<td align="right">-1.53</td>
+<td align="right">-0.206</td>
+<td align="right">3.223</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td align="left">., color - monochromatic, round - square</td>
+<td align="right">0.031</td>
+<td align="right">0.755</td>
+<td align="right">90</td>
+<td align="right">-1.17</td>
+<td align="right">1.227</td>
+<td align="right">0.216</td>
+</tr>
+</tbody>
+</table>
+<p>These Bayes factors reveal that a model with a main effect for color is <strong>~3</strong> times more likely than a model without this effect, <strong>and</strong> that a model <em>without</em> an interaction is <strong>~1/0.22 = 4.5</strong> times more likely than a model <em>with</em> an interaction! But… note that a Bayes factor of 4.5 is considered only <a href="https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf">moderate evidence in favor of the null effect</a>. As we can see, <strong>a <em>p</em>-value of 1.0 does not necessarily mean the data strongly supports the null</strong>.</p>
+<p>Happy Bayesing!</p>
+</div>
+<div id="join-easystats" class="section level2">
+<h2>join easystats</h2>
+<p>Note that <a href="https://github.com/easystats"><strong><em>easystats</em></strong></a> is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+</div>
