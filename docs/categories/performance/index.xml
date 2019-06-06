@@ -71,9 +71,9 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
-&amp;gt; 1  -43      10    87       20   87 0.47 0.044        0.27          0.045
+&amp;gt; 1  -43      10    87       20   87 0.47 0.045        0.26          0.048
 &amp;gt;   R2_LOO_adjusted RMSE
-&amp;gt; 1            0.46 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; 1            0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
