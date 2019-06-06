@@ -1,7 +1,7 @@
 ---
 title: "Testing Contrasts from Bayesian Models with 'emmeans' and 'bayestestR'"
 author: "easystats"
-date: 2019-06-05
+date: 2019-06-06
 categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR"]
 ---
@@ -28,7 +28,7 @@ include_graphics("https://raw.githubusercontent.com/easystats/bayestestR/master/
 
 # The Problem with Null Effects
 
-Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with $p=1.00$!
+Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with ***p* = 1.00**!
 
 ```{r freq_model}
 options(contrasts = c('contr.sum', 'contr.poly'))
@@ -53,11 +53,11 @@ ggplot(puzzles,aes(color,RT, color = shape, group = shape)) +
 
 But what does this mean? **Can you infer that there isn't interaction?** Are the two simple effects of color truly identical?
 
-Classical statistics has no answer for us here - when the p-value is less than alpha (typically 5%) we can reject the null hypothesis, but when $p>.05$, even a lot bigger than 5%, classical (frequentists) statistics do not allow to infer that the null is true. For this, we need to go Bayesian!
+Classical statistics has no answer for us here - when the *p*-value is less than alpha (typically 5%) we can reject the null hypothesis, but when ***p* > .05**, even a lot bigger than 5%, classical (frequentists) statistics **do not allow to infer that the null is true**. For this, we need to go Bayesian!
 
 # Going Bayesian
 
-One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a Bayesian model equivalent to the repeated measures ANOVA above:
+One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a **Bayesian mixed model equivalent to the repeated measures ANOVA** above, manually specifying weakly informative priors on its effects:
 
 ```{r model_sh, eval=FALSE}
 library(rstanarm)
@@ -126,7 +126,15 @@ kable(describe_posterior(c_color_all,
                    test = c("bayesfactor"), bf_prior = stan_model))
 ```
 
-These Bayes factors reveal that a model with a main effect for color is ~3 times more likely than a model without this effect, **and** that a model *without* an interaction is ~1/0.22=4.5 times more likely than a model *with* an interaction! But... note that a Bayes factor of 4.5 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf), which come to show that even a p-value of 1.0 does not necessarily mean the data strongly supports the null.
+These Bayes factors reveal that a model with a main effect for color is **~3** times more likely than a model without this effect, **and** that a model *without* an interaction is **~1/0.22 = 4.5** times more likely than a model *with* an interaction! But... note that a Bayes factor of 4.5 is considered only [moderate evidence in favor of the null effect](https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf). As we can see, **a *p*-value of 1.0 does not necessarily mean the data strongly supports the null**.
 
 Happy Bayesing!
+
+
+
+## join easystats
+
+Note that [***easystats***](https://github.com/easystats) is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
 
