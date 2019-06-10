@@ -57,7 +57,7 @@ One of the (many) strengths of Bayesian statistics is its ability to support the
 ```{r model_sh, eval=FALSE}
 library(rstanarm)
 stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
-                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior = cauchy(0,c(0.707,0.707,0.5),          # as per Rouder et al., 2012
                         prior_intercept = student_t(3,0,10),          # weakly informative
                         prior_aux = exponential(.1),                  # weakly informative
                         prior_covariance = decov(1,1,1,1))            # weakly informative
@@ -67,7 +67,7 @@ stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 set.seed(333)
 junk <- capture.output(
   stan_model <- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
-                        prior = cauchy(0,0.5),
+                        prior = cauchy(0,c(0.707,0.707,0.5)),
                         prior_intercept = student_t(3,0,10),
                         prior_aux = exponential(.1),
                         prior_covariance = decov(1,1,1,1))
@@ -87,7 +87,9 @@ We can also estimate (based on posterior draws) the difference between the two s
 ```{r color_contrast}
 em_color_simple <- emmeans(stan_model, ~color * shape)
 pairs(em_color_simple, by = "shape") # simple effects for color
+```
 
+```{r color_contrast2}
 c_color_shape_interaction <- contrast(em_color_simple, interaction = c("pairwise","pairwise"))
 c_color_shape_interaction
 ```
@@ -98,12 +100,14 @@ As we can see, the simple effects are indeed similar, and the difference between
 
 One way to quantify evidence in the Bayesian framework is to calculate a [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with `bayesfactor_models()`, we'll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from [version 0.2.1, available on GitHub](https://github.com/easystats/bayestestR)) `describe_posterior()` to... well... describe our `emmeans` estimates' posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via `bf_prior` to allow the extraction or prior draw.)
 
-```{r describe_posterior_sh, eval=FALSE}
+```{r rbind_all}
 # combine all estimates of interest to one object:
 c_color_all <- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all
+```
 
+```{r describe_posterior_sh, eval=FALSE}
 describe_posterior(c_color_all,
                    estimate = "median", dispersion = TRUE,
                    ci = .9, ci_method = "hdi",
@@ -111,10 +115,6 @@ describe_posterior(c_color_all,
                    bf_prior = stan_model)
 ```
 ```{r describe_posterior, echo=FALSE, message=FALSE}
-c_color_all <- rbind(c_color_main,
-                     c_color_shape_interaction)
-c_color_all
-
 kable(describe_posterior(c_color_all,
                    estimate = "median", dispersion = TRUE,
                    ci = .9, ci_method = "hdi",

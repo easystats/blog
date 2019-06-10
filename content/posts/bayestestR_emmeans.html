@@ -50,7 +50,7 @@ summary(aov_model)</code></pre>
 <p>One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a <strong>Bayesian mixed model equivalent to the repeated measures ANOVA</strong> above, manually specifying weakly informative priors on its effects:</p>
 <pre class="r"><code>library(rstanarm)
 stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
-                        prior = cauchy(0,0.5),                        # as per Rouder et al., 2012
+                        prior = cauchy(0,c(0.707,0.707,0.5),          # as per Rouder et al., 2012
                         prior_intercept = student_t(3,0,10),          # weakly informative
                         prior_aux = exponential(.1),                  # weakly informative
                         prior_covariance = decov(1,1,1,1))            # weakly informative</code></pre>
@@ -58,7 +58,7 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.896     -1.68    -0.101
+##  color - monochromatic   -0.942     -1.66    -0.134
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
@@ -66,17 +66,17 @@ c_color_main</code></pre>
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.892     -1.91     0.232
+##  color - monochromatic   -0.941     -1.98    0.1140
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.910     -2.02     0.128
+##  color - monochromatic   -0.944     -2.10    0.0366
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
-<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
-##  color - monochromatic round - square   0.0312      -1.4      1.53
+<pre><code>##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
+##  color - monochromatic round - square -0.000141     -1.45      1.45
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
@@ -86,21 +86,20 @@ c_color_shape_interaction</code></pre>
 <pre class="r"><code># combine all estimates of interest to one object:
 c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
-c_color_all
-
-describe_posterior(c_color_all,
+c_color_all</code></pre>
+<pre><code>##  contrast              color_pairwise        shape_pairwise estimate
+##  color - monochromatic .                     .                -0.942
+##  .                     color - monochromatic round - square    0.000
+##  lower.HPD upper.HPD
+##      -1.66    -0.134
+##      -1.45     1.451
+## 
+## HPD interval probability: 0.95</code></pre>
+<pre class="r"><code>describe_posterior(c_color_all,
                    estimate = &quot;median&quot;, dispersion = TRUE,
                    ci = .9, ci_method = &quot;hdi&quot;,
                    test = c(&quot;bayesfactor&quot;),
                    bf_prior = stan_model)</code></pre>
-<pre><code>##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.896
-##  .                     color - monochromatic round - square    0.031
-##  lower.HPD upper.HPD
-##      -1.68    -0.101
-##      -1.40     1.534
-## 
-## HPD interval probability: 0.95</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -118,22 +117,22 @@ describe_posterior(c_color_all,
 <tr class="odd">
 <td>2</td>
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.896</td>
-<td align="right">0.400</td>
+<td align="right">-0.942</td>
+<td align="right">0.371</td>
 <td align="right">90</td>
-<td align="right">-1.53</td>
-<td align="right">-0.206</td>
-<td align="right">3.223</td>
+<td align="right">-1.58</td>
+<td align="right">-0.319</td>
+<td align="right">3.29</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">0.031</td>
-<td align="right">0.755</td>
+<td align="right">0.000</td>
+<td align="right">0.726</td>
 <td align="right">90</td>
-<td align="right">-1.17</td>
-<td align="right">1.227</td>
-<td align="right">0.216</td>
+<td align="right">-1.24</td>
+<td align="right">1.149</td>
+<td align="right">0.21</td>
 </tr>
 </tbody>
 </table>
