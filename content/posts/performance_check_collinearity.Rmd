@@ -21,7 +21,7 @@ library(see)
 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(performance)
 
 # fit model
