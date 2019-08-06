@@ -41,7 +41,7 @@ summary(aov_model)</code></pre>
 ## shape:color  1    0.0    0.00       0      1
 ## Residuals   11   30.5    2.77</code></pre>
 <p>You look at your data, as you were taught to do, and it really does seems like the effect of color <em>is not</em> moderated by shape (and vice versa):
-<img src="/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
+<img src="https://easystats.github.io/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
 <p>But what does this mean? <strong>Can you infer that there isn’t interaction?</strong> Are the two simple effects of color truly identical?</p>
 <p>Classical statistics has no answer for us here - when the <em>p</em>-value is less than alpha (typically 5%) we can reject the null hypothesis, but when <strong><em>p</em> &gt; .05</strong>, even a lot bigger than 5%, classical (frequentists) statistics <strong>do not allow to infer that the null is true</strong>. For this, we need to go Bayesian!</p>
 </div>
