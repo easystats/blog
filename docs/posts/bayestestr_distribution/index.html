@@ -31,7 +31,7 @@ It worked like this:
 It worked like this:
 # Generate a perfect samplex &lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&gt;% density() %&gt;% # Compute density functionas." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://easystats.github.io/blog/posts/bayestestr_distribution/" />
+<meta property="og:url" content="/blog/posts/bayestestr_distribution/" />
 <meta property="article:published_time" content="2019-05-13T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-05-13T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
 
@@ -61,8 +61,8 @@ It worked like this:
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/blog/favicon.png">
     
 
 </head>
@@ -74,14 +74,14 @@ It worked like this:
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://easystats.github.io/blog/">easystats</a>
+        <a href="/blog/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="/blog/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -239,7 +239,7 @@ x %&gt;%
   as.data.frame() %&gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()</code></pre>
-<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart <code>rnorm</code> (it has the same arguments, the same order and the same output type). However, we <a href="https://github.com/easystats/bayestestR/issues/86">quickly realised</a> this this name was not perfect (<em>no pun intended</em>), as indeed the obtained distribution was not <em>random</em> (and the <code>r</code> in <code>rnorm</code> stands for <em>random</em>).</p>
 <p>Thus, after discussion, we decided to change it to <a href="https://easystats.github.io/bayestestR/reference/distribution.html"><code>distribution_normal</code></a>. We also used that opportunity to add other types of “perfect” distributions:</p>
 <pre class="r"><code># Generate a perfect sample
@@ -250,7 +250,7 @@ x %&gt;%
   as.data.frame() %&gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()</code></pre>
-<p><img src="/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Interestingly, a few days before this update, we received a small email asking:</p>
 <blockquote>
 <p>Hi, I saw your blog post and wonder how you define a perfectly normal distribution.</p>
