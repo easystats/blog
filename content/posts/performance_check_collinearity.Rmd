@@ -67,7 +67,7 @@ plot(x)
 
 ## Check Zero-Inflated Mixed Models for Multicollinearity
 
-For models with zero-inflation component, multicollinearity may happen both in the count as well as the zero-inflaton component. By default, `check_collinearity()` checks the complete model, however, you can check only certain components of the model using the `component`-argument. In the following example, we will focus on the complete model.
+For models with zero-inflation component, multicollinearity may happen both in the _count_ as well as the _zero-inflation_ component. By default, `check_collinearity()` checks the complete model, however, you can check only certain components of the model using the `component`-argument. In the following example, we will focus on the complete model.
 
 ```{r}
 library(glmmTMB)
@@ -90,7 +90,7 @@ model <- glmmTMB(
 check_collinearity(model)
 ```
 
-As you can see, the `print()` method separates the results into the count and zero-inflated model components for a clearer output. Similar, `plot()` produces facets for each components, so it's easier to understand.
+As you can see, the `print()` method separates the results into the _count_ and _zero-inflated_ model components for a clearer output. Similar, `plot()` produces facets for each components, so it's easier to understand.
 
 ```{r}
 plot(check_collinearity(model))
@@ -98,7 +98,7 @@ plot(check_collinearity(model))
 
 ## Remedies for Multicollinearity
 
-Multicollinearity can have different reasons. Probably in most cases it will help to center or standardize the predictors. Sometimes the only way to avoid multicollinearity is to remove one of the predictors with a very high VIF value. Collecting more data may also help, but this is of course not always possible.
+Multicollinearity can have different reasons. Probably in many cases it will help to center or standardize the predictors. Sometimes the only way to avoid multicollinearity is to remove one of the predictors with a very high VIF value. Collecting more data may also help, but this is of course not always possible.
 
 ## join easystats
 
