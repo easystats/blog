@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bayestestR on easystats</title>
+    <title>Bayestestr on easystats</title>
     <link>/blog/categories/bayestestr/</link>
-    <description>Recent content in bayestestR on easystats</description>
+    <description>Recent content in Bayestestr on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
@@ -69,7 +70,7 @@ stan_model &amp;lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_main &amp;lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.942     -1.66    -0.134
+##  color - monochromatic   -0.932     -1.74    -0.177
 ## 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
@@ -77,17 +78,17 @@ c_color_main&lt;/code&gt;&lt;/pre&gt;
 pairs(em_color_simple, by = &amp;quot;shape&amp;quot;) # simple effects for color&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.941     -1.98    0.1140
+##  color - monochromatic   -0.917     -2.00     0.135
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -2.10    0.0366
+##  color - monochromatic   -0.943     -1.96     0.193
 ## 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_shape_interaction &amp;lt;- contrast(em_color_simple, interaction = c(&amp;quot;pairwise&amp;quot;,&amp;quot;pairwise&amp;quot;))
 c_color_shape_interaction&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.000141     -1.45      1.45
+&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square   0.0259     -1.46       1.5
 ## 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
@@ -99,11 +100,11 @@ c_color_all &amp;lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.942
-##  .                     color - monochromatic round - square    0.000
+##  color - monochromatic .                     .                -0.932
+##  .                     color - monochromatic round - square    0.026
 ##  lower.HPD upper.HPD
-##      -1.66    -0.134
-##      -1.45     1.451
+##      -1.74    -0.177
+##      -1.46     1.497
 ## 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;describe_posterior(c_color_all,
@@ -111,6 +112,7 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
                    ci = .9, ci_method = &amp;quot;hdi&amp;quot;,
                    test = c(&amp;quot;bayesfactor&amp;quot;),
                    bf_prior = stan_model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in logspline::logspline(x): Not all models could be fitted&lt;/code&gt;&lt;/pre&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
@@ -126,21 +128,21 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;color - monochromatic, ., .&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-0.942&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.371&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.932&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.391&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-1.58&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-0.319&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-1.62&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.312&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.465&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;., color - monochromatic, round - square&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.000&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.726&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.026&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.758&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-1.24&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;1.149&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.21&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-1.25&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.196&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.244&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -410,11 +412,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.42 47.65]
-##           wt  Rejected      0.00 % [-4.24 -1.00]
-##          cyl Undecided      0.39 % [-1.83  0.40]
-##         gear Undecided      0.44 % [-2.18  1.81]
-##           am Undecided      0.17 % [-1.47  4.55]
+##  (Intercept)  Rejected      0.00 % [27.29 47.08]
+##           wt  Rejected      0.00 % [-4.21 -1.07]
+##          cyl Undecided      0.37 % [-1.92  0.28]
+##         gear Undecided      0.44 % [-2.16  1.73]
+##           am Undecided      0.19 % [-1.11  4.53]
 ##           hp  Accepted      1.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>easystats</title>
+    <title>Easystats on easystats</title>
     <link>/blog/tags/easystats/</link>
-    <description>Recent content on easystats</description>
+    <description>Recent content in Easystats on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
@@ -75,17 +75,6 @@ performanceWe have recently decided to collaborate around the new easystats pro
     </item>
     
     <item>
-      <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation.knit/</link>
-      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/posts/performance_presentation.knit/</guid>
-      <description>Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
-***To address this, please let us introduce the *** performance package!
-performance We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP).</description>
-    </item>
-    
-    <item>
       <title>How to easily generate a perfectly normal distribution</title>
       <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
@@ -122,7 +111,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_anova/</guid>
-      <description>This post shows how to create formatted reports for ANOVAs.</description>
+      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
     </item>
     
     <item>
@@ -131,7 +120,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_correlation/</guid>
-      <description>This post shows how to create formatted reports for correlation tests</description>
+      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
     </item>
     
   </channel>

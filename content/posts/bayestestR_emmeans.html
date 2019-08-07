@@ -41,7 +41,7 @@ summary(aov_model)</code></pre>
 ## shape:color  1    0.0    0.00       0      1
 ## Residuals   11   30.5    2.77</code></pre>
 <p>You look at your data, as you were taught to do, and it really does seems like the effect of color <em>is not</em> moderated by shape (and vice versa):
-<img src="https://easystats.github.io/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
+<img src="/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png" width="672" /></p>
 <p>But what does this mean? <strong>Can you infer that there isn’t interaction?</strong> Are the two simple effects of color truly identical?</p>
 <p>Classical statistics has no answer for us here - when the <em>p</em>-value is less than alpha (typically 5%) we can reject the null hypothesis, but when <strong><em>p</em> &gt; .05</strong>, even a lot bigger than 5%, classical (frequentists) statistics <strong>do not allow to infer that the null is true</strong>. For this, we need to go Bayesian!</p>
 </div>
@@ -58,7 +58,7 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.942     -1.66    -0.134
+##  color - monochromatic   -0.932     -1.74    -0.177
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
@@ -66,17 +66,17 @@ c_color_main</code></pre>
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.941     -1.98    0.1140
+##  color - monochromatic   -0.917     -2.00     0.135
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -2.10    0.0366
+##  color - monochromatic   -0.943     -1.96     0.193
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
-<pre><code>##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.000141     -1.45      1.45
+<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square   0.0259     -1.46       1.5
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
@@ -88,11 +88,11 @@ c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all</code></pre>
 <pre><code>##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.942
-##  .                     color - monochromatic round - square    0.000
+##  color - monochromatic .                     .                -0.932
+##  .                     color - monochromatic round - square    0.026
 ##  lower.HPD upper.HPD
-##      -1.66    -0.134
-##      -1.45     1.451
+##      -1.74    -0.177
+##      -1.46     1.497
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>describe_posterior(c_color_all,
@@ -100,6 +100,7 @@ c_color_all</code></pre>
                    ci = .9, ci_method = &quot;hdi&quot;,
                    test = c(&quot;bayesfactor&quot;),
                    bf_prior = stan_model)</code></pre>
+<pre><code>## Warning in logspline::logspline(x): Not all models could be fitted</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -115,21 +116,21 @@ c_color_all</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.942</td>
-<td align="right">0.371</td>
+<td align="right">-0.932</td>
+<td align="right">0.391</td>
 <td align="right">90</td>
-<td align="right">-1.58</td>
-<td align="right">-0.319</td>
-<td align="right">3.29</td>
+<td align="right">-1.62</td>
+<td align="right">-0.312</td>
+<td align="right">2.465</td>
 </tr>
 <tr class="even">
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">0.000</td>
-<td align="right">0.726</td>
+<td align="right">0.026</td>
+<td align="right">0.758</td>
 <td align="right">90</td>
-<td align="right">-1.24</td>
-<td align="right">1.149</td>
-<td align="right">0.21</td>
+<td align="right">-1.25</td>
+<td align="right">1.196</td>
+<td align="right">0.244</td>
 </tr>
 </tbody>
 </table>

@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>report on easystats</title>
+    <title>Report on easystats</title>
     <link>/blog/categories/report/</link>
-    <description>Recent content in report on easystats</description>
+    <description>Recent content in Report on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
@@ -41,7 +42,7 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
 
   - The effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001) and can
-be considered as large (partial omega squared = 0.61).&lt;/code&gt;&lt;/pre&gt;
+be considered as large (partial omega squared = ).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
