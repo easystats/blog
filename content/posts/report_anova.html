@@ -30,8 +30,7 @@ library(report)  # Load the package</code></pre>
 <pre class="r"><code>report(aov_results)</code></pre>
 <pre><code>The ANOVA suggests that:
 
-  - The effect of Species is significant (F(2, 147) = 119.26, p &lt; .001) and can
-be considered as large (partial omega squared = ).</code></pre>
+  - The main effect of Species is significant (F(2, 147) = 119.26, p &lt; .001).</code></pre>
 <p>It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see <a href="https://academic.oup.com/hcr/article-abstract/28/4/612/4331349">Levine et al. 2002</a>, <a href="http://journals.sagepub.com/doi/abs/10.1177/0013164404264848">Pierce et al. 2004</a>) as well as its <a href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">interpretation</a> and presents the results in an APA-compatible way.</p>
 <p>Note that a table-output is also available:</p>
 <pre class="r"><code>aov_results %&gt;% 
@@ -42,11 +41,10 @@ be considered as large (partial omega squared = ).</code></pre>
 <tr class="header">
 <th align="left">Parameter</th>
 <th align="right">Sum_Squares</th>
-<th align="right">DoF</th>
+<th align="right">df</th>
 <th align="right">Mean_Square</th>
 <th align="right">F</th>
 <th align="right">p</th>
-<th align="right">Omega_Sq_partial</th>
 </tr>
 </thead>
 <tbody>
@@ -57,14 +55,12 @@ be considered as large (partial omega squared = ).</code></pre>
 <td align="right">31.61</td>
 <td align="right">119.26</td>
 <td align="right">0</td>
-<td align="right">0.61</td>
 </tr>
 <tr class="even">
 <td align="left">Residuals</td>
 <td align="right">38.96</td>
 <td align="right">147</td>
 <td align="right">0.27</td>
-<td align="right"></td>
 <td align="right"></td>
 <td align="right"></td>
 </tr>

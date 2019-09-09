@@ -6,10 +6,21 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
+      <link>/blog/posts/parameters_presentation/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/parameters_presentation/</guid>
+      <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
+But the parameters package, finally on CRAN, already has some cool features!
+parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
+    </item>
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
@@ -111,7 +122,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_anova/</guid>
-      <description>Psychological science is still massively using analysis of variance (ANOVA). Despite its relative simplicity, I am very often confronted to errors in its reporting, for instance in student’s theses or manuscripts, or even published papers (See the excellent statcheck to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation).</description>
+      <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     
     <item>
@@ -120,7 +131,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/report_correlation/</guid>
-      <description>One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. The new report package was designed specifically to do this job.</description>
+      <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     
   </channel>

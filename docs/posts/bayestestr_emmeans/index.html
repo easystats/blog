@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.6" />
 
     
     
@@ -265,7 +265,7 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.932     -1.74    -0.177
+##  color - monochromatic   -0.942     -1.66    -0.134
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
@@ -273,17 +273,17 @@ c_color_main</code></pre>
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.917     -2.00     0.135
+##  color - monochromatic   -0.941     -1.98    0.1140
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.943     -1.96     0.193
+##  color - monochromatic   -0.944     -2.10    0.0366
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
-<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
-##  color - monochromatic round - square   0.0259     -1.46       1.5
+<pre><code>##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
+##  color - monochromatic round - square -0.000141     -1.45      1.45
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
@@ -295,11 +295,11 @@ c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all</code></pre>
 <pre><code>##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.932
-##  .                     color - monochromatic round - square    0.026
+##  color - monochromatic .                     .                -0.942
+##  .                     color - monochromatic round - square    0.000
 ##  lower.HPD upper.HPD
-##      -1.74    -0.177
-##      -1.46     1.497
+##      -1.66    -0.134
+##      -1.45     1.451
 ## 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>describe_posterior(c_color_all,
@@ -307,7 +307,6 @@ c_color_all</code></pre>
                    ci = .9, ci_method = &quot;hdi&quot;,
                    test = c(&quot;bayesfactor&quot;),
                    bf_prior = stan_model)</code></pre>
-<pre><code>## Warning in logspline::logspline(x): Not all models could be fitted</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -323,21 +322,21 @@ c_color_all</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.932</td>
-<td align="right">0.391</td>
+<td align="right">-0.942</td>
+<td align="right">0.371</td>
 <td align="right">90</td>
-<td align="right">-1.62</td>
-<td align="right">-0.312</td>
-<td align="right">2.465</td>
+<td align="right">-1.58</td>
+<td align="right">-0.319</td>
+<td align="right">3.29</td>
 </tr>
 <tr class="even">
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">0.026</td>
-<td align="right">0.758</td>
+<td align="right">0.000</td>
+<td align="right">0.726</td>
 <td align="right">90</td>
-<td align="right">-1.25</td>
-<td align="right">1.196</td>
-<td align="right">0.244</td>
+<td align="right">-1.24</td>
+<td align="right">1.149</td>
+<td align="right">0.21</td>
 </tr>
 </tbody>
 </table>
