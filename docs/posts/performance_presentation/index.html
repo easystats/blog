@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.55.6" />
 
     
     
@@ -277,10 +277,10 @@ model &lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 
 # Compute performance indices
 model_performance(model)</code></pre>
-<pre><code>&gt;   ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_SE R2_marginal R2_marginal_SE
-&gt; 1  -43      10    87       20   87 0.47 0.044        0.27          0.046
-&gt;   R2_LOO_adjusted RMSE
-&gt; 1            0.45 0.31</code></pre>
+<pre><code>&gt; # Indices of model performance
+&gt; 
+&gt;  ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_marginal R2_adjusted RMSE
+&gt;   -43      10    87       20   87 0.47        0.27        0.45 0.31</code></pre>
 <ul>
 <li><strong>Don’t forget to check out the</strong> <a href="https://easystats.github.io/performance/"><strong>documentation here</strong></a> <strong>for more!</strong></li>
 </ul>

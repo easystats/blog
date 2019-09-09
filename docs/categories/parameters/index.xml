@@ -1,0 +1,113 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>parameters on easystats</title>
+    <link>/blog/categories/parameters/</link>
+    <description>Recent content in parameters on easystats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
+      <link>/blog/posts/parameters_presentation/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/parameters_presentation/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/parameters/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Okay, &lt;em&gt;“an alternative to broom”&lt;/em&gt; might be a bit of an &lt;strong&gt;overstatement&lt;/strong&gt; &lt;em&gt;(at least for now…)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;But the &lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; package, finally on CRAN, already has some cool features!&lt;/p&gt;
+&lt;div id=&#34;parameters&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;parameters&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life &lt;em&gt;easier&lt;/em&gt;. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model internal access&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, as well as &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance and quality&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&#39;&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; primary goal is to provide utilities for processing the parameters of various statistical models. Beyond computing &lt;strong&gt;&lt;em&gt;p&lt;/em&gt;-values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, &lt;strong&gt;Bayesian indices&lt;/strong&gt; and other measures for a wide variety of models, this package implements features like &lt;strong&gt;standardization&lt;/strong&gt; or &lt;strong&gt;bootstrapping&lt;/strong&gt; of parameters and models, &lt;strong&gt;feature reduction&lt;/strong&gt; (feature extraction and variable selection) as well as conversion between indices of &lt;strong&gt;effect size&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The main function of the package is &lt;code&gt;model_parameters()&lt;/code&gt;, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to &lt;a href=&#34;https://github.com/tidymodels/broom&#34;&gt;&lt;code&gt;broom::tidy()&lt;/code&gt;&lt;/a&gt;, with some notable differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The names of the returned dataframe are &lt;strong&gt;specific&lt;/strong&gt; to their content. For instance, the column containing the statistic is named following the statistic name, i.e., &lt;em&gt;t&lt;/em&gt;, &lt;em&gt;z&lt;/em&gt;, etc., instead of a generic name such as &lt;em&gt;statistic&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;It is able to compute or extract indices not available by default, such as &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, etc.&lt;/li&gt;
+&lt;li&gt;It includes &lt;strong&gt;feature engineering&lt;/strong&gt; capabilities, including &lt;a href=&#34;https://easystats.github.io/parameters/articles/bootstrapping.html&#34;&gt;&lt;strong&gt;bootstrapping&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/parameters/articles/standardization.html&#34;&gt;&lt;strong&gt;standardization&lt;/strong&gt;&lt;/a&gt; of parameters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;div id=&#34;anovas&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;ANOVAs&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- iris
+df$Sepal.Big &amp;lt;- ifelse(df$Sepal.Width &amp;gt;= 3, &amp;quot;Yes&amp;quot;, &amp;quot;No&amp;quot;)
+
+model &amp;lt;- aov(Sepal.Length ~ Sepal.Big, data = df)
+model_parameters(model, eta_squared = &amp;quot;partial&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter | Sum_Squares |  df | Mean_Square |    F |    p | Eta_Sq (partial)
+## ----------------------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | &amp;gt; .1 |             0.01
+## Residuals |      101.07 | 148 |        0.68 |      |      |&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;mixed-models&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Mixed models&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(lme4)
+
+model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
+model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |        95% CI |    t |      p | Coefficient (std.)
+## --------------------------------------------------------------------------------------
+## (Intercept)  |        1.78 | 0.69 | [-1.71, 5.26] | 2.56 |  &amp;lt; .05 |               0.00
+## Petal.Length |        0.15 | 0.06 | [-0.14, 0.43] | 2.26 |  &amp;lt; .05 |               0.59
+## Petal.Width  |        0.61 | 0.14 | [-0.59, 1.81] | 4.49 | &amp;lt; .001 |               1.07&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see)
+
+lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;% 
+  model_parameters() %&amp;gt;% 
+  plot()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bayesian-models&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Bayesian models&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rstanarm)
+
+model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
+model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat |               Prior
+## -----------------------------------------------------------------------------------------------
+## (Intercept) |  39.68 | [36.74, 42.35] |   100% |        0% | 4836 | 0.999 | Normal (0 +- 60.27)
+## wt          |  -3.19 | [-4.41, -2.03] | 99.98% |     0.05% | 2276 | 1.000 | Normal (0 +- 15.40)
+## cyl         |  -1.50 | [-2.21, -0.88] |   100% |     1.75% | 2300 | 1.000 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>parameters</category>
+      
+            <category>standardize</category>
+      
+            <category>coefficients</category>
+      
+      
+            <category>R</category>
+      
+            <category>parameters</category>
+      
+    </item>
+    
+  </channel>
+</rss>

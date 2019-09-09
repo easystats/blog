@@ -1,0 +1,81 @@
+---
+title: "parameters: a powerful and lightweight alternative to broom to describe your models' coefficients"
+author: "easystats"
+date: 2019-09-10
+categories: ["R", "parameters"]
+tags: ["R", "easystats", "parameters", "standardize", "coefficients"]
+---
+
+
+
+<p><img src="https://github.com/easystats/parameters/raw/master/man/figures/logo.png" width="200px" /></p>
+<p>Okay, <em>“an alternative to broom”</em> might be a bit of an <strong>overstatement</strong> <em>(at least for now…)</em></p>
+<p>But the <a href="https://github.com/easystats/parameters"><strong><code>parameters</code></strong></a> package, finally on CRAN, already has some cool features!</p>
+<div id="parameters" class="section level2">
+<h2>parameters</h2>
+<p><a href="https://github.com/orgs/easystats/people">We</a> have recently decided to collaborate around the <a href="https://github.com/easystats"><strong>easystats project</strong></a>, a set of packages designed to make your life <em>easier</em>. This project encompasses several packages, devoted for instance to <a href="https://github.com/easystats/insight">model internal access</a>, <a href="https://github.com/easystats/bayestestR">Bayesian analysis</a>, as well as <a href="https://github.com/easystats/performance">indices of model performance and quality</a>.</p>
+<p><a href="https://github.com/easystats/parameters"><strong><code>parameters'</code></strong></a> primary goal is to provide utilities for processing the parameters of various statistical models. Beyond computing <strong><em>p</em>-values</strong>, <strong>CIs</strong>, <strong>Bayesian indices</strong> and other measures for a wide variety of models, this package implements features like <strong>standardization</strong> or <strong>bootstrapping</strong> of parameters and models, <strong>feature reduction</strong> (feature extraction and variable selection) as well as conversion between indices of <strong>effect size</strong>.</p>
+<p>The main function of the package is <code>model_parameters()</code>, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to <a href="https://github.com/tidymodels/broom"><code>broom::tidy()</code></a>, with some notable differences:</p>
+<ul>
+<li>The names of the returned dataframe are <strong>specific</strong> to their content. For instance, the column containing the statistic is named following the statistic name, i.e., <em>t</em>, <em>z</em>, etc., instead of a generic name such as <em>statistic</em>.</li>
+<li>It is able to compute or extract indices not available by default, such as <strong><em>p</em> values</strong>, <strong>CIs</strong>, etc.</li>
+<li>It includes <strong>feature engineering</strong> capabilities, including <a href="https://easystats.github.io/parameters/articles/bootstrapping.html"><strong>bootstrapping</strong></a> and <a href="https://easystats.github.io/parameters/articles/standardization.html"><strong>standardization</strong></a> of parameters.</li>
+</ul>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<div id="anovas" class="section level3">
+<h3>ANOVAs</h3>
+<pre class="r"><code>df &lt;- iris
+df$Sepal.Big &lt;- ifelse(df$Sepal.Width &gt;= 3, &quot;Yes&quot;, &quot;No&quot;)
+
+model &lt;- aov(Sepal.Length ~ Sepal.Big, data = df)
+model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
+<pre><code>## Parameter | Sum_Squares |  df | Mean_Square |    F |    p | Eta_Sq (partial)
+## ----------------------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | &gt; .1 |             0.01
+## Residuals |      101.07 | 148 |        0.68 |      |      |</code></pre>
+</div>
+<div id="mixed-models" class="section level3">
+<h3>Mixed models</h3>
+<pre class="r"><code>library(lme4)
+
+model &lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
+model_parameters(model, standardize = &quot;refit&quot;)</code></pre>
+<pre><code>## Parameter    | Coefficient |   SE |        95% CI |    t |      p | Coefficient (std.)
+## --------------------------------------------------------------------------------------
+## (Intercept)  |        1.78 | 0.69 | [-1.71, 5.26] | 2.56 |  &lt; .05 |               0.00
+## Petal.Length |        0.15 | 0.06 | [-0.14, 0.43] | 2.26 |  &lt; .05 |               0.59
+## Petal.Width  |        0.61 | 0.14 | [-0.59, 1.81] | 4.49 | &lt; .001 |               1.07</code></pre>
+<p>And you can also <strong>directly plot the parameters</strong> with the see package!</p>
+<pre class="r"><code>library(see)
+
+lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&gt;% 
+  model_parameters() %&gt;% 
+  plot()</code></pre>
+<p><img src="/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="bayesian-models" class="section level3">
+<h3>Bayesian models</h3>
+<pre class="r"><code>library(rstanarm)
+
+model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
+model_parameters(model)</code></pre>
+<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat |               Prior
+## -----------------------------------------------------------------------------------------------
+## (Intercept) |  39.68 | [36.74, 42.35] |   100% |        0% | 4836 | 0.999 | Normal (0 +- 60.27)
+## wt          |  -3.19 | [-4.41, -2.03] | 99.98% |     0.05% | 2276 | 1.000 | Normal (0 +- 15.40)
+## cyl         |  -1.50 | [-2.21, -0.88] |   100% |     1.75% | 2300 | 1.000 |  Normal (0 +- 8.44)</code></pre>
+<ul>
+<li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
+</ul>
+</div>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p>There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!</p>
+<p>Note that <em>easystats</em> is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>

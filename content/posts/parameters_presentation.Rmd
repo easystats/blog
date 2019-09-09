@@ -22,7 +22,7 @@ include_graphics("https://github.com/easystats/parameters/raw/master/man/figures
 ```
 
 
-Well, *"an alternative to broom"* might be a bit of an **overstatement** *(at least for now...)*
+Okay, *"an alternative to broom"* might be a bit of an **overstatement** *(at least for now...)*
 
 But the [**`parameters`**](https://github.com/easystats/parameters) package, finally on CRAN, already has some cool features!
 
@@ -34,7 +34,9 @@ But the [**`parameters`**](https://github.com/easystats/parameters) package, fin
 
 [**`parameters'`**](https://github.com/easystats/parameters) primary goal is to provide utilities for processing the parameters of various statistical models. Beyond computing ***p*-values**, **CIs**, **Bayesian indices** and other measures for a wide variety of models, this package implements features like **standardization** or **bootstrapping** of parameters and models, **feature reduction** (feature extraction and variable selection) as well as conversion between indices of **effect size**.
 
-The main function of the package is `model_parameters()`, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to [`broom::tidy()`](https://github.com/tidymodels/broom), with some notable differences: 
+The main function of the package is `model_parameters()`, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to [`broom::tidy()`](https://github.com/tidymodels/broom), with some notable differences:
+
+
 - The names of the returned dataframe are **specific** to their content. For instance, the column containing the statistic is named following the statistic name, i.e., *t*, *z*, etc., instead of a generic name such as *statistic*.
 - It is able to compute or extract indices not available by default, such as ***p* values**, **CIs**, etc.
 - It includes **feature engineering** capabilities, including [**bootstrapping**](https://easystats.github.io/parameters/articles/bootstrapping.html) and [**standardization**](https://easystats.github.io/parameters/articles/standardization.html) of parameters.
@@ -50,14 +52,14 @@ df <- iris
 df$Sepal.Big <- ifelse(df$Sepal.Width >= 3, "Yes", "No")
 
 model <- aov(Sepal.Length ~ Sepal.Big, data = df)
-model_parameters(model, omega_squared = "partial", eta_squared = "partial", epsilon_squared = TRUE)
+model_parameters(model, eta_squared = "partial")
 ```
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 df <- iris
 df$Sepal.Big <- ifelse(df$Sepal.Width >= 3, "Yes", "No")
 
 model <- aov(Sepal.Length ~ Sepal.Big, data = df)
-model_parameters(model, omega_squared = "partial", eta_squared = "partial", epsilon_squared = TRUE)
+model_parameters(model, eta_squared = "partial")
 ```
 
 ### Mixed models
@@ -101,7 +103,7 @@ model_parameters(model)
 ```
 
 
-- **Check out** [**more examples and documentation**](https://easystats.github.io/parameters/) **for more!**
+- **Check out** [**more examples and documentation here!**](https://easystats.github.io/parameters/)
 
 
 
