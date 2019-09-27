@@ -25,7 +25,7 @@ include_graphics("https://github.com/easystats/parameters/raw/master/man/figures
 The [**easystats project**](https://github.com/easystats) continues to grow, expanding its capabilities and features, and the [**`parameters`**](https://github.com/easystats/parameters) package 0.2.0 update is now on CRAN.
 
 
-The primary goal is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developpers, as it is a lightweight and open-developed package.
+The primary goal is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(parameters)
@@ -34,7 +34,7 @@ model <- lm(Sepal.Width ~ Petal.Length * Species, data = iris)
 model_parameters(model, standardize = "refit")
 ```
 
-The main function, [`model_parameters()`](https://easystats.github.io/parameters/articles/model_parameters.html) can be seen as an alternative to `broom::tidy()`. However, the package also include many more useful [features](https://easystats.github.io/parameters/reference/index.html), some of which are described in our **improved documentation**:
+The main function, [`model_parameters()`](https://easystats.github.io/parameters/articles/model_parameters.html), can be seen as an alternative to `broom::tidy()`. However, the package also include many more useful [features](https://easystats.github.io/parameters/reference/index.html), some of which are described in our **improved documentation**:
 
 ## Improved Documentation
 
@@ -59,8 +59,23 @@ The main function, [`model_parameters()`](https://easystats.github.io/parameters
 
 ## Improved Support
 
-Besides stabilizing and improving the functions for the most popular models (`glm()`, `glmer()`, `stan_glm()`, `psych` and `lavaan`...), the functions `p_value()`, `ci()`, `standard_error()`, `standardize()` and most importantly `model_parameters()` now support many more model objects, including mixed models from packages *nlme*, *glmmTMB* or *GLMMadaptive*, zero-inflated models from package *pscl*, other regression types from packages *gam*, and structural models from *FactoMineR*.
+Besides stabilizing and improving the functions for the most popular models (`glm()`, `glmer()`, `stan_glm()`, `psych` and `lavaan`...), the functions `p_value()`, `ci()`, `standard_error()`, `standardize()` and most importantly `model_parameters()` now support many more model objects, including mixed models from packages *nlme*, *glmmTMB* or *GLMMadaptive*, zero-inflated models from package *pscl*, other regression types from packages *gam* or *mgcv*, fixed effects regression models from *panelr*, *lfe*, *feisr* or *plm*, and structural models from *FactoMineR*.
 
+## Improved Printing
+
+For models with special components, in particular zero-inflated models, `model_parameters()` separates these components for a clearer output.
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+library(glmmTMB)
+
+model <- glmmTMB(
+  count ~ spp + mined + (1 | site),
+  ziformula = ~mined,
+  family = poisson(),
+  data = Salamanders
+)
+model_parameters(model)
+```
 
 ## Join the team
 
