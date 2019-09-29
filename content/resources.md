@@ -17,7 +17,6 @@ Here are some links to get started with R:
   - [**EdX courses**](https://www.edx.org/learn/r-programming)
   - [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
   
-  
 
 ## Stay tuned
 
@@ -26,8 +25,19 @@ evolving field:
 
   - [**r-bloggers**](https://www.r-bloggers.com/)
   - [**r-weekly**](https://rweekly.org )
-  
 
+
+## For Psychology
+
+  - [**Learning Statistics with R**](https://learningstatisticswithr.com/)
+  - [**R for Psychological Science**](https://psyr.org/)
+  - [**Statistical Modeling and Mixed Models with R**](https://github.com/singmann/mixed_model_workshop)
+
+
+## Bayesian Statistics
+
+  - [**Bayesian Stats Tutorial**](https://easystats.github.io/bayestestR/articles/bayestestR.html)
+  - [**Introduction to Bayes factors with Harry Potter**](https://fabiandablander.com/r/Bayes-Potter.html)
 
 
 ## Miscellaneous
@@ -40,13 +50,7 @@ This section contains more scope-focused resources:
   - [**GAMs in R**](https://noamross.github.io/gams-in-r-course/)
   - [**Mixed Models in R**](https://m-clark.github.io/mixed-models-with-R/)
   
-
-## For Psychology
-
-  - [**Learning Statistics with R**](https://learningstatisticswithr.com/)
-  - [**R for Psychological Science**](https://psyr.org/)
-  - [**Statistical Modeling and Mixed Models with R**](https://github.com/singmann/mixed_model_workshop)
-
+  
 ## Contribute
 
 You can contribute to this post by adding more resources

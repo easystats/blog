@@ -58,26 +58,29 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.942     -1.66    -0.134
+##  color - monochromatic   -0.944     -1.66    -0.128
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <p>We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:</p>
 <pre class="r"><code>em_color_simple &lt;- emmeans(stan_model, ~color * shape)
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.941     -1.98    0.1140
+##  color - monochromatic   -0.940     -1.99     0.115
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -2.10    0.0366
+##  color - monochromatic   -0.949     -1.98     0.149
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
-<pre><code>##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.000141     -1.45      1.45
+<pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square -0.00364      -1.5      1.36
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <p>As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence <em>for the null</em>?</p>
 <div id="quantifying-evidence-for-the-null" class="section level2">
@@ -88,12 +91,13 @@ c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all</code></pre>
 <pre><code>##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.942
-##  .                     color - monochromatic round - square    0.000
+##  color - monochromatic .                     .                -0.944
+##  .                     color - monochromatic round - square   -0.004
 ##  lower.HPD upper.HPD
-##      -1.66    -0.134
-##      -1.45     1.451
+##      -1.66    -0.128
+##      -1.50     1.362
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>describe_posterior(c_color_all,
                    estimate = &quot;median&quot;, dispersion = TRUE,
@@ -103,6 +107,7 @@ c_color_all</code></pre>
 <table>
 <thead>
 <tr class="header">
+<th></th>
 <th align="left">Parameter</th>
 <th align="right">Median</th>
 <th align="right">MAD</th>
@@ -114,22 +119,24 @@ c_color_all</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
+<td>2</td>
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.942</td>
-<td align="right">0.371</td>
+<td align="right">-0.944</td>
+<td align="right">0.385</td>
 <td align="right">90</td>
 <td align="right">-1.58</td>
-<td align="right">-0.319</td>
-<td align="right">3.29</td>
+<td align="right">-0.302</td>
+<td align="right">3.233</td>
 </tr>
 <tr class="even">
+<td>1</td>
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">0.000</td>
-<td align="right">0.726</td>
+<td align="right">-0.004</td>
+<td align="right">0.732</td>
 <td align="right">90</td>
-<td align="right">-1.24</td>
-<td align="right">1.149</td>
-<td align="right">0.21</td>
+<td align="right">-1.25</td>
+<td align="right">1.135</td>
+<td align="right">0.229</td>
 </tr>
 </tbody>
 </table>

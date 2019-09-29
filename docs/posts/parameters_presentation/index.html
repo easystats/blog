@@ -257,11 +257,11 @@ model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
 
 model &lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
 model_parameters(model, standardize = &quot;refit&quot;)</code></pre>
-<pre><code>## Parameter    | Coefficient |   SE |        95% CI |    t |      p | Coefficient (std.)
-## --------------------------------------------------------------------------------------
-## (Intercept)  |        1.78 | 0.69 | [-1.71, 5.26] | 2.56 |  &lt; .05 |               0.00
-## Petal.Length |        0.15 | 0.06 | [-0.14, 0.43] | 2.26 |  &lt; .05 |               0.59
-## Petal.Width  |        0.61 | 0.14 | [-0.59, 1.81] | 4.49 | &lt; .001 |               1.07</code></pre>
+<pre><code>## Parameter    | Coefficient |   SE |       95% CI |    t |      p | Coefficient (std.)
+## -------------------------------------------------------------------------------------
+## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | &lt; .05  |               0.00
+## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | &lt; .05  |               0.59
+## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | &lt; .001 |               1.07</code></pre>
 <p>And you can also <strong>directly plot the parameters</strong> with the see package!</p>
 <pre class="r"><code>library(see)
 
@@ -276,11 +276,11 @@ lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&gt;%
 
 model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
-<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat |               Prior
+<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.68 | [36.74, 42.35] |   100% |        0% | 4836 | 0.999 | Normal (0 +- 60.27)
-## wt          |  -3.19 | [-4.41, -2.03] | 99.98% |     0.05% | 2276 | 1.000 | Normal (0 +- 15.40)
-## cyl         |  -1.50 | [-2.21, -0.88] |   100% |     1.75% | 2300 | 1.000 |  Normal (0 +- 8.44)</code></pre>
+## (Intercept) |  39.69 | [36.85, 42.55] |   100% |        0% | 1.000 | 5109 | Normal (0 +- 60.27)
+## wt          |  -3.20 | [-4.46, -1.90] | 99.98% |     0.05% | 1.001 | 2047 | Normal (0 +- 15.40)
+## cyl         |  -1.51 | [-2.20, -0.81] |   100% |     2.20% | 1.002 | 1983 |  Normal (0 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>
@@ -305,6 +305,11 @@ model_parameters(model)</code></pre>
       <span class="navigation-tittle">Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</span>
     </a>
     
+    
+    <a href="/blog/posts/parameters_v2/" class="navigation-next">
+      <span class="navigation-tittle">More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 

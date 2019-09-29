@@ -6,10 +6,21 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
+      <link>/blog/posts/parameters_v2/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/parameters_v2/</guid>
+      <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
+The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
+The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>
+    </item>
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
@@ -43,6 +54,16 @@ options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.</description>
     </item>
     
     <item>
+      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
+      <link>/blog/posts/bayestestr_emmeans.knit/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_emmeans.knit/</guid>
+      <description>The Problem with Null Effects Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with *p* = 1.00!
+options(contrasts = c(&#39;contr.sum&#39;, &#39;contr.</description>
+    </item>
+    
+    <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
       <link>/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
@@ -59,6 +80,17 @@ And this release is so packed with new features and improvements that it would b
       
       <guid>/blog/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
+Without further ado, please let us introduce the latest addition to the easyverse; the see package!
+Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
+    </item>
+    
+    <item>
+      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
+      <link>/blog/posts/see_presentation.knit/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/see_presentation.knit/</guid>
+      <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
     </item>

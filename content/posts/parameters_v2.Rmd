@@ -1,0 +1,85 @@
+---
+title: "More models, more features: what's new in 'parameters' 0.2.0"
+author: "easystats"
+date: 2019-09-30
+categories: ["R", "parameters"]
+tags: ["R", "easystats", "parameters", "broom", "coefficients"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+library(parameters)
+library(dplyr)
+```
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+include_graphics("https://github.com/easystats/parameters/raw/master/man/figures/figure1.png")
+```
+
+
+The [**easystats project**](https://github.com/easystats) continues to grow, expanding its capabilities and features, and the [**`parameters`**](https://github.com/easystats/parameters) package 0.2.0 update is now on CRAN.
+
+The primary goal of this package is to provide utilities for **processing the parameters** of various statistical models. It is useful for end-users as well as developers, as it is a **lightweight** and open-developed package.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(parameters)
+
+model <- lm(Sepal.Width ~ Petal.Length * Species, data = iris)
+model_parameters(model, standardize = "refit")
+```
+
+The main function, [`model_parameters()`](https://easystats.github.io/parameters/articles/model_parameters.html), can be seen as an alternative to `broom::tidy()`. However, the package also include many more useful [features](https://easystats.github.io/parameters/reference/index.html), some of which are described in our **improved documentation**:
+
+## Improved Documentation
+
+- **Parameters Description**
+
+  - [Guide to parameters description](https://easystats.github.io/parameters/articles/model_parameters.html)
+
+- **Parameters Engineering**
+
+  - [Guide to bootstrapped parameters](https://easystats.github.io/parameters/articles/bootstrapping.html)
+  - [Guide to standardized parameters](https://easystats.github.io/parameters/articles/standardization.html)
+
+- **Parameters Selection**
+
+  - [Guide to parameters selection](https://easystats.github.io/parameters/articles/parameters_selection.html)
+
+- **Dimension Reduction**
+
+  - [Guide to feature reduction (PCA, cMDS, ICA...)](https://easystats.github.io/parameters/articles/parameters_reduction.html)
+  - [Guide to structural models (EFA, CFA, SEM...)](https://easystats.github.io/parameters/articles/efa_cfa.html)
+
+
+## Improved Support
+
+Besides stabilizing and improving the functions for the most popular models (`glm()`, `glmer()`, `stan_glm()`, `psych` and `lavaan`...), the functions `p_value()`, `ci()`, `standard_error()`, `standardize()` and most importantly `model_parameters()` now support many more model objects, including mixed models from packages *nlme*, *glmmTMB* or *GLMMadaptive*, zero-inflated models from package *pscl*, other regression types from packages *gam* or *mgcv*, fixed effects regression models from *panelr*, *lfe*, *feisr* or *plm*, and structural models from *FactoMineR*.
+
+## Improved Printing
+
+For models with special components, in particular zero-inflated models, `model_parameters()` separates these components for a clearer output.
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+library(glmmTMB)
+
+model <- glmmTMB(
+  count ~ spp + mined + (1 | site),
+  ziformula = ~mined,
+  family = poisson(),
+  data = Salamanders
+)
+model_parameters(model)
+```
+
+## Join the team
+
+There is still room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!
+
+Note that *easystats* is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact one of [us](https://github.com/orgs/easystats/people) if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

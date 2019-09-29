@@ -69,26 +69,29 @@ stan_model &amp;lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_main &amp;lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.942     -1.66    -0.134
+##  color - monochromatic   -0.944     -1.66    -0.128
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;em_color_simple &amp;lt;- emmeans(stan_model, ~color * shape)
 pairs(em_color_simple, by = &amp;quot;shape&amp;quot;) # simple effects for color&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.941     -1.98    0.1140
+##  color - monochromatic   -0.940     -1.99     0.115
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -2.10    0.0366
+##  color - monochromatic   -0.949     -1.98     0.149
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_shape_interaction &amp;lt;- contrast(em_color_simple, interaction = c(&amp;quot;pairwise&amp;quot;,&amp;quot;pairwise&amp;quot;))
 c_color_shape_interaction&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise  estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.000141     -1.45      1.45
+&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square -0.00364      -1.5      1.36
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
 &lt;div id=&#34;quantifying-evidence-for-the-null&#34; class=&#34;section level2&#34;&gt;
@@ -99,12 +102,13 @@ c_color_all &amp;lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  contrast              color_pairwise        shape_pairwise estimate
-##  color - monochromatic .                     .                -0.942
-##  .                     color - monochromatic round - square    0.000
+##  color - monochromatic .                     .                -0.944
+##  .                     color - monochromatic round - square   -0.004
 ##  lower.HPD upper.HPD
-##      -1.66    -0.134
-##      -1.45     1.451
+##      -1.66    -0.128
+##      -1.50     1.362
 ## 
+## Point estimate displayed: median 
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;describe_posterior(c_color_all,
                    estimate = &amp;quot;median&amp;quot;, dispersion = TRUE,
@@ -114,6 +118,7 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;Median&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;MAD&lt;/th&gt;
@@ -125,22 +130,24 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;2&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;color - monochromatic, ., .&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-0.942&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.371&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.944&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.385&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;-1.58&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-0.319&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;3.29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.302&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.233&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;1&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;., color - monochromatic, round - square&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.000&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.726&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-0.004&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.732&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;-1.24&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;1.149&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.21&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-1.25&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.135&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.229&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -155,6 +162,176 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
+    
+    <item>
+      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
+      <link>/blog/posts/bayestestr_emmeans.knit/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_emmeans.knit/</guid>
+      <description>
+
+&lt;h1 id=&#34;the-problem-with-null-effects&#34;&gt;The Problem with Null Effects&lt;/h1&gt;
+
+&lt;p&gt;Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with *&lt;strong&gt;p* = 1.00&lt;/strong&gt;!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;options(contrasts = c(&#39;contr.sum&#39;, &#39;contr.poly&#39;))
+
+data(&amp;quot;puzzles&amp;quot;, package = &amp;quot;BayesFactor&amp;quot;)
+aov_model &amp;lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
+
+summary(aov_model)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## 
+## Error: ID
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
+## Residuals 11    226    20.6               
+## 
+## Error: ID:shape
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)  
+## shape      1   12.0   12.00    7.54  0.019 *
+## Residuals 11   17.5    1.59                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Error: ID:color
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)   
+## color      1   12.0   12.00    13.9 0.0033 **
+## Residuals 11    9.5    0.86                  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Error: ID:shape:color
+##             Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
+## shape:color  1    0.0    0.00       0      1
+## Residuals   11   30.5    2.77
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You look at your data, as you were taught to do, and it really does seems like the effect of color &lt;em&gt;is not&lt;/em&gt; moderated by shape (and vice versa):
+&lt;img src=&#34;bayestestR_emmeans_files/figure-html/plot_data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But what does this mean? &lt;strong&gt;Can you infer that there isn&amp;rsquo;t interaction?&lt;/strong&gt; Are the two simple effects of color truly identical?&lt;/p&gt;
+
+&lt;p&gt;Classical statistics has no answer for us here - when the &lt;em&gt;p&lt;/em&gt;-value is less than alpha (typically 5%) we can reject the null hypothesis, but when *&lt;strong&gt;p* &amp;gt; .05&lt;/strong&gt;, even a lot bigger than 5%, classical (frequentists) statistics &lt;strong&gt;do not allow to infer that the null is true&lt;/strong&gt;. For this, we need to go Bayesian!&lt;/p&gt;
+
+&lt;h1 id=&#34;going-bayesian&#34;&gt;Going Bayesian&lt;/h1&gt;
+
+&lt;p&gt;One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a &lt;strong&gt;Bayesian mixed model equivalent to the repeated measures ANOVA&lt;/strong&gt; above, manually specifying weakly informative priors on its effects:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(rstanarm)
+stan_model &amp;lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
+                        prior = cauchy(0,c(0.707,0.707,0.5),          # as per Rouder et al., 2012
+                        prior_intercept = student_t(3,0,10),          # weakly informative
+                        prior_aux = exponential(.1),                  # weakly informative
+                        prior_covariance = decov(1,1,1,1))            # weakly informative
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using the fantastic &lt;strong&gt;&lt;code&gt;emmeans&lt;/code&gt;&lt;/strong&gt; package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c_color_main &amp;lt;- pairs(emmeans(stan_model, ~ color))
+c_color_main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.944     -1.66    -0.128
+## 
+## Point estimate displayed: median 
+## HPD interval probability: 0.95
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;em_color_simple &amp;lt;- emmeans(stan_model, ~color * shape)
+pairs(em_color_simple, by = &amp;quot;shape&amp;quot;) # simple effects for color
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## shape = round:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.940     -1.99     0.115
+## 
+## shape = square:
+##  contrast              estimate lower.HPD upper.HPD
+##  color - monochromatic   -0.949     -1.98     0.149
+## 
+## Point estimate displayed: median 
+## HPD interval probability: 0.95
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;c_color_shape_interaction &amp;lt;- contrast(em_color_simple, interaction = c(&amp;quot;pairwise&amp;quot;,&amp;quot;pairwise&amp;quot;))
+c_color_shape_interaction
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
+##  color - monochromatic round - square -0.00364      -1.5      1.36
+## 
+## Point estimate displayed: median 
+## HPD interval probability: 0.95
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
+
+&lt;h2 id=&#34;quantifying-evidence-for-the-null&#34;&gt;Quantifying Evidence for the Null&lt;/h2&gt;
+
+&lt;p&gt;One way to quantify evidence in the Bayesian framework is to calculate a &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factor&lt;/strong&gt;&lt;/a&gt; - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with &lt;code&gt;bayesfactor_models()&lt;/code&gt;, we&amp;rsquo;ll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;version 0.2.1, available on GitHub&lt;/a&gt;) &lt;code&gt;describe_posterior()&lt;/code&gt; to&amp;hellip; well&amp;hellip; describe our &lt;code&gt;emmeans&lt;/code&gt; estimates&amp;rsquo; posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via &lt;code&gt;bf_prior&lt;/code&gt; to allow the extraction or prior draw.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# combine all estimates of interest to one object:
+c_color_all &amp;lt;- rbind(c_color_main,
+                     c_color_shape_interaction)
+c_color_all
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##  contrast              color_pairwise        shape_pairwise estimate
+##  color - monochromatic .                     .                -0.944
+##  .                     color - monochromatic round - square   -0.004
+##  lower.HPD upper.HPD
+##      -1.66    -0.128
+##      -1.50     1.362
+## 
+## Point estimate displayed: median 
+## HPD interval probability: 0.95
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;describe_posterior(c_color_all,
+                   estimate = &amp;quot;median&amp;quot;, dispersion = TRUE,
+                   ci = .9, ci_method = &amp;quot;hdi&amp;quot;,
+                   test = c(&amp;quot;bayesfactor&amp;quot;),
+                   bf_prior = stan_model)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; Parameter                                   Median     MAD   CI   CI_low   CI_high      BF
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2    color - monochromatic, ., .                 -0.944   0.385   90    -1.58    -0.302   3.233
+1    ., color - monochromatic, round - square    -0.004   0.732   90    -1.25     1.135   0.229&lt;/p&gt;
+
+&lt;p&gt;These Bayes factors reveal that a model with a main effect for color is &lt;strong&gt;~3&lt;/strong&gt; times more likely than a model without this effect, &lt;strong&gt;and&lt;/strong&gt; that a model &lt;em&gt;without&lt;/em&gt; an interaction is &lt;strong&gt;~&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;0&lt;/sub&gt;.22 = 4.5&lt;/strong&gt; times more likely than a model &lt;em&gt;with&lt;/em&gt; an interaction! But&amp;hellip; note that a Bayes factor of 4.5 is considered only &lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf&#34;&gt;moderate evidence in favor of the null effect&lt;/a&gt;. As we can see, &lt;strong&gt;a &lt;em&gt;p&lt;/em&gt;-value of 1.0 does not necessarily mean the data strongly supports the null&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Happy Bayesing!&lt;/p&gt;
+
+&lt;h2 id=&#34;join-easystats&#34;&gt;join easystats&lt;/h2&gt;
+
+&lt;p&gt;Note that &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt; is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
             <category>R</category>
@@ -410,11 +587,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [26.84 47.39]
-##           wt  Rejected      0.00 % [-4.16 -1.06]
-##          cyl Undecided      0.38 % [-1.91  0.34]
-##         gear Undecided      0.41 % [-2.28  1.68]
-##           am Undecided      0.19 % [-1.20  4.44]
+##  (Intercept)  Rejected      0.00 % [27.06 47.19]
+##           wt  Rejected      0.00 % [-4.17 -0.99]
+##          cyl Undecided      0.35 % [-1.86  0.32]
+##         gear Undecided      0.43 % [-2.14  1.74]
+##           am Undecided      0.20 % [-1.09  4.53]
 ##           hp  Accepted      1.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
