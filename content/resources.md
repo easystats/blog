@@ -17,7 +17,6 @@ Here are some links to get started with R:
   - [**EdX courses**](https://www.edx.org/learn/r-programming)
   - [**LearnR Youtube Channel**](https://www.youtube.com/user/TheLearnR/)
   
-  
 
 ## Stay tuned
 
@@ -26,21 +25,7 @@ evolving field:
 
   - [**r-bloggers**](https://www.r-bloggers.com/)
   - [**r-weekly**](https://rweekly.org )
-  
 
-
-
-## Miscellaneous
-
-This section contains more scope-focused resources:
-
-  - [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
-  - [**Bayesian Stats Tutorial**](https://easystats.github.io/bayestestR/articles/bayestestR.html)
-  - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
-  - [**Data Visualization: A practical introduction**](https://socviz.co/)
-  - [**GAMs in R**](https://noamross.github.io/gams-in-r-course/)
-  - [**Mixed Models in R**](https://m-clark.github.io/mixed-models-with-R/)
-  
 
 ## For Psychology
 
@@ -48,6 +33,24 @@ This section contains more scope-focused resources:
   - [**R for Psychological Science**](https://psyr.org/)
   - [**Statistical Modeling and Mixed Models with R**](https://github.com/singmann/mixed_model_workshop)
 
+
+## Bayesian Statistics
+
+  - [**Bayesian Stats Tutorial**](https://easystats.github.io/bayestestR/articles/bayestestR.html)
+  - [**Introduction to Bayes factors with Harry Potter**](https://fabiandablander.com/r/Bayes-Potter.html)
+
+
+## Miscellaneous
+
+This section contains more scope-focused resources:
+
+  - [**Interpretable Machine Learning book**](https://christophm.github.io/interpretable-ml-book/)
+  - [**Structural Equation Modeling using Lavaan**](https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf)
+  - [**Data Visualization: A practical introduction**](https://socviz.co/)
+  - [**GAMs in R**](https://noamross.github.io/gams-in-r-course/)
+  - [**Mixed Models in R**](https://m-clark.github.io/mixed-models-with-R/)
+  
+  
 ## Contribute
 
 You can contribute to this post by adding more resources
