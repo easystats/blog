@@ -42,25 +42,25 @@ tags: ["R", "easystats", "parameters", "broom", "coefficients"]
 <div id="improved-printing" class="section level2">
 <h2>Improved Printing</h2>
 <p>For models with special components, in particular zero-inflated models, <code>model_parameters()</code> separates these components for a clearer output.</p>
-<pre><code>## # Conditional component
+<pre><code>## # Fixed Effects component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | &gt; .1  
-## spp (PR)    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | &lt; .001
-## spp (DM)    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 0.05  
-## spp (EC-A)  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | &lt; .01 
-## spp (EC-L)  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | &lt; .001
-## spp (DES-L) |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | &lt; .001
-## spp (DF)    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | &gt; .1  
-## mined (no)  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | &lt; .001
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &lt; .001
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &lt; .001
+## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &lt; .001
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &lt; .001
 ## 
 ## # Zero-Inflated component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | &lt; .01 
-## mined (no)  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | &lt; .001</code></pre>
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &lt; .001</code></pre>
 </div>
 <div id="join-the-team" class="section level2">
 <h2>Join the team</h2>
