@@ -27,9 +27,11 @@ We believe that this could be solved (at least, partially) by the **default impl
 devtools::install_github("easystats/report")  # Install the latest psycho version
 
 library(report)  # Load the package
+library(dplyr)
 ```
 ```{r fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, include=FALSE, results='markup'}
 library(report)  # Load the package
+library(dplyr)
 ```
 
 # Fit an anova
@@ -48,7 +50,7 @@ The `report` package include a single function, namely `report()`, that can be a
 ```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE}
 report(aov_results)
 ```
-```{r, fig.width=7, fig.height=4.5, eval = TRUE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, fig.width=7, fig.height=4.5, eval = FALSE, results='markup', fig.align='center', comment=NA, message=FALSE, warning=FALSE, echo=FALSE}
 report(aov_results) %>% to_text(width=80)
 ```
 
@@ -62,7 +64,7 @@ aov_results %>%
   report() %>% 
   to_table()
 ```
-```{r echo=FALSE, fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, results='asis'}
+```{r eval = FALSE, echo=FALSE, fig.align='center', fig.height=4.5, fig.width=7, message=FALSE, warning=FALSE, comment=NA, results='asis'}
 aov_results %>% 
   report() %>% 
   to_table() %>% 

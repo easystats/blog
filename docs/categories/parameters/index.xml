@@ -1,21 +1,199 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>parameters on easystats</title>
-    <link>/blog/categories/parameters/</link>
+    <link>https://easystats.github.io/blog/categories/parameters/</link>
     <description>Recent content in parameters on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>News from easystats: updated parameters and see packages.</title>
+      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/parameters/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;img src=&#34;https://github.com/easystats/see/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;new-features-of-the-parameters-and-see-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;New Features of the parameters and see Package&lt;/h2&gt;
+&lt;p&gt;We’re excited to announce some news from the &lt;a href=&#34;https://github.com/easystats/easystats&#34;&gt;easystats-project&lt;/a&gt;. Two packages were updated recently, the &lt;a href=&#34;https://easystats.github.io/parameters&#34;&gt;&lt;strong&gt;parameters&lt;/strong&gt;-package&lt;/a&gt; and our visualization-toolbox, the &lt;a href=&#34;http://easystats.github.io/see&#34;&gt;&lt;strong&gt;see&lt;/strong&gt;-package&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before we start introducing some of the new features, we’d like to explain why you need the &lt;strong&gt;see&lt;/strong&gt;-package to create plots for functions from other &lt;em&gt;easystats&lt;/em&gt; packages. So, the &lt;strong&gt;see&lt;/strong&gt;-package not only includes additional geoms, color scales and themes for &lt;strong&gt;ggplot2&lt;/strong&gt;, but - maybe more important - also provides &lt;code&gt;plot()&lt;/code&gt;-methods for many functions from the various &lt;em&gt;easystats&lt;/em&gt; packages. By separating the plotting functionality from our core packages, packages from the easystats-project don’t rely nor import any other packages! This means that you can safely use them as dependencies in your own packages, without the risk of butterfly effects (a small change in a distant downstream dependency with unexpected upstream consequences).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;print-and-plot-your-model-parameters&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Print and Plot your Model Parameters&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://easystats.github.io/parameters/reference/model_parameters.html&#34;&gt;&lt;code&gt;model_parameters()&lt;/code&gt;&lt;/a&gt; function in the &lt;strong&gt;parameters&lt;/strong&gt;-package is simlar to &lt;code&gt;broom::tidy()&lt;/code&gt; - it returns a summary of the model parameters as a clean, consistent data frame. &lt;a href=&#34;https://easystats.github.io/parameters/reference/standardize_names.html&#34;&gt;&lt;code&gt;standardize_names()&lt;/code&gt;&lt;/a&gt; can be used to return a data frame with column names as they are used in other packages (like &lt;strong&gt;broom&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;model_parameters()&lt;/code&gt; supports many different models, including mixed or Bayesian regression models. It comes with nice &lt;code&gt;print()&lt;/code&gt; and &lt;code&gt;plot()&lt;/code&gt; methods.&lt;/p&gt;
+&lt;div id=&#34;examples---zero-inflated-mixed-models-with-glmmtmb&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Examples - Zero Inflated Mixed Models with glmmTMB&lt;/h3&gt;
+&lt;p&gt;The first example is a zero-inflated mixed model, fitted with the &lt;strong&gt;glmmTMB&lt;/strong&gt;-package. &lt;code&gt;model_parameters()&lt;/code&gt; creates separate tables for different model components (like zero-inflated components).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(glmmTMB)
+data(Salamanders)
+model &amp;lt;- glmmTMB(
+  count ~ spp + mined + (1 | site),
+  ziformula = ~mined,
+  family = poisson(),
+  data = Salamanders
+)
+
+model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # Fixed Effects component
+## 
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &amp;lt; .001
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &amp;lt; .001
+## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &amp;lt; .001
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &amp;lt; .001
+## 
+## # Zero-Inflated component
+## 
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If only a specific part of the model should be shown, use the &lt;code&gt;component&lt;/code&gt;-argument.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model, component = &amp;quot;zero_inflated&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; creates a so called “forest plot”. In case of models with multiple components, parameters are separated into facets by model component.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- model_parameters(model)
+plot(result)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples---bayesian-mixed-models-with-brms&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Examples - Bayesian Mixed Models with brms&lt;/h3&gt;
+&lt;p&gt;For the next example, we download a pre-compiled &lt;strong&gt;brms&lt;/strong&gt; model to save computation time. For Bayesian models, by default, only “fixed” effects are shown. Using &lt;code&gt;effects = &#34;all&#34;&lt;/code&gt; and &lt;code&gt;component = &#34;all&#34;&lt;/code&gt; allows us to display random effects and the parameters of the zero-inflated model part as well.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# We download the model to save computation time. Here is the code
+# to refit the exact model used below...
+
+# zinb &amp;lt;- read.csv(&amp;quot;http://stats.idre.ucla.edu/stat/data/fish.csv&amp;quot;)
+# set.seed(123)
+# model &amp;lt;- brm(bf(
+#     count ~ persons + child + camper + (1 | persons),
+#     zi ~ child + camper + (1 | persons)
+#   ),
+#   data = zinb,
+#   family = zero_inflated_poisson()
+# )
+brms_model &amp;lt;- insight::download_model(&amp;quot;brms_zi_2&amp;quot;)
+result &amp;lt;- model_parameters(brms_model, effects = &amp;quot;all&amp;quot;, component = &amp;quot;all&amp;quot;)
+
+result&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # Fixed Effects (Count Model) 
+## 
+## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat
+## -------------------------------------------------------------------------
+## (Intercept) |  -0.84 | [-1.44, -0.29] | 96.43% |     2.77% |  562 | 1.009
+## persons     |   0.84 | [ 0.66,  1.06] |   100% |        0% |  382 | 1.010
+## child       |  -1.15 | [-1.29, -0.98] |   100% |        0% | 1089 | 1.002
+## camper      |   0.73 | [ 0.58,  0.89] |   100% |        0% | 2724 | 1.000
+## 
+## # Fixed Effects (Zero-Inflated Model) 
+## 
+## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat
+## -------------------------------------------------------------------------
+## (Intercept) |  -0.64 | [-1.93,  0.52] | 83.15% |     6.95% |  845 | 1.001
+## child       |   1.88 | [ 1.40,  2.43] |   100% |        0% | 2322 | 1.001
+## camper      |  -0.83 | [-1.41, -0.24] | 98.95% |     1.70% | 2277 | 1.001
+## 
+## # Random Effects (Count Model) 
+## 
+## Parameter | Median |        89% CI |     pd | % in ROPE | ESS |  Rhat
+## ---------------------------------------------------------------------
+## persons.1 |  -0.01 | [-0.38, 0.28] | 55.33% |    60.50% | 572 | 1.009
+## persons.2 |   0.02 | [-0.17, 0.30] | 61.88% |    65.62% | 691 | 1.008
+## persons.3 |  -0.02 | [-0.26, 0.18] | 61.27% |    67.90% | 340 | 1.011
+## persons.4 |   0.00 | [-0.32, 0.33] | 51.38% |    62.12% | 287 | 1.011
+## 
+## # Random Effects (Zero-Inflated Model) 
+## 
+## Parameter | Median |         89% CI |     pd | % in ROPE | ESS |  Rhat
+## ----------------------------------------------------------------------
+## persons.1 |   1.28 | [ 0.08,  2.70] | 95.73% |     2.15% | 811 | 1.001
+## persons.2 |   0.25 | [-0.90,  1.57] | 66.45% |    12.72% | 759 | 1.001
+## persons.3 |  -0.18 | [-1.51,  1.01] | 59.67% |    11.28% | 871 | 1.001
+## persons.4 |  -1.29 | [-2.62, -0.01] | 94.85% |     1.85% | 912 | 1.000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; now creates four facets by default. Note that plots from the &lt;strong&gt;parameters&lt;/strong&gt;-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the &lt;strong&gt;bayestestRR&lt;/strong&gt;-package, as shown &lt;a href=&#34;https://easystats.github.io/see/articles/bayestestR.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;You can modify the layout with &lt;code&gt;n_columns&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result, n_columns = 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples---meta-analysis-with-metafor&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Examples - Meta-Analysis with metafor&lt;/h3&gt;
+&lt;p&gt;Even results from meta-analyses, using the &lt;strong&gt;metafor&lt;/strong&gt;-package, can be visualized with &lt;strong&gt;parameters&lt;/strong&gt; and &lt;strong&gt;see&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(metafor)
+d &amp;lt;- data.frame(
+  effectsize = c(-0.393, 0.675, 0.282, -1.398),
+  standarderror = c(0.317, 0.317, 0.13, 0.36)
+)
+
+ma &amp;lt;- rma(yi = effectsize, sei = standarderror, method = &amp;quot;REML&amp;quot;, data = d)
+result &amp;lt;- model_parameters(ma)
+
+result&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |   SE |         95% CI |     z |      p | Weight
+## ---------------------------------------------------------------------------
+## Study 1     |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
+## Study 2     |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
+## Study 3     |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
+## Study 4     |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &amp;lt; .001 |   7.72
+## (Intercept) |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check out&lt;/strong&gt; more examples and documentation &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;parameters&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/see/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;see&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>parameters</category>
+      
+            <category>coefficients</category>
+      
+            <category>see</category>
+      
+            <category>visualization</category>
+      
+      
+            <category>R</category>
+      
+            <category>parameters</category>
+      
+            <category>see</category>
+      
+    </item>
+    
+    <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>/blog/posts/parameters_v2/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>
 
 
@@ -53,25 +231,25 @@
 &lt;div id=&#34;improved-printing&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Improved Printing&lt;/h2&gt;
 &lt;p&gt;For models with special components, in particular zero-inflated models, &lt;code&gt;model_parameters()&lt;/code&gt; separates these components for a clearer output.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## # Conditional component
+&lt;pre&gt;&lt;code&gt;## # Fixed Effects component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | &amp;gt; .1  
-## spp (PR)    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | &amp;lt; .001
-## spp (DM)    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 0.05  
-## spp (EC-A)  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | &amp;lt; .01 
-## spp (EC-L)  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | &amp;lt; .001
-## spp (DES-L) |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | &amp;lt; .001
-## spp (DF)    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | &amp;gt; .1  
-## mined (no)  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | &amp;lt; .001
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &amp;lt; .001
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &amp;lt; .001
+## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &amp;lt; .001
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &amp;lt; .001
 ## 
 ## # Zero-Inflated component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | &amp;lt; .01 
-## mined (no)  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;join-the-team&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Join the team&lt;/h2&gt;
@@ -102,10 +280,10 @@
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>/blog/posts/parameters_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>
 
 
@@ -132,10 +310,10 @@ df$Sepal.Big &amp;lt;- ifelse(df$Sepal.Width &amp;gt;= 3, &amp;quot;Yes&amp;quot
 
 model &amp;lt;- aov(Sepal.Length ~ Sepal.Big, data = df)
 model_parameters(model, eta_squared = &amp;quot;partial&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter | Sum_Squares |  df | Mean_Square |    F |    p | Eta_Sq (partial)
-## ----------------------------------------------------------------------------
-## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | &amp;gt; .1 |             0.01
-## Residuals |      101.07 | 148 |        0.68 |      |      |&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta_Sq (partial)
+## -----------------------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 |             0.01
+## Residuals |      101.07 | 148 |        0.68 |      |       |&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;mixed-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Mixed models&lt;/h3&gt;
@@ -143,18 +321,18 @@ model_parameters(model, eta_squared = &amp;quot;partial&amp;quot;)&lt;/code&gt;&
 
 model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
 model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |       95% CI |    t |      p | Coefficient (std.)
-## -------------------------------------------------------------------------------------
-## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | &amp;lt; .05  |               0.00
-## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | &amp;lt; .05  |               0.59
-## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | &amp;lt; .001 |               1.07&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |       95% CI |    t |  df |      p
+## ----------------------------------------------------------------------
+## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | 145 | 0.010 
+## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | 145 | 0.024 
+## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | 145 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see)
 
 lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;% 
   model_parameters() %&amp;gt;% 
   plot()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Bayesian models&lt;/h3&gt;
@@ -164,9 +342,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.69 | [36.85, 42.55] |   100% |        0% | 1.000 | 5109 | Normal (0 +- 60.27)
-## wt          |  -3.20 | [-4.46, -1.90] | 99.98% |     0.05% | 1.001 | 2047 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.20, -0.81] |   100% |     2.20% | 1.002 | 1983 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
+## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
+## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

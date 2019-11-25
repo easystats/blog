@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.59.1" />
 
     
     
@@ -31,9 +31,9 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
 To address this, please let us introduce bayestestR!
 bayestestRWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/bayestestr_presentation/" />
-<meta property="article:published_time" content="2019-04-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-04-15T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/bayestestr_presentation/" />
+<meta property="article:published_time" content="2019-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-15T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
 
     
@@ -74,14 +74,14 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -179,10 +179,10 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
           in
           
           
-              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              <a class="badge badge-category" href="/blog/categories/bayestestr">BAYESTESTR</a>
               •
           
-              <a class="badge badge-category" href="/blog/categories/bayestestr">BAYESTESTR</a>
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
               
           
       
@@ -252,12 +252,12 @@ equivalence_test(model)</code></pre>
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.06 47.19]
-##           wt  Rejected      0.00 % [-4.17 -0.99]
-##          cyl Undecided      0.35 % [-1.86  0.32]
-##         gear Undecided      0.43 % [-2.14  1.74]
-##           am Undecided      0.20 % [-1.09  4.53]
-##           hp  Accepted      1.00 % [-0.05  0.00]</code></pre>
+##  (Intercept)  Rejected      0.00 % [27.31 46.70]
+##           wt  Rejected      0.00 % [-4.22 -1.13]
+##          cyl Undecided     38.19 % [-1.85  0.34]
+##         gear Undecided     43.89 % [-2.16  1.68]
+##           am Undecided     20.50 % [-1.27  4.35]
+##           hp  Accepted    100.00 % [-0.05  0.00]</code></pre>
 <p>Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.</p>
 <pre class="r"><code># Do the test and plot results
 plot(equivalence_test(model))</code></pre>

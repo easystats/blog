@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.59.1" />
 
     
     
@@ -31,9 +31,9 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
 The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
 The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/parameters_v2/" />
-<meta property="article:published_time" content="2019-09-30T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-09-30T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/parameters_v2/" />
+<meta property="article:published_time" content="2019-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-30T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
 
     
@@ -74,14 +74,14 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -179,10 +179,10 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
           in
           
           
-              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              <a class="badge badge-category" href="/blog/categories/parameters">PARAMETERS</a>
               •
           
-              <a class="badge badge-category" href="/blog/categories/parameters">PARAMETERS</a>
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
               
           
       
@@ -257,25 +257,25 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
 <div id="improved-printing" class="section level2">
 <h2>Improved Printing</h2>
 <p>For models with special components, in particular zero-inflated models, <code>model_parameters()</code> separates these components for a clearer output.</p>
-<pre><code>## # Conditional component
+<pre><code>## # Fixed Effects component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | &gt; .1  
-## spp (PR)    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | &lt; .001
-## spp (DM)    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 0.05  
-## spp (EC-A)  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | &lt; .01 
-## spp (EC-L)  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | &lt; .001
-## spp (DES-L) |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | &lt; .001
-## spp (DF)    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | &gt; .1  
-## mined (no)  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | &lt; .001
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &lt; .001
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &lt; .001
+## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &lt; .001
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &lt; .001
 ## 
 ## # Zero-Inflated component
 ## 
-## Parameter   | Coefficient |   SE |         95% CI |     z |      p
-## ------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | &lt; .01 
-## mined (no)  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | &lt; .001</code></pre>
+## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
+## ------------------------------------------------------------------------
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &lt; .001</code></pre>
 </div>
 <div id="join-the-team" class="section level2">
 <h2>Join the team</h2>
@@ -296,6 +296,11 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
       <span class="navigation-tittle">parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</span>
     </a>
     
+    
+    <a href="/blog/posts/parameters_and_see_update/" class="navigation-next">
+      <span class="navigation-tittle">News from easystats: updated parameters and see packages.</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 

@@ -1,0 +1,134 @@
+---
+title: "News from easystats: updated parameters and see packages."
+author: "easystats"
+date: 2019-11-25
+categories: ["R", "parameters", "see"]
+tags: ["R", "easystats", "parameters", "coefficients", "see", "visualization"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+
+library(parameters)
+library(see)
+```
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/parameters/raw/master/man/figures/logo.png")
+ 
+include_graphics("https://github.com/easystats/see/raw/master/man/figures/logo.png")
+```
+
+## New Features of the parameters and see Package
+
+We're excited to announce some news from the [easystats-project](https://github.com/easystats/easystats). Two packages were updated recently, the [**parameters**-package](https://easystats.github.io/parameters) and our visualization-toolbox, the [**see**-package](http://easystats.github.io/see).
+
+Before we start introducing some of the new features, we'd like to explain why you need the **see**-package to create plots for functions from other *easystats* packages. So, the **see**-package not only includes additional geoms, color scales and themes for **ggplot2**, but - maybe more important - also provides `plot()`-methods for many functions from the various *easystats* packages. By separating the plotting functionality from our core packages, packages from the easystats-project don’t rely nor import any other packages! This means that you can safely use them as dependencies in your own packages, without the risk of butterfly effects (a small change in a distant downstream dependency with unexpected upstream consequences).
+
+## Print and Plot your Model Parameters
+
+The [`model_parameters()`](https://easystats.github.io/parameters/reference/model_parameters.html) function in the **parameters**-package is simlar to `broom::tidy()` - it returns a summary of the model parameters as a clean, consistent data frame. [`standardize_names()`](https://easystats.github.io/parameters/reference/standardize_names.html) can be used to return a data frame with column names as they are used in other packages (like **broom**). 
+
+`model_parameters()` supports many different models, including mixed or Bayesian regression models. It comes with nice `print()` and `plot()` methods.
+
+### Examples - Zero Inflated Mixed Models with glmmTMB
+
+The first example is a zero-inflated mixed model, fitted with the **glmmTMB**-package. `model_parameters()` creates separate tables for different model components (like zero-inflated components).
+
+```{r}
+library(glmmTMB)
+data(Salamanders)
+model <- glmmTMB(
+  count ~ spp + mined + (1 | site),
+  ziformula = ~mined,
+  family = poisson(),
+  data = Salamanders
+)
+
+model_parameters(model)
+```
+
+If only a specific part of the model should be shown, use the `component`-argument.
+
+```{r}
+model_parameters(model, component = "zero_inflated")
+```
+
+`plot()` creates a so called "forest plot". In case of models with multiple components, parameters are separated into facets by model component.
+
+```{r}
+result <- model_parameters(model)
+plot(result)
+```
+
+### Examples - Bayesian Mixed Models with brms
+
+For the next example, we download a pre-compiled **brms** model to save computation time. For Bayesian models, by default, only "fixed" effects are shown. Using `effects = "all"` and `component = "all"` allows us to display random effects and the parameters of the zero-inflated model part as well.
+
+```{r}
+# We download the model to save computation time. Here is the code
+# to refit the exact model used below...
+
+# zinb <- read.csv("http://stats.idre.ucla.edu/stat/data/fish.csv")
+# set.seed(123)
+# model <- brm(bf(
+#     count ~ persons + child + camper + (1 | persons),
+#     zi ~ child + camper + (1 | persons)
+#   ),
+#   data = zinb,
+#   family = zero_inflated_poisson()
+# )
+brms_model <- insight::download_model("brms_zi_2")
+result <- model_parameters(brms_model, effects = "all", component = "all")
+
+result
+```
+
+`plot()` now creates four facets by default. Note that plots from the **parameters**-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the **bayestestRR**-package, as shown [here](https://easystats.github.io/see/articles/bayestestR.html).
+
+```{r}
+plot(result)
+```
+
+You can modify the layout with `n_columns`.
+
+```{r fig.height=9}
+plot(result, n_columns = 1)
+```
+
+### Examples - Meta-Analysis with metafor
+
+Even results from meta-analyses, using the **metafor**-package, can be visualized with **parameters** and **see**.
+
+```{r}
+library(metafor)
+d <- data.frame(
+  effectsize = c(-0.393, 0.675, 0.282, -1.398),
+  standarderror = c(0.317, 0.317, 0.13, 0.36)
+)
+
+ma <- rma(yi = effectsize, sei = standarderror, method = "REML", data = d)
+result <- model_parameters(ma)
+
+result
+```
+
+Above you see the coefficients, their standard errors and the "weight", based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to `metafor::forest()`).
+
+```{r}
+plot(result)
+```
+
+**Check out** more examples and documentation [**here (for _parameters_**)](https://easystats.github.io/parameters/) and [**here (for _see_**)](https://easystats.github.io/see/).
+
+## Get Involved
+
+Note that *easystats* is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

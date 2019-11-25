@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ANOVA on easystats</title>
-    <link>/blog/tags/anova/</link>
+    <link>https://easystats.github.io/blog/tags/anova/</link>
     <description>Recent content in ANOVA on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/anova/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/anova/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     

@@ -1,54 +1,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on easystats</title>
-    <link>/blog/categories/</link>
+    <link>https://easystats.github.io/blog/categories/</link>
     <description>Recent content in Categories on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>R</title>
-      <link>/blog/categories/r/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/categories/r/</guid>
-      <description></description>
-      
-      
-    </item>
     
     <item>
       <title>parameters</title>
-      <link>/blog/categories/parameters/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      <link>https://easystats.github.io/blog/categories/parameters/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/categories/parameters/</guid>
+      <guid>https://easystats.github.io/blog/categories/parameters/</guid>
       <description></description>
       
       
     </item>
     
     <item>
-      <title>performance</title>
-      <link>/blog/categories/performance/</link>
-      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      <title>R</title>
+      <link>https://easystats.github.io/blog/categories/r/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/categories/performance/</guid>
-      <description></description>
-      
-      
-    </item>
-    
-    <item>
-      <title>bayestestR</title>
-      <link>/blog/categories/bayestestr/</link>
-      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/categories/bayestestr/</guid>
+      <guid>https://easystats.github.io/blog/categories/r/</guid>
       <description></description>
       
       
@@ -56,10 +34,32 @@
     
     <item>
       <title>see</title>
-      <link>/blog/categories/see/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <link>https://easystats.github.io/blog/categories/see/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/categories/see/</guid>
+      <guid>https://easystats.github.io/blog/categories/see/</guid>
+      <description></description>
+      
+      
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://easystats.github.io/blog/categories/performance/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/categories/performance/</guid>
+      <description></description>
+      
+      
+    </item>
+    
+    <item>
+      <title>bayestestR</title>
+      <link>https://easystats.github.io/blog/categories/bayestestr/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/categories/bayestestr/</guid>
       <description></description>
       
       
@@ -67,10 +67,10 @@
     
     <item>
       <title>insight</title>
-      <link>/blog/categories/insight/</link>
+      <link>https://easystats.github.io/blog/categories/insight/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/categories/insight/</guid>
+      <guid>https://easystats.github.io/blog/categories/insight/</guid>
       <description></description>
       
       
@@ -78,10 +78,10 @@
     
     <item>
       <title>report</title>
-      <link>/blog/categories/report/</link>
+      <link>https://easystats.github.io/blog/categories/report/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/categories/report/</guid>
+      <guid>https://easystats.github.io/blog/categories/report/</guid>
       <description></description>
       
       

@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.59.1" />
 
     
     
@@ -31,9 +31,9 @@ parametersWe have recently decided to collaborate around the easystats project,
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/parameters_presentation/" />
-<meta property="article:published_time" content="2019-09-10T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-09-10T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/parameters_presentation/" />
+<meta property="article:published_time" content="2019-09-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-10T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
 
     
@@ -74,14 +74,14 @@ parametersWe have recently decided to collaborate around the easystats project,
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -179,10 +179,10 @@ parametersWe have recently decided to collaborate around the easystats project,
           in
           
           
-              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              <a class="badge badge-category" href="/blog/categories/parameters">PARAMETERS</a>
               •
           
-              <a class="badge badge-category" href="/blog/categories/parameters">PARAMETERS</a>
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
               
           
       
@@ -246,10 +246,10 @@ df$Sepal.Big &lt;- ifelse(df$Sepal.Width &gt;= 3, &quot;Yes&quot;, &quot;No&quot
 
 model &lt;- aov(Sepal.Length ~ Sepal.Big, data = df)
 model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
-<pre><code>## Parameter | Sum_Squares |  df | Mean_Square |    F |    p | Eta_Sq (partial)
-## ----------------------------------------------------------------------------
-## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | &gt; .1 |             0.01
-## Residuals |      101.07 | 148 |        0.68 |      |      |</code></pre>
+<pre><code>## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta_Sq (partial)
+## -----------------------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 |             0.01
+## Residuals |      101.07 | 148 |        0.68 |      |       |</code></pre>
 </div>
 <div id="mixed-models" class="section level3">
 <h3>Mixed models</h3>
@@ -257,11 +257,11 @@ model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
 
 model &lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
 model_parameters(model, standardize = &quot;refit&quot;)</code></pre>
-<pre><code>## Parameter    | Coefficient |   SE |       95% CI |    t |      p | Coefficient (std.)
-## -------------------------------------------------------------------------------------
-## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | &lt; .05  |               0.00
-## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | &lt; .05  |               0.59
-## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | &lt; .001 |               1.07</code></pre>
+<pre><code>## Parameter    | Coefficient |   SE |       95% CI |    t |  df |      p
+## ----------------------------------------------------------------------
+## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | 145 | 0.010 
+## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | 145 | 0.024 
+## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | 145 | &lt; .001</code></pre>
 <p>And you can also <strong>directly plot the parameters</strong> with the see package!</p>
 <pre class="r"><code>library(see)
 
@@ -278,9 +278,9 @@ model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
 <pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.69 | [36.85, 42.55] |   100% |        0% | 1.000 | 5109 | Normal (0 +- 60.27)
-## wt          |  -3.20 | [-4.46, -1.90] | 99.98% |     0.05% | 1.001 | 2047 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.20, -0.81] |   100% |     2.20% | 1.002 | 1983 |  Normal (0 +- 8.44)</code></pre>
+## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
+## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
+## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>

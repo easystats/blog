@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>perfect on easystats</title>
-    <link>/blog/tags/perfect/</link>
+    <link>https://easystats.github.io/blog/tags/perfect/</link>
     <description>Recent content in perfect on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 13 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/perfect/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/perfect/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
       <description>Recently, we published a post presenting a small convenience function, from the bayestestR package. This function, named rnorm_perfect, generated an empirical distribution (i.e., a vector of values) as close as possible to a desired distribution, in this case the normal distribution.
 It worked like this:
 # Generate a perfect samplex &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&amp;gt;% density() %&amp;gt;% # Compute density functionas.</description>

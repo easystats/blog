@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.59.1" />
 
     
     
@@ -32,8 +32,8 @@ Without further ado, please let us introduce the latest addition to the easyvers
 Essentially, see is the visualisation companion to other functions and packages in easystats." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/posts/see_presentation.knit/" />
-<meta property="article:published_time" content="2019-05-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-27T00:00:00&#43;00:00"/><meta property="og:site_name" content="easystats" />
+<meta property="article:published_time" content="2019-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-27T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
 
     
@@ -229,35 +229,34 @@ Essentially, see is the visualisation companion to other functions and packages 
 <h2 id="examples">Examples</h2>
 
 <ul>
-<li><strong>Better looking points</strong> with <strong>modern theme</strong> and <strong>flat design colours</strong></li>
-</ul>
+<li><p><strong>Better looking points</strong> with <strong>modern theme</strong> and <strong>flat design colours</strong></p>
 
 <pre><code class="language-r">library(see)
 library(ggplot2)
 
 ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
-  geom_point2(size=4, alpha=0.5) +
-  scale_color_flat_d() +
-  theme_modern()
-</code></pre>
+geom_point2(size=4, alpha=0.5) +
+scale_color_flat_d() +
+theme_modern()
+</code></pre></li>
+</ul>
 
 <p><img src="see_presentation_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 
 <ul>
-<li><strong>Violin plot</strong> with <strong>blackboard theme</strong> and <strong>material design colours</strong></li>
-</ul>
+<li><p><strong>Violin plot</strong> with <strong>blackboard theme</strong> and <strong>material design colours</strong></p>
 
 <pre><code class="language-r">ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) + 
-  geom_violindot(fill_dots = &quot;white&quot;) + 
-  scale_fill_material_d() +
-  theme_blackboard()
-</code></pre>
+geom_violindot(fill_dots = &quot;white&quot;) + 
+scale_fill_material_d() +
+theme_blackboard()
+</code></pre></li>
+</ul>
 
 <p><img src="see_presentation_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 
 <ul>
-<li><strong>Abyss theme</strong></li>
-</ul>
+<li><p><strong>Abyss theme</strong></p>
 
 <pre><code class="language-r">library(bayestestR)
 library(rstanarm)
@@ -267,9 +266,10 @@ model &lt;- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars)
 result &lt;- equivalence_test(model, ci = c(.89, .95))
 
 plot(result) +
-  theme_abyss() +
-  scale_fill_flat()
-</code></pre>
+theme_abyss() +
+scale_fill_flat()
+</code></pre></li>
+</ul>
 
 <p><img src="see_presentation_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 

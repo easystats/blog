@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>visualization on easystats</title>
+    <link>https://easystats.github.io/blog/tags/visualization/</link>
+    <description>Recent content in visualization on easystats</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://easystats.github.io/blog/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>News from easystats: updated parameters and see packages.</title>
+      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
+      <description>New Features of the parameters and see PackageWe’re excited to announce some news from the easystats-project. Two packages were updated recently, the parameters-package and our visualization-toolbox, the see-package.
+Before we start introducing some of the new features, we’d like to explain why you need the see-package to create plots for functions from other easystats packages. So, the see-package not only includes additional geoms, color scales and themes for ggplot2, but - maybe more important - also provides plot()-methods for many functions from the various easystats packages.</description>
+    </item>
+    
+  </channel>
+</rss>
