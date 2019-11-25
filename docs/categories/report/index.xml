@@ -27,7 +27,8 @@
 &lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
 
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+library(report)  # Load the package
+library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;fit-an-anova&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Fit an anova&lt;/h1&gt;
@@ -38,44 +39,11 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;h1&gt;Formatted output&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to an ANOVA object to format its content.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(aov_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
-
-  - The main effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
   report() %&amp;gt;% 
   to_table()&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Sum_Squares&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;df&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Mean_Square&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;F&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;p&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;Species&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;63.21&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;31.61&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;119.26&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;Residuals&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;38.96&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;147&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.27&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Evolution&lt;/h1&gt;
@@ -117,7 +85,8 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
 
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+library(report)  # Load the package
+library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Do a correlation&lt;/h1&gt;
@@ -128,8 +97,6 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;h1&gt;Formatted output&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;

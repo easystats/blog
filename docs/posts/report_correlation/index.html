@@ -228,7 +228,8 @@
 <p><code>report</code> is part of the new <a href="https://github.com/easystats"><em>easystats</em></a> suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from <a href="https://github.com/easystats/report">github</a>.</p>
 <pre class="r"><code>devtools::install_github(&quot;easystats/report&quot;)  # Install the latest psycho version
 
-library(report)  # Load the package</code></pre>
+library(report)  # Load the package
+library(dplyr)</code></pre>
 </div>
 <div id="do-a-correlation" class="section level1">
 <h1>Do a correlation</h1>
@@ -239,8 +240,6 @@ cor_results &lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a correl
 <h1>Formatted output</h1>
 <p>The <code>report</code> package include a single function, namely <code>report()</code>, that can be applied to a correlation to format its content.</p>
 <pre class="r"><code>report(cor_results)</code></pre>
-<pre><code>## The Pearson&#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &lt; .001).</code></pre>
 <p>The formatted output includes the <strong>direction</strong>, <strong>effect size</strong> (interpreted by default using <strong><a href="https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r">Cohen’s (1988)</a></strong> rules of thumb) and <strong>confidence intervals</strong>. Now, you can just copy and paste this line into your report and focus on more important things.</p>
 </div>
 <div id="evolution" class="section level1">

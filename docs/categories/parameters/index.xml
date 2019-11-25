@@ -5,15 +5,15 @@
     <description>Recent content in parameters on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://easystats.github.io/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>News from the easystats-project: updated parameters and see packages.</title>
+      <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>
@@ -342,9 +342,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.68 | [36.67, 42.48] |   100% |        0% | 0.999 | 4436 | Normal (0 +- 60.27)
-## wt          |  -3.19 | [-4.44, -1.88] |   100% |        0% | 1.000 | 1953 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.19, -0.81] | 99.92% |     1.75% | 1.001 | 2025 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
+## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
+## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

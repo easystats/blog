@@ -17,7 +17,8 @@ summary: This post shows how to create formatted reports for ANOVAs.
 <p><code>report</code> is part of the new <a href="https://github.com/easystats"><em>easystats</em></a> suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from <a href="https://github.com/easystats/report">github</a>.</p>
 <pre class="r"><code>devtools::install_github(&quot;easystats/report&quot;)  # Install the latest psycho version
 
-library(report)  # Load the package</code></pre>
+library(report)  # Load the package
+library(dplyr)</code></pre>
 </div>
 <div id="fit-an-anova" class="section level1">
 <h1>Fit an anova</h1>
@@ -28,44 +29,11 @@ library(report)  # Load the package</code></pre>
 <h1>Formatted output</h1>
 <p>The <code>report</code> package include a single function, namely <code>report()</code>, that can be applied to an ANOVA object to format its content.</p>
 <pre class="r"><code>report(aov_results)</code></pre>
-<pre><code>The ANOVA suggests that:
-
-  - The main effect of Species is significant (F(2, 147) = 119.26, p &lt; .001).</code></pre>
 <p>It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see <a href="https://academic.oup.com/hcr/article-abstract/28/4/612/4331349">Levine et al. 2002</a>, <a href="http://journals.sagepub.com/doi/abs/10.1177/0013164404264848">Pierce et al. 2004</a>) as well as its <a href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize">interpretation</a> and presents the results in an APA-compatible way.</p>
 <p>Note that a table-output is also available:</p>
 <pre class="r"><code>aov_results %&gt;% 
   report() %&gt;% 
   to_table()</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Parameter</th>
-<th align="right">Sum_Squares</th>
-<th align="right">df</th>
-<th align="right">Mean_Square</th>
-<th align="right">F</th>
-<th align="right">p</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Species</td>
-<td align="right">63.21</td>
-<td align="right">2</td>
-<td align="right">31.61</td>
-<td align="right">119.26</td>
-<td align="right">0</td>
-</tr>
-<tr class="even">
-<td align="left">Residuals</td>
-<td align="right">38.96</td>
-<td align="right">147</td>
-<td align="right">0.27</td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="evolution" class="section level1">
 <h1>Evolution</h1>

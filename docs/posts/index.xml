@@ -5,15 +5,15 @@
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://easystats.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>News from the easystats-project: updated parameters and see packages.</title>
+      <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>
@@ -306,9 +306,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.68 | [36.67, 42.48] |   100% |        0% | 0.999 | 4436 | Normal (0 +- 60.27)
-## wt          |  -3.19 | [-4.44, -1.88] |   100% |        0% | 1.000 | 1953 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.19, -0.81] | 99.92% |     1.75% | 1.001 | 2025 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
+## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
+## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -818,7 +818,7 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
 &amp;gt; 
 &amp;gt;  ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_marginal R2_adjusted RMSE
-&amp;gt;   -43      10    87       20   87 0.47        0.69        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt;   -43      10    87       20   87 0.47        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -923,11 +923,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.20 47.75]
-##           wt  Rejected      0.00 % [-4.23 -1.01]
-##          cyl Undecided     38.25 % [-1.95  0.28]
-##         gear Undecided     42.18 % [-2.27  1.65]
-##           am Undecided     19.01 % [-1.12  4.53]
+##  (Intercept)  Rejected      0.00 % [27.31 46.70]
+##           wt  Rejected      0.00 % [-4.22 -1.13]
+##          cyl Undecided     38.19 % [-1.85  0.34]
+##         gear Undecided     43.89 % [-2.16  1.68]
+##           am Undecided     20.50 % [-1.27  4.35]
 ##           hp  Accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -1031,7 +1031,8 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
 
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+library(report)  # Load the package
+library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;fit-an-anova&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Fit an anova&lt;/h1&gt;
@@ -1042,44 +1043,11 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;h1&gt;Formatted output&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to an ANOVA object to format its content.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(aov_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;The ANOVA suggests that:
-
-  - The main effect of Species is significant (F(2, 147) = 119.26, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
   report() %&amp;gt;% 
   to_table()&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Sum_Squares&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;df&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Mean_Square&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;F&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;p&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;Species&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;63.21&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;31.61&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;119.26&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td align=&#34;left&#34;&gt;Residuals&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;38.96&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;147&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0.27&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;/div&gt;
 &lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Evolution&lt;/h1&gt;
@@ -1103,7 +1071,8 @@ library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you’ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;devtools::install_github(&amp;quot;easystats/report&amp;quot;)  # Install the latest psycho version
 
-library(report)  # Load the package&lt;/code&gt;&lt;/pre&gt;
+library(report)  # Load the package
+library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;do-a-correlation&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Do a correlation&lt;/h1&gt;
@@ -1114,8 +1083,6 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;h1&gt;Formatted output&lt;/h1&gt;
 &lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(cor_results)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The Pearson&amp;#39;s product-moment correlation between df$Sepal.Length and
-## df$Petal.Length is positive, significant and large (r = 0.87, p &amp;lt; .001).&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen’s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;

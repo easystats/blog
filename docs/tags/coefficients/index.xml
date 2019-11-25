@@ -6,15 +6,15 @@
     <description>Recent content in coefficients on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/coefficients/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>News from the easystats-project: updated parameters and see packages.</title>
+      <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
-      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>New Features of the parameters and see PackageWe’re excited to announce some news from the easystats-project. Two packages were updated recently, the parameters-package and our visualization-toolbox, the see-package.
