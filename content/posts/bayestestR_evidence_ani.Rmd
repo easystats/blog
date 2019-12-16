@@ -1,0 +1,36 @@
+---
+title: 'bayestestR: Compute indices of effect existence and significance in a Bayesian
+  framework'
+author: "easystats"
+date: '2019-12-16'
+tags:
+- R
+- easystats
+- bayestestR
+categories:
+- R
+- bayestestR
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '')
+options(digits=2)
+```
+
+The [**bayestestR** package](https://github.com/easystats/bayestestR) has several functions to compute indices of effect existence and significance in a Bayesian framework, like [`p_direction()`](https://easystats.github.io/bayestestR/reference/p_direction.html) or [`bayesfactor_parameter()`](https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html).
+
+The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. One of our [easystats-gurus](https://github.com/DominiqueMakowski) has now created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
+
+![](https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif)
+
+If you'd like to know more (statistical) details about these indices, we have recently published a paper with a simulation study, demonstrating how such indices behave in the context of different sources of uncertainty:
+
+Makowski D, Ben-Shachar MS, Chen SHA, Lüdecke D (2019) Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology 2019;10:2767. doi: [10.3389/fpsyg.2019.02767](https://doi.org/10.3389/fpsyg.2019.02767)
+
+In this paper, you'll also find fancy figures like this one:
+
+![](https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png)
+
+**Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!

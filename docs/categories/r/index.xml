@@ -1,20 +1,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on easystats</title>
-    <link>https://easystats.github.io/blog/categories/r/</link>
+    <link>/blog/categories/r/</link>
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-        <atom:link href="https://easystats.github.io/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 16 Dec 2019 00:00:00 +0000</lastBuildDate>
+
+        <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
+
+
+    <item>
+      <title>bayestestR: Compute indices of effect existence and significance in a Bayesian framework</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</link>
+      <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+
+      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</guid>
+      <description>
+
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt; package&lt;/a&gt; has several functions to compute indices of effect existence and significance in a Bayesian framework, like &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/p_direction.html&#34;&gt;&lt;code&gt;p_direction()&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html&#34;&gt;&lt;code&gt;bayesfactor_parameter()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. One of our &lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;easystats-gurus&lt;/a&gt; has now created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study, demonstrating how such indices behave in the context of different sources of uncertainty:&lt;/p&gt;
+&lt;p&gt;Makowski D, Ben-Shachar MS, Chen SHA, Lüdecke D (2019) Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology 2019;10:2767. doi: &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;10.3389/fpsyg.2019.02767&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this paper, you’ll also find fancy figures like this one:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
+</description>
+
+            <category>R</category>
+
+            <category>easystats</category>
+
+            <category>bayestestR</category>
+
+
+            <category>R</category>
+
+            <category>bayestestR</category>
+
+    </item>
+
     <item>
       <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>
 
@@ -43,29 +75,29 @@ model &amp;lt;- glmmTMB(
 
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # Fixed Effects component
-## 
+##
 ## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
 ## ------------------------------------------------------------------------
-## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194
 ## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &amp;lt; .001
-## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
-## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006
 ## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &amp;lt; .001
 ## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &amp;lt; .001
-## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435
 ## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &amp;lt; .001
-## 
+##
 ## # Zero-Inflated component
-## 
+##
 ## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
 ## ------------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004
 ## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If only a specific part of the model should be shown, use the &lt;code&gt;component&lt;/code&gt;-argument.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model, component = &amp;quot;zero_inflated&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
 ## ------------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004
 ## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; creates a so called “forest plot”. In case of models with multiple components, parameters are separated into facets by model component.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- model_parameters(model)
@@ -91,34 +123,34 @@ brms_model &amp;lt;- insight::download_model(&amp;quot;brms_zi_2&amp;quot;)
 result &amp;lt;- model_parameters(brms_model, effects = &amp;quot;all&amp;quot;, component = &amp;quot;all&amp;quot;)
 
 result&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed Effects (Count Model) 
-## 
+&lt;pre&gt;&lt;code&gt;## # Fixed Effects (Count Model)
+##
 ## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat
 ## -------------------------------------------------------------------------
 ## (Intercept) |  -0.84 | [-1.44, -0.29] | 96.43% |     2.77% |  562 | 1.009
 ## persons     |   0.84 | [ 0.66,  1.06] |   100% |        0% |  382 | 1.010
 ## child       |  -1.15 | [-1.29, -0.98] |   100% |        0% | 1089 | 1.002
 ## camper      |   0.73 | [ 0.58,  0.89] |   100% |        0% | 2724 | 1.000
-## 
-## # Fixed Effects (Zero-Inflated Model) 
-## 
+##
+## # Fixed Effects (Zero-Inflated Model)
+##
 ## Parameter   | Median |         89% CI |     pd | % in ROPE |  ESS |  Rhat
 ## -------------------------------------------------------------------------
 ## (Intercept) |  -0.64 | [-1.93,  0.52] | 83.15% |     6.95% |  845 | 1.001
 ## child       |   1.88 | [ 1.40,  2.43] |   100% |        0% | 2322 | 1.001
 ## camper      |  -0.83 | [-1.41, -0.24] | 98.95% |     1.70% | 2277 | 1.001
-## 
-## # Random Effects (Count Model) 
-## 
+##
+## # Random Effects (Count Model)
+##
 ## Parameter | Median |        89% CI |     pd | % in ROPE | ESS |  Rhat
 ## ---------------------------------------------------------------------
 ## persons.1 |  -0.01 | [-0.38, 0.28] | 55.33% |    60.50% | 572 | 1.009
 ## persons.2 |   0.02 | [-0.17, 0.30] | 61.88% |    65.62% | 691 | 1.008
 ## persons.3 |  -0.02 | [-0.26, 0.18] | 61.27% |    67.90% | 340 | 1.011
 ## persons.4 |   0.00 | [-0.32, 0.33] | 51.38% |    62.12% | 287 | 1.011
-## 
-## # Random Effects (Zero-Inflated Model) 
-## 
+##
+## # Random Effects (Zero-Inflated Model)
+##
 ## Parameter | Median |         89% CI |     pd | % in ROPE | ESS |  Rhat
 ## ----------------------------------------------------------------------
 ## persons.1 |   1.28 | [ 0.08,  2.70] | 95.73% |     2.15% | 811 | 1.001
@@ -166,33 +198,33 @@ result&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>parameters</category>
-      
+
             <category>coefficients</category>
-      
+
             <category>see</category>
-      
+
             <category>visualization</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>parameters</category>
-      
+
             <category>see</category>
-      
+
     </item>
-    
+
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
       <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>
 
@@ -232,23 +264,23 @@ result&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Improved Printing&lt;/h2&gt;
 &lt;p&gt;For models with special components, in particular zero-inflated models, &lt;code&gt;model_parameters()&lt;/code&gt; separates these components for a clearer output.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## # Fixed Effects component
-## 
+##
 ## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
 ## ------------------------------------------------------------------------
-## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194 
+## (Intercept) |       -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 633 | 0.194
 ## spp [PR]    |       -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | 633 | &amp;lt; .001
-## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051 
-## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006 
+## spp [DM]    |        0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 633 | 0.051
+## spp [EC-A]  |       -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 633 | 0.006
 ## spp [EC-L]  |        0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | 633 | &amp;lt; .001
 ## spp [DES-L] |        0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | 633 | &amp;lt; .001
-## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435 
+## spp [DF]    |        0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 633 | 0.435
 ## mined [no]  |        1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | 633 | &amp;lt; .001
-## 
+##
 ## # Zero-Inflated component
-## 
+##
 ## Parameter   | Coefficient |   SE |         95% CI |     z |  df |      p
 ## ------------------------------------------------------------------------
-## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004 
+## (Intercept) |        0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 633 | 0.004
 ## mined [no]  |       -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | 633 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;join-the-team&#34; class=&#34;section level2&#34;&gt;
@@ -260,29 +292,29 @@ result&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>parameters</category>
-      
+
             <category>broom</category>
-      
+
             <category>coefficients</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>parameters</category>
-      
+
     </item>
-    
+
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>
 
@@ -323,14 +355,14 @@ model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), dat
 model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |       95% CI |    t |  df |      p
 ## ----------------------------------------------------------------------
-## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | 145 | 0.010 
-## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | 145 | 0.024 
+## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | 145 | 0.010
+## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | 145 | 0.024
 ## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | 145 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see)
 
-lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;% 
-  model_parameters() %&amp;gt;% 
+lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;%
+  model_parameters() %&amp;gt;%
   plot()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -342,9 +374,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
-## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
-## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.71 | [36.98, 42.56] |   100% |        0% | 0.999 | 4727 | Normal (0 +- 60.27)
+## wt          |  -3.24 | [-4.51, -2.00] |   100% |     0.05% | 1.000 | 2000 | Normal (0 +- 15.40)
+## cyl         |  -1.48 | [-2.18, -0.82] | 99.98% |     1.68% | 1.000 | 1956 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -359,29 +391,29 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>parameters</category>
-      
+
             <category>standardize</category>
-      
+
             <category>coefficients</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>parameters</category>
-      
+
     </item>
-    
+
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
       <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>
 
@@ -402,14 +434,14 @@ model &amp;lt;- lm(mpg ~ wt + cyl + gear + disp, data = mtcars)&lt;/code&gt;&lt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# now check for multicollinearity
 check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # Check for Multicollinearity
-## 
+##
 ## Low Correlation
-## 
+##
 ##  Parameter  VIF Increased SE
 ##       gear 1.53         1.24
-## 
+##
 ## Moderate Correlation
-## 
+##
 ##  Parameter  VIF Increased SE
 ##         wt 5.05         2.25
 ##        cyl 5.41         2.33
@@ -435,34 +467,34 @@ Salamanders$cover2 &amp;lt;-
 
 # fit mixed model with zero-inflation
 model &amp;lt;- glmmTMB(
-  count ~ spp + mined + cover + cover2 + (1 | site), 
-  ziformula = ~ spp + mined, 
-  family = truncated_poisson, 
+  count ~ spp + mined + cover + cover2 + (1 | site),
+  ziformula = ~ spp + mined,
+  family = truncated_poisson,
   data = Salamanders
 )
 
 # now check for multicollinearity
 check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # Check for Multicollinearity
-## 
+##
 ## * conditional component:
-## 
+##
 ## Low Correlation
-## 
+##
 ##  Parameter  VIF Increased SE
 ##        spp 1.07         1.04
 ##      mined 1.17         1.08
-## 
+##
 ## High Correlation
-## 
+##
 ##  Parameter   VIF Increased SE
 ##      cover 19.30         4.39
 ##     cover2 19.12         4.37
-## 
+##
 ## * zero inflated component:
-## 
+##
 ## Low Correlation
-## 
+##
 ##  Parameter  VIF Increased SE
 ##        spp 1.08         1.04
 ##      mined 1.08         1.04&lt;/code&gt;&lt;/pre&gt;
@@ -482,27 +514,27 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>performance</category>
-      
+
             <category>multicollinearity</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>performance</category>
-      
+
     </item>
-    
+
     <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
       <description>
 
@@ -516,25 +548,25 @@ data(&amp;quot;puzzles&amp;quot;, package = &amp;quot;BayesFactor&amp;quot;)
 aov_model &amp;lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles)
 
 summary(aov_model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
+&lt;pre&gt;&lt;code&gt;##
 ## Error: ID
 ##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
-## Residuals 11    226    20.6               
-## 
+## Residuals 11    226    20.6
+##
 ## Error: ID:shape
-##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)  
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
 ## shape      1   12.0   12.00    7.54  0.019 *
-## Residuals 11   17.5    1.59                 
+## Residuals 11   17.5    1.59
 ## ---
 ## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
+##
 ## Error: ID:color
-##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)   
+##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
 ## color      1   12.0   12.00    13.9 0.0033 **
-## Residuals 11    9.5    0.86                  
+## Residuals 11    9.5    0.86
 ## ---
 ## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
+##
 ## Error: ID:shape:color
 ##             Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
 ## shape:color  1    0.0    0.00       0      1
@@ -558,8 +590,8 @@ stan_model &amp;lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 c_color_main&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
 ##  color - monochromatic   -0.944     -1.66    -0.128
-## 
-## Point estimate displayed: median 
+##
+## Point estimate displayed: median
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;em_color_simple &amp;lt;- emmeans(stan_model, ~color * shape)
@@ -567,19 +599,19 @@ pairs(em_color_simple, by = &amp;quot;shape&amp;quot;) # simple effects for colo
 &lt;pre&gt;&lt;code&gt;## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
 ##  color - monochromatic   -0.940     -1.99     0.115
-## 
+##
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
 ##  color - monochromatic   -0.949     -1.98     0.149
-## 
-## Point estimate displayed: median 
+##
+## Point estimate displayed: median
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;c_color_shape_interaction &amp;lt;- contrast(em_color_simple, interaction = c(&amp;quot;pairwise&amp;quot;,&amp;quot;pairwise&amp;quot;))
 c_color_shape_interaction&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
 ##  color - monochromatic round - square -0.00364      -1.5      1.36
-## 
-## Point estimate displayed: median 
+##
+## Point estimate displayed: median
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
 &lt;div id=&#34;quantifying-evidence-for-the-null&#34; class=&#34;section level2&#34;&gt;
@@ -595,8 +627,8 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 ##  upper.HPD
 ##     -0.128
 ##      1.362
-## 
-## Point estimate displayed: median 
+##
+## Point estimate displayed: median
 ## HPD interval probability: 0.95&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;describe_posterior(c_color_all,
                    estimate = &amp;quot;median&amp;quot;, dispersion = TRUE,
@@ -651,25 +683,25 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>bayestestR</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>bayestestR</category>
-      
+
     </item>
-    
+
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
       <description>
 
@@ -710,25 +742,25 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>bayestestR</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>bayestestR</category>
-      
+
     </item>
-    
+
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
       <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>
 
@@ -756,8 +788,8 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) + 
-  geom_violindot(fill_dots = &amp;quot;white&amp;quot;) + 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
+  geom_violindot(fill_dots = &amp;quot;white&amp;quot;) +
   scale_fill_material_d() +
   theme_blackboard()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -785,25 +817,25 @@ plot(result) +
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>see</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>see</category>
-      
+
     </item>
-    
+
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
       <description>
 
@@ -816,9 +848,9 @@ x &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
 # Visualise it
 library(tidyverse)
 
-x %&amp;gt;% 
+x %&amp;gt;%
   density() %&amp;gt;%  # Compute density function
-  as.data.frame() %&amp;gt;% 
+  as.data.frame() %&amp;gt;%
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -827,9 +859,9 @@ x %&amp;gt;%
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
 x &amp;lt;- distribution_beta(n = 100, 6, 2)
 
-x %&amp;gt;% 
-  density() %&amp;gt;% 
-  as.data.frame() %&amp;gt;% 
+x %&amp;gt;%
+  density() %&amp;gt;%
+  as.data.frame() %&amp;gt;%
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -855,31 +887,31 @@ x %&amp;gt;%
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>bayestestR</category>
-      
+
             <category>distribution</category>
-      
+
             <category>perfect</category>
-      
+
             <category>gaussian</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>bayestestR</category>
-      
+
     </item>
-    
+
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
       <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>
 
@@ -909,13 +941,13 @@ model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 # compute R2, based on Nakagawa et al. 2017
 r2(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # R2 for Mixed Models
-&amp;gt; 
+&amp;gt;
 &amp;gt;   Conditional R2: 0.913
 &amp;gt;      Marginal R2: 0.216&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# compute intra-class correlation coefficient (ICC)
 icc(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Intraclass Correlation Coefficient
-&amp;gt; 
+&amp;gt;
 &amp;gt;      Adjusted ICC: 0.889
 &amp;gt;   Conditional ICC: 0.697&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now let’s compute &lt;strong&gt;all available&lt;/strong&gt; indices of performance appropriate for a given model. This can be done via the &lt;a href=&#34;https://easystats.github.io/performance/reference/model_performance.html&#34;&gt;&lt;strong&gt;model_performance()&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -936,9 +968,9 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 # Compute performance indices
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
-&amp;gt; 
+&amp;gt;
 &amp;gt;  ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_marginal R2_adjusted RMSE
-&amp;gt;   -43      10    87       20   87 0.47        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt;   -44      10    87       20   87 0.47        0.69        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -954,31 +986,31 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>performance</category>
-      
+
             <category>R2</category>
-      
+
             <category>ICC</category>
-      
+
             <category>AIC</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>performance</category>
-      
+
     </item>
-    
+
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
@@ -996,17 +1028,17 @@ x &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)
 # Visualise it
 library(tidyverse)
 
-x %&amp;gt;% 
+x %&amp;gt;%
   density() %&amp;gt;%  # Compute density function
-  as.data.frame() %&amp;gt;% 
+  as.data.frame() %&amp;gt;%
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;%
   density() %&amp;gt;%  # Compute density function
-  as.data.frame() %&amp;gt;% 
-  mutate(outlier = ifelse(x &amp;gt; 2, &amp;quot;Extreme&amp;quot;, &amp;quot;Not extreme&amp;quot;)) %&amp;gt;% 
+  as.data.frame() %&amp;gt;%
+  mutate(outlier = ifelse(x &amp;gt; 2, &amp;quot;Extreme&amp;quot;, &amp;quot;Not extreme&amp;quot;)) %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
@@ -1024,31 +1056,31 @@ x %&amp;gt;%
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>bayestestR</category>
-      
+
             <category>rnorm</category>
-      
+
             <category>normal</category>
-      
+
             <category>gaussian</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>bayestestR</category>
-      
+
     </item>
-    
+
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
       <description>
 
@@ -1075,15 +1107,15 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl + gear + am + hp, data = mtcars)&lt;/cod
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test
 equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## # Test for Practical Equivalence
-## 
+##
 ##   ROPE: [-0.60 0.60]
-## 
+##
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.31 46.70]
-##           wt  Rejected      0.00 % [-4.22 -1.13]
-##          cyl Undecided     38.19 % [-1.85  0.34]
-##         gear Undecided     43.89 % [-2.16  1.68]
-##           am Undecided     20.50 % [-1.27  4.35]
+##  (Intercept)  Rejected      0.00 % [27.27 47.29]
+##           wt  Rejected      0.00 % [-4.14 -0.98]
+##          cyl Undecided     38.70 % [-1.87  0.31]
+##         gear Undecided     41.73 % [-2.15  1.81]
+##           am Undecided     19.77 % [-0.99  4.70]
 ##           hp  Accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -1103,31 +1135,31 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>bayestestR</category>
-      
+
             <category>posterior</category>
-      
+
             <category>rstanarm</category>
-      
+
             <category>brms</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>bayestestR</category>
-      
+
     </item>
-    
+
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
       <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>
 
@@ -1170,7 +1202,7 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_variables(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; $response
 &amp;gt; [1] &amp;quot;Sepal.Length&amp;quot;
-&amp;gt; 
+&amp;gt;
 &amp;gt; $conditional
 &amp;gt; [1] &amp;quot;Species&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
@@ -1186,31 +1218,31 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>insight</category>
-      
+
             <category>access</category>
-      
+
             <category>models</category>
-      
+
             <category>data</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>insight</category>
-      
+
     </item>
-    
+
     <item>
       <title>The end of errors in ANOVA reporting</title>
       <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>
 
@@ -1237,8 +1269,8 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;report(aov_results)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
 &lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;% 
-  report() %&amp;gt;% 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;aov_results %&amp;gt;%
+  report() %&amp;gt;%
   to_table()&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;evolution&#34; class=&#34;section level1&#34;&gt;
@@ -1246,31 +1278,31 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>report</category>
-      
+
             <category>ANOVA</category>
-      
+
             <category>APA</category>
-      
+
             <category>results</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>report</category>
-      
+
     </item>
-    
+
     <item>
       <title>Formatted correlation output with effect sizes</title>
       <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
-      
+
       <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>
 
@@ -1300,25 +1332,25 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-      
+
             <category>R</category>
-      
+
             <category>easystats</category>
-      
+
             <category>report</category>
-      
+
             <category>correlations</category>
-      
+
             <category>APA</category>
-      
+
             <category>results</category>
-      
-      
+
+
             <category>R</category>
-      
+
             <category>report</category>
-      
+
     </item>
-    
+
   </channel>
 </rss>
