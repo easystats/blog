@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>broom on easystats</title>
-    <link>https://easystats.github.io/blog/tags/broom/</link>
+    <link>/blog/tags/broom/</link>
     <description>Recent content in broom on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 30 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://easystats.github.io/blog/tags/broom/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/tags/broom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
+      <link>/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
+      <guid>/blog/posts/parameters_v2/</guid>
       <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
 The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
 The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>

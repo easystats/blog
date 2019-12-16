@@ -31,7 +31,7 @@ parametersWe have recently decided to collaborate around the easystats project,
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://easystats.github.io/blog/posts/parameters_presentation/" />
+<meta property="og:url" content="/blog/posts/parameters_presentation/" />
 <meta property="article:published_time" content="2019-09-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-10T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
@@ -74,14 +74,14 @@ parametersWe have recently decided to collaborate around the easystats project,
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://easystats.github.io/blog/">easystats</a>
+        <a href="/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -276,11 +276,11 @@ lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&gt;%
 
 model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
-<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
-## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.68 | [36.67, 42.48] |   100% |        0% | 0.999 | 4436 | Normal (0 +- 60.27)
-## wt          |  -3.19 | [-4.44, -1.88] |   100% |        0% | 1.000 | 1953 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.19, -0.81] | 99.92% |     1.75% | 1.001 | 2025 |  Normal (0 +- 8.44)</code></pre>
+<pre><code>## Parameter   | Median |         89% CI |   pd | % in ROPE |  Rhat |  ESS |               Prior
+## ---------------------------------------------------------------------------------------------
+## (Intercept) |  39.68 | [36.87, 42.53] | 100% |        0% | 1.000 | 5314 | Normal (0 +- 60.27)
+## wt          |  -3.20 | [-4.45, -1.88] | 100% |     0.12% | 0.999 | 2106 | Normal (0 +- 15.40)
+## cyl         |  -1.51 | [-2.25, -0.84] | 100% |     2.20% | 1.000 | 2099 |  Normal (0 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>
