@@ -1,21 +1,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on easystats</title>
-    <link>https://easystats.github.io/blog/categories/r/</link>
+    <link>/blog/categories/r/</link>
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Comparison of indices of significance in the Bayesian framework</title>
+      <link>/blog/posts/bayestestr_evidence_ani/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_evidence_ani/</guid>
+      <description>
+
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt; package has several functions to compute indices of effect existence and significance in a Bayesian framework, like &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/p_direction.html&#34;&gt;&lt;code&gt;p_direction()&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html&#34;&gt;&lt;code&gt;bayesfactor_parameters()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. &lt;a href=&#34;https://twitter.com/Dom_Makowski/status/1204027373542203394?s=20&#34;&gt;Using the package&lt;/a&gt;, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!), demonstrating how such indices behave in the context of different sources of uncertainty:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Makowski, D., Ben-Shachar, M. S., Chen, S. H., &amp;amp; Lüdecke, D. (2019). &lt;em&gt;Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology, 10&lt;/em&gt;, 2767. doi: &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;10.3389/fpsyg.2019.02767&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this paper, you’ll also find fancy figures like this one, showing the relationship between Bayesian indices and the frequentist &lt;em&gt;p&lt;/em&gt;-value:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
+    
+    <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
+      <link>/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
+      <guid>/blog/posts/parameters_and_see_update/</guid>
       <description>
 
 
@@ -190,10 +224,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
+      <link>/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
+      <guid>/blog/posts/parameters_v2/</guid>
       <description>
 
 
@@ -280,10 +314,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
+      <link>/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
+      <guid>/blog/posts/parameters_presentation/</guid>
       <description>
 
 
@@ -342,9 +376,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
-## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
-## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.63 | [36.71, 42.43] |   100% |        0% | 0.999 | 5012 | Normal (0 +- 60.27)
+## wt          |  -3.20 | [-4.54, -1.98] | 99.90% |     0.15% | 1.000 | 1810 | Normal (0 +- 15.40)
+## cyl         |  -1.50 | [-2.18, -0.77] | 99.72% |     2.57% | 1.000 | 1776 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -379,10 +413,10 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
+      <link>/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
+      <guid>/blog/posts/performance_check_collinearity/</guid>
       <description>
 
 
@@ -500,10 +534,10 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
+      <link>/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
+      <guid>/blog/posts/bayestestr_emmeans/</guid>
       <description>
 
 
@@ -667,10 +701,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
+      <link>/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
+      <guid>/blog/posts/bayestestr_v2/</guid>
       <description>
 
 
@@ -726,10 +760,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
+      <link>/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
+      <guid>/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -801,10 +835,10 @@ plot(result) +
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
+      <link>/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
+      <guid>/blog/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -877,10 +911,10 @@ x %&amp;gt;%
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
+      <link>/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
+      <guid>/blog/posts/performance_presentation/</guid>
       <description>
 
 
@@ -938,7 +972,7 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
 &amp;gt; 
 &amp;gt;  ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_marginal R2_adjusted RMSE
-&amp;gt;   -43      10    87       20   87 0.47        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt;   -44      10    87       20   87 0.46        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -976,10 +1010,10 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -1046,10 +1080,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
+      <link>/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
+      <guid>/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -1079,11 +1113,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.31 46.70]
-##           wt  Rejected      0.00 % [-4.22 -1.13]
-##          cyl Undecided     38.19 % [-1.85  0.34]
-##         gear Undecided     43.89 % [-2.16  1.68]
-##           am Undecided     20.50 % [-1.27  4.35]
+##  (Intercept)  Rejected      0.00 % [27.35 46.71]
+##           wt  Rejected      0.00 % [-4.26 -1.17]
+##          cyl Undecided     35.72 % [-1.88  0.34]
+##         gear Undecided     42.91 % [-2.21  1.70]
+##           am Undecided     19.12 % [-1.34  4.32]
 ##           hp  Accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -1125,10 +1159,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
+      <link>/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
+      <guid>/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -1208,10 +1242,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova/</link>
+      <link>/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
+      <guid>/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -1268,10 +1302,10 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
+      <link>/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <guid>/blog/posts/report_correlation/</guid>
       <description>
 
 

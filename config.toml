@@ -21,7 +21,7 @@ googleAnalytics = "UA-97457476-9"
 
 ## Site Settings
 [params]
-    author = "Dominique Makowski and Daniel Lüdecke"
+    author = "eassystats team"
     title = "easystats"
     # description = "..."
     authorimage = "/img/logo.png"

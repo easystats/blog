@@ -1,21 +1,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on easystats</title>
-    <link>https://easystats.github.io/blog/posts/</link>
+    <link>/blog/posts/</link>
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Comparison of indices of significance in the Bayesian framework</title>
+      <link>/blog/posts/bayestestr_evidence_ani/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_evidence_ani/</guid>
+      <description>
+
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt; package has several functions to compute indices of effect existence and significance in a Bayesian framework, like &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/p_direction.html&#34;&gt;&lt;code&gt;p_direction()&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html&#34;&gt;&lt;code&gt;bayesfactor_parameters()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. &lt;a href=&#34;https://twitter.com/Dom_Makowski/status/1204027373542203394?s=20&#34;&gt;Using the package&lt;/a&gt;, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!), demonstrating how such indices behave in the context of different sources of uncertainty:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Makowski, D., Ben-Shachar, M. S., Chen, S. H., &amp;amp; Lüdecke, D. (2019). &lt;em&gt;Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology, 10&lt;/em&gt;, 2767. doi: &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;10.3389/fpsyg.2019.02767&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this paper, you’ll also find fancy figures like this one, showing the relationship between Bayesian indices and the frequentist &lt;em&gt;p&lt;/em&gt;-value:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
+      <link>/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
+      <guid>/blog/posts/parameters_and_see_update/</guid>
       <description>
 
 
@@ -70,7 +92,7 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; creates a so called “forest plot”. In case of models with multiple components, parameters are separated into facets by model component.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- model_parameters(model)
 plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---bayesian-mixed-models-with-brms&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Bayesian Mixed Models with brms&lt;/h3&gt;
@@ -127,10 +149,10 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## persons.4 |  -1.29 | [-2.62, -0.01] | 94.85% |     1.85% | 912 | 1.000&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; now creates four facets by default. Note that plots from the &lt;strong&gt;parameters&lt;/strong&gt;-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the &lt;strong&gt;bayestestRR&lt;/strong&gt;-package, as shown &lt;a href=&#34;https://easystats.github.io/see/articles/bayestestR.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can modify the layout with &lt;code&gt;n_columns&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result, n_columns = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---meta-analysis-with-metafor&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Meta-Analysis with metafor&lt;/h3&gt;
@@ -154,7 +176,7 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## (Intercept) |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Check out&lt;/strong&gt; more examples and documentation &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;parameters&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/see/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;see&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -170,10 +192,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
+      <link>/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
+      <guid>/blog/posts/parameters_v2/</guid>
       <description>
 
 
@@ -244,10 +266,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
+      <link>/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
+      <guid>/blog/posts/parameters_presentation/</guid>
       <description>
 
 
@@ -296,7 +318,7 @@ model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt
 lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;% 
   model_parameters() %&amp;gt;% 
   plot()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Bayesian models&lt;/h3&gt;
@@ -306,9 +328,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.65 | [36.82, 42.48] |   100% |        0% | 1.000 | 4982 | Normal (0 +- 60.27)
-## wt          |  -3.18 | [-4.42, -1.90] | 99.95% |     0.30% | 1.000 | 2097 | Normal (0 +- 15.40)
-## cyl         |  -1.52 | [-2.22, -0.87] | 99.92% |     1.65% | 1.001 | 2134 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.63 | [36.71, 42.43] |   100% |        0% | 0.999 | 5012 | Normal (0 +- 60.27)
+## wt          |  -3.20 | [-4.54, -1.98] | 99.90% |     0.15% | 1.000 | 1810 | Normal (0 +- 15.40)
+## cyl         |  -1.50 | [-2.18, -0.77] | 99.72% |     2.57% | 1.000 | 1776 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -327,10 +349,10 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
+      <link>/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
+      <guid>/blog/posts/performance_check_collinearity/</guid>
       <description>
 
 
@@ -368,7 +390,7 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# plot results
 x &amp;lt;- check_collinearity(model)
 plot(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;check-zero-inflated-mixed-models-for-multicollinearity&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Check Zero-Inflated Mixed Models for Multicollinearity&lt;/h2&gt;
@@ -416,7 +438,7 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 ##      mined 1.08         1.04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you can see, the &lt;code&gt;print()&lt;/code&gt; method separates the results into the &lt;em&gt;count&lt;/em&gt; and &lt;em&gt;zero-inflated&lt;/em&gt; model components for a clearer output. Similar, &lt;code&gt;plot()&lt;/code&gt; produces facets for each components, so it’s easier to understand.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(check_collinearity(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;remedies-for-multicollinearity&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Remedies for Multicollinearity&lt;/h2&gt;
@@ -434,10 +456,10 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
+      <link>/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
+      <guid>/blog/posts/bayestestr_emmeans/</guid>
       <description>
 
 
@@ -474,7 +496,7 @@ summary(aov_model)&lt;/code&gt;&lt;/pre&gt;
 ## shape:color  1    0.0    0.00       0      1
 ## Residuals   11   30.5    2.77&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You look at your data, as you were taught to do, and it really does seems like the effect of color &lt;em&gt;is not&lt;/em&gt; moderated by shape (and vice versa):
-&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;/blog/blog/posts/bayestestR_emmeans_files/figure-html/plot_data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;But what does this mean? &lt;strong&gt;Can you infer that there isn’t interaction?&lt;/strong&gt; Are the two simple effects of color truly identical?&lt;/p&gt;
 &lt;p&gt;Classical statistics has no answer for us here - when the &lt;em&gt;p&lt;/em&gt;-value is less than alpha (typically 5%) we can reject the null hypothesis, but when &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; &amp;gt; .05&lt;/strong&gt;, even a lot bigger than 5%, classical (frequentists) statistics &lt;strong&gt;do not allow to infer that the null is true&lt;/strong&gt;. For this, we need to go Bayesian!&lt;/p&gt;
 &lt;/div&gt;
@@ -589,10 +611,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
+      <link>/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
+      <guid>/blog/posts/bayestestr_v2/</guid>
       <description>
 
 
@@ -636,10 +658,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
+      <link>/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
+      <guid>/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -662,7 +684,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_point2(size=4, alpha=0.5) +
   scale_color_flat_d() +
   theme_modern()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -670,7 +692,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_violindot(fill_dots = &amp;quot;white&amp;quot;) + 
   scale_fill_material_d() +
   theme_blackboard()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -684,7 +706,7 @@ result &amp;lt;- equivalence_test(model, ci = c(.89, .95))
 plot(result) +
   theme_abyss() +
   scale_fill_flat()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;
@@ -699,10 +721,10 @@ plot(result) +
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
+      <link>/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
+      <guid>/blog/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -719,7 +741,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;This function’s name was initially chosen because of its proximity (argument-wise) with its random counterpart &lt;code&gt;rnorm&lt;/code&gt; (it has the same arguments, the same order and the same output type). However, we &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/86&#34;&gt;quickly realised&lt;/a&gt; this this name was not perfect (&lt;em&gt;no pun intended&lt;/em&gt;), as indeed the obtained distribution was not &lt;em&gt;random&lt;/em&gt; (and the &lt;code&gt;r&lt;/code&gt; in &lt;code&gt;rnorm&lt;/code&gt; stands for &lt;em&gt;random&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Thus, after discussion, we decided to change it to &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/distribution.html&#34;&gt;&lt;code&gt;distribution_normal&lt;/code&gt;&lt;/a&gt;. We also used that opportunity to add other types of “perfect” distributions:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Generate a perfect sample
@@ -730,7 +752,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_distribution_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Interestingly, a few days before this update, we received a small email asking:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hi, I saw your blog post and wonder how you define a perfectly normal distribution.&lt;/p&gt;
@@ -757,10 +779,10 @@ x %&amp;gt;%
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
+      <link>/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
+      <guid>/blog/posts/performance_presentation/</guid>
       <description>
 
 
@@ -818,7 +840,7 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
 &amp;gt; 
 &amp;gt;  ELPD ELPD_SE LOOIC LOOIC_SE WAIC   R2 R2_marginal R2_adjusted RMSE
-&amp;gt;   -43      10    87       20   87 0.47        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt;   -44      10    87       20   87 0.46        0.68        0.45 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -838,10 +860,10 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -863,7 +885,7 @@ x %&amp;gt;%
   as.data.frame() %&amp;gt;% 
   ggplot(aes(x=x, y=y)) +
   geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also easily color some of the parts of the curve, for instance, the observations lying beyond +2 standard deviations.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x %&amp;gt;% 
   density() %&amp;gt;%  # Compute density function
@@ -872,7 +894,7 @@ x %&amp;gt;%
   ggplot(aes(x=x, y=y, fill=outlier)) +
   geom_ribbon(aes(ymin=0, ymax=y)) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_rnorm_perfect_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayestestr-and-easystats&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;bayestestR and easystats&lt;/h2&gt;
@@ -890,10 +912,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
+      <link>/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
+      <guid>/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -923,16 +945,16 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ##   ROPE: [-0.60 0.60]
 ## 
 ##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.31 46.70]
-##           wt  Rejected      0.00 % [-4.22 -1.13]
-##          cyl Undecided     38.19 % [-1.85  0.34]
-##         gear Undecided     43.89 % [-2.16  1.68]
-##           am Undecided     20.50 % [-1.27  4.35]
+##  (Intercept)  Rejected      0.00 % [27.35 46.71]
+##           wt  Rejected      0.00 % [-4.26 -1.17]
+##          cyl Undecided     35.72 % [-1.88  0.34]
+##         gear Undecided     42.91 % [-2.21  1.70]
+##           am Undecided     19.12 % [-1.34  4.32]
 ##           hp  Accepted    100.00 % [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
 plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_presentation_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -951,10 +973,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
+      <link>/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
+      <guid>/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -1016,10 +1038,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova/</link>
+      <link>/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
+      <guid>/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -1058,10 +1080,10 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
+      <link>/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <guid>/blog/posts/report_correlation/</guid>
       <description>
 
 

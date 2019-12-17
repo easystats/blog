@@ -2,41 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bayestestR on easystats</title>
-    <link>https://easystats.github.io/blog/tags/bayestestr/</link>
+    <link>/blog/tags/bayestestr/</link>
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://easystats.github.io/blog/tags/bayestestr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/tags/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Comparison of indices of significance in the Bayesian framework</title>
+      <link>/blog/posts/bayestestr_evidence_ani/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_evidence_ani/</guid>
+      <description>The bayestestR package has several functions to compute indices of effect existence and significance in a Bayesian framework, like p_direction() or bayesfactor_parameters().
+The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. Using the package, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
+If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!</description>
+    </item>
+    
+    <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
+      <link>/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
+      <guid>/blog/posts/bayestestr_emmeans/</guid>
       <description>The Problem with Null EffectsSay you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
 options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.</description>
     </item>
     
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
+      <link>/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
+      <guid>/blog/posts/bayestestr_v2/</guid>
       <description>bayestestR 0.2 is here!As you might have heard from previous posts, we have recently started to collaborate around the new easystats project, a suite of packages designed to make your life easier. One of the packages, bayestestR, has just been updated on CRAN.
 And this release is so packed with new features and improvements that it would be impossible to present them all in one post! We have added the computation of different types of Bayes factors (BF), new plotting methods (available in the see package), a new meta-function, describe_posterior, that computes everything at once, and more…</description>
     </item>
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
+      <link>/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
+      <guid>/blog/posts/bayestestr_distribution/</guid>
       <description>Recently, we published a post presenting a small convenience function, from the bayestestR package. This function, named rnorm_perfect, generated an empirical distribution (i.e., a vector of values) as close as possible to a desired distribution, in this case the normal distribution.
 It worked like this:
 # Generate a perfect samplex &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&amp;gt;% density() %&amp;gt;% # Compute density functionas.</description>
@@ -44,10 +55,10 @@ It worked like this:
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>Many times, for instance when teaching, I needed to quickly and simply generate a perfectly normally distributed sample to illustrate or show some of its characteristics.
 This is now very easy to do with the new bayestestR package, which includes the rnorm_perfect function. This function is very similar to the classic rnorm (same arguments), with the difference that the generated sample is perfectly normal.
 ExamplebayestestR can be installed as follows:</description>
@@ -55,10 +66,10 @@ ExamplebayestestR can be installed as follows:</description>
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
+      <link>/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
+      <guid>/blog/posts/bayestestr_presentation/</guid>
       <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
 To address this, please let us introduce bayestestR!
 bayestestRWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
