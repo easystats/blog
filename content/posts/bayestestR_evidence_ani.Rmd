@@ -1,8 +1,7 @@
 ---
-title: 'bayestestR: Compute indices of effect existence and significance in a Bayesian
-  framework'
+title: "Comparison of indices of significance in the Bayesian framework"
 author: "easystats"
-date: '2019-12-16'
+date: '2019-12-17'
 tags:
 - R
 - easystats
@@ -19,17 +18,17 @@ options(knitr.kable.NA = '')
 options(digits=2)
 ```
 
-The [**bayestestR** package](https://github.com/easystats/bayestestR) has several functions to compute indices of effect existence and significance in a Bayesian framework, like [`p_direction()`](https://easystats.github.io/bayestestR/reference/p_direction.html) or [`bayesfactor_parameter()`](https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html).
+The [**bayestestR** package](https://github.com/easystats/bayestestR) has several functions to compute indices of effect existence and significance in a Bayesian framework, like [`p_direction()`](https://easystats.github.io/bayestestR/reference/p_direction.html) or [`bayesfactor_parameters()`](https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html).
 
-The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. One of our [easystats-gurus](https://github.com/DominiqueMakowski) has now created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
+The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. [Using the package](https://twitter.com/Dom_Makowski/status/1204027373542203394?s=20), we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
 
 ![](https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif)
 
-If you'd like to know more (statistical) details about these indices, we have recently published a paper with a simulation study, demonstrating how such indices behave in the context of different sources of uncertainty:
+If you'd like to know more (statistical) details about these indices, we have recently published a paper (available for free!) with a simulation study, demonstrating how such indices behave in the context of different sources of uncertainty:
 
-Makowski D, Ben-Shachar MS, Chen SHA, Lüdecke D (2019) Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology 2019;10:2767. doi: [10.3389/fpsyg.2019.02767](https://doi.org/10.3389/fpsyg.2019.02767)
+- Makowski, D., Ben-Shachar, M. S., Chen, S. H., & Lüdecke, D. (2019). *Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology, 10*, 2767. doi: [10.3389/fpsyg.2019.02767](https://doi.org/10.3389/fpsyg.2019.02767)
 
-In this paper, you'll also find fancy figures like this one:
+In this paper, you'll also find fancy figures like this one, showing the relationship between Bayesian indices and the frequentist *p*-value:
 
 ![](https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png)
 
