@@ -43,7 +43,7 @@ In one year, we created **9 packages**, pushed 7 of them to **CRAN** (that have 
 
 That doesn't mean that there are no academic outcomes. This year, we published **3 papers** related to easystats. And we plan on keeping at least that rythm for the year to come *(now might be your chance to get involved ;)*. We also plan on releasing the remaining packages (and fixing [*report*](https://github.com/easystats/report), I know XD), continue improving the existing ones and adding more awesome features and documentation.
 
-All in all, **easystats** is a living demonstration of how an open-science project can be born and keep growing. And it's against all odds in the current academic system! We have **no funding** (however, very interested in getting some... *\*wink wink\**) nor academic pressure related to it, we are all contributing to it on our **free time**, out of pure enthusiasm and interest in making this place better. 
+All in all, **easystats** is a living demonstration of how an open-science project can be born and keep growing. And it's against all odds in the current academic system! We have **no funding** (however, very interested in getting some... *\*wink wink\**) and no direct obligation to work to it. We are all contributing to it on our **free time**, out of **pure enthusiasm** and interest in making this place a lil' bit better. 
 
 So, as a closing note, Because happiness is only useful if it is shared, we'd like to thank **you, user of easystats**, for directly contributing to our passion. Cheers!
 
