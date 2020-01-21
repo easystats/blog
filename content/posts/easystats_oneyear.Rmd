@@ -57,7 +57,7 @@ Note that *easystats* is a new project in active development, looking for contri
 
 ## Stay tuned 
 
-To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click one [of the easystats package page](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter**:
+To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter**:
 
 - [@strengejacke](https://twitter.com/strengejacke)
 - [@DominiqueMakowski](https://twitter.com/Dom_Makowski)
