@@ -25,23 +25,19 @@ include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/m
 
 ## Happy birthday easystats!
 
-About a year ago, I (Dominique Makowski) sadly realised that the R package I was maintaining ([*psycho*](https://github.com/neuropsychology/psycho.R)) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. **Something had to be done.**
+About a year ago, I [(Dom)](https://github.com/DominiqueMakowski) sadly realised that the R package I was maintaining ([*psycho*](https://github.com/neuropsychology/psycho.R)) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. **Something had to be done.**
 
-I decided to get in touch with Daniel, *aka* **strengejacke** (for mysterious and very confusing reasons), the author of the [*sjverse*](https://github.com/strengejacke), a collection of awesome packages which scope wasn't too distant from my own one. Quickly, we realised that beyond facing similar issues, we shared the same vision: **Make R stats easy again**.
+I decided to get in touch with [Daniel](https://github.com/strengejacke), *aka* **strengejacke** (for mysterious and very confusing reasons), the author of the [*sjverse*](https://github.com/strengejacke), a collection of awesome packages which scope wasn't too distant from my own one. Quickly, we realised that beyond facing similar issues, we shared the same vision: **Make R stats easy again**.
 
 We were also agreeing on a possible way of reaching this goal. Build a new collection of packages that would work together to provide a smooth experience to getting stats, and all that entails, done in R (note that we preferred the workflow to be *easy* rather than *tidy*... ;p). Most importantly, we shared the same values, including a commitment to open-science, a desire for collaborative development, a focus on user- and beginner- friendliness, and a dedication to the Force.
 
 And just like that, [**easystats was born**](https://github.com/orgs/easystats/).
 
-But this project wouldn't have grown, nor still exist, if we hadn't manage to bring in the **most talented people**, creating an awesome [team](https://github.com/orgs/easystats/people) which diversity in experience and skills offers an incredibly valuable resource. Shout-out to the ultimate Bayes master [@mattansb](https://github.com/mattansb), to our socio-political expert [@pdwaggoner](https://github.com/pdwaggoner), to [@IndrajeetPatil](https://twitter.com/patilindrajeets), the compulsive model supporter and author of the famous [*ggstatsplot*](https://github.com/IndrajeetPatil/ggstatsplot), to our big-daddy-markdown-mate [@humanfactors](https://twitter.com/humanfactorsio), to the best dinosaur stats explainer  [@lindeloev](https://twitter.com/jonaslindeloev) and to the [*interaction*](https://github.com/jacob-long/interactions) genius [@jacob-long](https://twitter.com/jacobandrewlong). A big thank you to our team. Make sure to check-out their awesome work and research!
+But this project wouldn't have grown, nor still exist, if we hadn't manage to bring in the **most talented people**, creating an awesome [team](https://github.com/orgs/easystats/people) which diversity in experience and skills offers an incredibly valuable resource. Shout-out to the ultimate Bayes master [@mattansb](https://github.com/mattansb), to our socio-political expert [@pdwaggoner](https://github.com/pdwaggoner), to [@IndrajeetPatil](https://twitter.com/patilindrajeets), the compulsive model supporter and author of the famous [*ggstatsplot*](https://github.com/IndrajeetPatil/ggstatsplot), to our big-daddy-markdown-mate [@humanfactors](https://twitter.com/humanfactorsio), to the best dinosaur stats explainer  [@lindeloev](https://twitter.com/jonaslindeloev) and to the [*interaction*](https://github.com/jacob-long/interactions) genius [@jacob-long](https://twitter.com/jacobandrewlong). A big thank you to this great team. Make sure to check-out their awesome work and research!
 
 Together in one year, we created **9 packages**, pushed 7 of them to **CRAN** (which have now been downloaded more than **half a million times** *(!!!)*), wrote many [**blogposts**](https://easystats.github.io/blog/posts/), and made just about a thousand [memes](https://raw.githubusercontent.com/easystats/easystats/master/man/figures/misc/notthememe.jpg). But most importantly, we all **learned a lot**, as this project partly became the opportunity for us to drastically improve our R, stats, programming and light-saber skills. Moreover, it also ended up being a great occasion and place to have **fun**, contribute to the **community**, and become part of a **network** of talented and open-minded people with similar interests. And that is, by far, one of the biggest take-away.
 
-And yet, although fun is good, it doesn't make for a living (unless you're Mr Bean). And the **easystats** project can also be considered as a legit academic research project with legit academic outcomes. This year, we published **3 papers** related to easystats, and we plan on keeping up *at least* that rhythm for the year to come *(now might be your chance to get involved ;)*. Here are the packages with accompanying papers, all published in the *Journal of Open Source Software*: 
-
-1. [insight](https://joss.theoj.org/papers/10.21105/joss.01412)
-2. [bayestestR](https://joss.theoj.org/papers/10.21105/joss.01541)
-3. **OTHER PAPER HERE...**
+And yet, although fun is good, it doesn't make for a living (unless you're Mr Bean). And the **easystats** project also turned out to be a legit academic research project with legit academic outcomes. This year, we published **3 papers** ([*insight*](https://joss.theoj.org/papers/10.21105/joss.01412)]; [*bayestestR*](https://joss.theoj.org/papers/10.21105/joss.01541) and [another Bayes-related one](https://doi.org/10.3389/fpsyg.2019.02767)) related to easystats, and we plan on keeping up *at least* that rhythm for the year to come *(now might be your chance to get involved ;)*. 
 
 Aside from publications, we also plan on releasing the remaining packages (What do I hear? "fixing [*report*](https://github.com/easystats/report)"?), continue improving the existing ones and adding even more awesome features and documentation.
 
@@ -49,7 +45,7 @@ All in all, **easystats** is a living and breathing demonstration of how an open
 
 So, as a closing note, because happiness is only useful when it is shared, we'd like to thank **you, user of easystats**, for directly contributing to our passion. Cheers!
 
-*...And if you're not yet a user or a contributor... what are you waiting for?*
+*...And if you're not yet a user or a contributor... what are you waiting for?!*
 
 
 ## Get Involved
@@ -69,4 +65,4 @@ To be updated about the *upcoming features* and cool R or data science stuff, yo
 - [@humanfactors](https://twitter.com/humanfactorsio)
 - [@lindeloev](https://twitter.com/jonaslindeloev)
 - [@jacob-long](https://twitter.com/jacobandrewlong)
-- [pdwaggoner](https://pdwaggoner.github.io/)
+- [@pdwaggoner](https://pdwaggoner.github.io/)
