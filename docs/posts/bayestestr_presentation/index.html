@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.62.2" />
 
     
     
@@ -149,7 +149,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
     </div>
     
 <div class="copyright">
-  &copy; 2019 easystats
+  &copy; 2020 easystats
   
     <a href="https://github.com/easystats/easystats">GPL-3.0</a>
   
@@ -215,7 +215,7 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
     
     
     <br/>
-    <i class="fas fa-clock"></i> 2 min read
+    <i class="fas fa-clock"></i> 3 min read
 </div>
 
 
@@ -251,13 +251,14 @@ equivalence_test(model)</code></pre>
 ## 
 ##   ROPE: [-0.60 0.60]
 ## 
-##    Parameter        H0 inside ROPE       89% HDI
-##  (Intercept)  Rejected      0.00 % [27.35 46.71]
-##           wt  Rejected      0.00 % [-4.26 -1.17]
-##          cyl Undecided     35.72 % [-1.88  0.34]
-##         gear Undecided     42.91 % [-2.21  1.70]
-##           am Undecided     19.12 % [-1.34  4.32]
-##           hp  Accepted    100.00 % [-0.05  0.00]</code></pre>
+## Parameter   |        H0 | inside ROPE |       89% HDI
+## -----------------------------------------------------
+## (Intercept) |  Rejected |      0.00 % | [26.85 46.59]
+## wt          |  Rejected |      0.00 % | [-4.09 -1.05]
+## cyl         | Undecided |     38.53 % | [-1.90  0.28]
+## gear        | Undecided |     41.95 % | [-2.05  1.75]
+## am          | Undecided |     19.04 % | [-1.25  4.43]
+## hp          |  Accepted |    100.00 % | [-0.05  0.00]</code></pre>
 <p>Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.</p>
 <pre class="r"><code># Do the test and plot results
 plot(equivalence_test(model))</code></pre>

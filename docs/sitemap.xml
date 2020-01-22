@@ -3,8 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/categories/bayestestr/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
+    <loc>/blog/tags/aniversary/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/easystats/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/easystats/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/easystats_oneyear/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/categories/r/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/r/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,42 +58,12 @@
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
+    <loc>/blog/categories/bayestestr/</loc>
     <lastmod>2019-12-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/posts/bayestestr_evidence_ani/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/easystats/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/r/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/r/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/</loc>
     <lastmod>2019-12-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -118,12 +133,12 @@
   </url>
   
   <url>
-    <loc>/blog/categories/performance/</loc>
+    <loc>/blog/tags/performance/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/performance/</loc>
+    <loc>/blog/categories/performance/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
