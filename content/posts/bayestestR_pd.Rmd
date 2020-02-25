@@ -17,11 +17,11 @@ set.seed(333)
 
 
 
-The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcommers often strugle with a lot of new concepts and tools and could benefit from some **familiar grounding**. And the *p*-value is a very familiar index (although paradoxically often misunderstood, but that's another topic).
+The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some **familiar grounding**. And the *p*-value is a very familiar index (although paradoxically often misunderstood, but that's another topic).
 
 Is there an equivalent of the *p*-value? Well, depends on what "equivalent" means. Some might argue that the [**Bayes factor**](https://easystats.github.io/bayestestR/articles/bayes_factors.html) is some sort of equivalent, i.e., a value that can be used for decisions and interpretation of results. [Some others](https://www.youtube.com/watch?v=Ip8Ci5KUVRc&t=408s) would suggest that the [MAP-based *p*-value](https://easystats.github.io/bayestestR/reference/p_map.html) is another equivalent.
 
-Based on a simulation study [(Makowski et al., 2019)](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02767/full), we think that the [**probability of direction**](https://easystats.github.io/bayestestR/articles/probability_of_direction.html) (*p*-direction, or *pd*) is the closest ***statistical* equivalent to the *p*-value**. The *statistical* is important here, simply meaning that the two indices are strongly correlated. That being said, they are **not *conceptually* equivalent** (as we argue in the paper, the *pd* is an index of effect *existence*, rather than *significance*).
+Based on a simulation study [(Makowski et al., 2019)](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02767/full), we think that the [**probability of direction**](https://easystats.github.io/bayestestR/articles/probability_of_direction.html) (*p*-direction, or *pd*) is the closest ***statistical* equivalent to the *p*-value***. The *statistical* is important here, simply meaning that the two indices are strongly correlated. That being said, they are **not *conceptually* equivalent** (as we argue in the paper, the *pd* is an index of effect *existence*, rather than *significance*).
 
 Here's a short example.
 
@@ -41,7 +41,7 @@ Let's start by running a simple linear regression and displaying its result with
 ```{r message=FALSE, warning=FALSE}
 library(parameters)
 
-model <- lm(disp ~ carb, data=mtcars)
+model <- lm(disp ~ carb, data = mtcars)
 parameters(model)
 ```
 
@@ -58,7 +58,16 @@ Let's fit the same regression as above within a Bayesian framework with a flat p
 library(bayestestR)
 library(rstanarm)
 
-model <- stan_glm(disp ~ carb, data=mtcars, priors=NULL, prior_intercept=NULL, chains=10, iter=10000, seed=333)
+model <-
+  stan_glm(
+    disp ~ carb,
+    data = mtcars,
+    priors = NULL,
+    prior_intercept = NULL,
+    chains = 10,
+    iter = 10000,
+    seed = 333
+  )
 ```
 ```{r message=FALSE, warning=FALSE}
 parameters(model)
