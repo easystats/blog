@@ -83,9 +83,9 @@ pd_to_p(0.9869)
 
 As we can see, we are not far from the frequentist *p*-value! 
 
-But again, we need to underline that the *p*-direction has a **different meaning and interpretation**. It refers to the *probability that the effect is positive or negative (depending on the median's sign)*, Moreover, when using informative priors centred as 0, a Bayesian analysis will always lead to "less significant" effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which **is a good thing**.
+But again, we need to underline that the *p*-direction has a **different meaning and interpretation**. It refers to the *probability that the effect is positive or negative (depending on the median's sign)*. Moreover, when using informative priors centred at 0, a Bayesian analysis will always lead to "less significant" effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which **is a good thing**.
 
-So, makes sure you understand the indices you use (for instance by [**checking-out our gentle intro to Bayesian analysis**](https://easystats.github.io/bayestestR/articles/bayestestR.html))
+So, makes sure you understand the indices you use (for instance by [**checking-out our gentle intro to Bayesian analysis**](https://easystats.github.io/bayestestR/articles/bayestestR.html))!
 
 
 
