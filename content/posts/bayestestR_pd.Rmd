@@ -92,9 +92,11 @@ pd_to_p(0.9869)
 
 As we can see, we are not far from the frequentist *p*-value! 
 
-But again, we need to underline that the *p*-direction has a **different meaning and interpretation**. It refers to the *probability that the effect is positive or negative (depending on the median's sign)*. Moreover, when using informative priors centred at 0, a Bayesian analysis will always lead to "less significant" effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which **is a good thing**.
+But again, we need to underline that the *p*-direction has a **different meaning and interpretation**. It refers to the *probability that the effect is positive or negative (depending on the median's sign)*. But like the *p*-value, it cannot either be used to **support a lack of an effect** (for that, [ROPE-based indices](https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html) or [Bayes factors](https://easystats.github.io/bayestestR/articles/bayes_factors.html) might be more appropriate). 
 
-So, makes sure you understand the indices you use (for instance by [**checking-out our gentle intro to Bayesian analysis**](https://easystats.github.io/bayestestR/articles/bayestestR.html))!
+Moreover, when using informative priors centred at 0, a Bayesian analysis will always lead to "less significant" effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which **is a good thing**.
+
+In conclusion, make sure you understand the indices you use (for instance by [**checking-out our gentle intro to Bayesian analysis**](https://easystats.github.io/bayestestR/articles/bayestestR.html))!
 
 
 
@@ -117,3 +119,4 @@ To be updated about the *upcoming features* and cool R or data science stuff, yo
 - [\@lindeloev](https://twitter.com/jonaslindeloev)
 - [\@jacob-long](https://twitter.com/jacobandrewlong)
 - [\@pdwaggoner](https://pdwaggoner.github.io/)
+- [\@LeoDutriaux](https://twitter.com/LDtrx)
