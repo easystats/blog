@@ -1,7 +1,7 @@
 ---
 title: "The p-direction: A Bayesian equivalent of the p-value?"
 author: "easystats"
-date: 2020-02-25
+date: 2020-02-26
 categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR", "p-value", "pd", "p-direction"]
 editor_options: 
