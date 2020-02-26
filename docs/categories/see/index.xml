@@ -145,13 +145,13 @@ ma &amp;lt;- rma(yi = effectsize, sei = standarderror, method = &amp;quot;REML&a
 result &amp;lt;- model_parameters(ma)
 
 result&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |   SE |         95% CI |     z |      p | Weight
-## ---------------------------------------------------------------------------
-## Study 1     |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
-## Study 2     |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
-## Study 3     |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
-## Study 4     |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &amp;lt; .001 |   7.72
-## (Intercept) |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter | Coefficient |   SE |         95% CI |     z |      p | Weight
+## -------------------------------------------------------------------------
+## Study 1   |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
+## Study 2   |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
+## Study 3   |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
+## Study 4   |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &amp;lt; .001 |   7.72
+## Overall   |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;

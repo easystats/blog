@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+    
+    
+    
+
+<title>The p-direction: A Bayesian equivalent of the p-value? • easystats</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The p-direction: A Bayesian equivalent of the p-value?"/>
+<meta name="twitter:description" content="The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i."/>
+
+<meta property="og:title" content="The p-direction: A Bayesian equivalent of the p-value?" />
+<meta property="og:description" content="The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/posts/bayestestr_pd/" />
+<meta property="article:published_time" content="2020-02-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-26T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
+
+
+<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="/blog/">easystats</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">easystats</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/blog/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/portfolio/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/resources/">
+						<span>Resources</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/easystats/easystats" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 easystats
+  
+    <a href="https://github.com/easystats/easystats">GPL-3.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>The p-direction: A Bayesian equivalent of the p-value?</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 26, 2020
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/blog/categories/bayestestr">BAYESTESTR</a>
+              •
+          
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/blog/tags/r">r</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/easystats">easystats</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/bayestestr">bayestestr</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/p-value">p-value</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/pd">pd</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/p-direction">p-direction</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+
+
+<p>The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some <strong>familiar grounding</strong>. And the <em>p</em>-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).</p>
+<p><strong>Is there an equivalent of the <em>p</em>-value?</strong> Well, depends on what “equivalent” means. Some might argue that the <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html"><strong>Bayes factor</strong></a> is some sort of equivalent, i.e., a value that can be used for decisions and interpretation of results. <a href="https://www.youtube.com/watch?v=Ip8Ci5KUVRc&amp;t=408s">Some others</a> would suggest that the <a href="https://easystats.github.io/bayestestR/reference/p_map.html">MAP-based <em>p</em>-value</a> is another alternative.</p>
+<p>Based on a simulation study <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02767/full">(Makowski et al., 2019)</a>, we think that the <a href="https://easystats.github.io/bayestestR/articles/probability_of_direction.html"><strong>probability of direction</strong></a> (<em>p</em>-direction, or <em>pd</em>) is the closest <strong><em>statistical</em> equivalent to the <em>p</em>-value</strong>. The <em>statistical</em> is important here, simply meaning that the two indices are strongly correlated. That being said, they are <strong>not <em>conceptually</em> equivalent</strong> (as we argue in the paper, the <em>pd</em> is an index of effect <em>existence</em>, rather than <em>significance</em>).</p>
+<p>Here’s a short example.</p>
+<div id="frequentist-regression" class="section level2">
+<h2>Frequentist regression</h2>
+<p>First, you can install (or update) the necessary packages by running the following (it’s important that the <em>insight</em> package version must be &gt;= 0.8.1):</p>
+<pre class="r"><code>install.packages(c(&quot;insight&quot;, &quot;bayestestR&quot;, &quot;parameters&quot;))</code></pre>
+<p>Let’s start by running a simple linear regression and displaying its result with the <a href="https://easystats.github.io/parameters/"><strong>parameters</strong></a> package.</p>
+<pre class="r"><code>library(parameters)
+
+model &lt;- lm(disp ~ carb, data = mtcars)
+parameters(model)</code></pre>
+<pre><code>## Parameter   | Coefficient |    SE |          95% CI |    t | df |     p
+## -----------------------------------------------------------------------
+## (Intercept) |      145.48 | 41.58 | [60.56, 230.40] | 3.50 | 30 | 0.001
+## carb        |       30.31 | 12.87 | [ 4.02,  56.59] | 2.35 | 30 | 0.025</code></pre>
+<p>The <em>p</em>-value of the linear relationship between the two variable is of <em>.025</em> (the second row in the <em>p</em> column). What does a Bayesian analysis tells us?</p>
+</div>
+<div id="bayesian-regression-with-flat-priors" class="section level2">
+<h2>Bayesian regression (with flat priors)</h2>
+<p>As you might know, a Bayesian analysis is close to a maximum likelihood analysis (the typical frequentist paradigm) when no information is given by the prior (and the result is only driven by the data). This is the case with <strong>flat priors</strong>, that give equivalent likelihood to each and every one of your wildest dreams (see the <a href="https://cran.r-project.org/web/packages/rstanarm/vignettes/priors.html"><em>How to Specify Flat Priors (and why you typically shouldn’t)</em></a> section).</p>
+<p>Let’s fit the same regression as above within a Bayesian framework with a flat prior (i.e., by setting them as <code>NULL</code>).</p>
+<pre class="r"><code>library(bayestestR)
+library(rstanarm)
+
+model &lt;-
+  stan_glm(
+    disp ~ carb,
+    data = mtcars,
+    priors = NULL,
+    prior_intercept = NULL
+  )</code></pre>
+<pre class="r"><code>parameters(model)</code></pre>
+<pre><code>## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
+## --------------------------------------------------------------------------------------------------
+## (Intercept) | 145.97 | [78.68, 212.98] | 99.92% |     0.11% | 1.000 | 55624 |       Uniform ( +- )
+## carb        |  30.24 | [ 9.47,  51.26] | 98.80% |     8.50% | 1.000 | 52688 | Normal (0 +- 191.83)</code></pre>
+<p>It tells us that the <em>p</em>-direction is of 98.80%, i.e., <code>0.9880</code> (note that your results can slightly vary due to the random nature of the sampling; you can increase the number of iterations to get more stable results). We can quickly visualize its meaning as follows (with the <a href="https://github.com/easystats/see"><strong>see</strong></a> package):</p>
+<pre class="r"><code>library(see)
+
+plot(p_direction(model))</code></pre>
+<p><img src="/blog/posts/bayestestR_pd_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="from-p-direction-to-p-value" class="section level2">
+<h2>From <em>p</em>-direction to <em>p</em>-value</h2>
+<p>We can convert this value to a <em>p</em>-value using the following function:</p>
+<pre class="r"><code>pd_to_p(0.9880)</code></pre>
+<pre><code>## [1] 0.024</code></pre>
+<p>As we can see, we are not far from the frequentist <em>p</em>-value!</p>
+<p>But again, we need to underline that the <em>p</em>-direction has a <strong>different meaning and interpretation</strong>. It refers to the <em>probability that the effect is positive or negative (depending on the median’s sign)</em>. But like the <em>p</em>-value, it cannot either be used to <strong>support a lack of an effect</strong> (for that, <a href="https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html">ROPE-based indices</a> or <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html">Bayes factors</a> might be more appropriate).</p>
+<p>Moreover, when using <strong>informative priors</strong> centred at 0, a Bayesian analysis will always lead to “less significant” effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which <strong>is a good thing</strong>.</p>
+<p>In conclusion, make sure you understand the indices you use (for instance by <a href="https://easystats.github.io/bayestestR/articles/bayestestR.html"><strong>checking-out our gentle intro to Bayesian analysis</strong></a>)!</p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p><em>easystats</em> is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+<div id="stay-tuned" class="section level2">
+<h2>Stay tuned</h2>
+<p>To be updated about the <em>upcoming features</em> and cool R or data science stuff, you can <strong>follow the packages on GitHub</strong> (click on one <a href="https://github.com/easystats">of the easystats package</a>) and then on the <strong>Watch</strong> button on the top right corner) as well as the <strong>easystats team on twitter and online</strong>:</p>
+<ul>
+<li><a href="https://twitter.com/easystats4u">@easystats4u</a></li>
+<li><a href="https://twitter.com/strengejacke">@strengejacke</a></li>
+<li><a href="https://twitter.com/Dom_Makowski">@DominiqueMakowski</a></li>
+<li><a href="https://twitter.com/mattansb">@mattansb</a></li>
+<li><a href="https://twitter.com/patilindrajeets">@IndrajeetPatil</a></li>
+<li><a href="https://twitter.com/humanfactorsio">@humanfactors</a></li>
+<li><a href="https://twitter.com/jonaslindeloev">@lindeloev</a></li>
+<li><a href="https://twitter.com/jacobandrewlong">@jacob-long</a></li>
+<li><a href="https://pdwaggoner.github.io/">@pdwaggoner</a></li>
+<li><a href="https://twitter.com/LDtrx">@LeoDutriaux</a></li>
+</ul>
+</div>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/blog/posts/easystats_oneyear/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">easystats: one year already. What&#39;s next?</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97457476-9', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

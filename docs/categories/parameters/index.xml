@@ -145,13 +145,13 @@ ma &amp;lt;- rma(yi = effectsize, sei = standarderror, method = &amp;quot;REML&a
 result &amp;lt;- model_parameters(ma)
 
 result&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |   SE |         95% CI |     z |      p | Weight
-## ---------------------------------------------------------------------------
-## Study 1     |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
-## Study 2     |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
-## Study 3     |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
-## Study 4     |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &amp;lt; .001 |   7.72
-## (Intercept) |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter | Coefficient |   SE |         95% CI |     z |      p | Weight
+## -------------------------------------------------------------------------
+## Study 1   |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
+## Study 2   |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
+## Study 3   |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
+## Study 4   |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &amp;lt; .001 |   7.72
+## Overall   |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -321,11 +321,11 @@ model_parameters(model, eta_squared = &amp;quot;partial&amp;quot;)&lt;/code&gt;&
 
 model &amp;lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
 model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |       95% CI |    t |  df |      p
-## ----------------------------------------------------------------------
-## (Intercept)  |        1.78 | 0.69 | [0.42, 3.14] | 2.56 | 145 | 0.010 
-## Petal.Length |        0.15 | 0.06 | [0.02, 0.27] | 2.26 | 145 | 0.024 
-## Petal.Width  |        0.61 | 0.14 | [0.34, 0.88] | 4.49 | 145 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |        95% CI |    t |  df |      p
+## -----------------------------------------------------------------------
+## (Intercept)  |        0.00 | 1.51 | [-2.96, 2.96] | 0.00 | 145 | 1.000 
+## Petal.Length |        0.59 | 0.26 | [ 0.08, 1.10] | 2.26 | 145 | 0.024 
+## Petal.Width  |        1.07 | 0.24 | [ 0.60, 1.53] | 4.49 | 145 | &amp;lt; .001&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see)
 
@@ -342,9 +342,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.65 | [36.89, 42.61] |   100% |        0% | 0.999 | 5499 | Normal (0 +- 60.27)
-## wt          |  -3.17 | [-4.41, -1.99] |   100% |     0.05% | 1.000 | 2012 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.15, -0.83] | 99.92% |     1.68% | 1.000 | 2070 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.73 | [36.86, 42.44] |   100% |        0% | 1.000 | 4966 | Normal (0 +- 60.27)
+## wt          |  -3.18 | [-4.47, -1.95] | 99.95% |     0.12% | 1.000 | 1994 | Normal (0 +- 15.40)
+## cyl         |  -1.51 | [-2.22, -0.82] | 99.95% |     1.90% | 1.001 | 1994 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;

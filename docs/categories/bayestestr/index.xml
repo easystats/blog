@@ -5,10 +5,117 @@
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The p-direction: A Bayesian equivalent of the p-value?</title>
+      <link>/blog/posts/bayestestr_pd/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_pd/</guid>
+      <description>
+
+
+&lt;p&gt;The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some &lt;strong&gt;familiar grounding&lt;/strong&gt;. And the &lt;em&gt;p&lt;/em&gt;-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Is there an equivalent of the &lt;em&gt;p&lt;/em&gt;-value?&lt;/strong&gt; Well, depends on what “equivalent” means. Some might argue that the &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factor&lt;/strong&gt;&lt;/a&gt; is some sort of equivalent, i.e., a value that can be used for decisions and interpretation of results. &lt;a href=&#34;https://www.youtube.com/watch?v=Ip8Ci5KUVRc&amp;amp;t=408s&#34;&gt;Some others&lt;/a&gt; would suggest that the &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/p_map.html&#34;&gt;MAP-based &lt;em&gt;p&lt;/em&gt;-value&lt;/a&gt; is another alternative.&lt;/p&gt;
+&lt;p&gt;Based on a simulation study &lt;a href=&#34;https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02767/full&#34;&gt;(Makowski et al., 2019)&lt;/a&gt;, we think that the &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/probability_of_direction.html&#34;&gt;&lt;strong&gt;probability of direction&lt;/strong&gt;&lt;/a&gt; (&lt;em&gt;p&lt;/em&gt;-direction, or &lt;em&gt;pd&lt;/em&gt;) is the closest &lt;strong&gt;&lt;em&gt;statistical&lt;/em&gt; equivalent to the &lt;em&gt;p&lt;/em&gt;-value&lt;/strong&gt;. The &lt;em&gt;statistical&lt;/em&gt; is important here, simply meaning that the two indices are strongly correlated. That being said, they are &lt;strong&gt;not &lt;em&gt;conceptually&lt;/em&gt; equivalent&lt;/strong&gt; (as we argue in the paper, the &lt;em&gt;pd&lt;/em&gt; is an index of effect &lt;em&gt;existence&lt;/em&gt;, rather than &lt;em&gt;significance&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Here’s a short example.&lt;/p&gt;
+&lt;div id=&#34;frequentist-regression&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Frequentist regression&lt;/h2&gt;
+&lt;p&gt;First, you can install (or update) the necessary packages by running the following (it’s important that the &lt;em&gt;insight&lt;/em&gt; package version must be &amp;gt;= 0.8.1):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(c(&amp;quot;insight&amp;quot;, &amp;quot;bayestestR&amp;quot;, &amp;quot;parameters&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s start by running a simple linear regression and displaying its result with the &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;parameters&lt;/strong&gt;&lt;/a&gt; package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(parameters)
+
+model &amp;lt;- lm(disp ~ carb, data = mtcars)
+parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter   | Coefficient |    SE |          95% CI |    t | df |     p
+## -----------------------------------------------------------------------
+## (Intercept) |      145.48 | 41.58 | [60.56, 230.40] | 3.50 | 30 | 0.001
+## carb        |       30.31 | 12.87 | [ 4.02,  56.59] | 2.35 | 30 | 0.025&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;em&gt;p&lt;/em&gt;-value of the linear relationship between the two variable is of &lt;em&gt;.025&lt;/em&gt; (the second row in the &lt;em&gt;p&lt;/em&gt; column). What does a Bayesian analysis tells us?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bayesian-regression-with-flat-priors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bayesian regression (with flat priors)&lt;/h2&gt;
+&lt;p&gt;As you might know, a Bayesian analysis is close to a maximum likelihood analysis (the typical frequentist paradigm) when no information is given by the prior (and the result is only driven by the data). This is the case with &lt;strong&gt;flat priors&lt;/strong&gt;, that give equivalent likelihood to each and every one of your wildest dreams (see the &lt;a href=&#34;https://cran.r-project.org/web/packages/rstanarm/vignettes/priors.html&#34;&gt;&lt;em&gt;How to Specify Flat Priors (and why you typically shouldn’t)&lt;/em&gt;&lt;/a&gt; section).&lt;/p&gt;
+&lt;p&gt;Let’s fit the same regression as above within a Bayesian framework with a flat prior (i.e., by setting them as &lt;code&gt;NULL&lt;/code&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(bayestestR)
+library(rstanarm)
+
+model &amp;lt;-
+  stan_glm(
+    disp ~ carb,
+    data = mtcars,
+    priors = NULL,
+    prior_intercept = NULL
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
+## --------------------------------------------------------------------------------------------------
+## (Intercept) | 145.97 | [78.68, 212.98] | 99.92% |     0.11% | 1.000 | 55624 |       Uniform ( +- )
+## carb        |  30.24 | [ 9.47,  51.26] | 98.80% |     8.50% | 1.000 | 52688 | Normal (0 +- 191.83)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It tells us that the &lt;em&gt;p&lt;/em&gt;-direction is of 98.80%, i.e., &lt;code&gt;0.9880&lt;/code&gt; (note that your results can slightly vary due to the random nature of the sampling; you can increase the number of iterations to get more stable results). We can quickly visualize its meaning as follows (with the &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;&lt;strong&gt;see&lt;/strong&gt;&lt;/a&gt; package):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see)
+
+plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_pd_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;from-p-direction-to-p-value&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;From &lt;em&gt;p&lt;/em&gt;-direction to &lt;em&gt;p&lt;/em&gt;-value&lt;/h2&gt;
+&lt;p&gt;We can convert this value to a &lt;em&gt;p&lt;/em&gt;-value using the following function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pd_to_p(0.9880)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.024&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As we can see, we are not far from the frequentist &lt;em&gt;p&lt;/em&gt;-value!&lt;/p&gt;
+&lt;p&gt;But again, we need to underline that the &lt;em&gt;p&lt;/em&gt;-direction has a &lt;strong&gt;different meaning and interpretation&lt;/strong&gt;. It refers to the &lt;em&gt;probability that the effect is positive or negative (depending on the median’s sign)&lt;/em&gt;. But like the &lt;em&gt;p&lt;/em&gt;-value, it cannot either be used to &lt;strong&gt;support a lack of an effect&lt;/strong&gt; (for that, &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html&#34;&gt;ROPE-based indices&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;Bayes factors&lt;/a&gt; might be more appropriate).&lt;/p&gt;
+&lt;p&gt;Moreover, when using &lt;strong&gt;informative priors&lt;/strong&gt; centred at 0, a Bayesian analysis will always lead to “less significant” effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which &lt;strong&gt;is a good thing&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In conclusion, make sure you understand the indices you use (for instance by &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;&lt;strong&gt;checking-out our gentle intro to Bayesian analysis&lt;/strong&gt;&lt;/a&gt;)!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+            <category>p-value</category>
+      
+            <category>pd</category>
+      
+            <category>p-direction</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
     
     <item>
       <title>Comparison of indices of significance in the Bayesian framework</title>
@@ -452,11 +559,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [26.85 46.59]
-## wt          |  Rejected |      0.00 % | [-4.09 -1.05]
-## cyl         | Undecided |     38.53 % | [-1.90  0.28]
-## gear        | Undecided |     41.95 % | [-2.05  1.75]
-## am          | Undecided |     19.04 % | [-1.25  4.43]
+## (Intercept) |  Rejected |      0.00 % | [27.43 47.04]
+## wt          |  Rejected |      0.00 % | [-4.17 -1.00]
+## cyl         | Undecided |     36.00 % | [-1.93  0.32]
+## gear        | Undecided |     42.97 % | [-2.14  1.81]
+## am          | Undecided |     20.16 % | [-1.11  4.68]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
