@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.65.2" />
 
     
     
@@ -46,7 +46,7 @@ Before we start introducing some of the new features, we’d like to explain why
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
 
 
 <link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -353,13 +353,13 @@ ma &lt;- rma(yi = effectsize, sei = standarderror, method = &quot;REML&quot;, da
 result &lt;- model_parameters(ma)
 
 result</code></pre>
-<pre><code>## Parameter   | Coefficient |   SE |         95% CI |     z |      p | Weight
-## ---------------------------------------------------------------------------
-## Study 1     |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
-## Study 2     |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
-## Study 3     |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
-## Study 4     |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &lt; .001 |   7.72
-## (Intercept) |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |</code></pre>
+<pre><code>## Parameter | Coefficient |   SE |         95% CI |     z |      p | Weight
+## -------------------------------------------------------------------------
+## Study 1   |       -0.39 | 0.32 | [-1.01,  0.23] | -1.24 | 0.215  |   9.95
+## Study 2   |        0.68 | 0.32 | [ 0.05,  1.30] |  2.13 | 0.033  |   9.95
+## Study 3   |        0.28 | 0.13 | [ 0.03,  0.54] |  2.17 | 0.030  |  59.17
+## Study 4   |       -1.40 | 0.36 | [-2.10, -0.69] | -3.88 | &lt; .001 |   7.72
+## Overall   |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |</code></pre>
 <p>Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to <code>metafor::forest()</code>).</p>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>

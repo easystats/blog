@@ -5,7 +5,7 @@
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Posts</title>
       <link>/blog/posts/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/posts/</guid>
       <description></description>
@@ -41,10 +41,10 @@
 &lt;p&gt;&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;&lt;strong&gt;R for Datascience&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://bookdown.org/ndphillips/YaRrr/&#34;&gt;&lt;strong&gt;YaRrr! The Pirate&#39;s Guide to R&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bookdown.org/ndphillips/YaRrr/&#34;&gt;&lt;strong&gt;YaRrr! The Pirate&amp;rsquo;s Guide to R&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.yan-holtz.com/teaching&#34;&gt;&lt;strong&gt;Yan Holtz&#39;s tutorials&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yan-holtz.com/teaching&#34;&gt;&lt;strong&gt;Yan Holtz&amp;rsquo;s tutorials&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://gvwilson.github.io/tidynomicon/&#34;&gt;&lt;strong&gt;The Tidynomicon: A Brief Introduction to R for Python Programmers&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;

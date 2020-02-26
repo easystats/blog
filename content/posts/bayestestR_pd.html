@@ -1,0 +1,89 @@
+---
+title: "The p-direction: A Bayesian equivalent of the p-value?"
+author: "easystats"
+date: 2020-02-26
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR", "p-value", "pd", "p-direction"]
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<p>The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some <strong>familiar grounding</strong>. And the <em>p</em>-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).</p>
+<p><strong>Is there an equivalent of the <em>p</em>-value?</strong> Well, depends on what “equivalent” means. Some might argue that the <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html"><strong>Bayes factor</strong></a> is some sort of equivalent, i.e., a value that can be used for decisions and interpretation of results. <a href="https://www.youtube.com/watch?v=Ip8Ci5KUVRc&amp;t=408s">Some others</a> would suggest that the <a href="https://easystats.github.io/bayestestR/reference/p_map.html">MAP-based <em>p</em>-value</a> is another alternative.</p>
+<p>Based on a simulation study <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02767/full">(Makowski et al., 2019)</a>, we think that the <a href="https://easystats.github.io/bayestestR/articles/probability_of_direction.html"><strong>probability of direction</strong></a> (<em>p</em>-direction, or <em>pd</em>) is the closest <strong><em>statistical</em> equivalent to the <em>p</em>-value</strong>. The <em>statistical</em> is important here, simply meaning that the two indices are strongly correlated. That being said, they are <strong>not <em>conceptually</em> equivalent</strong> (as we argue in the paper, the <em>pd</em> is an index of effect <em>existence</em>, rather than <em>significance</em>).</p>
+<p>Here’s a short example.</p>
+<div id="frequentist-regression" class="section level2">
+<h2>Frequentist regression</h2>
+<p>First, you can install (or update) the necessary packages by running the following (it’s important that the <em>insight</em> package version must be &gt;= 0.8.1):</p>
+<pre class="r"><code>install.packages(c(&quot;insight&quot;, &quot;bayestestR&quot;, &quot;parameters&quot;))</code></pre>
+<p>Let’s start by running a simple linear regression and displaying its result with the <a href="https://easystats.github.io/parameters/"><strong>parameters</strong></a> package.</p>
+<pre class="r"><code>library(parameters)
+
+model &lt;- lm(disp ~ carb, data = mtcars)
+parameters(model)</code></pre>
+<pre><code>## Parameter   | Coefficient |    SE |          95% CI |    t | df |     p
+## -----------------------------------------------------------------------
+## (Intercept) |      145.48 | 41.58 | [60.56, 230.40] | 3.50 | 30 | 0.001
+## carb        |       30.31 | 12.87 | [ 4.02,  56.59] | 2.35 | 30 | 0.025</code></pre>
+<p>The <em>p</em>-value of the linear relationship between the two variable is of <em>.025</em> (the second row in the <em>p</em> column). What does a Bayesian analysis tells us?</p>
+</div>
+<div id="bayesian-regression-with-flat-priors" class="section level2">
+<h2>Bayesian regression (with flat priors)</h2>
+<p>As you might know, a Bayesian analysis is close to a maximum likelihood analysis (the typical frequentist paradigm) when no information is given by the prior (and the result is only driven by the data). This is the case with <strong>flat priors</strong>, that give equivalent likelihood to each and every one of your wildest dreams (see the <a href="https://cran.r-project.org/web/packages/rstanarm/vignettes/priors.html"><em>How to Specify Flat Priors (and why you typically shouldn’t)</em></a> section).</p>
+<p>Let’s fit the same regression as above within a Bayesian framework with a flat prior (i.e., by setting them as <code>NULL</code>).</p>
+<pre class="r"><code>library(bayestestR)
+library(rstanarm)
+
+model &lt;-
+  stan_glm(
+    disp ~ carb,
+    data = mtcars,
+    priors = NULL,
+    prior_intercept = NULL
+  )</code></pre>
+<pre class="r"><code>parameters(model)</code></pre>
+<pre><code>## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
+## --------------------------------------------------------------------------------------------------
+## (Intercept) | 145.97 | [78.68, 212.98] | 99.92% |     0.11% | 1.000 | 55624 |       Uniform ( +- )
+## carb        |  30.24 | [ 9.47,  51.26] | 98.80% |     8.50% | 1.000 | 52688 | Normal (0 +- 191.83)</code></pre>
+<p>It tells us that the <em>p</em>-direction is of 98.80%, i.e., <code>0.9880</code> (note that your results can slightly vary due to the random nature of the sampling; you can increase the number of iterations to get more stable results). We can quickly visualize its meaning as follows (with the <a href="https://github.com/easystats/see"><strong>see</strong></a> package):</p>
+<pre class="r"><code>library(see)
+
+plot(p_direction(model))</code></pre>
+<p><img src="/blog/posts/bayestestR_pd_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="from-p-direction-to-p-value" class="section level2">
+<h2>From <em>p</em>-direction to <em>p</em>-value</h2>
+<p>We can convert this value to a <em>p</em>-value using the following function:</p>
+<pre class="r"><code>pd_to_p(0.9880)</code></pre>
+<pre><code>## [1] 0.024</code></pre>
+<p>As we can see, we are not far from the frequentist <em>p</em>-value!</p>
+<p>But again, we need to underline that the <em>p</em>-direction has a <strong>different meaning and interpretation</strong>. It refers to the <em>probability that the effect is positive or negative (depending on the median’s sign)</em>. But like the <em>p</em>-value, it cannot either be used to <strong>support a lack of an effect</strong> (for that, <a href="https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html">ROPE-based indices</a> or <a href="https://easystats.github.io/bayestestR/articles/bayes_factors.html">Bayes factors</a> might be more appropriate).</p>
+<p>Moreover, when using <strong>informative priors</strong> centred at 0, a Bayesian analysis will always lead to “less significant” effects, as the prior will pull the posterior towards 0. This is a natural way of penalizing results, which <strong>is a good thing</strong>.</p>
+<p>In conclusion, make sure you understand the indices you use (for instance by <a href="https://easystats.github.io/bayestestR/articles/bayestestR.html"><strong>checking-out our gentle intro to Bayesian analysis</strong></a>)!</p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p><em>easystats</em> is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+<div id="stay-tuned" class="section level2">
+<h2>Stay tuned</h2>
+<p>To be updated about the <em>upcoming features</em> and cool R or data science stuff, you can <strong>follow the packages on GitHub</strong> (click on one <a href="https://github.com/easystats">of the easystats package</a>) and then on the <strong>Watch</strong> button on the top right corner) as well as the <strong>easystats team on twitter and online</strong>:</p>
+<ul>
+<li><a href="https://twitter.com/easystats4u">@easystats4u</a></li>
+<li><a href="https://twitter.com/strengejacke">@strengejacke</a></li>
+<li><a href="https://twitter.com/Dom_Makowski">@DominiqueMakowski</a></li>
+<li><a href="https://twitter.com/mattansb">@mattansb</a></li>
+<li><a href="https://twitter.com/patilindrajeets">@IndrajeetPatil</a></li>
+<li><a href="https://twitter.com/humanfactorsio">@humanfactors</a></li>
+<li><a href="https://twitter.com/jonaslindeloev">@lindeloev</a></li>
+<li><a href="https://twitter.com/jacobandrewlong">@jacob-long</a></li>
+<li><a href="https://pdwaggoner.github.io/">@pdwaggoner</a></li>
+<li><a href="https://twitter.com/LDtrx">@LeoDutriaux</a></li>
+</ul>
+</div>
