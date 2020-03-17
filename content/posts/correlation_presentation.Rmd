@@ -110,6 +110,20 @@ iris %>%
 ```
 
 
+## Gaussian Graphical Models (GGMs)
+
+Such partial correlations can also be represented as **Gaussian graphical models**, an increasingly popular tool in psychology:
+
+```{r message=FALSE, warning=FALSE}
+library(see) # for plotting
+library(ggraph) # needs to be loaded
+
+mtcars %>% 
+  correlation(partial = TRUE) %>% 
+  plot()
+```
+
+
 
 ## Get Involved
 
