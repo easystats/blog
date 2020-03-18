@@ -1,39 +1,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>easystats</title>
-    <link>/blog/</link>
+    <link>https://easystats.github.io/blog/</link>
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Posts</title>
-      <link>/blog/posts/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      <link>https://easystats.github.io/blog/posts/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/</guid>
+      <guid>https://easystats.github.io/blog/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About</title>
-      <link>/blog/portfolio/</link>
+      <link>https://easystats.github.io/blog/portfolio/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/portfolio/</guid>
+      <guid>https://easystats.github.io/blog/portfolio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learn R</title>
-      <link>/blog/resources/</link>
+      <link>https://easystats.github.io/blog/resources/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/resources/</guid>
+      <guid>https://easystats.github.io/blog/resources/</guid>
       <description>&lt;h2 id=&#34;learn-r&#34;&gt;Learn R&lt;/h2&gt;
 &lt;p&gt;Here are some links to get started with R:&lt;/p&gt;
 &lt;ul&gt;

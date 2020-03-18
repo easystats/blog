@@ -1,21 +1,194 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on easystats</title>
-    <link>/blog/categories/r/</link>
+    <link>https://easystats.github.io/blog/categories/r/</link>
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>The ulimate package for correlations (by easystats)</title>
+      <link>https://easystats.github.io/blog/posts/correlation_presentation/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/correlation_presentation/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/correlation/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;the-correlation-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The correlation package&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt; continues to grow with its more recent addition, a package devoted to &lt;strong&gt;correlations&lt;/strong&gt;. Check-out its &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;webpage here&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;It’s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as &lt;strong&gt;partial&lt;/strong&gt; correlations, &lt;strong&gt;Bayesian&lt;/strong&gt; correlations, &lt;strong&gt;multilevel&lt;/strong&gt; correlations, &lt;strong&gt;polychoric&lt;/strong&gt; correlations, &lt;strong&gt;biweight&lt;/strong&gt;, &lt;strong&gt;percentage bend&lt;/strong&gt; or &lt;strong&gt;Sheperd’s Pi&lt;/strong&gt; correlations (types of &lt;strong&gt;robust&lt;/strong&gt; correlation), &lt;strong&gt;distance&lt;/strong&gt; correlation (a type of &lt;strong&gt;non-linear&lt;/strong&gt; correlation) and more, also allowing for combinations between them (for instance, &lt;em&gt;Bayesian partial multilevel correlation&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;You can install and load the package as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;correlation&amp;quot;)
+library(correlation)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;examples&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;p&gt;The main function is &lt;a href=&#34;https://easystats.github.io/correlation/reference/correlation.html&#34;&gt;&lt;code&gt;correlation()&lt;/code&gt;&lt;/a&gt;, which builds on top of &lt;a href=&#34;https://easystats.github.io/correlation/reference/cor_test.html&#34;&gt;&lt;code&gt;cor_test()&lt;/code&gt;&lt;/a&gt; and comes with a number of possible options.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;correlation-details-and-matrix&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Correlation details and matrix&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cor &amp;lt;- correlation(iris)
+cor&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |     r |     t |  df |      p |         95% CI |  Method | n_Obs
+## ---------------------------------------------------------------------------------------------
+## Sepal.Length |  Sepal.Width | -0.12 | -1.44 | 148 | 0.152  | [-0.27,  0.04] | Pearson |   150
+## Sepal.Length | Petal.Length |  0.87 | 21.65 | 148 | &amp;lt; .001 | [ 0.83,  0.91] | Pearson |   150
+## Sepal.Length |  Petal.Width |  0.82 | 17.30 | 148 | &amp;lt; .001 | [ 0.76,  0.86] | Pearson |   150
+## Sepal.Width  | Petal.Length | -0.43 | -5.77 | 148 | &amp;lt; .001 | [-0.55, -0.29] | Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.37 | -4.79 | 148 | &amp;lt; .001 | [-0.50, -0.22] | Pearson |   150
+## Petal.Length |  Petal.Width |  0.96 | 43.39 | 148 | &amp;lt; .001 | [ 0.95,  0.97] | Pearson |   150&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output is not a square matrix, but a &lt;strong&gt;(tidy) dataframe with all correlations tests per row&lt;/strong&gt;. One can also obtain a &lt;strong&gt;matrix&lt;/strong&gt; using:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cor)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
+## -------------------------------------------------------
+## Sepal.Length |     0.82*** |      0.87*** |       -0.12
+## Sepal.Width  |    -0.37*** |     -0.43*** |            
+## Petal.Length |     0.96*** |              |&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that one can also obtain the full, &lt;strong&gt;square&lt;/strong&gt; and redundant matrix using:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;as.table(cor)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Sepal.Length | Sepal.Width | Petal.Length | Petal.Width
+## ----------------------------------------------------------------------
+## Sepal.Length |      1.00*** |       -0.12 |      0.87*** |     0.82***
+## Sepal.Width  |        -0.12 |     1.00*** |     -0.43*** |    -0.37***
+## Petal.Length |      0.87*** |    -0.43*** |      1.00*** |     0.96***
+## Petal.Width  |      0.82*** |    -0.37*** |      0.96*** |     1.00***&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;grouped-dataframes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Grouped dataframes&lt;/h2&gt;
+&lt;p&gt;The function also supports &lt;strong&gt;stratified correlations&lt;/strong&gt;, all within the &lt;em&gt;tidyverse&lt;/em&gt; workflow!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)
+
+iris %&amp;gt;% 
+  select(Species, Petal.Width, Sepal.Length, Sepal.Width) %&amp;gt;%
+  group_by(Species) %&amp;gt;% 
+  correlation()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Group      |   Parameter1 |   Parameter2 |    r |    t | df |      p |        95% CI |  Method | n_Obs
+## ------------------------------------------------------------------------------------------------------
+## setosa     |  Petal.Width | Sepal.Length | 0.28 | 2.01 | 48 | 0.101  | [ 0.00, 0.52] | Pearson |    50
+## setosa     |  Petal.Width |  Sepal.Width | 0.23 | 1.66 | 48 | 0.104  | [-0.05, 0.48] | Pearson |    50
+## setosa     | Sepal.Length |  Sepal.Width | 0.74 | 7.68 | 48 | &amp;lt; .001 | [ 0.59, 0.85] | Pearson |    50
+## versicolor |  Petal.Width | Sepal.Length | 0.55 | 4.52 | 48 | &amp;lt; .001 | [ 0.32, 0.72] | Pearson |    50
+## versicolor |  Petal.Width |  Sepal.Width | 0.66 | 6.15 | 48 | &amp;lt; .001 | [ 0.47, 0.80] | Pearson |    50
+## versicolor | Sepal.Length |  Sepal.Width | 0.53 | 4.28 | 48 | &amp;lt; .001 | [ 0.29, 0.70] | Pearson |    50
+## virginica  |  Petal.Width | Sepal.Length | 0.28 | 2.03 | 48 | 0.048  | [ 0.00, 0.52] | Pearson |    50
+## virginica  |  Petal.Width |  Sepal.Width | 0.54 | 4.42 | 48 | &amp;lt; .001 | [ 0.31, 0.71] | Pearson |    50
+## virginica  | Sepal.Length |  Sepal.Width | 0.46 | 3.56 | 48 | 0.002  | [ 0.20, 0.65] | Pearson |    50&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bayesian-correlations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bayesian Correlations&lt;/h2&gt;
+&lt;p&gt;It is very easy to switch to a &lt;strong&gt;Bayesian framework&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, bayesian=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         89% CI |     pd | % in ROPE |    BF |              Prior | n_Obs
+## --------------------------------------------------------------------------------------------------------------
+## Sepal.Length |  Sepal.Width | -0.12 | [-0.24,  0.01] | 91.60% |    44.45% |  0.51 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.82,  0.89] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  | Petal.Length | -0.41 | [-0.52, -0.31] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.47, -0.25] |   100% |     0.22% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tetrachoric-polychoric-biserial-biweight&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Tetrachoric, Polychoric, Biserial, Biweight…&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;correlation&lt;/code&gt; package also supports different types of methods, which can deal with correlations &lt;strong&gt;between factors&lt;/strong&gt;!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, include_factors = TRUE, method = &amp;quot;auto&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1         |         Parameter2 |     r |      t |  df |      p |         95% CI |      Method | n_Obs
+## --------------------------------------------------------------------------------------------------------------
+## Sepal.Length       |        Sepal.Width | -0.12 |  -1.44 | 148 | 0.304  | [-0.27,  0.04] |     Pearson |   150
+## Sepal.Length       |       Petal.Length |  0.87 |  21.65 | 148 | &amp;lt; .001 | [ 0.83,  0.91] |     Pearson |   150
+## Sepal.Length       |        Petal.Width |  0.82 |  17.30 | 148 | &amp;lt; .001 | [ 0.76,  0.86] |     Pearson |   150
+## Sepal.Length       |     Species.setosa | -0.93 | -29.97 | 148 | &amp;lt; .001 | [-0.95, -0.90] |    Biserial |   150
+## Sepal.Length       | Species.versicolor |  0.10 |   1.25 | 148 | 0.304  | [-0.06,  0.26] |    Biserial |   150
+## Sepal.Length       |  Species.virginica |  0.82 |  17.66 | 148 | &amp;lt; .001 | [ 0.77,  0.87] |    Biserial |   150
+## Sepal.Width        |       Petal.Length | -0.43 |  -5.77 | 148 | &amp;lt; .001 | [-0.55, -0.29] |     Pearson |   150
+## Sepal.Width        |        Petal.Width | -0.37 |  -4.79 | 148 | &amp;lt; .001 | [-0.50, -0.22] |     Pearson |   150
+## Sepal.Width        |     Species.setosa |  0.78 |  15.09 | 148 | &amp;lt; .001 | [ 0.71,  0.84] |    Biserial |   150
+## Sepal.Width        | Species.versicolor | -0.60 |  -9.20 | 148 | &amp;lt; .001 | [-0.70, -0.49] |    Biserial |   150
+## Sepal.Width        |  Species.virginica | -0.18 |  -2.16 | 148 | 0.130  | [-0.33, -0.02] |    Biserial |   150
+## Petal.Length       |        Petal.Width |  0.96 |  43.39 | 148 | &amp;lt; .001 | [ 0.95,  0.97] |     Pearson |   150
+## Petal.Length       |     Species.setosa | -1.00 |   -Inf | 148 | &amp;lt; .001 | [-1.00, -1.00] |    Biserial |   150
+## Petal.Length       | Species.versicolor |  0.26 |   3.27 | 148 | 0.007  | [ 0.10,  0.40] |    Biserial |   150
+## Petal.Length       |  Species.virginica |  0.93 |  31.09 | 148 | &amp;lt; .001 | [ 0.91,  0.95] |    Biserial |   150
+## Petal.Width        |     Species.setosa | -1.00 |   -Inf | 148 | &amp;lt; .001 | [-1.00, -1.00] |    Biserial |   150
+## Petal.Width        | Species.versicolor |  0.15 |   1.87 | 148 | 0.191  | [-0.01,  0.31] |    Biserial |   150
+## Petal.Width        |  Species.virginica |  0.99 | 112.56 | 148 | &amp;lt; .001 | [ 0.99,  1.00] |    Biserial |   150
+## Species.setosa     | Species.versicolor | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
+## Species.setosa     |  Species.virginica | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
+## Species.versicolor |  Species.virginica | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;partial-correlations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Partial Correlations&lt;/h2&gt;
+&lt;p&gt;It also supports &lt;strong&gt;partial correlations&lt;/strong&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;% 
+  correlation(partial = TRUE) %&amp;gt;% 
+  summary()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
+## -------------------------------------------------------
+## Sepal.Length |    -0.34*** |      0.72*** |     0.63***
+## Sepal.Width  |     0.35*** |     -0.62*** |            
+## Petal.Length |     0.87*** |              |&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gaussian-graphical-models-ggms&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Gaussian Graphical Models (GGMs)&lt;/h2&gt;
+&lt;p&gt;Such partial correlations can also be represented as &lt;strong&gt;Gaussian graphical models&lt;/strong&gt;, an increasingly popular tool in psychology:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(see) # for plotting
+library(ggraph) # needs to be loaded
+
+mtcars %&amp;gt;% 
+  correlation(partial = TRUE) %&amp;gt;% 
+  plot()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>correlation</category>
+      
+      
+            <category>R</category>
+      
+            <category>correlation</category>
+      
+    </item>
+    
+    <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>
-      <link>/blog/posts/bayestestr_pd/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_pd/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_pd/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_pd/</guid>
       <description>
 
 
@@ -119,10 +292,10 @@ plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>
-      <link>/blog/posts/easystats_oneyear/</link>
+      <link>https://easystats.github.io/blog/posts/easystats_oneyear/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/easystats_oneyear/</guid>
+      <guid>https://easystats.github.io/blog/posts/easystats_oneyear/</guid>
       <description>
 
 
@@ -179,10 +352,10 @@ plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Comparison of indices of significance in the Bayesian framework</title>
-      <link>/blog/posts/bayestestr_evidence_ani/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_evidence_ani/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</guid>
       <description>
 
 
@@ -213,10 +386,10 @@ plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>/blog/posts/parameters_and_see_update/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_and_see_update/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>
 
 
@@ -391,10 +564,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>/blog/posts/parameters_v2/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>
 
 
@@ -481,10 +654,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>/blog/posts/parameters_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>
 
 
@@ -543,9 +716,9 @@ model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.73 | [36.86, 42.44] |   100% |        0% | 1.000 | 4966 | Normal (0 +- 60.27)
-## wt          |  -3.18 | [-4.47, -1.95] | 99.95% |     0.12% | 1.000 | 1994 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.22, -0.82] | 99.95% |     1.90% | 1.001 | 1994 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.63 | [36.92, 42.74] |   100% |        0% | 1.000 | 4915 | Normal (0 +- 60.27)
+## wt          |  -3.17 | [-4.35, -1.84] |   100% |        0% | 1.000 | 2246 | Normal (0 +- 15.40)
+## cyl         |  -1.50 | [-2.12, -0.80] | 99.95% |     1.85% | 1.001 | 2362 |  Normal (0 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -580,10 +753,10 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>/blog/posts/performance_check_collinearity/</link>
+      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_check_collinearity/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>
 
 
@@ -701,10 +874,10 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>/blog/posts/bayestestr_emmeans/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_emmeans/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
       <description>
 
 
@@ -868,10 +1041,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>/blog/posts/bayestestr_v2/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
       <description>
 
 
@@ -927,10 +1100,10 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>/blog/posts/see_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/see_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -1002,10 +1175,10 @@ plot(result) +
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
       <description>
 
 
@@ -1078,10 +1251,10 @@ x %&amp;gt;%
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>
 
 
@@ -1143,7 +1316,7 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &amp;gt; 
 &amp;gt;   ELPD | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2_marginal | R2_adjusted | RMSE
 &amp;gt; -------------------------------------------------------------------------------------
-&amp;gt; -43.36 |   10.13 | 86.73 |    20.25 | 86.68 | 0.47 |        0.69 |        0.46 | 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; -43.30 |   10.16 | 86.60 |    20.32 | 86.55 | 0.47 |        0.68 |        0.46 | 0.31&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1181,10 +1354,10 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>
 
 
@@ -1251,10 +1424,10 @@ x %&amp;gt;%
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
       <description>
 
 
@@ -1285,11 +1458,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [27.43 47.04]
-## wt          |  Rejected |      0.00 % | [-4.17 -1.00]
-## cyl         | Undecided |     36.00 % | [-1.93  0.32]
-## gear        | Undecided |     42.97 % | [-2.14  1.81]
-## am          | Undecided |     20.16 % | [-1.11  4.68]
+## (Intercept) |  Rejected |      0.00 % | [28.03 47.49]
+## wt          |  Rejected |      0.00 % | [-4.23 -1.15]
+## cyl         | Undecided |     36.06 % | [-1.95  0.24]
+## gear        | Undecided |     42.91 % | [-2.25  1.59]
+## am          | Undecided |     19.35 % | [-0.94  4.67]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -1331,10 +1504,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>
 
 
@@ -1414,10 +1587,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>
 
 
@@ -1474,10 +1647,10 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>
 
 

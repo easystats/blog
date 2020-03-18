@@ -1,0 +1,148 @@
+---
+title: "The ulimate package for correlations (by easystats)"
+author: "easystats"
+date: 2020-03-18
+categories: ["R", "correlation"]
+tags: ["R", "easystats", "correlation"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+```
+
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://github.com/easystats/correlation/raw/master/man/figures/logo.png")
+```
+
+
+
+## The correlation package
+
+The [**easystats project**](https://github.com/easystats) continues to grow with its more recent addition, a package devoted to **correlations**. Check-out its [**webpage here**](https://github.com/easystats/correlation)! 
+
+It's lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as **partial** correlations, **Bayesian** correlations, **multilevel** correlations, **polychoric** correlations, **biweight**, **percentage bend** or **Sheperd's Pi** correlations (types of **robust** correlation), **distance** correlation (a type of **non-linear** correlation) and more, also allowing for combinations between them (for instance, *Bayesian partial multilevel correlation*).
+
+You can install and load the package as follows:
+
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+install.packages("correlation")
+library(correlation)
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(correlation)
+```
+
+## Examples
+
+The main function is [`correlation()`](https://easystats.github.io/correlation/reference/correlation.html), which builds on top of [`cor_test()`](https://easystats.github.io/correlation/reference/cor_test.html) and comes with a number of possible options.
+
+## Correlation details and matrix
+
+```{r message=FALSE, warning=FALSE}
+cor <- correlation(iris)
+cor
+```
+
+The output is not a square matrix, but a **(tidy) dataframe with all correlations tests per row**. One can also obtain a **matrix** using:
+
+```{r message=FALSE, warning=FALSE}
+summary(cor)
+```
+
+Note that one can also obtain the full, **square** and redundant matrix using:
+
+```{r message=FALSE, warning=FALSE}
+as.table(cor)
+```
+
+
+## Grouped dataframes
+
+The function also supports **stratified correlations**, all within the *tidyverse* workflow!
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+
+iris %>% 
+  select(Species, Petal.Width, Sepal.Length, Sepal.Width) %>%
+  group_by(Species) %>% 
+  correlation()
+```
+
+
+## Bayesian Correlations
+
+It is very easy to switch to a **Bayesian framework**.
+
+```{r message=FALSE, warning=FALSE}
+correlation(iris, bayesian=TRUE)
+```
+
+
+## Tetrachoric, Polychoric, Biserial, Biweight...
+
+The `correlation` package also supports different types of methods, which can deal with correlations **between factors**!
+
+```{r message=FALSE, warning=FALSE, eval=TRUE}
+correlation(iris, include_factors = TRUE, method = "auto")
+```
+```{r message=FALSE, warning=FALSE, include=FALSE}
+correlation(iris, include_factors = TRUE, method = "auto") %>% 
+  select(Parameter1, Parameter2, r, Method)
+```
+
+
+
+## Partial Correlations
+
+It also supports **partial correlations**:
+
+```{r message=FALSE, warning=FALSE}
+iris %>% 
+  correlation(partial = TRUE) %>% 
+  summary()
+```
+
+
+## Gaussian Graphical Models (GGMs)
+
+Such partial correlations can also be represented as **Gaussian graphical models**, an increasingly popular tool in psychology:
+
+```{r message=FALSE, warning=FALSE}
+library(see) # for plotting
+library(ggraph) # needs to be loaded
+
+mtcars %>% 
+  correlation(partial = TRUE) %>% 
+  plot()
+```
+
+
+
+## Get Involved
+
+*easystats* is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
+
+## Stay tuned 
+
+To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
+
+- [\@easystats4u](https://twitter.com/easystats4u)
+- [\@strengejacke](https://twitter.com/strengejacke)
+- [\@DominiqueMakowski](https://twitter.com/Dom_Makowski)
+- [\@mattansb](https://twitter.com/mattansb)
+- [\@IndrajeetPatil](https://twitter.com/patilindrajeets)
+- [\@humanfactors](https://twitter.com/humanfactorsio)
+- [\@lindeloev](https://twitter.com/jonaslindeloev)
+- [\@jacob-long](https://twitter.com/jacobandrewlong)
+- [\@pdwaggoner](https://pdwaggoner.github.io/)
+- [\@LeoDutriaux](https://twitter.com/LDtrx)
+

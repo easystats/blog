@@ -1,0 +1,159 @@
+---
+title: "The ulimate package for correlations (by easystats)"
+author: "easystats"
+date: 2020-03-18
+categories: ["R", "correlation"]
+tags: ["R", "easystats", "correlation"]
+---
+
+
+
+<p><img src="https://github.com/easystats/correlation/raw/master/man/figures/logo.png" width="200px" /></p>
+<div id="the-correlation-package" class="section level2">
+<h2>The correlation package</h2>
+<p>The <a href="https://github.com/easystats"><strong>easystats project</strong></a> continues to grow with its more recent addition, a package devoted to <strong>correlations</strong>. Check-out its <a href="https://github.com/easystats/correlation"><strong>webpage here</strong></a>!</p>
+<p>It’s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as <strong>partial</strong> correlations, <strong>Bayesian</strong> correlations, <strong>multilevel</strong> correlations, <strong>polychoric</strong> correlations, <strong>biweight</strong>, <strong>percentage bend</strong> or <strong>Sheperd’s Pi</strong> correlations (types of <strong>robust</strong> correlation), <strong>distance</strong> correlation (a type of <strong>non-linear</strong> correlation) and more, also allowing for combinations between them (for instance, <em>Bayesian partial multilevel correlation</em>).</p>
+<p>You can install and load the package as follows:</p>
+<pre class="r"><code>install.packages(&quot;correlation&quot;)
+library(correlation)</code></pre>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<p>The main function is <a href="https://easystats.github.io/correlation/reference/correlation.html"><code>correlation()</code></a>, which builds on top of <a href="https://easystats.github.io/correlation/reference/cor_test.html"><code>cor_test()</code></a> and comes with a number of possible options.</p>
+</div>
+<div id="correlation-details-and-matrix" class="section level2">
+<h2>Correlation details and matrix</h2>
+<pre class="r"><code>cor &lt;- correlation(iris)
+cor</code></pre>
+<pre><code>## Parameter1   |   Parameter2 |     r |     t |  df |      p |         95% CI |  Method | n_Obs
+## ---------------------------------------------------------------------------------------------
+## Sepal.Length |  Sepal.Width | -0.12 | -1.44 | 148 | 0.152  | [-0.27,  0.04] | Pearson |   150
+## Sepal.Length | Petal.Length |  0.87 | 21.65 | 148 | &lt; .001 | [ 0.83,  0.91] | Pearson |   150
+## Sepal.Length |  Petal.Width |  0.82 | 17.30 | 148 | &lt; .001 | [ 0.76,  0.86] | Pearson |   150
+## Sepal.Width  | Petal.Length | -0.43 | -5.77 | 148 | &lt; .001 | [-0.55, -0.29] | Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.37 | -4.79 | 148 | &lt; .001 | [-0.50, -0.22] | Pearson |   150
+## Petal.Length |  Petal.Width |  0.96 | 43.39 | 148 | &lt; .001 | [ 0.95,  0.97] | Pearson |   150</code></pre>
+<p>The output is not a square matrix, but a <strong>(tidy) dataframe with all correlations tests per row</strong>. One can also obtain a <strong>matrix</strong> using:</p>
+<pre class="r"><code>summary(cor)</code></pre>
+<pre><code>## Parameter    | Petal.Width | Petal.Length | Sepal.Width
+## -------------------------------------------------------
+## Sepal.Length |     0.82*** |      0.87*** |       -0.12
+## Sepal.Width  |    -0.37*** |     -0.43*** |            
+## Petal.Length |     0.96*** |              |</code></pre>
+<p>Note that one can also obtain the full, <strong>square</strong> and redundant matrix using:</p>
+<pre class="r"><code>as.table(cor)</code></pre>
+<pre><code>## Parameter    | Sepal.Length | Sepal.Width | Petal.Length | Petal.Width
+## ----------------------------------------------------------------------
+## Sepal.Length |      1.00*** |       -0.12 |      0.87*** |     0.82***
+## Sepal.Width  |        -0.12 |     1.00*** |     -0.43*** |    -0.37***
+## Petal.Length |      0.87*** |    -0.43*** |      1.00*** |     0.96***
+## Petal.Width  |      0.82*** |    -0.37*** |      0.96*** |     1.00***</code></pre>
+</div>
+<div id="grouped-dataframes" class="section level2">
+<h2>Grouped dataframes</h2>
+<p>The function also supports <strong>stratified correlations</strong>, all within the <em>tidyverse</em> workflow!</p>
+<pre class="r"><code>library(dplyr)
+
+iris %&gt;% 
+  select(Species, Petal.Width, Sepal.Length, Sepal.Width) %&gt;%
+  group_by(Species) %&gt;% 
+  correlation()</code></pre>
+<pre><code>## Group      |   Parameter1 |   Parameter2 |    r |    t | df |      p |        95% CI |  Method | n_Obs
+## ------------------------------------------------------------------------------------------------------
+## setosa     |  Petal.Width | Sepal.Length | 0.28 | 2.01 | 48 | 0.101  | [ 0.00, 0.52] | Pearson |    50
+## setosa     |  Petal.Width |  Sepal.Width | 0.23 | 1.66 | 48 | 0.104  | [-0.05, 0.48] | Pearson |    50
+## setosa     | Sepal.Length |  Sepal.Width | 0.74 | 7.68 | 48 | &lt; .001 | [ 0.59, 0.85] | Pearson |    50
+## versicolor |  Petal.Width | Sepal.Length | 0.55 | 4.52 | 48 | &lt; .001 | [ 0.32, 0.72] | Pearson |    50
+## versicolor |  Petal.Width |  Sepal.Width | 0.66 | 6.15 | 48 | &lt; .001 | [ 0.47, 0.80] | Pearson |    50
+## versicolor | Sepal.Length |  Sepal.Width | 0.53 | 4.28 | 48 | &lt; .001 | [ 0.29, 0.70] | Pearson |    50
+## virginica  |  Petal.Width | Sepal.Length | 0.28 | 2.03 | 48 | 0.048  | [ 0.00, 0.52] | Pearson |    50
+## virginica  |  Petal.Width |  Sepal.Width | 0.54 | 4.42 | 48 | &lt; .001 | [ 0.31, 0.71] | Pearson |    50
+## virginica  | Sepal.Length |  Sepal.Width | 0.46 | 3.56 | 48 | 0.002  | [ 0.20, 0.65] | Pearson |    50</code></pre>
+</div>
+<div id="bayesian-correlations" class="section level2">
+<h2>Bayesian Correlations</h2>
+<p>It is very easy to switch to a <strong>Bayesian framework</strong>.</p>
+<pre class="r"><code>correlation(iris, bayesian=TRUE)</code></pre>
+<pre><code>## Parameter1   |   Parameter2 |   rho |         89% CI |     pd | % in ROPE |    BF |              Prior | n_Obs
+## --------------------------------------------------------------------------------------------------------------
+## Sepal.Length |  Sepal.Width | -0.12 | [-0.24,  0.01] | 91.60% |    44.45% |  0.51 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.82,  0.89] |   100% |        0% | &gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  | Petal.Length | -0.41 | [-0.52, -0.31] |   100% |        0% | &gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.47, -0.25] |   100% |     0.22% | &gt; 999 | Cauchy (0 +- 0.33) |   150
+## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &gt; 999 | Cauchy (0 +- 0.33) |   150</code></pre>
+</div>
+<div id="tetrachoric-polychoric-biserial-biweight" class="section level2">
+<h2>Tetrachoric, Polychoric, Biserial, Biweight…</h2>
+<p>The <code>correlation</code> package also supports different types of methods, which can deal with correlations <strong>between factors</strong>!</p>
+<pre class="r"><code>correlation(iris, include_factors = TRUE, method = &quot;auto&quot;)</code></pre>
+<pre><code>## Parameter1         |         Parameter2 |     r |      t |  df |      p |         95% CI |      Method | n_Obs
+## --------------------------------------------------------------------------------------------------------------
+## Sepal.Length       |        Sepal.Width | -0.12 |  -1.44 | 148 | 0.304  | [-0.27,  0.04] |     Pearson |   150
+## Sepal.Length       |       Petal.Length |  0.87 |  21.65 | 148 | &lt; .001 | [ 0.83,  0.91] |     Pearson |   150
+## Sepal.Length       |        Petal.Width |  0.82 |  17.30 | 148 | &lt; .001 | [ 0.76,  0.86] |     Pearson |   150
+## Sepal.Length       |     Species.setosa | -0.93 | -29.97 | 148 | &lt; .001 | [-0.95, -0.90] |    Biserial |   150
+## Sepal.Length       | Species.versicolor |  0.10 |   1.25 | 148 | 0.304  | [-0.06,  0.26] |    Biserial |   150
+## Sepal.Length       |  Species.virginica |  0.82 |  17.66 | 148 | &lt; .001 | [ 0.77,  0.87] |    Biserial |   150
+## Sepal.Width        |       Petal.Length | -0.43 |  -5.77 | 148 | &lt; .001 | [-0.55, -0.29] |     Pearson |   150
+## Sepal.Width        |        Petal.Width | -0.37 |  -4.79 | 148 | &lt; .001 | [-0.50, -0.22] |     Pearson |   150
+## Sepal.Width        |     Species.setosa |  0.78 |  15.09 | 148 | &lt; .001 | [ 0.71,  0.84] |    Biserial |   150
+## Sepal.Width        | Species.versicolor | -0.60 |  -9.20 | 148 | &lt; .001 | [-0.70, -0.49] |    Biserial |   150
+## Sepal.Width        |  Species.virginica | -0.18 |  -2.16 | 148 | 0.130  | [-0.33, -0.02] |    Biserial |   150
+## Petal.Length       |        Petal.Width |  0.96 |  43.39 | 148 | &lt; .001 | [ 0.95,  0.97] |     Pearson |   150
+## Petal.Length       |     Species.setosa | -1.00 |   -Inf | 148 | &lt; .001 | [-1.00, -1.00] |    Biserial |   150
+## Petal.Length       | Species.versicolor |  0.26 |   3.27 | 148 | 0.007  | [ 0.10,  0.40] |    Biserial |   150
+## Petal.Length       |  Species.virginica |  0.93 |  31.09 | 148 | &lt; .001 | [ 0.91,  0.95] |    Biserial |   150
+## Petal.Width        |     Species.setosa | -1.00 |   -Inf | 148 | &lt; .001 | [-1.00, -1.00] |    Biserial |   150
+## Petal.Width        | Species.versicolor |  0.15 |   1.87 | 148 | 0.191  | [-0.01,  0.31] |    Biserial |   150
+## Petal.Width        |  Species.virginica |  0.99 | 112.56 | 148 | &lt; .001 | [ 0.99,  1.00] |    Biserial |   150
+## Species.setosa     | Species.versicolor | -0.88 | -22.35 | 148 | &lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
+## Species.setosa     |  Species.virginica | -0.88 | -22.35 | 148 | &lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
+## Species.versicolor |  Species.virginica | -0.88 | -22.35 | 148 | &lt; .001 | [-0.91, -0.84] | Tetrachoric |   150</code></pre>
+</div>
+<div id="partial-correlations" class="section level2">
+<h2>Partial Correlations</h2>
+<p>It also supports <strong>partial correlations</strong>:</p>
+<pre class="r"><code>iris %&gt;% 
+  correlation(partial = TRUE) %&gt;% 
+  summary()</code></pre>
+<pre><code>## Parameter    | Petal.Width | Petal.Length | Sepal.Width
+## -------------------------------------------------------
+## Sepal.Length |    -0.34*** |      0.72*** |     0.63***
+## Sepal.Width  |     0.35*** |     -0.62*** |            
+## Petal.Length |     0.87*** |              |</code></pre>
+</div>
+<div id="gaussian-graphical-models-ggms" class="section level2">
+<h2>Gaussian Graphical Models (GGMs)</h2>
+<p>Such partial correlations can also be represented as <strong>Gaussian graphical models</strong>, an increasingly popular tool in psychology:</p>
+<pre class="r"><code>library(see) # for plotting
+library(ggraph) # needs to be loaded
+
+mtcars %&gt;% 
+  correlation(partial = TRUE) %&gt;% 
+  plot()</code></pre>
+<p><img src="/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p><em>easystats</em> is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+<div id="stay-tuned" class="section level2">
+<h2>Stay tuned</h2>
+<p>To be updated about the <em>upcoming features</em> and cool R or data science stuff, you can <strong>follow the packages on GitHub</strong> (click on one <a href="https://github.com/easystats">of the easystats package</a>) and then on the <strong>Watch</strong> button on the top right corner) as well as the <strong>easystats team on twitter and online</strong>:</p>
+<ul>
+<li><a href="https://twitter.com/easystats4u">@easystats4u</a></li>
+<li><a href="https://twitter.com/strengejacke">@strengejacke</a></li>
+<li><a href="https://twitter.com/Dom_Makowski">@DominiqueMakowski</a></li>
+<li><a href="https://twitter.com/mattansb">@mattansb</a></li>
+<li><a href="https://twitter.com/patilindrajeets">@IndrajeetPatil</a></li>
+<li><a href="https://twitter.com/humanfactorsio">@humanfactors</a></li>
+<li><a href="https://twitter.com/jonaslindeloev">@lindeloev</a></li>
+<li><a href="https://twitter.com/jacobandrewlong">@jacob-long</a></li>
+<li><a href="https://pdwaggoner.github.io/">@pdwaggoner</a></li>
+<li><a href="https://twitter.com/LDtrx">@LeoDutriaux</a></li>
+</ul>
+</div>
