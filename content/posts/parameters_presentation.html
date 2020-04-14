@@ -63,9 +63,9 @@ model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
 <pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
 ## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.63 | [36.92, 42.74] |   100% |        0% | 1.000 | 4915 | Normal (0 +- 60.27)
-## wt          |  -3.17 | [-4.35, -1.84] |   100% |        0% | 1.000 | 2246 | Normal (0 +- 15.40)
-## cyl         |  -1.50 | [-2.12, -0.80] | 99.95% |     1.85% | 1.001 | 2362 |  Normal (0 +- 8.44)</code></pre>
+## (Intercept) |  39.69 | [36.96, 42.56] |   100% |        0% | 1.000 | 4409 | Normal (0 +- 60.27)
+## wt          |  -3.20 | [-4.47, -2.00] |   100% |     0.02% | 1.001 | 2115 | Normal (0 +- 15.40)
+## cyl         |  -1.49 | [-2.19, -0.84] | 99.90% |     2.08% | 1.001 | 2031 |  Normal (0 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>

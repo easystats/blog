@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>see on easystats</title>
-    <link>https://easystats.github.io/blog/categories/see/</link>
+    <link>/blog/categories/see/</link>
     <description>Recent content in see on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/categories/see/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/categories/see/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
+      <link>/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
+      <guid>/blog/posts/parameters_and_see_update/</guid>
       <description>
 
 
@@ -70,7 +70,7 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; creates a so called “forest plot”. In case of models with multiple components, parameters are separated into facets by model component.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- model_parameters(model)
 plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---bayesian-mixed-models-with-brms&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Bayesian Mixed Models with brms&lt;/h3&gt;
@@ -127,10 +127,10 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## persons.4 |  -1.29 | [-2.62, -0.01] | 94.85% |     1.85% | 912 | 1.000&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; now creates four facets by default. Note that plots from the &lt;strong&gt;parameters&lt;/strong&gt;-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the &lt;strong&gt;bayestestRR&lt;/strong&gt;-package, as shown &lt;a href=&#34;https://easystats.github.io/see/articles/bayestestR.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can modify the layout with &lt;code&gt;n_columns&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result, n_columns = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---meta-analysis-with-metafor&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Meta-Analysis with metafor&lt;/h3&gt;
@@ -154,7 +154,7 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## Overall   |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Check out&lt;/strong&gt; more examples and documentation &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;parameters&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/see/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;see&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -190,10 +190,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
+      <link>/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
+      <guid>/blog/posts/see_presentation/</guid>
       <description>
 
 
@@ -216,7 +216,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_point2(size=4, alpha=0.5) +
   scale_color_flat_d() +
   theme_modern()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -224,7 +224,7 @@ ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
   geom_violindot(fill_dots = &amp;quot;white&amp;quot;) + 
   scale_fill_material_d() +
   theme_blackboard()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -238,7 +238,7 @@ result &amp;lt;- equivalence_test(model, ci = c(.89, .95))
 plot(result) +
   theme_abyss() +
   scale_fill_flat()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/see_presentation_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;

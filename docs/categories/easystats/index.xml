@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>easystats</title>
-    <link>https://easystats.github.io/blog/categories/easystats/</link>
+    <link>/blog/categories/easystats/</link>
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/categories/easystats/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/categories/easystats/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>
-      <link>https://easystats.github.io/blog/posts/easystats_oneyear/</link>
+      <link>/blog/posts/easystats_oneyear/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/easystats_oneyear/</guid>
+      <guid>/blog/posts/easystats_oneyear/</guid>
       <description>
 
 
