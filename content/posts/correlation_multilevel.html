@@ -1,0 +1,82 @@
+---
+title: "Multilevel Correlations: A New Method for Common Problems"
+author: "easystats"
+date: 2020-04-14
+categories: ["R", "correlation"]
+tags: ["R", "easystats", "correlation"]
+---
+
+
+
+<p>In this tutorial, we will introduce <strong>multilevel correlations</strong> (or <em>hierarchical</em> / <em>random-effects</em> correlations) and how to compute them using the new <a href="https://github.com/easystats/correlation"><strong>correlations</strong></a> package from the <a href="https://github.com/easystats"><strong>easystats suite</strong></a>.</p>
+<p>You can install the updated version and load the package as follows:</p>
+<pre class="r"><code>install.packages(&quot;correlation&quot;)
+library(correlation)</code></pre>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>Imagine we have an experiment in which <strong>10 individuals</strong> completed a task with <strong>100 trials</strong>. For each of the 1000 total trials, we measured two things, <strong>V1</strong> and <strong>V2</strong>, and our research aims at <strong>investingating the link between these two variables</strong>.</p>
+<p>We will generate data using the <a href="https://easystats.github.io/correlation/reference/simulate_simpson.html"><code>simulate_simpson()</code></a> function from the <code>correlation</code> package installed above.</p>
+<pre class="r"><code>data &lt;- simulate_simpson(n=100, groups=10)</code></pre>
+<p>Now let’s visualize the two variables:</p>
+<pre class="r"><code>library(ggplot2)
+
+ggplot(data, aes(x=V1, y=V2)) + 
+  geom_point() +
+  geom_smooth(colour=&quot;black&quot;, method=&quot;lm&quot;, se=FALSE) +
+  theme_classic()</code></pre>
+<p><img src="/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>That seems pretty straightfoward! It seems like there is a <strong>negative correlation</strong> between V1 and V2. Let’s test this.</p>
+</div>
+<div id="simple-correlation" class="section level2">
+<h2>Simple correlation</h2>
+<pre class="r"><code>correlation(data)</code></pre>
+<pre><code>## Parameter1 | Parameter2 |     r |         95% CI |      t |  df |      p |  Method | n_Obs
+## ------------------------------------------------------------------------------------------
+## V1         |         V2 | -0.84 | [-0.86, -0.82] | -48.77 | 998 | &lt; .001 | Pearson |  1000</code></pre>
+<p>Indeed, there is <strong>strong, negative and significant correlation</strong> between V1 and V2. Great, can we go ahead and <strong>publish these results in PNAS</strong>?</p>
+</div>
+<div id="the-simpsons-paradox" class="section level2">
+<h2>The Simpson’s Paradox</h2>
+<p>Hold on sunshine! Ever heard of something called the <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox"><strong>Simpson’s Paradox</strong></a>?</p>
+<p>Let’s colour our datapoints by group (by individuals):</p>
+<pre class="r"><code>library(ggplot2)
+
+ggplot(data, aes(x=V1, y=V2)) + 
+  geom_point(aes(colour=Group)) +
+  geom_smooth(aes(colour=Group), method=&quot;lm&quot;, se=FALSE) + 
+  geom_smooth(colour=&quot;black&quot;, method=&quot;lm&quot;, se=FALSE) + 
+  theme_classic()</code></pre>
+<p><img src="/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><em>Mmh</em>, interesting. It seems like, for each subject, the relationship is different. The negative general trend seems to be created by <strong>differences between the groups</strong> and could be spurious!</p>
+<p><strong>Multilevel <em>(as in multi-group)</em> correlations allow us to account for differences between groups</strong>. It is based on a partialization of the group variable, entered as a random factor in a mixed linear regression.</p>
+<p>You can compute them with the <a href="https://github.com/easystats/correlation"><strong>correlations</strong></a> package by setting the <code>multilevel</code> arguent to <code>TRUE</code>.</p>
+<pre class="r"><code>correlation(data, multilevel = TRUE)</code></pre>
+<pre><code>## Parameter1 | Parameter2 |    r |           CI |     t |  df |      p |  Method | n_Obs
+## --------------------------------------------------------------------------------------
+## V1         |         V2 | 0.50 | [0.45, 0.55] | 18.23 | 998 | &lt; .001 | Pearson |  1000</code></pre>
+<p><strong>Dayum!</strong> We were too hasty in our conclusions! Taking the group into account seems to be super important.</p>
+<p>Note: In this simple case where only two variables are of interest, it would be of course best to directly proceed using a mixed regression model instead of correlations. That being said, the latter can be useful for exploratory analysis, when multiple variables are of interest, or in combination with a network or structural approach.</p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p><em>easystats</em> is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+<div id="stay-tuned" class="section level2">
+<h2>Stay tuned</h2>
+<p>To be updated about the <em>upcoming features</em> and cool R or data science stuff, you can <strong>follow the packages on GitHub</strong> (click on one <a href="https://github.com/easystats">of the easystats package</a>) and then on the <strong>Watch</strong> button on the top right corner) as well as the <strong>easystats team on twitter and online</strong>:</p>
+<ul>
+<li><a href="https://twitter.com/easystats4u">@easystats4u</a></li>
+<li><a href="https://twitter.com/strengejacke">@strengejacke</a></li>
+<li><a href="https://twitter.com/Dom_Makowski">@DominiqueMakowski</a></li>
+<li><a href="https://twitter.com/mattansb">@mattansb</a></li>
+<li><a href="https://twitter.com/patilindrajeets">@IndrajeetPatil</a></li>
+<li><a href="https://twitter.com/humanfactorsio">@humanfactors</a></li>
+<li><a href="https://twitter.com/jonaslindeloev">@lindeloev</a></li>
+<li><a href="https://twitter.com/jacobandrewlong">@jacob-long</a></li>
+<li><a href="https://pdwaggoner.github.io/">@pdwaggoner</a></li>
+<li><a href="https://twitter.com/LDtrx">@LeoDutriaux</a></li>
+</ul>
+</div>

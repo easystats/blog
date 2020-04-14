@@ -1,7 +1,7 @@
 ---
 title: "Multilevel Correlations: A New Method for Common Problems"
 author: "easystats"
-date: 2020-03-18
+date: 2020-04-14
 categories: ["R", "correlation"]
 tags: ["R", "easystats", "correlation"]
 ---
@@ -78,9 +78,9 @@ ggplot(data, aes(x=V1, y=V2)) +
   theme_classic()
 ```
 
-Mmh, interesting. It seems like, for each subject, the relationship is different. The negative general trend seems to be created by **differences between the groups** and could be spurious! 
+*Mmh*, interesting. It seems like, for each subject, the relationship is different. The negative general trend seems to be created by **differences between the groups** and could be spurious! 
 
-**Multilevel *(as in multi-group)* correlations allow us to account for differences between groups**. It is based on a partialization of the group, entered as a random effect in a mixed linear regression.
+**Multilevel *(as in multi-group)* correlations allow us to account for differences between groups**. It is based on a partialization of the group variable, entered as a random factor in a mixed linear regression.
 
 You can compute them with the [**correlations**](https://github.com/easystats/correlation) package by setting the `multilevel` arguent to `TRUE`.
 
@@ -92,7 +92,7 @@ correlation(data, multilevel = TRUE)
 **Dayum!** We were too hasty in our conclusions! Taking the group into account seems to be super important.
 
 
-Note: In this simple case where only two variables are of interest, it would be best to proceed using a mixed regression model instead of correlations. That being said, the latter can be useful for exploratory analysis, when multiple variables are of interest, or in combination with a network or structural approach.
+Note: In this simple case where only two variables are of interest, it would be of course best to directly proceed using a mixed regression model instead of correlations. That being said, the latter can be useful for exploratory analysis, when multiple variables are of interest, or in combination with a network or structural approach.
 
 ## Get Involved
 

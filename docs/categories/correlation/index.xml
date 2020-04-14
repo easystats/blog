@@ -1,21 +1,117 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>correlation on easystats</title>
-    <link>https://easystats.github.io/blog/categories/correlation/</link>
+    <link>/blog/categories/correlation/</link>
     <description>Recent content in correlation on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://easystats.github.io/blog/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/blog/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Multilevel Correlations: A New Method for Common Problems</title>
+      <link>/blog/posts/correlation_multilevel/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/correlation_multilevel/</guid>
+      <description>
+
+
+&lt;p&gt;In this tutorial, we will introduce &lt;strong&gt;multilevel correlations&lt;/strong&gt; (or &lt;em&gt;hierarchical&lt;/em&gt; / &lt;em&gt;random-effects&lt;/em&gt; correlations) and how to compute them using the new &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;correlations&lt;/strong&gt;&lt;/a&gt; package from the &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats suite&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can install the updated version and load the package as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;correlation&amp;quot;)
+library(correlation)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+&lt;p&gt;Imagine we have an experiment in which &lt;strong&gt;10 individuals&lt;/strong&gt; completed a task with &lt;strong&gt;100 trials&lt;/strong&gt;. For each of the 1000 total trials, we measured two things, &lt;strong&gt;V1&lt;/strong&gt; and &lt;strong&gt;V2&lt;/strong&gt;, and our research aims at &lt;strong&gt;investingating the link between these two variables&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We will generate data using the &lt;a href=&#34;https://easystats.github.io/correlation/reference/simulate_simpson.html&#34;&gt;&lt;code&gt;simulate_simpson()&lt;/code&gt;&lt;/a&gt; function from the &lt;code&gt;correlation&lt;/code&gt; package installed above.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- simulate_simpson(n=100, groups=10)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now let’s visualize the two variables:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+
+ggplot(data, aes(x=V1, y=V2)) + 
+  geom_point() +
+  geom_smooth(colour=&amp;quot;black&amp;quot;, method=&amp;quot;lm&amp;quot;, se=FALSE) +
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;That seems pretty straightfoward! It seems like there is a &lt;strong&gt;negative correlation&lt;/strong&gt; between V1 and V2. Let’s test this.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-correlation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple correlation&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(data)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1 | Parameter2 |     r |         95% CI |      t |  df |      p |  Method | n_Obs
+## ------------------------------------------------------------------------------------------
+## V1         |         V2 | -0.84 | [-0.86, -0.82] | -48.77 | 998 | &amp;lt; .001 | Pearson |  1000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Indeed, there is &lt;strong&gt;strong, negative and significant correlation&lt;/strong&gt; between V1 and V2. Great, can we go ahead and &lt;strong&gt;publish these results in PNAS&lt;/strong&gt;?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-simpsons-paradox&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Simpson’s Paradox&lt;/h2&gt;
+&lt;p&gt;Hold on sunshine! Ever heard of something called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Simpson%27s_paradox&#34;&gt;&lt;strong&gt;Simpson’s Paradox&lt;/strong&gt;&lt;/a&gt;?&lt;/p&gt;
+&lt;p&gt;Let’s colour our datapoints by group (by individuals):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+
+ggplot(data, aes(x=V1, y=V2)) + 
+  geom_point(aes(colour=Group)) +
+  geom_smooth(aes(colour=Group), method=&amp;quot;lm&amp;quot;, se=FALSE) + 
+  geom_smooth(colour=&amp;quot;black&amp;quot;, method=&amp;quot;lm&amp;quot;, se=FALSE) + 
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Mmh&lt;/em&gt;, interesting. It seems like, for each subject, the relationship is different. The negative general trend seems to be created by &lt;strong&gt;differences between the groups&lt;/strong&gt; and could be spurious!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Multilevel &lt;em&gt;(as in multi-group)&lt;/em&gt; correlations allow us to account for differences between groups&lt;/strong&gt;. It is based on a partialization of the group variable, entered as a random factor in a mixed linear regression.&lt;/p&gt;
+&lt;p&gt;You can compute them with the &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;correlations&lt;/strong&gt;&lt;/a&gt; package by setting the &lt;code&gt;multilevel&lt;/code&gt; arguent to &lt;code&gt;TRUE&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(data, multilevel = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1 | Parameter2 |    r |           CI |     t |  df |      p |  Method | n_Obs
+## --------------------------------------------------------------------------------------
+## V1         |         V2 | 0.50 | [0.45, 0.55] | 18.23 | 998 | &amp;lt; .001 | Pearson |  1000&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Dayum!&lt;/strong&gt; We were too hasty in our conclusions! Taking the group into account seems to be super important.&lt;/p&gt;
+&lt;p&gt;Note: In this simple case where only two variables are of interest, it would be of course best to directly proceed using a mixed regression model instead of correlations. That being said, the latter can be useful for exploratory analysis, when multiple variables are of interest, or in combination with a network or structural approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>correlation</category>
+      
+      
+            <category>R</category>
+      
+            <category>correlation</category>
+      
+    </item>
+    
+    <item>
       <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation/</link>
+      <link>/blog/posts/correlation_presentation/</link>
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation/</guid>
+      <guid>/blog/posts/correlation_presentation/</guid>
       <description>
 
 
@@ -36,14 +132,14 @@ library(correlation)&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Correlation details and matrix&lt;/h2&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cor &amp;lt;- correlation(iris)
 cor&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |     r |     t |  df |      p |         95% CI |  Method | n_Obs
+&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |     r |         95% CI |     t |  df |      p |  Method | n_Obs
 ## ---------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.12 | -1.44 | 148 | 0.152  | [-0.27,  0.04] | Pearson |   150
-## Sepal.Length | Petal.Length |  0.87 | 21.65 | 148 | &amp;lt; .001 | [ 0.83,  0.91] | Pearson |   150
-## Sepal.Length |  Petal.Width |  0.82 | 17.30 | 148 | &amp;lt; .001 | [ 0.76,  0.86] | Pearson |   150
-## Sepal.Width  | Petal.Length | -0.43 | -5.77 | 148 | &amp;lt; .001 | [-0.55, -0.29] | Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.37 | -4.79 | 148 | &amp;lt; .001 | [-0.50, -0.22] | Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | 43.39 | 148 | &amp;lt; .001 | [ 0.95,  0.97] | Pearson |   150&lt;/code&gt;&lt;/pre&gt;
+## Sepal.Length |  Sepal.Width | -0.12 | [-0.27,  0.04] | -1.44 | 148 | 0.152  | Pearson |   150
+## Sepal.Length | Petal.Length |  0.87 | [ 0.83,  0.91] | 21.65 | 148 | &amp;lt; .001 | Pearson |   150
+## Sepal.Length |  Petal.Width |  0.82 | [ 0.76,  0.86] | 17.30 | 148 | &amp;lt; .001 | Pearson |   150
+## Sepal.Width  | Petal.Length | -0.43 | [-0.55, -0.29] | -5.77 | 148 | &amp;lt; .001 | Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.37 | [-0.50, -0.22] | -4.79 | 148 | &amp;lt; .001 | Pearson |   150
+## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] | 43.39 | 148 | &amp;lt; .001 | Pearson |   150&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The output is not a square matrix, but a &lt;strong&gt;(tidy) dataframe with all correlations tests per row&lt;/strong&gt;. One can also obtain a &lt;strong&gt;matrix&lt;/strong&gt; using:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cor)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
@@ -69,58 +165,58 @@ iris %&amp;gt;%
   select(Species, Petal.Width, Sepal.Length, Sepal.Width) %&amp;gt;%
   group_by(Species) %&amp;gt;% 
   correlation()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Group      |   Parameter1 |   Parameter2 |    r |    t | df |      p |        95% CI |  Method | n_Obs
+&lt;pre&gt;&lt;code&gt;## Group      |   Parameter1 |   Parameter2 |    r |        95% CI |    t | df |      p |  Method | n_Obs
 ## ------------------------------------------------------------------------------------------------------
-## setosa     |  Petal.Width | Sepal.Length | 0.28 | 2.01 | 48 | 0.101  | [ 0.00, 0.52] | Pearson |    50
-## setosa     |  Petal.Width |  Sepal.Width | 0.23 | 1.66 | 48 | 0.104  | [-0.05, 0.48] | Pearson |    50
-## setosa     | Sepal.Length |  Sepal.Width | 0.74 | 7.68 | 48 | &amp;lt; .001 | [ 0.59, 0.85] | Pearson |    50
-## versicolor |  Petal.Width | Sepal.Length | 0.55 | 4.52 | 48 | &amp;lt; .001 | [ 0.32, 0.72] | Pearson |    50
-## versicolor |  Petal.Width |  Sepal.Width | 0.66 | 6.15 | 48 | &amp;lt; .001 | [ 0.47, 0.80] | Pearson |    50
-## versicolor | Sepal.Length |  Sepal.Width | 0.53 | 4.28 | 48 | &amp;lt; .001 | [ 0.29, 0.70] | Pearson |    50
-## virginica  |  Petal.Width | Sepal.Length | 0.28 | 2.03 | 48 | 0.048  | [ 0.00, 0.52] | Pearson |    50
-## virginica  |  Petal.Width |  Sepal.Width | 0.54 | 4.42 | 48 | &amp;lt; .001 | [ 0.31, 0.71] | Pearson |    50
-## virginica  | Sepal.Length |  Sepal.Width | 0.46 | 3.56 | 48 | 0.002  | [ 0.20, 0.65] | Pearson |    50&lt;/code&gt;&lt;/pre&gt;
+## setosa     |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] | 2.01 | 48 | 0.101  | Pearson |    50
+## setosa     |  Petal.Width |  Sepal.Width | 0.23 | [-0.05, 0.48] | 1.66 | 48 | 0.104  | Pearson |    50
+## setosa     | Sepal.Length |  Sepal.Width | 0.74 | [ 0.59, 0.85] | 7.68 | 48 | &amp;lt; .001 | Pearson |    50
+## versicolor |  Petal.Width | Sepal.Length | 0.55 | [ 0.32, 0.72] | 4.52 | 48 | &amp;lt; .001 | Pearson |    50
+## versicolor |  Petal.Width |  Sepal.Width | 0.66 | [ 0.47, 0.80] | 6.15 | 48 | &amp;lt; .001 | Pearson |    50
+## versicolor | Sepal.Length |  Sepal.Width | 0.53 | [ 0.29, 0.70] | 4.28 | 48 | &amp;lt; .001 | Pearson |    50
+## virginica  |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] | 2.03 | 48 | 0.048  | Pearson |    50
+## virginica  |  Petal.Width |  Sepal.Width | 0.54 | [ 0.31, 0.71] | 4.42 | 48 | &amp;lt; .001 | Pearson |    50
+## virginica  | Sepal.Length |  Sepal.Width | 0.46 | [ 0.20, 0.65] | 3.56 | 48 | 0.002  | Pearson |    50&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-correlations&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Bayesian Correlations&lt;/h2&gt;
 &lt;p&gt;It is very easy to switch to a &lt;strong&gt;Bayesian framework&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, bayesian=TRUE)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         89% CI |     pd | % in ROPE |    BF |              Prior | n_Obs
+&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |    BF |              Prior | n_Obs
 ## --------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.12 | [-0.24,  0.01] | 91.60% |    44.45% |  0.51 | Cauchy (0 +- 0.33) |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.82,  0.89] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 91.42% |    42.00% |  0.51 | Cauchy (0 +- 0.33) |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.90] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
 ## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
-## Sepal.Width  | Petal.Length | -0.41 | [-0.52, -0.31] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.47, -0.25] |   100% |     0.22% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  | Petal.Length | -0.41 | [-0.52, -0.30] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |     0.05% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150
 ## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 999 | Cauchy (0 +- 0.33) |   150&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;tetrachoric-polychoric-biserial-biweight&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Tetrachoric, Polychoric, Biserial, Biweight…&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;correlation&lt;/code&gt; package also supports different types of methods, which can deal with correlations &lt;strong&gt;between factors&lt;/strong&gt;!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, include_factors = TRUE, method = &amp;quot;auto&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Parameter1         |         Parameter2 |     r |      t |  df |      p |         95% CI |      Method | n_Obs
-## --------------------------------------------------------------------------------------------------------------
-## Sepal.Length       |        Sepal.Width | -0.12 |  -1.44 | 148 | 0.304  | [-0.27,  0.04] |     Pearson |   150
-## Sepal.Length       |       Petal.Length |  0.87 |  21.65 | 148 | &amp;lt; .001 | [ 0.83,  0.91] |     Pearson |   150
-## Sepal.Length       |        Petal.Width |  0.82 |  17.30 | 148 | &amp;lt; .001 | [ 0.76,  0.86] |     Pearson |   150
-## Sepal.Length       |     Species.setosa | -0.93 | -29.97 | 148 | &amp;lt; .001 | [-0.95, -0.90] |    Biserial |   150
-## Sepal.Length       | Species.versicolor |  0.10 |   1.25 | 148 | 0.304  | [-0.06,  0.26] |    Biserial |   150
-## Sepal.Length       |  Species.virginica |  0.82 |  17.66 | 148 | &amp;lt; .001 | [ 0.77,  0.87] |    Biserial |   150
-## Sepal.Width        |       Petal.Length | -0.43 |  -5.77 | 148 | &amp;lt; .001 | [-0.55, -0.29] |     Pearson |   150
-## Sepal.Width        |        Petal.Width | -0.37 |  -4.79 | 148 | &amp;lt; .001 | [-0.50, -0.22] |     Pearson |   150
-## Sepal.Width        |     Species.setosa |  0.78 |  15.09 | 148 | &amp;lt; .001 | [ 0.71,  0.84] |    Biserial |   150
-## Sepal.Width        | Species.versicolor | -0.60 |  -9.20 | 148 | &amp;lt; .001 | [-0.70, -0.49] |    Biserial |   150
-## Sepal.Width        |  Species.virginica | -0.18 |  -2.16 | 148 | 0.130  | [-0.33, -0.02] |    Biserial |   150
-## Petal.Length       |        Petal.Width |  0.96 |  43.39 | 148 | &amp;lt; .001 | [ 0.95,  0.97] |     Pearson |   150
-## Petal.Length       |     Species.setosa | -1.00 |   -Inf | 148 | &amp;lt; .001 | [-1.00, -1.00] |    Biserial |   150
-## Petal.Length       | Species.versicolor |  0.26 |   3.27 | 148 | 0.007  | [ 0.10,  0.40] |    Biserial |   150
-## Petal.Length       |  Species.virginica |  0.93 |  31.09 | 148 | &amp;lt; .001 | [ 0.91,  0.95] |    Biserial |   150
-## Petal.Width        |     Species.setosa | -1.00 |   -Inf | 148 | &amp;lt; .001 | [-1.00, -1.00] |    Biserial |   150
-## Petal.Width        | Species.versicolor |  0.15 |   1.87 | 148 | 0.191  | [-0.01,  0.31] |    Biserial |   150
-## Petal.Width        |  Species.virginica |  0.99 | 112.56 | 148 | &amp;lt; .001 | [ 0.99,  1.00] |    Biserial |   150
-## Species.setosa     | Species.versicolor | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
-## Species.setosa     |  Species.virginica | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150
-## Species.versicolor |  Species.virginica | -0.88 | -22.35 | 148 | &amp;lt; .001 | [-0.91, -0.84] | Tetrachoric |   150&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter1         |         Parameter2 |     r |         95% CI |      t |  df |      p |         Method | n_Obs
+## -----------------------------------------------------------------------------------------------------------------
+## Sepal.Length       |        Sepal.Width | -0.12 | [-0.27,  0.04] |  -1.44 | 148 | 0.452  |        Pearson |   150
+## Sepal.Length       |       Petal.Length |  0.87 | [ 0.83,  0.91] |  21.65 | 148 | &amp;lt; .001 |        Pearson |   150
+## Sepal.Length       |        Petal.Width |  0.82 | [ 0.76,  0.86] |  17.30 | 148 | &amp;lt; .001 |        Pearson |   150
+## Sepal.Length       |     Species.setosa | -0.72 | [-0.79, -0.63] | -12.53 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Sepal.Length       | Species.versicolor |  0.08 | [-0.08,  0.24] |   0.97 | 148 | 0.452  | Point-biserial |   150
+## Sepal.Length       |  Species.virginica |  0.64 | [ 0.53,  0.72] |  10.08 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Sepal.Width        |       Petal.Length | -0.43 | [-0.55, -0.29] |  -5.77 | 148 | &amp;lt; .001 |        Pearson |   150
+## Sepal.Width        |        Petal.Width | -0.37 | [-0.50, -0.22] |  -4.79 | 148 | &amp;lt; .001 |        Pearson |   150
+## Sepal.Width        |     Species.setosa |  0.60 | [ 0.49,  0.70] |   9.20 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Sepal.Width        | Species.versicolor | -0.47 | [-0.58, -0.33] |  -6.44 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Sepal.Width        |  Species.virginica | -0.14 | [-0.29,  0.03] |  -1.67 | 148 | 0.392  | Point-biserial |   150
+## Petal.Length       |        Petal.Width |  0.96 | [ 0.95,  0.97] |  43.39 | 148 | &amp;lt; .001 |        Pearson |   150
+## Petal.Length       |     Species.setosa | -0.92 | [-0.94, -0.89] | -29.13 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Petal.Length       | Species.versicolor |  0.20 | [ 0.04,  0.35] |   2.51 | 148 | 0.066  | Point-biserial |   150
+## Petal.Length       |  Species.virginica |  0.72 | [ 0.63,  0.79] |  12.66 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Petal.Width        |     Species.setosa | -0.89 | [-0.92, -0.85] | -23.41 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Petal.Width        | Species.versicolor |  0.12 | [-0.04,  0.27] |   1.44 | 148 | 0.452  | Point-biserial |   150
+## Petal.Width        |  Species.virginica |  0.77 | [ 0.69,  0.83] |  14.66 | 148 | &amp;lt; .001 | Point-biserial |   150
+## Species.setosa     | Species.versicolor | -0.88 | [-0.91, -0.84] | -22.35 | 148 | &amp;lt; .001 |    Tetrachoric |   150
+## Species.setosa     |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.35 | 148 | &amp;lt; .001 |    Tetrachoric |   150
+## Species.versicolor |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.35 | 148 | &amp;lt; .001 |    Tetrachoric |   150&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;partial-correlations&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Partial Correlations&lt;/h2&gt;
@@ -143,7 +239,7 @@ library(ggraph) # needs to be loaded
 mtcars %&amp;gt;% 
   correlation(partial = TRUE) %&amp;gt;% 
   plot()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;

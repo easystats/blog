@@ -2,21 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>correlation on easystats</title>
-    <link>https://easystats.github.io/blog/tags/correlation/</link>
+    <link>/blog/tags/correlation/</link>
     <description>Recent content in correlation on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://easystats.github.io/blog/tags/correlation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/blog/tags/correlation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Multilevel Correlations: A New Method for Common Problems</title>
+      <link>/blog/posts/correlation_multilevel/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/correlation_multilevel/</guid>
+      <description>In this tutorial, we will introduce multilevel correlations (or hierarchical / random-effects correlations) and how to compute them using the new correlations package from the easystats suite.
+You can install the updated version and load the package as follows:
+install.packages(&amp;quot;correlation&amp;quot;)library(correlation)DataImagine we have an experiment in which 10 individuals completed a task with 100 trials. For each of the 1000 total trials, we measured two things, V1 and V2, and our research aims at investingating the link between these two variables.</description>
+    </item>
+    
+    <item>
       <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation/</link>
+      <link>/blog/posts/correlation_presentation/</link>
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation/</guid>
+      <guid>/blog/posts/correlation_presentation/</guid>
       <description>The correlation packageThe easystats project continues to grow with its more recent addition, a package devoted to correlations. Check-out its webpage here!
 It’s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd’s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
     </item>
