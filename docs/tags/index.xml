@@ -6,24 +6,24 @@
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>correlation</title>
-      <link>/blog/tags/correlation/</link>
-      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      <title>bayestestR</title>
+      <link>/blog/tags/bayestestr/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/correlation/</guid>
+      <guid>/blog/tags/bayestestr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>easystats</title>
       <link>/blog/tags/easystats/</link>
-      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/easystats/</guid>
       <description></description>
@@ -32,18 +32,18 @@
     <item>
       <title>R</title>
       <link>/blog/tags/r/</link>
-      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bayestestR</title>
-      <link>/blog/tags/bayestestr/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      <title>correlation</title>
+      <link>/blog/tags/correlation/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/tags/bayestestr/</guid>
+      <guid>/blog/tags/correlation/</guid>
       <description></description>
     </item>
     
