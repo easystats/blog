@@ -99,21 +99,23 @@ result</code></pre>
 ## 
 ## # Random Effects (Count Model) 
 ## 
-## Parameter | Median |        89% CI |     pd | % in ROPE | ESS |  Rhat
-## ---------------------------------------------------------------------
-## persons.1 |  -0.01 | [-0.38, 0.28] | 55.33% |    60.50% | 572 | 1.009
-## persons.2 |   0.02 | [-0.17, 0.30] | 61.88% |    65.62% | 691 | 1.008
-## persons.3 |  -0.02 | [-0.26, 0.18] | 61.27% |    67.90% | 340 | 1.011
-## persons.4 |   0.00 | [-0.32, 0.33] | 51.38% |    62.12% | 287 | 1.011
+## Parameter   | Median |        89% CI |     pd | % in ROPE | ESS |  Rhat
+## -----------------------------------------------------------------------
+## persons.1   |  -0.01 | [-0.38, 0.28] | 55.33% |    60.50% | 572 | 1.009
+## persons.2   |   0.02 | [-0.17, 0.30] | 61.88% |    65.62% | 691 | 1.008
+## persons.3   |  -0.02 | [-0.26, 0.18] | 61.27% |    67.90% | 340 | 1.011
+## persons.4   |   0.00 | [-0.32, 0.33] | 51.38% |    62.12% | 287 | 1.011
+## (Intercept) |   0.13 | [ 0.00, 0.50] |   100% |    42.60% | 311 | 1.013
 ## 
 ## # Random Effects (Zero-Inflated Model) 
 ## 
-## Parameter | Median |         89% CI |     pd | % in ROPE | ESS |  Rhat
-## ----------------------------------------------------------------------
-## persons.1 |   1.28 | [ 0.08,  2.70] | 95.73% |     2.15% | 811 | 1.001
-## persons.2 |   0.25 | [-0.90,  1.57] | 66.45% |    12.72% | 759 | 1.001
-## persons.3 |  -0.18 | [-1.51,  1.01] | 59.67% |    11.28% | 871 | 1.001
-## persons.4 |  -1.29 | [-2.62, -0.01] | 94.85% |     1.85% | 912 | 1.000</code></pre>
+## Parameter    | Median |         89% CI |     pd | % in ROPE | ESS |  Rhat
+## -------------------------------------------------------------------------
+## persons.1    |   1.28 | [ 0.08,  2.70] | 95.73% |     2.15% | 811 | 1.001
+## persons.2    |   0.25 | [-0.90,  1.57] | 66.45% |    12.72% | 759 | 1.001
+## persons.3    |  -0.18 | [-1.51,  1.01] | 59.67% |    11.28% | 871 | 1.001
+## persons.4    |  -1.29 | [-2.62, -0.01] | 94.85% |     1.85% | 912 | 1.000
+## zi_Intercept |   1.49 | [ 0.44,  3.33] |   100% |     0.02% | 848 | 1.002</code></pre>
 <p><code>plot()</code> now creates four facets by default. Note that plots from the <strong>parameters</strong>-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the <strong>bayestestRR</strong>-package, as shown <a href="https://easystats.github.io/see/articles/bayestestR.html">here</a>.</p>
 <pre class="r"><code>plot(result)</code></pre>
 <p><img src="/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>

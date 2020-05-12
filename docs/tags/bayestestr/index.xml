@@ -6,10 +6,21 @@
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/tags/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>In defence of the 95% CI</title>
+      <link>/blog/posts/bayestestr_95/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_95/</guid>
+      <description>TLDR: BayestestR currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what? Join the discussion here.
+Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, .05 (for the p-value), or the 95% range for the Confidence Interval (CI). Indeed, why 95 and not 94 or 90?
+One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter’s value.</description>
+    </item>
     
     <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>

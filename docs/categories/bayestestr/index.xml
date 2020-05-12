@@ -5,10 +5,107 @@
     <description>Recent content in bayestestR on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/blog/categories/bayestestr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>In defence of the 95% CI</title>
+      <link>/blog/posts/bayestestr_95/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/posts/bayestestr_95/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;BayestestR&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what?&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/250&#34;&gt;&lt;strong&gt;&lt;em&gt;Join the discussion here.&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, &lt;strong&gt;.05&lt;/strong&gt; (for the &lt;em&gt;p&lt;/em&gt;-value), or the &lt;strong&gt;95%&lt;/strong&gt; range for the &lt;strong&gt;Confidence Interval&lt;/strong&gt; (CI). Indeed, why 95 and not 94 or 90?&lt;/p&gt;
+&lt;p&gt;One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter’s value. Almost as if the estimation resulted in a &lt;strong&gt;probability distribution&lt;/strong&gt;, from which the confidence interval is describing the &lt;em&gt;width&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Well the traditional confidence interval is &lt;strong&gt;not that&lt;/strong&gt;, and this probabilistic interpretation pertains in fact to the &lt;strong&gt;&lt;em&gt;Credible&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;Interval&lt;/strong&gt; obtained via Bayesian methods. Indeed, in the Bayesian framework, parameters of a model are given as probability distributions that we need to describe (see this &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;gentle introduction to Bayes&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;And as you might know, &lt;em&gt;some&lt;/em&gt; Bayesianists tend to think that their philosophy is superior to that of the frequentist empire (&lt;em&gt;could be true though&lt;/em&gt;). Also, as the Bayesian field is growing, people see it as a new world and a promissing opportunity to make things right, and correct the mistakes that have been poisoning the old world.&lt;/p&gt;
+&lt;p&gt;This has led experts to question the validity of this 95% range, which appeared as arbitrary, and closely related to the &lt;em&gt;p&lt;/em&gt;-value and the notion of &lt;strong&gt;significance&lt;/strong&gt; (&lt;em&gt;ewww&lt;/em&gt;). This, as well as because of some computational reasons (related to the stability of the bounds of a distribution in relationship with the number of samples), has led some to move away from 95%, and use for instance 90%. Recently, the great McElreath, in his awesome book &lt;a href=&#34;https://xcelab.net/rm/statistical-rethinking/&#34;&gt;&lt;strong&gt;Statistical Rethinking&lt;/strong&gt;&lt;/a&gt;, made the case for using 89%, to underline the arbitrary nature of such threshold.&lt;/p&gt;
+&lt;p&gt;However, there might be a few arguments that could potentially be made &lt;strong&gt;in favour&lt;/strong&gt; of this “magical value”.&lt;/p&gt;
+&lt;div id=&#34;reproducibility-and-continuation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Reproducibility and continuation&lt;/h2&gt;
+&lt;p&gt;The scientific landscape, especially in social and neuro- sciences, has been recently shaken by the so-called &lt;strong&gt;reproducibility crisis&lt;/strong&gt;. People realized that the science they trusted was akin to a collossus with clay feet: many “facts” and published results were not replicable, and most of them were not &lt;strong&gt;reproducible&lt;/strong&gt;. The full steps to go from data to results were either not provided, or not described with enough details to allow other researchers to apply the exact same pipeline, with the end goal of &lt;em&gt;comparing&lt;/em&gt; the results.&lt;/p&gt;
+&lt;p&gt;Indeed, most scientific results, or result numbers, are relative, in the sense that they are to be interpreted in the context of a method, measure, field or context. &lt;strong&gt;People sometimes joke that a correlation of .70 is a disaster in physics but a miracle in psychology&lt;/strong&gt;. As such, it is important that we take this continuity of science into account when making decisions. Let’s say everybody, from Newton and Copernicus, used &lt;code&gt;Pi = 3.10&lt;/code&gt;. Should we change that? Sure, because it’s a &lt;em&gt;bad&lt;/em&gt; number and a bad approximation, and using &lt;code&gt;Pi = 3.14&lt;/code&gt; is &lt;em&gt;objectively&lt;/em&gt; better. But in the case where there is no strong reason to do so, should we change conventions, just for the sake of change?&lt;/p&gt;
+&lt;p&gt;By switching to reporting 89% intervals, mainly for the sake of heightening the wall between the Bayesian and the frequentist worlds, it seems like it kind of goes against this idea of continuity and additivity of scientific results. And I’m not sure the benefits outweight the drawbacks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;purpose-of-such-interval&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Purpose of such &lt;em&gt;interval&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;People often use the credible interval to describe the &lt;strong&gt;uncertainty&lt;/strong&gt; related to their parameters, because &lt;strong&gt;uncertainty&lt;/strong&gt; is key and should be embraced. But you might ask, why not use another index of uncertainty, - and dispersion, such as for instance the standard deviation &lt;strong&gt;SD&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;Well, some people describe both, but in that case you might also add the MAD, and all ranges of the credible interval. In fact, you might as well return the whole density plot (though if you can, it’s the best thing to do. And do check out the great &lt;a href=&#34;https://github.com/mjskay/tidybayes/&#34;&gt;&lt;strong&gt;tidybayes package&lt;/strong&gt; for awesome visualization tools&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;So, what are the advantages of the CI over the SD? Well, one difference is that the CI bounds are often seen as an approximation of the limits of a distribution (or its plausible region). What does it mean? Take this example. Let’s imagine this distribution of mean 0 and SD 1 made of a lot of points:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(bayestestR)
+library(see)
+
+x &amp;lt;- distribution_normal(10^6, mean = 0, sd = 1)
+
+plot(estimate_density(x)) +
+  theme_modern()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_95_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;While this empirical distribution of values has real bounds (it has a minimum and a maximum value), these are merely a computational “artifact”. In theory, this distribution covers the whole range of real values, extending until infinity (and beyond). All values are &lt;em&gt;possible&lt;/em&gt;, albeit very very very very &lt;strong&gt;unlikely&lt;/strong&gt;. But despite this mathematical fact, our chunking-loving brain understands that the important stuff is happening somewhere between -3 and 3.&lt;/p&gt;
+&lt;p&gt;As such, the uncertainty interval can be used to convey a rough (and artificial) sense of the limits of the likely area. Having edges of plausibility is arguably more intuitive than a single dispersion index, such as SD, facilitating decision making (for instance, if this range covers 0) and interpretations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;relationship-with-the-sd&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Relationship with the SD&lt;/h2&gt;
+&lt;p&gt;Alright, we see how returning a credible interval is useful and provides intuitive information about the “limits” of a continuous distribution. On the other hand, the SD is such a mathematical marvel, tied with other useful concepts such as &lt;em&gt;z&lt;/em&gt;-scores, standardization etc. It is indeed tempting to return both the CI and the SD. But as we said, reporting too much information can also hinder the readibility of a document, so which one to pick (if we had to)?&lt;/p&gt;
+&lt;p&gt;Moreover, the SD can also be used to describe the width of a distribution. For instance, we know that the bulk of a normal distribution lies within 6 SD around the mean. In the case above, the majority of points fall within -3 SD to 3 SD. When I say the bulk, it’s about 99.7% of the values, which arguably includes also quite improbable values.&lt;/p&gt;
+&lt;p&gt;So what if we restricted the range a bit, and took the range from -2 SD to 2 SD? Interestingly, such range includes, &lt;em&gt;you guessed it&lt;/em&gt;, about 95% of the values (95.45).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+
+plot(ci(x, ci=0.95)) +
+  scale_x_continuous(breaks = -3:3) +
+  theme_modern()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/bayestestR_95_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;That means that we can roughly approximate the 95% range from the SD… and &lt;em&gt;vice versa&lt;/em&gt;. If a 95% range is [2, 10], it means that the SD is probably somewhere around &lt;code&gt;(10 - 2) / 4 = 2&lt;/code&gt;. And this means that there is a rough correspondance between the 95% CI and the SD, connecting these two concepts in a more general and intuitive understanding of a distribution&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I see you comming&lt;/strong&gt;. &lt;em&gt;“But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal”&lt;/em&gt;. &lt;em&gt;“This is misguided and will create more confusion in the minds of the padawan”&lt;/em&gt;. It’s true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I’m not sure.&lt;/p&gt;
+&lt;p&gt;All in all, these are some elements that could be made to support the usage of the 95% range. They might not be the strongest arguments, which opens up a debate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-do-you-think&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What do you think?&lt;/h2&gt;
+&lt;p&gt;In our package &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;, we previously used &lt;code&gt;0.89&lt;/code&gt; by default, that returned the 89% CI. But as we like to challenge ourselves, we are looking for arguments in favour, or against, its change.&lt;/p&gt;
+&lt;p&gt;Thus, we’d like to invite you to give your opinion or vote on the &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/250&#34;&gt;dedicated issue&lt;/a&gt;. Thanks :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note: this is an opinion article written by me and that it does not necessarily reflect the opinions of the other easystats members, nor the opinion of my family, my people and that of the Human species.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>bayestestR</category>
+      
+      
+            <category>R</category>
+      
+            <category>bayestestR</category>
+      
+    </item>
     
     <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>
@@ -559,11 +656,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [26.62 47.14]
-## wt          |  Rejected |      0.00 % | [-4.08 -0.85]
-## cyl         | Undecided |     40.16 % | [-1.84  0.39]
-## gear        | Undecided |     40.66 % | [-2.20  1.82]
-## am          | Undecided |     20.16 % | [-1.13  4.59]
+## (Intercept) |  Rejected |      0.00 % | [26.87 46.80]
+## wt          |  Rejected |      0.00 % | [-4.29 -1.12]
+## cyl         | Undecided |     37.91 % | [-1.88  0.31]
+## gear        | Undecided |     41.79 % | [-2.17  1.67]
+## am          | Undecided |     19.35 % | [-0.98  4.66]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results

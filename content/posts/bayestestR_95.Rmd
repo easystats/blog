@@ -1,0 +1,119 @@
+---
+title: "In defence of the 95% CI"
+author: "easystats"
+date: 2020-05-12
+categories: ["R", "bayestestR"]
+tags: ["R", "easystats", "bayestestR"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+```
+
+
+**TLDR:** [**BayestestR**](https://github.com/easystats/bayestestR) **currently uses a 89\% threshold by default for Credible Intervals (CI). Should we change that? If so, by what?** [***Join the discussion here.***](https://github.com/easystats/bayestestR/issues/250)
+
+Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, **.05** (for the *p*-value), or the **95\%** range for the **Confidence Interval** (CI). Indeed, why 95 and not 94 or 90?
+
+One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter's value. Almost as if the estimation resulted in a **probability distribution**, from which the confidence interval is describing the *width*.
+
+Well the traditional confidence interval is **not that**, and this probabilistic interpretation pertains in fact to the ***Credible*** **Interval** obtained via Bayesian methods. Indeed, in the Bayesian framework, parameters of a model are given as probability distributions that we need to describe (see this [gentle introduction to Bayes](https://easystats.github.io/bayestestR/articles/bayestestR.html)).
+
+And as you might know, *some* Bayesianists tend to think that their philosophy is superior to that of the frequentist empire (*could be true though*). Also, as the Bayesian field is growing, people see it as a new world and a promissing opportunity to make things right, and correct the mistakes that have been poisoning the old world.
+
+This has led experts to question the validity of this 95\% range, which appeared as arbitrary, and closely related to the *p*-value and the notion of **significance** (*ewww*). This, as well as because of some computational reasons (related to the stability of the bounds of a distribution in relationship with the number of samples), has led some to move away from 95\%, and use for instance 90\%. Recently, the great McElreath, in his awesome book [**Statistical Rethinking**](https://xcelab.net/rm/statistical-rethinking/), made the case for using 89\%, to underline the arbitrary nature of such threshold.
+
+However, there might be a few arguments that could potentially be made **in favour** of this "magical value".
+
+## Reproducibility and continuation
+
+The scientific landscape, especially in social and neuro- sciences, has been recently shaken by the so-called **reproducibility crisis**. People realized that the science they trusted was akin to a collossus with clay feet: many "facts" and published results were not replicable, and most of them were not **reproducible**. The full steps to go from data to results were either not provided, or not described with enough details to allow other researchers to apply the exact same pipeline, with the end goal of *comparing* the results. 
+
+Indeed, most scientific results, or result numbers, are relative, in the sense that they are to be interpreted in the context of a method, measure, field or context. **People sometimes joke that a correlation of .70 is a disaster in physics but a miracle in psychology**. As such, it is important that we take this continuity of science into account when making decisions. Let's say everybody, from Newton and Copernicus, used `Pi = 3.10`. Should we change that? Sure, because it's a *bad* number and a bad approximation, and using `Pi = 3.14` is *objectively* better. But in the case where there is no strong reason to do so, should we change conventions, just for the sake of change?  
+
+By switching to reporting 89\% intervals, mainly for the sake of heightening the wall between the Bayesian and the frequentist worlds, it seems like it kind of goes against this idea of continuity and additivity of scientific results. And I'm not sure the benefits outweight the drawbacks.
+
+## Purpose of such *interval*
+
+People often use the credible interval to describe the **uncertainty** related to their parameters, because **uncertainty** is key and should be embraced. But you might ask, why not use another index of uncertainty, - and dispersion, such as for instance the standard deviation **SD**? 
+
+Well, some people describe both, but in that case you might also add the MAD, and all ranges of the credible interval. In fact, you might as well return the whole density plot (though if you can, it's the best thing to do. And do check out the great [**tidybayes package** for awesome visualization tools](https://github.com/mjskay/tidybayes/)).
+
+So, what are the advantages of the CI over the SD? Well, one difference is that the CI bounds are often seen as an approximation of the limits of a distribution (or its plausible region). What does it mean? Take this example. Let's imagine this distribution of mean 0 and SD 1 made of a lot of points:
+
+```{r}
+library(bayestestR)
+library(see)
+
+x <- distribution_normal(10^6, mean = 0, sd = 1)
+
+plot(estimate_density(x)) +
+  theme_modern()
+```
+
+
+While this empirical distribution of values has real bounds (it has a minimum and a maximum value), these are merely a computational "artifact". In theory, this distribution covers the whole range of real values, extending until infinity (and beyond). All values are *possible*, albeit very very very very **unlikely**. But despite this mathematical fact, our chunking-loving brain understands that the important stuff is happening somewhere between -3 and 3.
+
+As such, the uncertainty interval can be used to convey a rough (and artificial) sense of the limits of the likely area. Having edges of plausibility is arguably more intuitive than a single dispersion index, such as SD, facilitating decision making (for instance, if this range covers 0) and interpretations. 
+
+
+## Relationship with the SD
+
+
+Alright, we see how returning a credible interval is useful and provides intuitive information about the "limits" of a continuous distribution. On the other hand, the SD is such a mathematical marvel, tied with other useful concepts such as *z*-scores, standardization etc. It is indeed tempting to return both the CI and the SD. But as we said, reporting too much information can also hinder the readibility of a document, so which one to pick (if we had to)?
+
+Moreover, the SD can also be used to describe the width of a distribution. For instance, we know that the bulk of a normal distribution lies within 6 SD around the mean. In the case above, the majority of points fall within -3 SD to 3 SD. When I say the bulk, it's about 99.7\% of the values, which arguably includes also quite improbable values.
+
+So what if we restricted the range a bit, and took the range from -2 SD to 2 SD? Interestingly, such range includes, *you guessed it*, about 95\% of the values (95.45). 
+
+```{r}
+library(ggplot2)
+
+plot(ci(x, ci=0.95)) +
+  scale_x_continuous(breaks = -3:3) +
+  theme_modern()
+```
+
+
+That means that we can roughly approximate the 95\% range from the SD... and *vice versa*. If a 95\% range is [2, 10], it means that the SD is probably somewhere around `(10 - 2) / 4 = 2`. And this means that there is a rough correspondance between the 95\% CI and the SD, connecting these two concepts in a more general and intuitive understanding of a distribution
+
+
+**I see you comming**. *"But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal"*. *"This is misguided and will create more confusion in the minds of the padawan"*. It's true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I'm not sure.
+
+All in all, these are some elements that could be made to support the usage of the 95\% range. They might not be the strongest arguments, which opens up a debate.
+
+
+## What do you think?
+
+In our package [**bayestestR**](https://github.com/easystats/bayestestR), we previously used `0.89` by default, that returned the 89\% CI. But as we like to challenge ourselves, we are looking for arguments in favour, or against, its change. 
+
+Thus, we'd like to invite you to give your opinion or vote on the [dedicated issue](https://github.com/easystats/bayestestR/issues/250). Thanks :)
+
+
+***Note: this is an opinion article written by me and that it does not necessarily reflect the opinions of the other easystats members, nor the opinion of my family, my people and that of the Human species.***
+
+## Get Involved
+
+*easystats* is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
+
+## Stay tuned 
+
+To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
+
+- [\@easystats4u](https://twitter.com/easystats4u)
+- [\@strengejacke](https://twitter.com/strengejacke)
+- [\@DominiqueMakowski](https://twitter.com/Dom_Makowski)
+- [\@mattansb](https://twitter.com/mattansb)
+- [\@IndrajeetPatil](https://twitter.com/patilindrajeets)
+- [\@humanfactors](https://twitter.com/humanfactorsio)
+- [\@lindeloev](https://twitter.com/jonaslindeloev)
+- [\@jacob-long](https://twitter.com/jacobandrewlong)
+- [\@pdwaggoner](https://pdwaggoner.github.io/)
+- [\@LeoDutriaux](https://twitter.com/LDtrx)
+
