@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aniversary on easystats</title>
-    <link>/blog/tags/aniversary/</link>
+    <link>https://easystats.github.io/blog/tags/aniversary/</link>
     <description>Recent content in aniversary on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/aniversary/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/aniversary/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>
-      <link>/blog/posts/easystats_oneyear/</link>
+      <link>https://easystats.github.io/blog/posts/easystats_oneyear/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/easystats_oneyear/</guid>
+      <guid>https://easystats.github.io/blog/posts/easystats_oneyear/</guid>
       <description>Happy birthday easystats!About a year ago, I (Dom) sadly realised that the R package I was maintaining (psycho) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. Something had to be done.
 I decided to get in touch with Daniel, aka strengejacke (for mysterious and very confusing reasons), the author of the sjverse, a collection of awesome packages which scope wasn’t too distant from my own one.</description>
     </item>

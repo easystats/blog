@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>multicollinearity on easystats</title>
-    <link>/blog/tags/multicollinearity/</link>
+    <link>https://easystats.github.io/blog/tags/multicollinearity/</link>
     <description>Recent content in multicollinearity on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/multicollinearity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/multicollinearity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>/blog/posts/performance_check_collinearity/</link>
+      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_check_collinearity/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>The goal of performance is to provide lightweight tools to assess and check the quality of your model. It includes functions such as r2() for many models (including logistic, mixed and Bayesian models), icc() or helpers to check_convergence(), check_overdipsersion() or check_zero-inflation() (see a complete list of functions here).
 In this posting, we want to focus on multicollinearity. Multicollinearity “is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others” (source), i.</description>
     </item>

@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>correlation on easystats</title>
-    <link>/blog/categories/correlation/</link>
+    <link>https://easystats.github.io/blog/categories/correlation/</link>
     <description>Recent content in correlation on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/correlation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multilevel Correlations: A New Method for Common Problems</title>
-      <link>/blog/posts/correlation_multilevel/</link>
+      <link>https://easystats.github.io/blog/posts/correlation_multilevel/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/correlation_multilevel/</guid>
+      <guid>https://easystats.github.io/blog/posts/correlation_multilevel/</guid>
       <description>
 
 
@@ -35,7 +35,7 @@ ggplot(data, aes(x=V1, y=V2)) +
   geom_point() +
   geom_smooth(colour=&amp;quot;black&amp;quot;, method=&amp;quot;lm&amp;quot;, se=FALSE) +
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;That seems pretty straightfoward! It seems like there is a &lt;strong&gt;negative correlation&lt;/strong&gt; between V1 and V2. Let’s test this.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;simple-correlation&#34; class=&#34;section level2&#34;&gt;
@@ -57,7 +57,7 @@ ggplot(data, aes(x=V1, y=V2)) +
   geom_smooth(aes(colour=Group), method=&amp;quot;lm&amp;quot;, se=FALSE) + 
   geom_smooth(colour=&amp;quot;black&amp;quot;, method=&amp;quot;lm&amp;quot;, se=FALSE) + 
   theme_classic()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/correlation_multilevel_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Mmh&lt;/em&gt;, interesting. It seems like, for each subject, the relationship is different. The negative general trend seems to be created by &lt;strong&gt;differences between the groups&lt;/strong&gt; and could be spurious!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Multilevel &lt;em&gt;(as in multi-group)&lt;/em&gt; correlations allow us to account for differences between groups&lt;/strong&gt;. It is based on a partialization of the group variable, entered as a random factor in a mixed linear regression.&lt;/p&gt;
 &lt;p&gt;You can compute them with the &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;correlations&lt;/strong&gt;&lt;/a&gt; package by setting the &lt;code&gt;multilevel&lt;/code&gt; arguent to &lt;code&gt;TRUE&lt;/code&gt;.&lt;/p&gt;
@@ -108,10 +108,10 @@ ggplot(data, aes(x=V1, y=V2)) +
     
     <item>
       <title>The ulimate package for correlations (by easystats)</title>
-      <link>/blog/posts/correlation_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/correlation_presentation/</link>
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/correlation_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/correlation_presentation/</guid>
       <description>
 
 
@@ -239,7 +239,7 @@ library(ggraph) # needs to be loaded
 mtcars %&amp;gt;% 
   correlation(partial = TRUE) %&amp;gt;% 
   plot()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/correlation_presentation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Get Involved&lt;/h2&gt;

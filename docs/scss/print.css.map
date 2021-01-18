@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "print.css",
-	"sourceRoot": "D:/Dropbox/RECHERCHE/N/easystats/blog",
+	"sourceRoot": "D:/mail/Documents/Coding/R/easystats/blog",
 	"sources": [
 		"themes/hyde-hyde/assets/scss/print.scss",
 		"themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",

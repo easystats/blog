@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>standardize on easystats</title>
-    <link>/blog/tags/standardize/</link>
+    <link>https://easystats.github.io/blog/tags/standardize/</link>
     <description>Recent content in standardize on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/standardize/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/standardize/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>/blog/posts/parameters_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>

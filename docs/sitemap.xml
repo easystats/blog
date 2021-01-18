@@ -1,369 +1,374 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/tags/bayestestr/</loc>
+    <loc>https://easystats.github.io/blog/categories/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/tags/easystats/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/parameters_new_models/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/tags/parameters/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/categories/parameters/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/categories/r/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/tags/r/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/tags/</loc>
+    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/categories/bayestestr/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/bayestestr/</loc>
+    <loc>https://easystats.github.io/blog/tags/bayestestr/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_95/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/easystats/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/bayestestr_95/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/posts/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/r/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/categories/r/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/correlation/</loc>
+    <loc>https://easystats.github.io/blog/categories/correlation/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/correlation/</loc>
+    <loc>https://easystats.github.io/blog/tags/correlation/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/correlation_multilevel/</loc>
+    <loc>https://easystats.github.io/blog/posts/correlation_multilevel/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/correlation_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/correlation_presentation/</loc>
     <lastmod>2020-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/p-direction/</loc>
+    <loc>https://easystats.github.io/blog/tags/p-direction/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/p-value/</loc>
+    <loc>https://easystats.github.io/blog/tags/p-value/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/pd/</loc>
+    <loc>https://easystats.github.io/blog/tags/pd/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_pd/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_pd/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/aniversary/</loc>
+    <loc>https://easystats.github.io/blog/tags/aniversary/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/easystats/</loc>
+    <loc>https://easystats.github.io/blog/categories/easystats/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/easystats_oneyear/</loc>
+    <loc>https://easystats.github.io/blog/posts/easystats_oneyear/</loc>
     <lastmod>2020-01-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_evidence_ani/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</loc>
     <lastmod>2019-12-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/coefficients/</loc>
+    <loc>https://easystats.github.io/blog/tags/coefficients/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/parameters_and_see_update/</loc>
+    <loc>https://easystats.github.io/blog/posts/parameters_and_see_update/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/parameters/</loc>
+    <loc>https://easystats.github.io/blog/categories/see/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/parameters/</loc>
+    <loc>https://easystats.github.io/blog/tags/see/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/see/</loc>
+    <loc>https://easystats.github.io/blog/tags/visualization/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/see/</loc>
-    <lastmod>2019-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/visualization/</loc>
-    <lastmod>2019-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/tags/broom/</loc>
+    <loc>https://easystats.github.io/blog/tags/broom/</loc>
     <lastmod>2019-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/parameters_v2/</loc>
+    <loc>https://easystats.github.io/blog/posts/parameters_v2/</loc>
     <lastmod>2019-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/parameters_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/parameters_presentation/</loc>
     <lastmod>2019-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/standardize/</loc>
+    <loc>https://easystats.github.io/blog/tags/standardize/</loc>
     <lastmod>2019-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/performance_check_collinearity/</loc>
+    <loc>https://easystats.github.io/blog/posts/performance_check_collinearity/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/multicollinearity/</loc>
+    <loc>https://easystats.github.io/blog/tags/multicollinearity/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/performance/</loc>
+    <loc>https://easystats.github.io/blog/tags/performance/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/performance/</loc>
+    <loc>https://easystats.github.io/blog/categories/performance/</loc>
     <lastmod>2019-08-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_emmeans/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_emmeans/</loc>
     <lastmod>2019-06-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_v2/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_v2/</loc>
     <lastmod>2019-06-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/see_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/see_presentation/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_distribution/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_distribution/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/distribution/</loc>
+    <loc>https://easystats.github.io/blog/tags/distribution/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/gaussian/</loc>
+    <loc>https://easystats.github.io/blog/tags/gaussian/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/perfect/</loc>
+    <loc>https://easystats.github.io/blog/tags/perfect/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/aic/</loc>
+    <loc>https://easystats.github.io/blog/tags/aic/</loc>
     <lastmod>2019-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/performance_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/performance_presentation/</loc>
     <lastmod>2019-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/icc/</loc>
+    <loc>https://easystats.github.io/blog/tags/icc/</loc>
     <lastmod>2019-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/r2/</loc>
+    <loc>https://easystats.github.io/blog/tags/r2/</loc>
     <lastmod>2019-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_rnorm_perfect/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/normal/</loc>
+    <loc>https://easystats.github.io/blog/tags/normal/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/rnorm/</loc>
+    <loc>https://easystats.github.io/blog/tags/rnorm/</loc>
     <lastmod>2019-04-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/brms/</loc>
+    <loc>https://easystats.github.io/blog/tags/brms/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/bayestestr_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_presentation/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/posterior/</loc>
+    <loc>https://easystats.github.io/blog/tags/posterior/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/rstanarm/</loc>
+    <loc>https://easystats.github.io/blog/tags/rstanarm/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/insight_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/insight_presentation/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/access/</loc>
+    <loc>https://easystats.github.io/blog/tags/access/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/data/</loc>
+    <loc>https://easystats.github.io/blog/tags/data/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/insight/</loc>
+    <loc>https://easystats.github.io/blog/categories/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/insight/</loc>
+    <loc>https://easystats.github.io/blog/tags/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/models/</loc>
+    <loc>https://easystats.github.io/blog/tags/models/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/anova/</loc>
+    <loc>https://easystats.github.io/blog/tags/anova/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/apa/</loc>
+    <loc>https://easystats.github.io/blog/tags/apa/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/report/</loc>
+    <loc>https://easystats.github.io/blog/tags/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/categories/report/</loc>
+    <loc>https://easystats.github.io/blog/categories/report/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/results/</loc>
+    <loc>https://easystats.github.io/blog/tags/results/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/report_anova/</loc>
+    <loc>https://easystats.github.io/blog/posts/report_anova/</loc>
     <lastmod>2019-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/tags/correlations/</loc>
+    <loc>https://easystats.github.io/blog/tags/correlations/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/posts/report_correlation/</loc>
+    <loc>https://easystats.github.io/blog/posts/report_correlation/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/</loc>
+    <loc>https://easystats.github.io/blog/portfolio/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/people/</loc>
+    <loc>https://easystats.github.io/blog/portfolio/people/</loc>
     <lastmod>2018-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/portfolio/easystats/</loc>
+    <loc>https://easystats.github.io/blog/portfolio/easystats/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/resources/</loc>
+    <loc>https://easystats.github.io/blog/resources/</loc>
   </url>
   
 </urlset>

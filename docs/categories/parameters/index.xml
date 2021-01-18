@@ -1,21 +1,1198 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>parameters on easystats</title>
-    <link>/blog/categories/parameters/</link>
+    <link>https://easystats.github.io/blog/categories/parameters/</link>
     <description>Recent content in parameters on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/parameters/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>New formatting features in the parameters package</title>
+      <link>https://easystats.github.io/blog/posts/parameters_new_models/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_new_models/</guid>
+      <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;You probably already have heard of the &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;em&gt;parameters&lt;/em&gt; package&lt;/a&gt;, a light-weight package to extract, compute and explore the parameters of statistical models using R (if not, there is a related &lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.02445&#34;&gt;publication&lt;/a&gt; introducing the package’s main features).&lt;/p&gt;
+&lt;p&gt;In this post, we like to introduce a new feature that facilitates nicely rendered output in markdown or HTML format (including PDFs). This allows you to easily create pretty tables of model summaries, for a large variety of models.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;parameters&lt;/em&gt; package, together with the &lt;a href=&#34;https://easystats.github.io/insight/&#34;&gt;&lt;em&gt;insight&lt;/em&gt; package&lt;/a&gt;, provides those tools to format the layout and style of tables from model parameters. The easy way is using the &lt;code&gt;model_parameters()&lt;/code&gt; function, where usually don’t have to take care about formatting and layout, at least not for simple purposes like printing to the console or inside rmarkdown documents. However, sometimes you may want to do the formatting steps manually. This blog post introduces the various functions that are used for parameters table formatting.&lt;/p&gt;
+&lt;div id=&#34;an-example-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;An Example Model&lt;/h2&gt;
+&lt;p&gt;We start with a model that does not make much sense, but it is useful for demonstrating the formatting functions.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris)
+iris$Petlen &amp;lt;- cut(iris$Petal.Length, breaks = c(0, 3, 7))
+model &amp;lt;- lm(Sepal.Width ~ poly(Sepal.Length, 2) + Species + Petlen, data = iris)
+
+summary(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Call:
+## lm(formula = Sepal.Width ~ poly(Sepal.Length, 2) + Species + 
+##     Petlen, data = iris)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -0.7742 -0.1490 -0.0056  0.1666  0.6973 
+## 
+## Coefficients:
+##                        Estimate Std. Error t value Pr(&amp;gt;|t|)    
+## (Intercept)              3.8127     0.0582   65.50  &amp;lt; 2e-16 ***
+## poly(Sepal.Length, 2)1   4.0602     0.4668    8.70    7e-15 ***
+## poly(Sepal.Length, 2)2  -1.3024     0.3149   -4.14    6e-05 ***
+## Speciesversicolor       -1.0056     0.2781   -3.62  0.00041 ***
+## Speciesvirginica        -0.9913     0.2851   -3.48  0.00067 ***
+## Petlen(3,7]             -0.1360     0.2818   -0.48  0.63019    
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## Residual standard error: 0.28 on 144 degrees of freedom
+## Multiple R-squared:  0.615,  Adjusted R-squared:  0.602 
+## F-statistic:   46 on 5 and 144 DF,  p-value: &amp;lt;2e-16&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatting-parameter-names&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Formatting Parameter Names&lt;/h2&gt;
+&lt;p&gt;As we can see, in such cases, the standard R output looks a bit cryptic, although all necessary and important information is included in the summary. The formatting of coefficients for polynomial transformation is difficult to read, factors grouped with &lt;code&gt;cut()&lt;/code&gt; always require a short time of thinking to find out which of the bound (in this case, &lt;code&gt;Petlen(3,7]&lt;/code&gt;, 3 and 7) is included in the range, and names of factor levels are directly concatenated to the name of the factor variable.&lt;/p&gt;
+&lt;p&gt;Thus, the first step would be to format the parameter names, which can be done with &lt;code&gt;format_parameters()&lt;/code&gt; from the &lt;em&gt;parameters&lt;/em&gt; package:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(parameters)
+format_parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                 (Intercept)      poly(Sepal.Length, 2)1 
+##               &amp;quot;(Intercept)&amp;quot; &amp;quot;Sepal.Length [1st degree]&amp;quot; 
+##      poly(Sepal.Length, 2)2           Speciesversicolor 
+## &amp;quot;Sepal.Length [2nd degree]&amp;quot;      &amp;quot;Species [versicolor]&amp;quot; 
+##            Speciesvirginica                 Petlen(3,7] 
+##       &amp;quot;Species [virginica]&amp;quot;              &amp;quot;Petlen [4-7]&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;format_parameters()&lt;/code&gt; returns a (named) character vector with the original coefficients as &lt;em&gt;names&lt;/em&gt; of each character element, and the formatted names of the coefficients as values of the character vector. Let’s look at the results again:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cat(format_parameters(model), sep = &amp;quot;\n&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## (Intercept)
+## Sepal.Length [1st degree]
+## Sepal.Length [2nd degree]
+## Species [versicolor]
+## Species [virginica]
+## Petlen [4-7]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now variable names and factor levels, but also polynomial terms or even factors grouped with &lt;code&gt;cut()&lt;/code&gt; are much more readable. Factor levels are separated from the variable name, inside brackets. Same for the coefficients of the different polynomial degrees. And the exact range for &lt;code&gt;cut()&lt;/code&gt;-factors is also clearer now.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;standardizing-column-names-of-parameter-tables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Standardizing Column Names of Parameter Tables&lt;/h2&gt;
+&lt;p&gt;As seen above, the &lt;code&gt;summary()&lt;/code&gt; returns columns named &lt;code&gt;Estimate&lt;/code&gt;, &lt;code&gt;t value&lt;/code&gt; or &lt;code&gt;Pr(&amp;gt;|t|)&lt;/code&gt;. While &lt;code&gt;Estimate&lt;/code&gt; is not specific for certain models, &lt;code&gt;t value&lt;/code&gt; is. For logistic regression models, you would get &lt;code&gt;z value&lt;/code&gt;. Some packages alter the names, so you get just &lt;code&gt;t&lt;/code&gt; or &lt;code&gt;t-value&lt;/code&gt; etc.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;model_parameters()&lt;/code&gt; also uses context-specific column names, where applicable:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;colnames(model_parameters(model))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Parameter&amp;quot;   &amp;quot;Coefficient&amp;quot; &amp;quot;SE&amp;quot;          &amp;quot;CI_low&amp;quot;      &amp;quot;CI_high&amp;quot;    
+## [6] &amp;quot;t&amp;quot;           &amp;quot;df_error&amp;quot;    &amp;quot;p&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For Bayesian models, &lt;code&gt;Coefficient&lt;/code&gt; is usually named &lt;code&gt;Median&lt;/code&gt; etc. While this makes sense from a user perspective, because you instantly know which type of statistic or coefficient you have, it becomes difficult when you need a generic naming scheme to access model parameters when the input model is unknown. This is the typical approach from the &lt;em&gt;broom&lt;/em&gt; package, where you get “standardized” column names:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(broom)
+colnames(tidy(model))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;term&amp;quot;      &amp;quot;estimate&amp;quot;  &amp;quot;std.error&amp;quot; &amp;quot;statistic&amp;quot; &amp;quot;p.value&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To deal with such situations, the &lt;em&gt;insight&lt;/em&gt; package provides a &lt;code&gt;standardize_names()&lt;/code&gt; function, which exactly does that: standardizing the column names of the input. In the following example, you see that the statistic-column is no longer named &lt;code&gt;t&lt;/code&gt;, but &lt;code&gt;statistic&lt;/code&gt;. &lt;code&gt;df_error&lt;/code&gt; or &lt;code&gt;df_residuals&lt;/code&gt; will be renamed to &lt;code&gt;df&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(insight)
+library(magrittr)
+model %&amp;gt;% 
+  model_parameters() %&amp;gt;% 
+  standardize_names() %&amp;gt;% 
+  colnames()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Parameter&amp;quot;   &amp;quot;Coefficient&amp;quot; &amp;quot;SE&amp;quot;          &amp;quot;CI_low&amp;quot;      &amp;quot;CI_high&amp;quot;    
+## [6] &amp;quot;Statistic&amp;quot;   &amp;quot;df&amp;quot;          &amp;quot;p&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Furthermore, you can request “broom”-style for column names:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model %&amp;gt;% 
+  model_parameters() %&amp;gt;% 
+  standardize_names(style = &amp;quot;broom&amp;quot;) %&amp;gt;% 
+  colnames()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;term&amp;quot;      &amp;quot;estimate&amp;quot;  &amp;quot;std.error&amp;quot; &amp;quot;conf.low&amp;quot;  &amp;quot;conf.high&amp;quot; &amp;quot;statistic&amp;quot;
+## [7] &amp;quot;df.error&amp;quot;  &amp;quot;p.value&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatting-column-names-and-columns&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Formatting Column Names and Columns&lt;/h2&gt;
+&lt;p&gt;Beside formatting parameter names (coefficient names) using &lt;code&gt;format_parameters()&lt;/code&gt;, we can do even more to make the output more readable. Let’s look at an example that includes confidence intervals.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cbind(summary(model)$coefficients, confint(model))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                        Estimate Std. Error t value Pr(&amp;gt;|t|) 2.5 % 97.5 %
+## (Intercept)                3.81      0.058   65.50 4.6e-109  3.70   3.93
+## poly(Sepal.Length, 2)1     4.06      0.467    8.70  7.0e-15  3.14   4.98
+## poly(Sepal.Length, 2)2    -1.30      0.315   -4.14  6.0e-05 -1.92  -0.68
+## Speciesversicolor         -1.01      0.278   -3.62  4.1e-04 -1.56  -0.46
+## Speciesvirginica          -0.99      0.285   -3.48  6.7e-04 -1.55  -0.43
+## Petlen(3,7]               -0.14      0.282   -0.48  6.3e-01 -0.69   0.42&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can get a similar tabular output using &lt;em&gt;broom&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tidy(model, conf.int = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 7
+##   term                 estimate std.error statistic   p.value conf.low conf.high
+##   &amp;lt;chr&amp;gt;                   &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1 (Intercept)             3.81     0.0582    65.5   4.61e-109    3.70      3.93 
+## 2 poly(Sepal.Length, ~    4.06     0.467      8.70  7.00e- 15    3.14      4.98 
+## 3 poly(Sepal.Length, ~   -1.30     0.315     -4.14  5.98e-  5   -1.92     -0.680
+## 4 Speciesversicolor      -1.01     0.278     -3.62  4.12e-  4   -1.56     -0.456
+## 5 Speciesvirginica       -0.991    0.285     -3.48  6.72e-  4   -1.55     -0.428
+## 6 Petlen(3,7]            -0.136    0.282     -0.482 6.30e-  1   -0.693     0.421&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Some improvements according to readability could be collapsing and formatting the confidence intervals, and maybe the p-values. This would require some effort, for instance, to format the values of the lower and upper confidence intervals and collapsing them into one column. However, the &lt;code&gt;format_table()&lt;/code&gt; function is a convenient function that does all the work for you.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;format_table()&lt;/code&gt; requires a data frame with model parameters as input, however, there are some requirements to make &lt;code&gt;format_table()&lt;/code&gt; work. In particular, the column names must follow a certain pattern to be recognized, and this pattern may either be the naming convention from &lt;em&gt;broom&lt;/em&gt; or the &lt;a href=&#34;https://easystats.github.io/easystats/&#34;&gt;&lt;em&gt;easystats&lt;/em&gt; packages&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model %&amp;gt;% 
+  tidy(conf.int = TRUE) %&amp;gt;% 
+  format_table()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                     term estimate std.error statistic p.value       conf.int
+## 1            (Intercept)     3.81      0.06     65.50  &amp;lt; .001 [ 3.70,  3.93]
+## 2 poly(Sepal.Length, 2)1     4.06      0.47      8.70  &amp;lt; .001 [ 3.14,  4.98]
+## 3 poly(Sepal.Length, 2)2    -1.30      0.31     -4.14  &amp;lt; .001 [-1.92, -0.68]
+## 4      Speciesversicolor    -1.01      0.28     -3.62  &amp;lt; .001 [-1.56, -0.46]
+## 5       Speciesvirginica    -0.99      0.29     -3.48  &amp;lt; .001 [-1.55, -0.43]
+## 6            Petlen(3,7]    -0.14      0.28     -0.48  0.630  [-0.69,  0.42]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When the parameters table also includes degrees of freedom, and the degrees of freedom are the same for each parameter, then this information is included in the statistic-column. This is usually the default for &lt;code&gt;model_parameters()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model %&amp;gt;% 
+  model_parameters() %&amp;gt;% 
+  format_table()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                   Parameter Coefficient   SE         95% CI t(144)      p
+## 1               (Intercept)        3.81 0.06 [ 3.70,  3.93]  65.50 &amp;lt; .001
+## 2 Sepal.Length [1st degree]        4.06 0.47 [ 3.14,  4.98]   8.70 &amp;lt; .001
+## 3 Sepal.Length [2nd degree]       -1.30 0.31 [-1.92, -0.68]  -4.14 &amp;lt; .001
+## 4      Species [versicolor]       -1.01 0.28 [-1.56, -0.46]  -3.62 &amp;lt; .001
+## 5       Species [virginica]       -0.99 0.29 [-1.55, -0.43]  -3.48 &amp;lt; .001
+## 6              Petlen [4-7]       -0.14 0.28 [-0.69,  0.42]  -0.48 0.630&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exporting-the-parameters-table&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exporting the Parameters Table&lt;/h2&gt;
+&lt;p&gt;Finally, &lt;code&gt;export_table()&lt;/code&gt; from &lt;em&gt;insight&lt;/em&gt; formats the data frame and returns a character vector that can be printed to the console or inside rmarkdown documents. The data frame then looks more “table-like”.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(mtcars)
+cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   mpg | cyl |   disp |  hp | drat
+## ---------------------------------
+## 21.00 |   6 | 160.00 | 110 | 3.90
+## 21.00 |   6 | 160.00 | 110 | 3.90
+## 22.80 |   4 | 108.00 |  93 | 3.85
+## 21.40 |   6 | 258.00 | 110 | 3.08
+## 18.70 |   8 | 360.00 | 175 | 3.15
+## 18.10 |   6 | 225.00 | 105 | 2.76
+## 14.30 |   8 | 360.00 | 245 | 3.21
+## 24.40 |   4 | 146.70 |  62 | 3.69&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Putting all this together allows us to create nice tabular outputs of parameters tables. This can be done using &lt;em&gt;broom&lt;/em&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model %&amp;gt;% 
+  tidy(conf.int = TRUE) %&amp;gt;% 
+  format_table() %&amp;gt;% 
+  export_table() %&amp;gt;% 
+  cat()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## term                   | estimate | std.error | statistic | p.value |       conf.int
+## ------------------------------------------------------------------------------------
+## (Intercept)            |     3.81 |      0.06 |     65.50 |  &amp;lt; .001 | [ 3.70,  3.93]
+## poly(Sepal.Length, 2)1 |     4.06 |      0.47 |      8.70 |  &amp;lt; .001 | [ 3.14,  4.98]
+## poly(Sepal.Length, 2)2 |    -1.30 |      0.31 |     -4.14 |  &amp;lt; .001 | [-1.92, -0.68]
+## Speciesversicolor      |    -1.01 |      0.28 |     -3.62 |  &amp;lt; .001 | [-1.56, -0.46]
+## Speciesvirginica       |    -0.99 |      0.29 |     -3.48 |  &amp;lt; .001 | [-1.55, -0.43]
+## Petlen(3,7]            |    -0.14 |      0.28 |     -0.48 |  0.630  | [-0.69,  0.42]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or, in a simpler way and with much more options (like standardizing, robust standard errors, bootstrapping, …) using &lt;code&gt;model_parameters()&lt;/code&gt;, which &lt;code&gt;print()&lt;/code&gt;-method does all these steps automatically:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Parameter                 | Coefficient |   SE |         95% CI | t(144) |      p
+## ---------------------------------------------------------------------------------
+## (Intercept)               |        3.81 | 0.06 | [ 3.70,  3.93] |  65.50 | &amp;lt; .001
+## Sepal.Length [1st degree] |        4.06 | 0.47 | [ 3.14,  4.98] |   8.70 | &amp;lt; .001
+## Sepal.Length [2nd degree] |       -1.30 | 0.31 | [-1.92, -0.68] |  -4.14 | &amp;lt; .001
+## Species [versicolor]      |       -1.01 | 0.28 | [-1.56, -0.46] |  -3.62 | &amp;lt; .001
+## Species [virginica]       |       -0.99 | 0.29 | [-1.55, -0.43] |  -3.48 | &amp;lt; .001
+## Petlen [4-7]              |       -0.14 | 0.28 | [-0.69,  0.42] |  -0.48 | 0.630&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatting-the-parameters-table-in-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Formatting the Parameters Table in Markdown&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;export_table()&lt;/code&gt; provides a few options to generate tables in markdown-format. This allows to easily render nice-looking tables inside markdown-documents. First of all, use &lt;code&gt;format = &#34;markdown&#34;&lt;/code&gt; to activate the markdown-formatting. &lt;code&gt;caption&lt;/code&gt; can be used to add a table caption. Furthermore, &lt;code&gt;align&lt;/code&gt; allows to choose an alignment for all table columns, or to specify the alignment for each column individually.&lt;/p&gt;
+&lt;p&gt;The following table has six columns. Using &lt;code&gt;align = &#34;lcccrr&#34;&lt;/code&gt; would left-align the first column, center columns two to four, and right-align the last two columns.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model %&amp;gt;% 
+  tidy(conf.int = TRUE) %&amp;gt;% 
+  # parenthesis look better in markdown-tables, so we use &amp;quot;brackets&amp;quot; here
+  format_table(ci_brackets = c(&amp;quot;(&amp;quot;, &amp;quot;)&amp;quot;)) %&amp;gt;% 
+  export_table(format = &amp;quot;markdown&amp;quot;, caption = &amp;quot;My Table&amp;quot;, align = &amp;quot;lcccrr&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;My Table&lt;/caption&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;term&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;estimate&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;std.error&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;statistic&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;p.value&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;conf.int&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;(Intercept)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3.81&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.06&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;65.50&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;( 3.70, 3.93)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;poly(Sepal.Length, 2)1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4.06&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.47&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;8.70&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;( 3.14, 4.98)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;poly(Sepal.Length, 2)2&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-1.30&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.31&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-4.14&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;(-1.92, -0.68)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Speciesversicolor&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-1.01&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.28&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-3.62&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;(-1.56, -0.46)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Speciesvirginica&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.99&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.29&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-3.48&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;(-1.55, -0.43)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Petlen(3,7]&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.14&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.28&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.48&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.630&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;(-0.69, 0.42)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;print_md()&lt;/code&gt; is a convenient wrapper around &lt;code&gt;format_table()&lt;/code&gt; and &lt;code&gt;export_table(format = &#34;markdown&#34;)&lt;/code&gt;, and allows to directly format the output of functions like &lt;code&gt;model_parameters()&lt;/code&gt;, &lt;code&gt;simulate_parameters()&lt;/code&gt; or other &lt;em&gt;parameters&lt;/em&gt; functions in markdown-format.&lt;/p&gt;
+&lt;p&gt;These tables are also nicely formatted when knitting markdown-documents into Word or PDF. &lt;code&gt;print_md()&lt;/code&gt; applies some default settings that have proven to work well for markdown, PDF or Word tables.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model) %&amp;gt;% print_md()&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Parameter&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Coefficient&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;SE&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;95% CI&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;t(144)&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;p&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;(Intercept)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3.81&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.06&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(3.70, 3.93)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;65.50&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Sepal.Length (1st degree)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4.06&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.47&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(3.14, 4.98)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;8.70&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Sepal.Length (2nd degree)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-1.30&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.31&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(-1.92, -0.68)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-4.14&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Species (versicolor)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-1.01&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.28&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(-1.56, -0.46)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-3.62&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Species (virginica)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.99&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.29&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(-1.55, -0.43)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-3.48&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Petlen (4-7)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.14&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.28&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;(-0.69, 0.42)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-0.48&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.630&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;A similar option is &lt;code&gt;print_html()&lt;/code&gt;, which is a convenient wrapper for &lt;code&gt;format_table()&lt;/code&gt; and &lt;code&gt;export_table(format = &#34;html&#34;)&lt;/code&gt;. Using HTML in markdown has the advantage that it will be properly rendered when exporting to PDF.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model) %&amp;gt;% print_html()&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#ydjypvcysn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ydjypvcysn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ydjypvcysn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ydjypvcysn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ydjypvcysn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ydjypvcysn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ydjypvcysn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ydjypvcysn .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ydjypvcysn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ydjypvcysn .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#ydjypvcysn .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#ydjypvcysn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ydjypvcysn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ydjypvcysn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ydjypvcysn .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ydjypvcysn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ydjypvcysn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ydjypvcysn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ydjypvcysn .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#ydjypvcysn .gt_left {
+  text-align: left;
+}
+
+#ydjypvcysn .gt_center {
+  text-align: center;
+}
+
+#ydjypvcysn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ydjypvcysn .gt_font_normal {
+  font-weight: normal;
+}
+
+#ydjypvcysn .gt_font_bold {
+  font-weight: bold;
+}
+
+#ydjypvcysn .gt_font_italic {
+  font-style: italic;
+}
+
+#ydjypvcysn .gt_super {
+  font-size: 65%;
+}
+
+#ydjypvcysn .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+&lt;/style&gt;
+&lt;div id=&#34;ydjypvcysn&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+  &lt;thead class=&#34;gt_header&#34;&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_left&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Parameter&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Coefficient&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;SE&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;95% CI&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;t(144)&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;p&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;(Intercept)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3.81&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.06&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(3.70, 3.93)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;65.50&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Sepal.Length (1st degree)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4.06&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.47&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(3.14, 4.98)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8.70&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Sepal.Length (2nd degree)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-1.30&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.31&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.92, -0.68)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-4.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Species (versicolor)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-1.01&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.56, -0.46)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-3.62&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Species (virginica)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.99&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.29&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.55, -0.43)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-3.48&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Petlen (4-7)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-0.69, 0.42)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.48&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.630 &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot class=&#34;gt_sourcenotes&#34;&gt;&lt;/tfoot&gt;
+  
+&lt;/table&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;print_md()&lt;/code&gt; and &lt;code&gt;print_html()&lt;/code&gt; are considered as main functions for users who want to generate nicely rendered tables inside markdown-documents. A wrapper around these both is &lt;code&gt;display()&lt;/code&gt;, which either calls &lt;code&gt;print_md()&lt;/code&gt; or &lt;code&gt;print_html()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_parameters(model) %&amp;gt;% display(format = &amp;quot;html&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#vmorelkfvp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vmorelkfvp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vmorelkfvp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vmorelkfvp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vmorelkfvp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vmorelkfvp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vmorelkfvp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vmorelkfvp .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vmorelkfvp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vmorelkfvp .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#vmorelkfvp .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#vmorelkfvp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vmorelkfvp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#vmorelkfvp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vmorelkfvp .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vmorelkfvp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vmorelkfvp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vmorelkfvp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vmorelkfvp .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#vmorelkfvp .gt_left {
+  text-align: left;
+}
+
+#vmorelkfvp .gt_center {
+  text-align: center;
+}
+
+#vmorelkfvp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vmorelkfvp .gt_font_normal {
+  font-weight: normal;
+}
+
+#vmorelkfvp .gt_font_bold {
+  font-weight: bold;
+}
+
+#vmorelkfvp .gt_font_italic {
+  font-style: italic;
+}
+
+#vmorelkfvp .gt_super {
+  font-size: 65%;
+}
+
+#vmorelkfvp .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+&lt;/style&gt;
+&lt;div id=&#34;vmorelkfvp&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+  &lt;thead class=&#34;gt_header&#34;&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_left&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Parameter&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Coefficient&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;SE&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;95% CI&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;t(144)&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;p&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;(Intercept)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;3.81&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.06&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(3.70, 3.93)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;65.50&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Sepal.Length (1st degree)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;4.06&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.47&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(3.14, 4.98)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;8.70&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Sepal.Length (2nd degree)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-1.30&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.31&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.92, -0.68)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-4.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Species (versicolor)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-1.01&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.56, -0.46)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-3.62&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Species (virginica)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.99&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.29&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-1.55, -0.43)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-3.48&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;&amp;lt; .001&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;gt_row gt_left&#34;&gt;Petlen (4-7)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.14&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.28&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;(-0.69, 0.42)&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;-0.48&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34;&gt;0.630 &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot class=&#34;gt_sourcenotes&#34;&gt;&lt;/tfoot&gt;
+  
+&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>parameters</category>
+      
+      
+            <category>R</category>
+      
+            <category>parameters</category>
+      
+    </item>
+    
+    <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>/blog/posts/parameters_and_see_update/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_and_see_update/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>
 
 
@@ -70,7 +1247,7 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; creates a so called “forest plot”. In case of models with multiple components, parameters are separated into facets by model component.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- model_parameters(model)
 plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---bayesian-mixed-models-with-brms&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Bayesian Mixed Models with brms&lt;/h3&gt;
@@ -129,10 +1306,10 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## zi_Intercept |   1.49 | [ 0.44,  3.33] |   100% |     0.02% | 848 | 1.002&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;plot()&lt;/code&gt; now creates four facets by default. Note that plots from the &lt;strong&gt;parameters&lt;/strong&gt;-package create forest plots. If you prefer plots that show the complete posterior distribution, you may rather use functions from the &lt;strong&gt;bayestestRR&lt;/strong&gt;-package, as shown &lt;a href=&#34;https://easystats.github.io/see/articles/bayestestR.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;You can modify the layout with &lt;code&gt;n_columns&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result, n_columns = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;examples---meta-analysis-with-metafor&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Examples - Meta-Analysis with metafor&lt;/h3&gt;
@@ -156,7 +1333,7 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## Overall   |       -0.18 | 0.44 | [-1.05,  0.68] | -0.42 | 0.676  |&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Above you see the coefficients, their standard errors and the “weight”, based on the inverse variance. When you plot the results, the dot-geoms have different sizes, depending on the weight of the study (similar to &lt;code&gt;metafor::forest()&lt;/code&gt;).&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(result)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_and_see_update_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Check out&lt;/strong&gt; more examples and documentation &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;parameters&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/see/&#34;&gt;&lt;strong&gt;here (for &lt;em&gt;see&lt;/em&gt;&lt;/strong&gt;)&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -192,10 +1369,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>/blog/posts/parameters_v2/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>
 
 
@@ -282,10 +1459,10 @@ result&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>/blog/posts/parameters_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>
 
 
@@ -334,7 +1511,7 @@ model_parameters(model, standardize = &amp;quot;refit&amp;quot;)&lt;/code&gt;&lt
 lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;gt;% 
   model_parameters() %&amp;gt;% 
   plot()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/parameters_presentation_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Bayesian models&lt;/h3&gt;

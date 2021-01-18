@@ -1,21 +1,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>performance on easystats</title>
-    <link>/blog/categories/performance/</link>
+    <link>https://easystats.github.io/blog/categories/performance/</link>
     <description>Recent content in performance on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/performance/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/performance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>/blog/posts/performance_check_collinearity/</link>
+      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_check_collinearity/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>
 
 
@@ -53,7 +53,7 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# plot results
 x &amp;lt;- check_collinearity(model)
 plot(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;check-zero-inflated-mixed-models-for-multicollinearity&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Check Zero-Inflated Mixed Models for Multicollinearity&lt;/h2&gt;
@@ -101,7 +101,7 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
 ##      mined 1.08         1.04&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As you can see, the &lt;code&gt;print()&lt;/code&gt; method separates the results into the &lt;em&gt;count&lt;/em&gt; and &lt;em&gt;zero-inflated&lt;/em&gt; model components for a clearer output. Similar, &lt;code&gt;plot()&lt;/code&gt; produces facets for each components, so it’s easier to understand.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(check_collinearity(model))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://easystats.github.io/blog/blog/posts/performance_check_collinearity_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;remedies-for-multicollinearity&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Remedies for Multicollinearity&lt;/h2&gt;
@@ -133,10 +133,10 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>
 
 
