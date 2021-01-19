@@ -82,7 +82,7 @@ plot(ci(x, ci=0.95)) +
 That means that we can roughly approximate the 95\% range from the SD... and *vice versa*. If a 95\% range is [2, 10], it means that the SD is probably somewhere around `(10 - 2) / 4 = 2`. And this means that there is a rough correspondance between the 95\% CI and the SD, connecting these two concepts in a more general and intuitive understanding of a distribution
 
 
-**I see you comming**. *"But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal"*. *"This is misguided and will create more confusion in the minds of the padawan"*. It's true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I'm not sure.
+**I see you coming**. *"But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal"*. *"This is misguided and will create more confusion in the minds of the padawan"*. It's true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I'm not sure.
 
 All in all, these are some elements that could be made to support the usage of the 95\% range. They might not be the strongest arguments, which opens up a debate.
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>coefficients on easystats</title>
@@ -29,7 +29,7 @@ Before we start introducing some of the new features, we’d like to explain why
       <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
 The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
-The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>
+The main function, model_parameters(), can be seen as an alternative to broom::tidy().</description>
     </item>
     
     <item>

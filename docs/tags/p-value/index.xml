@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>p-value on easystats</title>
@@ -18,7 +18,7 @@
       
       <guid>https://easystats.github.io/blog/posts/bayestestr_pd/</guid>
       <description>The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
-Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i.</description>
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means.</description>
     </item>
     
   </channel>

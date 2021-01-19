@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -44,7 +44,7 @@
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
 
 
 <link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -220,6 +220,9 @@
   
   <div class="post">
     
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, <strong>this diversity makes it hard for developpers</strong> that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as <strong>parameters names</strong>, <strong>formulae</strong>, <strong>data</strong>, etc.) is <strong>not unified</strong>, forcing the developers to spend some time figuring out how to do it for each model type.</p>
@@ -253,7 +256,10 @@ library(insight)  # Load the package</code></pre>
 </ul>
 <pre class="r"><code>find_formula(model)</code></pre>
 <pre><code>&gt; $conditional
-&gt; Sepal.Length ~ Species</code></pre>
+&gt; Sepal.Length ~ Species
+&gt; 
+&gt; attr(,&quot;class&quot;)
+&gt; [1] &quot;insight_formula&quot; &quot;list&quot;</code></pre>
 <ul>
 <li>Find the <strong>variables in the formula</strong>:</li>
 </ul>
@@ -287,7 +293,7 @@ library(insight)  # Load the package</code></pre>
     </a>
     
     
-    <a href="/blog/posts/bayestestr_presentation/" class="navigation-next">
+    <a href="/blog/posts/bayestestr_presentation.knit/" class="navigation-next">
       <span class="navigation-tittle">Describe and understand Bayesian models and posteriors using bayestestR</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

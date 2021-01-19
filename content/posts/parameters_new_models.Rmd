@@ -20,9 +20,9 @@ options(knitr.kable.NA = '',
         dpi=450)
 ```
 
-You probably already have heard of the [*parameters* package](https://easystats.github.io/parameters/), a light-weight package to extract, compute and explore the parameters of statistical models using R (if not, there is a related [publication](https://joss.theoj.org/papers/10.21105/joss.02445) introducing the package's main features).
+You probably already have heard of the [*parameters* package](https://easystats.github.io/parameters/), a light-weight package to **extract, compute and explore the parameters of statistical models** using R (if not, there is a related [publication](https://joss.theoj.org/papers/10.21105/joss.02445) introducing the package's main features).
 
-In this post, we like to introduce a new feature that facilitates nicely rendered output in markdown or HTML format (including PDFs). This allows you to easily create pretty tables of model summaries, for a large variety of models.
+In this post, we like to introduce a new feature that facilitates nicely rendered output in **markdown** or **HTML** format (including **PDFs**). This allows you to easily create pretty tables of model summaries, for a large variety of models.
 
 The *parameters* package, together with the [*insight* package](https://easystats.github.io/insight/), provides those tools to format the layout and style of tables from model parameters. The easy way is using the `model_parameters()` function, where usually don't have to take care about formatting and layout, at least not for simple purposes like printing to the console or inside rmarkdown documents. However, sometimes you may want to do the formatting steps manually. This blog post introduces the various functions that are used for parameters table formatting.
 

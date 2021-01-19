@@ -34,67 +34,59 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/resources/</guid>
-      <description>
-
-&lt;h2 id=&#34;learn-r&#34;&gt;Learn R&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;learn-r&#34;&gt;Learn R&lt;/h2&gt;
 &lt;p&gt;Here are some links to get started with R:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;&lt;strong&gt;R for Datascience&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://bookdown.org/ndphillips/YaRrr/&#34;&gt;&lt;strong&gt;YaRrr! The Pirate&amp;rsquo;s Guide to R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.yan-holtz.com/teaching&#34;&gt;&lt;strong&gt;Yan Holtz&amp;rsquo;s tutorials&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://gvwilson.github.io/tidynomicon/&#34;&gt;&lt;strong&gt;The Tidynomicon: A Brief Introduction to R for Python Programmers&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.statmethods.net/r-tutorial/index.html&#34;&gt;&lt;strong&gt;Quick-R&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.edx.org/learn/r-programming&#34;&gt;&lt;strong&gt;EdX courses&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/user/TheLearnR/&#34;&gt;&lt;strong&gt;LearnR Youtube Channel&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;&lt;strong&gt;R for Datascience&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://bookdown.org/ndphillips/YaRrr/&#34;&gt;&lt;strong&gt;YaRrr! The Pirate&amp;rsquo;s Guide to R&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yan-holtz.com/teaching&#34;&gt;&lt;strong&gt;Yan Holtz&amp;rsquo;s tutorials&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gvwilson.github.io/tidynomicon/&#34;&gt;&lt;strong&gt;The Tidynomicon: A Brief Introduction to R for Python Programmers&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.statmethods.net/r-tutorial/index.html&#34;&gt;&lt;strong&gt;Quick-R&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edx.org/learn/r-programming&#34;&gt;&lt;strong&gt;EdX courses&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/user/TheLearnR/&#34;&gt;&lt;strong&gt;LearnR Youtube Channel&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
-
 &lt;p&gt;Here are some links of blogs and such to keep in touch with this
 evolving field:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/&#34;&gt;&lt;strong&gt;r-bloggers&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rweekly.org&#34;&gt;&lt;strong&gt;r-weekly&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;for-psychology&#34;&gt;For Psychology&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://learningstatisticswithr.com/&#34;&gt;&lt;strong&gt;Learning Statistics with R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://psyr.org/&#34;&gt;&lt;strong&gt;R for Psychological Science&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/singmann/mixed_model_workshop&#34;&gt;&lt;strong&gt;Statistical Modeling and Mixed Models with R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;bayesian-statistics&#34;&gt;Bayesian Statistics&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;&lt;strong&gt;Bayesian Stats Tutorial&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://fabiandablander.com/r/Bayes-Potter.html&#34;&gt;&lt;strong&gt;Introduction to Bayes factors with Harry Potter&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;miscellaneous&#34;&gt;Miscellaneous&lt;/h2&gt;
-
 &lt;p&gt;This section contains more scope-focused resources:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://christophm.github.io/interpretable-ml-book/&#34;&gt;&lt;strong&gt;Interpretable Machine Learning book&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://curranbauer.org/wp-content/uploads/2019/04/SEM-R-notes-for-web-2019.pdf&#34;&gt;&lt;strong&gt;Structural Equation Modeling using Lavaan&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://socviz.co/&#34;&gt;&lt;strong&gt;Data Visualization: A practical introduction&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://noamross.github.io/gams-in-r-course/&#34;&gt;&lt;strong&gt;GAMs in R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m-clark.github.io/mixed-models-with-R/&#34;&gt;&lt;strong&gt;Mixed Models in R&lt;/strong&gt;&lt;/a&gt;
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m-clark.github.io/mixed-models-with-R/&#34;&gt;&lt;strong&gt;Mixed Models in R&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;contribute&#34;&gt;Contribute&lt;/h2&gt;
-
 &lt;p&gt;You can contribute to this post by adding more resources
 &lt;a href=&#34;https://github.com/easystats/blog/master/content/ressources.md&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>

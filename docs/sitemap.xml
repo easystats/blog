@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -38,12 +38,12 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/categories/r/</loc>
+    <loc>https://easystats.github.io/blog/tags/r/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/tags/r/</loc>
+    <loc>https://easystats.github.io/blog/categories/r/</loc>
     <lastmod>2020-10-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -53,12 +53,12 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/categories/bayestestr/</loc>
+    <loc>https://easystats.github.io/blog/tags/bayestestr/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/tags/bayestestr/</loc>
+    <loc>https://easystats.github.io/blog/categories/bayestestr/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,12 +68,17 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/categories/correlation/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_95.knit/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/tags/correlation/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/categories/correlation/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -84,6 +89,11 @@
   
   <url>
     <loc>https://easystats.github.io/blog/posts/correlation_presentation/</loc>
+    <lastmod>2020-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</loc>
     <lastmod>2020-03-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,7 +133,17 @@
   </url>
   
   <url>
+    <loc>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</loc>
+    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</loc>
     <lastmod>2019-12-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,12 +158,12 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/categories/see/</loc>
+    <loc>https://easystats.github.io/blog/tags/see/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/tags/see/</loc>
+    <loc>https://easystats.github.io/blog/categories/see/</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -198,7 +218,17 @@
   </url>
   
   <url>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</loc>
+    <lastmod>2019-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://easystats.github.io/blog/posts/bayestestr_v2/</loc>
+    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</loc>
     <lastmod>2019-06-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -273,6 +303,11 @@
   </url>
   
   <url>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</loc>
+    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://easystats.github.io/blog/tags/posterior/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
@@ -298,12 +333,12 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/categories/insight/</loc>
+    <loc>https://easystats.github.io/blog/tags/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/tags/insight/</loc>
+    <loc>https://easystats.github.io/blog/categories/insight/</loc>
     <lastmod>2019-04-02T00:00:00+00:00</lastmod>
   </url>
   

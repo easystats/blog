@@ -6,6 +6,9 @@ categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR", "posterior", "rstanarm", "brms"]
 ---
 
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p><img src="https://github.com/easystats/bayestestR/raw/master/man/figures/logo.png" width="200px" /></p>
@@ -35,11 +38,11 @@ equivalence_test(model)</code></pre>
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [26.87 46.80]
-## wt          |  Rejected |      0.00 % | [-4.29 -1.12]
-## cyl         | Undecided |     37.91 % | [-1.88  0.31]
-## gear        | Undecided |     41.79 % | [-2.17  1.67]
-## am          | Undecided |     19.35 % | [-0.98  4.66]
+## (Intercept) |  Rejected |      0.00 % | [26.33 46.80]
+## wt          |  Rejected |      0.00 % | [-4.19 -1.05]
+## cyl         | Undecided |     39.43 % | [-1.91  0.32]
+## gear        | Undecided |     41.73 % | [-2.33  1.66]
+## am          | Undecided |     18.53 % | [-1.21  4.42]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]</code></pre>
 <p>Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.</p>
 <pre class="r"><code># Do the test and plot results

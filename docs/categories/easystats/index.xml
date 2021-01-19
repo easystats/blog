@@ -17,6 +17,9 @@
       
       <guid>https://easystats.github.io/blog/posts/easystats_oneyear/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
@@ -55,6 +58,57 @@
 &lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>aniversary</category>
+      
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+    </item>
+    
+    <item>
+      <title>easystats: one year already. What&#39;s next?</title>
+      <link>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;happy-birthday-easystats&#34;&gt;Happy birthday easystats!&lt;/h2&gt;
+&lt;p&gt;About a year ago, I &lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;(Dom)&lt;/a&gt; sadly realised that the R package I was maintaining (&lt;a href=&#34;https://github.com/neuropsychology/psycho.R&#34;&gt;&lt;em&gt;psycho&lt;/em&gt;&lt;/a&gt;) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. &lt;strong&gt;Something had to be done.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I decided to get in touch with &lt;a href=&#34;https://github.com/strengejacke&#34;&gt;Daniel&lt;/a&gt;, &lt;em&gt;aka&lt;/em&gt; &lt;strong&gt;strengejacke&lt;/strong&gt; (for mysterious and very confusing reasons), the author of the &lt;a href=&#34;https://github.com/strengejacke&#34;&gt;&lt;em&gt;sjverse&lt;/em&gt;&lt;/a&gt;, a collection of awesome packages which scope wasn&amp;rsquo;t too distant from my own one. Quickly, we realised that beyond facing similar issues, we shared the same vision: &lt;strong&gt;Make R stats easy again&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We were also agreeing on a possible way of reaching this goal. Build a new collection of packages that would work together to provide a smooth experience to getting stats, and all that entails, done in R (note that we preferred the workflow to be &lt;em&gt;easy&lt;/em&gt; rather than &lt;em&gt;tidy&lt;/em&gt;&amp;hellip; ;p). Most importantly, we shared the same values, including a commitment to open-science, a desire for collaborative development, a focus on user- and beginner- friendliness, and a dedication to the Force.&lt;/p&gt;
+&lt;p&gt;And just like that, &lt;a href=&#34;https://github.com/orgs/easystats/&#34;&gt;&lt;strong&gt;easystats was born&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But this project wouldn&amp;rsquo;t have grown, nor still exist, if we hadn&amp;rsquo;t manage to bring in the &lt;strong&gt;most talented people&lt;/strong&gt;, creating an awesome &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;team&lt;/a&gt; which diversity in experience and skills offers an incredibly valuable resource. Shout-out to the ultimate Bayes master &lt;a href=&#34;https://github.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;, to our socio-political expert &lt;a href=&#34;https://github.com/pdwaggoner&#34;&gt;@pdwaggoner&lt;/a&gt;, to &lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;, the compulsive model supporter and author of the famous &lt;a href=&#34;https://github.com/IndrajeetPatil/ggstatsplot&#34;&gt;&lt;em&gt;ggstatsplot&lt;/em&gt;&lt;/a&gt;, to our big-daddy-markdown-mate &lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;, to the best dinosaur stats explainer  &lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt; and to the &lt;a href=&#34;https://github.com/jacob-long/interactions&#34;&gt;&lt;em&gt;interaction&lt;/em&gt;&lt;/a&gt; genius &lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;. A big thank you to this great team. Make sure to check-out their awesome work and research!&lt;/p&gt;
+&lt;p&gt;Together in one year, we created &lt;strong&gt;9 packages&lt;/strong&gt;, pushed 7 of them to &lt;strong&gt;CRAN&lt;/strong&gt; (which have now been downloaded more than &lt;strong&gt;half a million times&lt;/strong&gt; &lt;em&gt;(!!!)&lt;/em&gt;), wrote many &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;blogposts&lt;/strong&gt;&lt;/a&gt;, and made just about a thousand &lt;a href=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/misc/notthememe.jpg&#34;&gt;memes&lt;/a&gt;. But most importantly, we all &lt;strong&gt;learned a lot&lt;/strong&gt;, as this project partly became the opportunity for us to drastically improve our R, stats, programming and light-saber skills. Moreover, it also ended up being a great occasion and place to have &lt;strong&gt;fun&lt;/strong&gt;, contribute to the &lt;strong&gt;community&lt;/strong&gt;, and become part of a &lt;strong&gt;network&lt;/strong&gt; of talented and open-minded people with similar interests. And that is, by far, one of the biggest take-away.&lt;/p&gt;
+&lt;p&gt;And yet, although fun is good, it doesn&amp;rsquo;t make for a living (unless you&amp;rsquo;re Mr Bean). And the &lt;strong&gt;easystats&lt;/strong&gt; project also turned out to be a legit academic research project with legit academic outcomes. This year, we published &lt;strong&gt;3 papers&lt;/strong&gt; (&lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.01412&#34;&gt;&lt;em&gt;insight&lt;/em&gt;&lt;/a&gt;]; &lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.01541&#34;&gt;&lt;em&gt;bayestestR&lt;/em&gt;&lt;/a&gt; and &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;another Bayes-related one&lt;/a&gt;) related to easystats, and we plan on keeping up &lt;em&gt;at least&lt;/em&gt; that rhythm for the year to come &lt;em&gt;(now might be your chance to get involved ;)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Aside from publications, we also plan on releasing the remaining packages (What do I hear? &amp;ldquo;fixing &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;&lt;em&gt;report&lt;/em&gt;&lt;/a&gt;&amp;quot;?), continue improving the existing ones and adding even more awesome features and documentation.&lt;/p&gt;
+&lt;p&gt;All in all, &lt;strong&gt;easystats&lt;/strong&gt; is a living and breathing demonstration of how an open-science project can be born, keep growing and improving like an old wine. And the beauty, and tragedy, lies in the fact that it&amp;rsquo;s arguably against all the odds offered by the current academic system. We have &lt;strong&gt;no funding&lt;/strong&gt; (however, very interested in getting some&amp;hellip; &lt;em&gt;*wink wink*&lt;/em&gt;), no initial publication goals, and no direct obligation or pressure to work to it. We are all contributing to it on our &lt;strong&gt;free time&lt;/strong&gt;, out of &lt;strong&gt;pure enthusiasm&lt;/strong&gt; and interest in making this place a lil&amp;rsquo; bit better.&lt;/p&gt;
+&lt;p&gt;So, as a closing note, because happiness is only useful when it is shared, we&amp;rsquo;d like to thank &lt;strong&gt;you, user of easystats&lt;/strong&gt;, for directly contributing to our passion. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;hellip;And if you&amp;rsquo;re not yet a user or a contributor&amp;hellip; what are you waiting for?!&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
             <category>R</category>

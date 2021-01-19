@@ -17,6 +17,9 @@
       
       <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;img src=&#34;https://github.com/easystats/performance/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
@@ -138,6 +141,9 @@ check_collinearity(model)&lt;/code&gt;&lt;/pre&gt;
       
       <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;img src=&#34;https://github.com/easystats/performance/raw/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
@@ -179,9 +185,9 @@ icc(model)&lt;/code&gt;&lt;/pre&gt;
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
 &amp;gt; 
-&amp;gt;    AIC |    BIC | R2_conditional | R2_marginal |  ICC | RMSE
-&amp;gt; ------------------------------------------------------------
-&amp;gt; 106.99 | 119.03 |           0.91 |        0.22 | 0.89 | 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; AIC    |    BIC | R2 (cond.) | R2 (marg.) |  ICC | RMSE | Sigma
+&amp;gt; ---------------------------------------------------------------
+&amp;gt; 106.99 | 119.03 |       0.91 |       0.22 | 0.89 | 0.31 |  0.32&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;bayesian-mixed-models&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Bayesian Mixed Models&lt;/h3&gt;
@@ -196,9 +202,9 @@ model &amp;lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris
 model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; # Indices of model performance
 &amp;gt; 
-&amp;gt;   ELPD | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2_marginal | R2_adjusted | RMSE
-&amp;gt; -------------------------------------------------------------------------------------
-&amp;gt; -43.34 |   10.14 | 86.68 |    20.27 | 86.64 | 0.47 |        0.69 |        0.46 | 0.31&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; ELPD   | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2 (marg.) | R2 (adj.) | RMSE | Sigma
+&amp;gt; ------------------------------------------------------------------------------------------
+&amp;gt; -43.35 |   10.16 | 86.69 |    20.31 | 86.62 | 0.47 |       0.68 |      0.45 | 0.31 |  0.32&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

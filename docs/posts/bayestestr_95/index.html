@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.58.3" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -48,7 +48,7 @@ One of the issue that traditional confidence intervals are often being interpret
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
 
 
 <link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -215,6 +215,9 @@ One of the issue that traditional confidence intervals are often being interpret
   
   <div class="post">
     
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p><strong>TLDR:</strong> <a href="https://github.com/easystats/bayestestR"><strong>BayestestR</strong></a> <strong>currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what?</strong> <a href="https://github.com/easystats/bayestestR/issues/250"><strong><em>Join the discussion here.</em></strong></a></p>
@@ -235,8 +238,9 @@ One of the issue that traditional confidence intervals are often being interpret
 <p>People often use the credible interval to describe the <strong>uncertainty</strong> related to their parameters, because <strong>uncertainty</strong> is key and should be embraced. But you might ask, why not use another index of uncertainty, - and dispersion, such as for instance the standard deviation <strong>SD</strong>?</p>
 <p>Well, some people describe both, but in that case you might also add the MAD, and all ranges of the credible interval. In fact, you might as well return the whole density plot (though if you can, it’s the best thing to do. And do check out the great <a href="https://github.com/mjskay/tidybayes/"><strong>tidybayes package</strong> for awesome visualization tools</a>).</p>
 <p>So, what are the advantages of the CI over the SD? Well, one difference is that the CI bounds are often seen as an approximation of the limits of a distribution (or its plausible region). What does it mean? Take this example. Let’s imagine this distribution of mean 0 and SD 1 made of a lot of points:</p>
-<pre class="r"><code>library(bayestestR)
-library(see)
+<pre class="r"><code>library(bayestestR)</code></pre>
+<pre><code>## Note: The default CI width (currently `ci=0.89`) might change in future versions (see https://github.com/easystats/bayestestR/discussions/250). To prevent any issues, please set it explicitly when using bayestestR functions, via the &#39;ci&#39; argument.</code></pre>
+<pre class="r"><code>library(see)
 
 x &lt;- distribution_normal(10^6, mean = 0, sd = 1)
 
@@ -258,7 +262,7 @@ plot(ci(x, ci=0.95)) +
   theme_modern()</code></pre>
 <p><img src="/blog/posts/bayestestR_95_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>That means that we can roughly approximate the 95% range from the SD… and <em>vice versa</em>. If a 95% range is [2, 10], it means that the SD is probably somewhere around <code>(10 - 2) / 4 = 2</code>. And this means that there is a rough correspondance between the 95% CI and the SD, connecting these two concepts in a more general and intuitive understanding of a distribution</p>
-<p><strong>I see you comming</strong>. <em>“But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal”</em>. <em>“This is misguided and will create more confusion in the minds of the padawan”</em>. It’s true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I’m not sure.</p>
+<p><strong>I see you coming</strong>. <em>“But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal”</em>. <em>“This is misguided and will create more confusion in the minds of the padawan”</em>. It’s true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I’m not sure.</p>
 <p>All in all, these are some elements that could be made to support the usage of the 95% range. They might not be the strongest arguments, which opens up a debate.</p>
 </div>
 <div id="what-do-you-think" class="section level2">
@@ -296,9 +300,9 @@ plot(ci(x, ci=0.95)) +
 
 <div class="navigation navigation-single">
     
-    <a href="/blog/posts/correlation_multilevel/" class="navigation-prev">
+    <a href="/blog/posts/bayestestr_95.knit/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Multilevel Correlations: A New Method for Common Problems</span>
+      <span class="navigation-tittle">In defence of the 95% CI</span>
     </a>
     
     

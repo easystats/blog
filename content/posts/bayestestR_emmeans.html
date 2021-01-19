@@ -6,6 +6,9 @@ categories: ["R", "bayestestR"]
 tags: ["R", "easystats", "bayestestR"]
 ---
 
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <div id="the-problem-with-null-effects" class="section level1">
@@ -58,7 +61,7 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -1.66    -0.128
+##  color - monochromatic   -0.894     -1.67    -0.147
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -67,18 +70,18 @@ c_color_main</code></pre>
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.940     -1.99     0.115
+##  color - monochromatic   -0.898     -1.96     0.107
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.949     -1.98     0.149
+##  color - monochromatic   -0.887     -1.89     0.212
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
 <pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.00364      -1.5      1.36
+##  color - monochromatic round - square   0.0108     -1.36      1.38
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -91,11 +94,11 @@ c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all</code></pre>
 <pre><code>##  contrast              color_pairwise        shape_pairwise estimate lower.HPD
-##  color - monochromatic .                     .                -0.944     -1.66
-##  .                     color - monochromatic round - square   -0.004     -1.50
+##  color - monochromatic .                     .                -0.894     -1.67
+##  .                     color - monochromatic round - square    0.011     -1.36
 ##  upper.HPD
-##     -0.128
-##      1.362
+##     -0.147
+##      1.378
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -121,22 +124,22 @@ c_color_all</code></pre>
 <tr class="odd">
 <td>2</td>
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.944</td>
-<td align="right">0.385</td>
+<td align="right">-0.894</td>
+<td align="right">0.395</td>
 <td align="right">90</td>
-<td align="right">-1.58</td>
-<td align="right">-0.302</td>
-<td align="right">3.031</td>
+<td align="right">-1.50</td>
+<td align="right">-0.227</td>
+<td align="right">3.128</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">-0.004</td>
-<td align="right">0.732</td>
+<td align="right">0.011</td>
+<td align="right">0.700</td>
 <td align="right">90</td>
-<td align="right">-1.25</td>
-<td align="right">1.135</td>
-<td align="right">0.227</td>
+<td align="right">-1.16</td>
+<td align="right">1.145</td>
+<td align="right">0.272</td>
 </tr>
 </tbody>
 </table>
