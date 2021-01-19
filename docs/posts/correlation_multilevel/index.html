@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -31,7 +31,7 @@ install.packages(&quot;correlation&quot;)library(correlation)DataImagine we h
 You can install the updated version and load the package as follows:
 install.packages(&quot;correlation&quot;)library(correlation)DataImagine we have an experiment in which 10 individuals completed a task with 100 trials. For each of the 1000 total trials, we measured two things, V1 and V2, and our research aims at investingating the link between these two variables." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/correlation_multilevel/" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/correlation_multilevel/" />
 <meta property="article:published_time" content="2020-04-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-04-14T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
@@ -74,14 +74,14 @@ install.packages(&quot;correlation&quot;)library(correlation)DataImagine we h
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -149,7 +149,7 @@ install.packages(&quot;correlation&quot;)library(correlation)DataImagine we h
     </div>
     
 <div class="copyright">
-  &copy; 2020 easystats
+  &copy; 2021 easystats
   
     <a href="https://github.com/easystats/easystats">GPL-3.0</a>
   
@@ -215,6 +215,9 @@ install.packages(&quot;correlation&quot;)library(correlation)DataImagine we h
   
   <div class="post">
     
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p>In this tutorial, we will introduce <strong>multilevel correlations</strong> (or <em>hierarchical</em> / <em>random-effects</em> correlations) and how to compute them using the new <a href="https://github.com/easystats/correlation"><strong>correlations</strong></a> package from the <a href="https://github.com/easystats"><strong>easystats suite</strong></a>.</p>
@@ -239,9 +242,11 @@ ggplot(data, aes(x=V1, y=V2)) +
 <div id="simple-correlation" class="section level2">
 <h2>Simple correlation</h2>
 <pre class="r"><code>correlation(data)</code></pre>
-<pre><code>## Parameter1 | Parameter2 |     r |         95% CI |      t |  df |      p |  Method | n_Obs
-## ------------------------------------------------------------------------------------------
-## V1         |         V2 | -0.84 | [-0.86, -0.82] | -48.77 | 998 | &lt; .001 | Pearson |  1000</code></pre>
+<pre><code>## Parameter1 | Parameter2 |     r |         95% CI | t(998) |      p |  Method | n_Obs
+## ------------------------------------------------------------------------------------
+## V1         |         V2 | -0.84 | [-0.86, -0.82] | -48.77 | &lt; .001 | Pearson |  1000
+## 
+## p-value adjustment method: Holm (1979)</code></pre>
 <p>Indeed, there is <strong>strong, negative and significant correlation</strong> between V1 and V2. Great, can we go ahead and <strong>publish these results in PNAS</strong>?</p>
 </div>
 <div id="the-simpsons-paradox" class="section level2">
@@ -260,9 +265,11 @@ ggplot(data, aes(x=V1, y=V2)) +
 <p><strong>Multilevel <em>(as in multi-group)</em> correlations allow us to account for differences between groups</strong>. It is based on a partialization of the group variable, entered as a random factor in a mixed linear regression.</p>
 <p>You can compute them with the <a href="https://github.com/easystats/correlation"><strong>correlations</strong></a> package by setting the <code>multilevel</code> arguent to <code>TRUE</code>.</p>
 <pre class="r"><code>correlation(data, multilevel = TRUE)</code></pre>
-<pre><code>## Parameter1 | Parameter2 |    r |           CI |     t |  df |      p |  Method | n_Obs
-## --------------------------------------------------------------------------------------
-## V1         |         V2 | 0.50 | [0.45, 0.55] | 18.23 | 998 | &lt; .001 | Pearson |  1000</code></pre>
+<pre><code>## Parameter1 | Parameter2 |    r |           CI | t(998) |      p |  Method | n_Obs
+## ---------------------------------------------------------------------------------
+## V1         |         V2 | 0.50 | [0.45, 0.55] |  18.24 | &lt; .001 | Pearson |  1000
+## 
+## p-value adjustment method: Holm (1979)</code></pre>
 <p><strong>Dayum!</strong> We were too hasty in our conclusions! Taking the group into account seems to be super important.</p>
 <p>Note: In this simple case where only two variables are of interest, it would be of course best to directly proceed using a mixed regression model instead of correlations. That being said, the latter can be useful for exploratory analysis, when multiple variables are of interest, or in combination with a network or structural approach.</p>
 </div>
@@ -301,7 +308,7 @@ ggplot(data, aes(x=V1, y=V2)) +
     </a>
     
     
-    <a href="/blog/posts/bayestestr_95/" class="navigation-next">
+    <a href="/blog/posts/bayestestr_95.knit/" class="navigation-next">
       <span class="navigation-tittle">In defence of the 95% CI</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

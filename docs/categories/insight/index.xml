@@ -1,22 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>insight on easystats</title>
-    <link>/blog/categories/insight/</link>
+    <link>https://easystats.github.io/blog/categories/insight/</link>
     <description>Recent content in insight on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/insight/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/insight/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, &lt;strong&gt;this diversity makes it hard for developpers&lt;/strong&gt; that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as &lt;strong&gt;parameters names&lt;/strong&gt;, &lt;strong&gt;formulae&lt;/strong&gt;, &lt;strong&gt;data&lt;/strong&gt;, etc.) is &lt;strong&gt;not unified&lt;/strong&gt;, forcing the developers to spend some time figuring out how to do it for each model type.&lt;/p&gt;
@@ -50,7 +53,10 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_formula(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;gt; $conditional
-&amp;gt; Sepal.Length ~ Species&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; Sepal.Length ~ Species
+&amp;gt; 
+&amp;gt; attr(,&amp;quot;class&amp;quot;)
+&amp;gt; [1] &amp;quot;insight_formula&amp;quot; &amp;quot;list&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;Find the &lt;strong&gt;variables in the formula&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;

@@ -6,6 +6,9 @@ categories: ["R", "parameters"]
 tags: ["R", "easystats", "parameters", "standardize", "coefficients"]
 ---
 
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p><img src="https://github.com/easystats/parameters/raw/master/man/figures/logo.png" width="200px" /></p>
@@ -31,9 +34,9 @@ df$Sepal.Big &lt;- ifelse(df$Sepal.Width &gt;= 3, &quot;Yes&quot;, &quot;No&quot
 
 model &lt;- aov(Sepal.Length ~ Sepal.Big, data = df)
 model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
-<pre><code>## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta_Sq (partial)
-## -----------------------------------------------------------------------------
-## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 |             0.01
+<pre><code>## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta2
+## -----------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 | 0.01
 ## Residuals |      101.07 | 148 |        0.68 |      |       |</code></pre>
 </div>
 <div id="mixed-models" class="section level3">
@@ -42,11 +45,11 @@ model_parameters(model, eta_squared = &quot;partial&quot;)</code></pre>
 
 model &lt;- lmer(Sepal.Width ~ Petal.Length + Petal.Width + (1|Species), data = iris)
 model_parameters(model, standardize = &quot;refit&quot;)</code></pre>
-<pre><code>## Parameter    | Coefficient |   SE |        95% CI |    t |  df |      p
-## -----------------------------------------------------------------------
-## (Intercept)  |        0.00 | 1.51 | [-2.96, 2.96] | 0.00 | 145 | 1.000 
-## Petal.Length |        0.59 | 0.26 | [ 0.08, 1.10] | 2.26 | 145 | 0.024 
-## Petal.Width  |        1.07 | 0.24 | [ 0.60, 1.53] | 4.49 | 145 | &lt; .001</code></pre>
+<pre><code>## Parameter    | Coefficient |   SE |        95% CI |   t(145) |      p
+## ---------------------------------------------------------------------
+## (Intercept)  |    3.53e-13 | 1.51 | [-2.96, 2.96] | 2.33e-13 | &gt; .999
+## Petal.Length |        0.59 | 0.26 | [ 0.08, 1.10] |     2.26 | 0.024 
+## Petal.Width  |        1.07 | 0.24 | [ 0.60, 1.53] |     4.49 | &lt; .001</code></pre>
 <p>And you can also <strong>directly plot the parameters</strong> with the see package!</p>
 <pre class="r"><code>library(see)
 
@@ -61,11 +64,13 @@ lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&gt;%
 
 model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
-<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |               Prior
-## -----------------------------------------------------------------------------------------------
-## (Intercept) |  39.65 | [37.16, 42.75] |   100% |        0% | 1.000 | 5136 | Normal (0 +- 60.27)
-## wt          |  -3.17 | [-4.45, -1.94] |   100% |     0.12% | 1.000 | 2425 | Normal (0 +- 15.40)
-## cyl         |  -1.51 | [-2.13, -0.80] | 99.98% |     1.85% | 1.001 | 2479 |  Normal (0 +- 8.44)</code></pre>
+<pre><code>## # Fixed effects
+## 
+## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
+## ---------------------------------------------------------------------------------------------------
+## (Intercept) |  39.69 | [36.99, 42.62] |   100% |        0% | 1.000 | 4502 | Normal (20.09 +- 15.07)
+## wt          |  -3.19 | [-4.44, -1.96] |   100% |     0.10% | 1.001 | 1975 |  Normal (0.00 +- 15.40)
+## cyl         |  -1.51 | [-2.22, -0.85] | 99.95% |     1.90% | 1.002 | 1907 |   Normal (0.00 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>

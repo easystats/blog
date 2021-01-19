@@ -6,6 +6,9 @@ categories: ["R", "insight"]
 tags: ["R", "easystats", "insight", "access", "models", "data"]
 ---
 
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, <strong>this diversity makes it hard for developpers</strong> that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as <strong>parameters names</strong>, <strong>formulae</strong>, <strong>data</strong>, etc.) is <strong>not unified</strong>, forcing the developers to spend some time figuring out how to do it for each model type.</p>
@@ -39,7 +42,10 @@ library(insight)  # Load the package</code></pre>
 </ul>
 <pre class="r"><code>find_formula(model)</code></pre>
 <pre><code>&gt; $conditional
-&gt; Sepal.Length ~ Species</code></pre>
+&gt; Sepal.Length ~ Species
+&gt; 
+&gt; attr(,&quot;class&quot;)
+&gt; [1] &quot;insight_formula&quot; &quot;list&quot;</code></pre>
 <ul>
 <li>Find the <strong>variables in the formula</strong>:</li>
 </ul>

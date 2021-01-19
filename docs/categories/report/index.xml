@@ -1,22 +1,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>report on easystats</title>
-    <link>/blog/categories/report/</link>
+    <link>https://easystats.github.io/blog/categories/report/</link>
     <description>Recent content in report on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/blog/categories/report/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://easystats.github.io/blog/categories/report/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;strong&gt;Psychological science is still massively using analysis of variance (ANOVA)&lt;/strong&gt;. Despite its relative simplicity, I am very often confronted to &lt;strong&gt;errors in its reporting&lt;/strong&gt;, for instance in student’s theses or manuscripts, or even published papers (See the excellent &lt;a href=&#34;http://statcheck.io/&#34;&gt;statcheck&lt;/a&gt; to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.&lt;/p&gt;
@@ -72,11 +75,14 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;

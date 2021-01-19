@@ -6,6 +6,9 @@ categories: ["R", "performance"]
 tags: ["R", "easystats", "performance", "R2", "ICC", "AIC"]
 ---
 
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p><img src="https://github.com/easystats/performance/raw/master/man/figures/logo.png" width="200px" /></p>
@@ -47,9 +50,9 @@ icc(model)</code></pre>
 model_performance(model)</code></pre>
 <pre><code>&gt; # Indices of model performance
 &gt; 
-&gt;    AIC |    BIC | R2_conditional | R2_marginal |  ICC | RMSE
-&gt; ------------------------------------------------------------
-&gt; 106.99 | 119.03 |           0.91 |        0.22 | 0.89 | 0.31</code></pre>
+&gt; AIC    |    BIC | R2 (cond.) | R2 (marg.) |  ICC | RMSE | Sigma
+&gt; ---------------------------------------------------------------
+&gt; 106.99 | 119.03 |       0.91 |       0.22 | 0.89 | 0.31 |  0.32</code></pre>
 </div>
 <div id="bayesian-mixed-models" class="section level3">
 <h3>Bayesian Mixed Models</h3>
@@ -64,9 +67,9 @@ model &lt;- stan_glmer(Sepal.Width ~ Petal.Length + (1|Species), data = iris)
 model_performance(model)</code></pre>
 <pre><code>&gt; # Indices of model performance
 &gt; 
-&gt;   ELPD | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2_marginal | R2_adjusted | RMSE
-&gt; -------------------------------------------------------------------------------------
-&gt; -43.34 |   10.14 | 86.68 |    20.27 | 86.64 | 0.47 |        0.69 |        0.46 | 0.31</code></pre>
+&gt; ELPD   | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2 (marg.) | R2 (adj.) | RMSE | Sigma
+&gt; ------------------------------------------------------------------------------------------
+&gt; -43.35 |   10.16 | 86.69 |    20.31 | 86.62 | 0.47 |       0.68 |      0.45 | 0.31 |  0.32</code></pre>
 <ul>
 <li><strong>Don’t forget to check out the</strong> <a href="https://easystats.github.io/performance/"><strong>documentation here</strong></a> <strong>for more!</strong></li>
 </ul>

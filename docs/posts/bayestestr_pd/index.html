@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -23,13 +23,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The p-direction: A Bayesian equivalent of the p-value?"/>
 <meta name="twitter:description" content="The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
-Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i."/>
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means."/>
 
 <meta property="og:title" content="The p-direction: A Bayesian equivalent of the p-value?" />
 <meta property="og:description" content="The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
-Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i." />
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/bayestestr_pd/" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/bayestestr_pd/" />
 <meta property="article:published_time" content="2020-02-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-26T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
@@ -72,14 +72,14 @@ Is there an equivalent of the p-value? Well, depends on what “equivalent” me
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -147,7 +147,7 @@ Is there an equivalent of the p-value? Well, depends on what “equivalent” me
     </div>
     
 <div class="copyright">
-  &copy; 2020 easystats
+  &copy; 2021 easystats
   
     <a href="https://github.com/easystats/easystats">GPL-3.0</a>
   
@@ -222,6 +222,9 @@ Is there an equivalent of the p-value? Well, depends on what “equivalent” me
   
   <div class="post">
     
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <p>The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some <strong>familiar grounding</strong>. And the <em>p</em>-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).</p>
@@ -237,10 +240,10 @@ Is there an equivalent of the p-value? Well, depends on what “equivalent” me
 
 model &lt;- lm(disp ~ carb, data = mtcars)
 parameters(model)</code></pre>
-<pre><code>## Parameter   | Coefficient |    SE |          95% CI |    t | df |     p
-## -----------------------------------------------------------------------
-## (Intercept) |      145.48 | 41.58 | [60.56, 230.40] | 3.50 | 30 | 0.001
-## carb        |       30.31 | 12.87 | [ 4.02,  56.59] | 2.35 | 30 | 0.025</code></pre>
+<pre><code>## Parameter   | Coefficient |    SE |          95% CI | t(30) |     p
+## -------------------------------------------------------------------
+## (Intercept) |      145.48 | 41.58 | [60.56, 230.40] |  3.50 | 0.001
+## carb        |       30.31 | 12.87 | [ 4.02,  56.59] |  2.35 | 0.025</code></pre>
 <p>The <em>p</em>-value of the linear relationship between the two variable is of <em>.025</em> (the second row in the <em>p</em> column). What does a Bayesian analysis tells us?</p>
 </div>
 <div id="bayesian-regression-with-flat-priors" class="section level2">
@@ -258,10 +261,12 @@ model &lt;-
     prior_intercept = NULL
   )</code></pre>
 <pre class="r"><code>parameters(model)</code></pre>
-<pre><code>## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
+<pre><code>## # Fixed effects
+## 
+## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
 ## --------------------------------------------------------------------------------------------------
-## (Intercept) | 145.97 | [78.68, 212.98] | 99.92% |     0.11% | 1.000 | 55624 |       Uniform ( +- )
-## carb        |  30.24 | [ 9.47,  51.26] | 98.80% |     8.50% | 1.000 | 52688 | Normal (0 +- 191.83)</code></pre>
+## (Intercept) | 145.87 | [77.91, 215.41] | 99.94% |     0.14% | 1.000 | 52545 |       Uniform ( +- )
+## carb        |  30.22 | [ 9.10,  51.92] | 98.68% |     8.89% | 1.000 | 52711 | Normal (0 +- 191.83)</code></pre>
 <p>It tells us that the <em>p</em>-direction is of 98.80%, i.e., <code>0.9880</code> (note that your results can slightly vary due to the random nature of the sampling; you can increase the number of iterations to get more stable results). We can quickly visualize its meaning as follows (with the <a href="https://github.com/easystats/see"><strong>see</strong></a> package):</p>
 <pre class="r"><code>library(see)
 
@@ -313,7 +318,7 @@ plot(p_direction(model))</code></pre>
     </a>
     
     
-    <a href="/blog/posts/correlation_presentation/" class="navigation-next">
+    <a href="/blog/posts/correlation_presentation.utf8/" class="navigation-next">
       <span class="navigation-tittle">The ulimate package for correlations (by easystats)</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

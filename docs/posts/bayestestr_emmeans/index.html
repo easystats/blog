@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -23,13 +23,13 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;"/>
 <meta name="twitter:description" content="The Problem with Null EffectsSay you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
-options(contrasts = c(&#39;contr.sum&#39;, &#39;contr."/>
+options(contrasts = c(&#39;contr."/>
 
 <meta property="og:title" content="Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;" />
 <meta property="og:description" content="The Problem with Null EffectsSay you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
-options(contrasts = c(&#39;contr.sum&#39;, &#39;contr." />
+options(contrasts = c(&#39;contr." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/bayestestr_emmeans/" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/bayestestr_emmeans/" />
 <meta property="article:published_time" content="2019-06-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-06-06T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
@@ -72,14 +72,14 @@ options(contrasts = c(&#39;contr.sum&#39;, &#39;contr." />
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -147,7 +147,7 @@ options(contrasts = c(&#39;contr.sum&#39;, &#39;contr." />
     </div>
     
 <div class="copyright">
-  &copy; 2020 easystats
+  &copy; 2021 easystats
   
     <a href="https://github.com/easystats/easystats">GPL-3.0</a>
   
@@ -213,6 +213,9 @@ options(contrasts = c(&#39;contr.sum&#39;, &#39;contr." />
   
   <div class="post">
     
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
 
 <div id="the-problem-with-null-effects" class="section level1">
@@ -265,7 +268,7 @@ stan_model &lt;- stan_lmer(RT ~ shape*color + (1 | ID), data = puzzles,
 <pre class="r"><code>c_color_main &lt;- pairs(emmeans(stan_model, ~ color))
 c_color_main</code></pre>
 <pre><code>##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.944     -1.66    -0.128
+##  color - monochromatic   -0.894     -1.67    -0.147
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -274,18 +277,18 @@ c_color_main</code></pre>
 pairs(em_color_simple, by = &quot;shape&quot;) # simple effects for color</code></pre>
 <pre><code>## shape = round:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.940     -1.99     0.115
+##  color - monochromatic   -0.898     -1.96     0.107
 ## 
 ## shape = square:
 ##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.949     -1.98     0.149
+##  color - monochromatic   -0.887     -1.89     0.212
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
 <pre class="r"><code>c_color_shape_interaction &lt;- contrast(em_color_simple, interaction = c(&quot;pairwise&quot;,&quot;pairwise&quot;))
 c_color_shape_interaction</code></pre>
 <pre><code>##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
-##  color - monochromatic round - square -0.00364      -1.5      1.36
+##  color - monochromatic round - square   0.0108     -1.36      1.38
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -298,11 +301,11 @@ c_color_all &lt;- rbind(c_color_main,
                      c_color_shape_interaction)
 c_color_all</code></pre>
 <pre><code>##  contrast              color_pairwise        shape_pairwise estimate lower.HPD
-##  color - monochromatic .                     .                -0.944     -1.66
-##  .                     color - monochromatic round - square   -0.004     -1.50
+##  color - monochromatic .                     .                -0.894     -1.67
+##  .                     color - monochromatic round - square    0.011     -1.36
 ##  upper.HPD
-##     -0.128
-##      1.362
+##     -0.147
+##      1.378
 ## 
 ## Point estimate displayed: median 
 ## HPD interval probability: 0.95</code></pre>
@@ -328,22 +331,22 @@ c_color_all</code></pre>
 <tr class="odd">
 <td>2</td>
 <td align="left">color - monochromatic, ., .</td>
-<td align="right">-0.944</td>
-<td align="right">0.385</td>
+<td align="right">-0.894</td>
+<td align="right">0.395</td>
 <td align="right">90</td>
-<td align="right">-1.58</td>
-<td align="right">-0.302</td>
-<td align="right">3.031</td>
+<td align="right">-1.50</td>
+<td align="right">-0.227</td>
+<td align="right">3.128</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td align="left">., color - monochromatic, round - square</td>
-<td align="right">-0.004</td>
-<td align="right">0.732</td>
+<td align="right">0.011</td>
+<td align="right">0.700</td>
 <td align="right">90</td>
-<td align="right">-1.25</td>
-<td align="right">1.135</td>
-<td align="right">0.227</td>
+<td align="right">-1.16</td>
+<td align="right">1.145</td>
+<td align="right">0.272</td>
 </tr>
 </tbody>
 </table>
@@ -364,9 +367,9 @@ c_color_all</code></pre>
 
 <div class="navigation navigation-single">
     
-    <a href="/blog/posts/bayestestr_v2/" class="navigation-prev">
+    <a href="/blog/posts/bayestestr_emmeans.utf8/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Become a Bayesian master with bayestestR (0.2)</span>
+      <span class="navigation-tittle">Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</span>
     </a>
     
     

@@ -2,32 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>easystats</title>
-    <link>/blog/tags/easystats/</link>
+    <link>https://easystats.github.io/blog/tags/easystats/</link>
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/blog/tags/easystats/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://easystats.github.io/blog/tags/easystats/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>New formatting features in the parameters package</title>
+      <link>https://easystats.github.io/blog/posts/parameters_new_models/</link>
+      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_new_models/</guid>
+      <description>You probably already have heard of the parameters package, a light-weight package to extract, compute and explore the parameters of statistical models using R (if not, there is a related publication introducing the package’s main features).
+In this post, we like to introduce a new feature that facilitates nicely rendered output in markdown or HTML format (including PDFs). This allows you to easily create pretty tables of model summaries, for a large variety of models.</description>
+    </item>
+    
+    <item>
       <title>In defence of the 95% CI</title>
-      <link>/blog/posts/bayestestr_95/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_95/</link>
       <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_95/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_95/</guid>
       <description>TLDR: BayestestR currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what? Join the discussion here.
 Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, .05 (for the p-value), or the 95% range for the Confidence Interval (CI). Indeed, why 95 and not 94 or 90?
 One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter’s value.</description>
     </item>
     
     <item>
+      <title>In defence of the 95% CI</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_95.knit/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_95.knit/</guid>
+      <description>TLDR: BayestestR currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what? Join the discussion here.
+Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, .05 (for the p-value), or the 95% range for the Confidence Interval (CI). Indeed, why 95 and not 94 or 90?
+One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter&amp;rsquo;s value.</description>
+    </item>
+    
+    <item>
       <title>Multilevel Correlations: A New Method for Common Problems</title>
-      <link>/blog/posts/correlation_multilevel/</link>
+      <link>https://easystats.github.io/blog/posts/correlation_multilevel/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/correlation_multilevel/</guid>
+      <guid>https://easystats.github.io/blog/posts/correlation_multilevel/</guid>
       <description>In this tutorial, we will introduce multilevel correlations (or hierarchical / random-effects correlations) and how to compute them using the new correlations package from the easystats suite.
 You can install the updated version and load the package as follows:
 install.packages(&amp;quot;correlation&amp;quot;)library(correlation)DataImagine we have an experiment in which 10 individuals completed a task with 100 trials. For each of the 1000 total trials, we measured two things, V1 and V2, and our research aims at investingating the link between these two variables.</description>
@@ -35,72 +56,103 @@ install.packages(&amp;quot;correlation&amp;quot;)library(correlation)DataImag
     
     <item>
       <title>The ulimate package for correlations (by easystats)</title>
-      <link>/blog/posts/correlation_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/correlation_presentation/</link>
       <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/correlation_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/correlation_presentation/</guid>
       <description>The correlation packageThe easystats project continues to grow with its more recent addition, a package devoted to correlations. Check-out its webpage here!
 It’s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd’s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
     </item>
     
     <item>
+      <title>The ulimate package for correlations (by easystats)</title>
+      <link>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</guid>
+      <description>The correlation package The easystats project continues to grow with its more recent addition, a package devoted to correlations. Check-out its webpage here!
+It&amp;rsquo;s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd&amp;rsquo;s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
+    </item>
+    
+    <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>
-      <link>/blog/posts/bayestestr_pd/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_pd/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_pd/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_pd/</guid>
       <description>The Bayesian framework is powerful and allows for an incredible amount of flexibility and control over your analysis. That being said, newcomers often struggle with a lot of new concepts and tools and could benefit from some familiar grounding. And the p-value is a very familiar index (although paradoxically often misunderstood, but that’s another topic).
-Is there an equivalent of the p-value? Well, depends on what “equivalent” means. Some might argue that the Bayes factor is some sort of equivalent, i.</description>
+Is there an equivalent of the p-value? Well, depends on what “equivalent” means.</description>
     </item>
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>
-      <link>/blog/posts/easystats_oneyear/</link>
+      <link>https://easystats.github.io/blog/posts/easystats_oneyear/</link>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/easystats_oneyear/</guid>
+      <guid>https://easystats.github.io/blog/posts/easystats_oneyear/</guid>
       <description>Happy birthday easystats!About a year ago, I (Dom) sadly realised that the R package I was maintaining (psycho) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. Something had to be done.
 I decided to get in touch with Daniel, aka strengejacke (for mysterious and very confusing reasons), the author of the sjverse, a collection of awesome packages which scope wasn’t too distant from my own one.</description>
     </item>
     
     <item>
+      <title>easystats: one year already. What&#39;s next?</title>
+      <link>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</guid>
+      <description>Happy birthday easystats! About a year ago, I (Dom) sadly realised that the R package I was maintaining (psycho) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. Something had to be done.
+I decided to get in touch with Daniel, aka strengejacke (for mysterious and very confusing reasons), the author of the sjverse, a collection of awesome packages which scope wasn&amp;rsquo;t too distant from my own one.</description>
+    </item>
+    
+    <item>
       <title>Comparison of indices of significance in the Bayesian framework</title>
-      <link>/blog/posts/bayestestr_evidence_ani/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_evidence_ani/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</guid>
       <description>The bayestestR package has several functions to compute indices of effect existence and significance in a Bayesian framework, like p_direction() or bayesfactor_parameters().
 The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. Using the package, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
 If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!</description>
     </item>
     
     <item>
+      <title>Comparison of indices of significance in the Bayesian framework</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</guid>
+      <description>The bayestestR package has several functions to compute indices of effect existence and significance in a Bayesian framework, like p_direction() or bayesfactor_parameters().
+The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. Using the package, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
+If you&amp;rsquo;d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!</description>
+    </item>
+    
+    <item>
       <title>News from easystats: updated parameters and see packages.</title>
-      <link>/blog/posts/parameters_and_see_update/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_and_see_update/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_and_see_update/</guid>
       <description>New Features of the parameters and see PackageWe’re excited to announce some news from the easystats-project. Two packages were updated recently, the parameters-package and our visualization-toolbox, the see-package.
 Before we start introducing some of the new features, we’d like to explain why you need the see-package to create plots for functions from other easystats packages. So, the see-package not only includes additional geoms, color scales and themes for ggplot2, but - maybe more important - also provides plot()-methods for many functions from the various easystats packages.</description>
     </item>
     
     <item>
       <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>/blog/posts/parameters_v2/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_v2/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_v2/</guid>
       <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
 The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
-The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>
+The main function, model_parameters(), can be seen as an alternative to broom::tidy().</description>
     </item>
     
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>/blog/posts/parameters_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/parameters_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation/</guid>
       <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
@@ -108,40 +160,60 @@ parametersWe have recently decided to collaborate around the easystats project,
     
     <item>
       <title>Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</title>
-      <link>/blog/posts/performance_check_collinearity/</link>
+      <link>https://easystats.github.io/blog/posts/performance_check_collinearity/</link>
       <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_check_collinearity/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_check_collinearity/</guid>
       <description>The goal of performance is to provide lightweight tools to assess and check the quality of your model. It includes functions such as r2() for many models (including logistic, mixed and Bayesian models), icc() or helpers to check_convergence(), check_overdipsersion() or check_zero-inflation() (see a complete list of functions here).
 In this posting, we want to focus on multicollinearity. Multicollinearity “is a phenomenon in which one predictor variable in a multiple regression model can be linearly predicted from the others” (source), i.</description>
     </item>
     
     <item>
       <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>/blog/posts/bayestestr_emmeans/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans/</link>
       <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_emmeans/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
       <description>The Problem with Null EffectsSay you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
-options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.</description>
+options(contrasts = c(&amp;#39;contr.</description>
+    </item>
+    
+    <item>
+      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</guid>
+      <description>The Problem with Null Effects Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
+options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.poly&amp;#39;)) data(&amp;#34;puzzles&amp;#34;, package = &amp;#34;BayesFactor&amp;#34;) aov_model &amp;lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles) summary(aov_model) ## ## Error: ID## Df Sum Sq Mean Sq F value Pr(&amp;gt;F)## Residuals 11 226 20.</description>
     </item>
     
     <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>/blog/posts/bayestestr_v2/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_v2/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_v2/</guid>
       <description>bayestestR 0.2 is here!As you might have heard from previous posts, we have recently started to collaborate around the new easystats project, a suite of packages designed to make your life easier. One of the packages, bayestestR, has just been updated on CRAN.
 And this release is so packed with new features and improvements that it would be impossible to present them all in one post! We have added the computation of different types of Bayes factors (BF), new plotting methods (available in the see package), a new meta-function, describe_posterior, that computes everything at once, and more…</description>
     </item>
     
     <item>
+      <title>Become a Bayesian master with bayestestR (0.2)</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</guid>
+      <description>bayestestR 0.2 is here! As you might have heard from previous posts, we have recently started to collaborate around the new easystats project, a suite of packages designed to make your life easier. One of the packages, bayestestR, has just been updated on CRAN.
+And this release is so packed with new features and improvements that it would be impossible to present them all in one post! We have added the computation of different types of Bayes factors (BF), new plotting methods (available in the see package), a new meta-function, describe_posterior, that computes everything at once, and more&amp;hellip;</description>
+    </item>
+    
+    <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>/blog/posts/see_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/see_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
@@ -149,10 +221,10 @@ Essentially, see is the visualisation companion to other functions and packages 
     
     <item>
       <title>A perfectly normally distributed sample: another post?</title>
-      <link>/blog/posts/bayestestr_distribution/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_distribution/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_distribution/</guid>
       <description>Recently, we published a post presenting a small convenience function, from the bayestestR package. This function, named rnorm_perfect, generated an empirical distribution (i.e., a vector of values) as close as possible to a desired distribution, in this case the normal distribution.
 It worked like this:
 # Generate a perfect samplex &amp;lt;- rnorm_perfect(n = 100, mean = 0, sd = 1)# Visualise itlibrary(tidyverse)x %&amp;gt;% density() %&amp;gt;% # Compute density functionas.</description>
@@ -160,10 +232,10 @@ It worked like this:
     
     <item>
       <title>Compute R2s and other performance indices for all your models!</title>
-      <link>/blog/posts/performance_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/performance_presentation/</link>
       <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/performance_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/performance_presentation/</guid>
       <description>Indices of model performance (i.e., model quality, goodness of fit, predictive accuracy etc.) are very important, both for model comparison and model description purposes. However, their computation or extraction for a wide variety of models can be complex.
 To address this, please let us introduce the  performance package!
 performanceWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently WIP).</description>
@@ -171,10 +243,10 @@ performanceWe have recently decided to collaborate around the new easystats pro
     
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
-      <link>/blog/posts/bayestestr_rnorm_perfect/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_rnorm_perfect/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</guid>
       <description>Many times, for instance when teaching, I needed to quickly and simply generate a perfectly normally distributed sample to illustrate or show some of its characteristics.
 This is now very easy to do with the new bayestestR package, which includes the rnorm_perfect function. This function is very similar to the classic rnorm (same arguments), with the difference that the generated sample is perfectly normal.
 ExamplebayestestR can be installed as follows:</description>
@@ -182,39 +254,50 @@ ExamplebayestestR can be installed as follows:</description>
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>/blog/posts/bayestestr_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/bayestestr_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation/</guid>
       <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
 To address this, please let us introduce bayestestR!
 bayestestRWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
     </item>
     
     <item>
+      <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</guid>
+      <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
+To address this, please let us introduce bayestestR!
+bayestestR We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
+    </item>
+    
+    <item>
       <title>A unified syntax for accessing models&#39; information</title>
-      <link>/blog/posts/insight_presentation/</link>
+      <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/insight_presentation/</guid>
+      <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
     <item>
       <title>The end of errors in ANOVA reporting</title>
-      <link>/blog/posts/report_anova/</link>
+      <link>https://easystats.github.io/blog/posts/report_anova/</link>
       <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_anova/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_anova/</guid>
       <description>This post shows how to create formatted reports for ANOVAs.</description>
     </item>
     
     <item>
       <title>Formatted correlation output with effect sizes</title>
-      <link>/blog/posts/report_correlation/</link>
+      <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/posts/report_correlation/</guid>
+      <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     
