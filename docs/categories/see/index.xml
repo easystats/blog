@@ -265,5 +265,71 @@ plot(result) +
       
     </item>
     
+    <item>
+      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
+      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-see-package&#34;&gt;The see package&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model access&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;visualisation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Without further ado, please let us introduce the latest addition to the easyverse; the see package!&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Essentially, &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;&lt;code&gt;see&lt;/code&gt;&lt;/a&gt; is the visualisation companion to other functions and packages in &lt;strong&gt;easystats&lt;/strong&gt;. See the &lt;strong&gt;list of functions&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/see/reference/index.html&#34;&gt;here&lt;/a&gt;. However, it also includes some nice themes and geoms:&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Better looking points&lt;/strong&gt; with &lt;strong&gt;modern theme&lt;/strong&gt; and &lt;strong&gt;flat design colours&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggplot2)
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Width, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_point2&lt;/span&gt;(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, alpha&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_color_flat_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_modern&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, fill &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_violindot&lt;/span&gt;(fill_dots &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;white&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_material_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_blackboard&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(bayestestR)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
+
+model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; rstanarm&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; gear &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; disp, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
+
+result &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;equivalence_test&lt;/span&gt;(model, ci &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;.89&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;.95&lt;/span&gt;))
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(result) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_abyss&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_flat&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>see</category>
+      
+      
+            <category>R</category>
+      
+            <category>see</category>
+      
+    </item>
+    
   </channel>
 </rss>

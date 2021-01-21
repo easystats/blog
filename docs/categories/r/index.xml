@@ -5,7 +5,7 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://easystats.github.io/blog/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,11 +13,11 @@
     <item>
       <title>New formatting features in the parameters package</title>
       <link>https://easystats.github.io/blog/posts/parameters_new_models/</link>
-      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_new_models/</guid>
       <description>
-&lt;script src=&#34;https://easystats.github.io/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 &lt;link href=&#34;https://easystats.github.io/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
 &lt;script src=&#34;https://easystats.github.io/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
@@ -336,7 +336,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#bxlczzxlje .gt_table {
+#qvwhjhoram .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -361,7 +361,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_heading {
+#qvwhjhoram .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -373,7 +373,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_title {
+#qvwhjhoram .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -383,7 +383,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#bxlczzxlje .gt_subtitle {
+#qvwhjhoram .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -393,13 +393,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#bxlczzxlje .gt_bottom_border {
+#qvwhjhoram .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_col_headings {
+#qvwhjhoram .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -414,7 +414,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_col_heading {
+#qvwhjhoram .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -434,7 +434,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#bxlczzxlje .gt_column_spanner_outer {
+#qvwhjhoram .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -446,15 +446,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#bxlczzxlje .gt_column_spanner_outer:first-child {
+#qvwhjhoram .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bxlczzxlje .gt_column_spanner_outer:last-child {
+#qvwhjhoram .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bxlczzxlje .gt_column_spanner {
+#qvwhjhoram .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -466,7 +466,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#bxlczzxlje .gt_group_heading {
+#qvwhjhoram .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -488,7 +488,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#bxlczzxlje .gt_empty_group_heading {
+#qvwhjhoram .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -503,15 +503,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#bxlczzxlje .gt_from_md &gt; :first-child {
+#qvwhjhoram .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#bxlczzxlje .gt_from_md &gt; :last-child {
+#qvwhjhoram .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#bxlczzxlje .gt_row {
+#qvwhjhoram .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +530,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#bxlczzxlje .gt_stub {
+#qvwhjhoram .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -542,7 +542,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#bxlczzxlje .gt_summary_row {
+#qvwhjhoram .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -552,7 +552,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#bxlczzxlje .gt_first_summary_row {
+#qvwhjhoram .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -562,7 +562,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_grand_summary_row {
+#qvwhjhoram .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -572,7 +572,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#bxlczzxlje .gt_first_grand_summary_row {
+#qvwhjhoram .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -582,11 +582,11 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_striped {
+#qvwhjhoram .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bxlczzxlje .gt_table_body {
+#qvwhjhoram .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -595,7 +595,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_footnotes {
+#qvwhjhoram .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -609,13 +609,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_footnote {
+#qvwhjhoram .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bxlczzxlje .gt_sourcenotes {
+#qvwhjhoram .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,46 +629,46 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#bxlczzxlje .gt_sourcenote {
+#qvwhjhoram .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bxlczzxlje .gt_left {
+#qvwhjhoram .gt_left {
   text-align: left;
 }
 
-#bxlczzxlje .gt_center {
+#qvwhjhoram .gt_center {
   text-align: center;
 }
 
-#bxlczzxlje .gt_right {
+#qvwhjhoram .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bxlczzxlje .gt_font_normal {
+#qvwhjhoram .gt_font_normal {
   font-weight: normal;
 }
 
-#bxlczzxlje .gt_font_bold {
+#qvwhjhoram .gt_font_bold {
   font-weight: bold;
 }
 
-#bxlczzxlje .gt_font_italic {
+#qvwhjhoram .gt_font_italic {
   font-style: italic;
 }
 
-#bxlczzxlje .gt_super {
+#qvwhjhoram .gt_super {
   font-size: 65%;
 }
 
-#bxlczzxlje .gt_footnote_marks {
+#qvwhjhoram .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;bxlczzxlje&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;qvwhjhoram&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
@@ -746,7 +746,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#ircvvitskp .gt_table {
+#dryphqbdsb .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -771,7 +771,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_heading {
+#dryphqbdsb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -783,7 +783,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_title {
+#dryphqbdsb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -793,7 +793,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#ircvvitskp .gt_subtitle {
+#dryphqbdsb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -803,13 +803,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#ircvvitskp .gt_bottom_border {
+#dryphqbdsb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_col_headings {
+#dryphqbdsb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -824,7 +824,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_col_heading {
+#dryphqbdsb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -844,7 +844,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#ircvvitskp .gt_column_spanner_outer {
+#dryphqbdsb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -856,15 +856,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#ircvvitskp .gt_column_spanner_outer:first-child {
+#dryphqbdsb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ircvvitskp .gt_column_spanner_outer:last-child {
+#dryphqbdsb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ircvvitskp .gt_column_spanner {
+#dryphqbdsb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -876,7 +876,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#ircvvitskp .gt_group_heading {
+#dryphqbdsb .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -898,7 +898,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#ircvvitskp .gt_empty_group_heading {
+#dryphqbdsb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -913,15 +913,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#ircvvitskp .gt_from_md &gt; :first-child {
+#dryphqbdsb .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#ircvvitskp .gt_from_md &gt; :last-child {
+#dryphqbdsb .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#ircvvitskp .gt_row {
+#dryphqbdsb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,7 +940,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#ircvvitskp .gt_stub {
+#dryphqbdsb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -952,7 +952,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#ircvvitskp .gt_summary_row {
+#dryphqbdsb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -962,7 +962,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#ircvvitskp .gt_first_summary_row {
+#dryphqbdsb .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -972,7 +972,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_grand_summary_row {
+#dryphqbdsb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -982,7 +982,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#ircvvitskp .gt_first_grand_summary_row {
+#dryphqbdsb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -992,11 +992,11 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_striped {
+#dryphqbdsb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ircvvitskp .gt_table_body {
+#dryphqbdsb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1005,7 +1005,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_footnotes {
+#dryphqbdsb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1019,13 +1019,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_footnote {
+#dryphqbdsb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ircvvitskp .gt_sourcenotes {
+#dryphqbdsb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1039,46 +1039,46 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ircvvitskp .gt_sourcenote {
+#dryphqbdsb .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ircvvitskp .gt_left {
+#dryphqbdsb .gt_left {
   text-align: left;
 }
 
-#ircvvitskp .gt_center {
+#dryphqbdsb .gt_center {
   text-align: center;
 }
 
-#ircvvitskp .gt_right {
+#dryphqbdsb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ircvvitskp .gt_font_normal {
+#dryphqbdsb .gt_font_normal {
   font-weight: normal;
 }
 
-#ircvvitskp .gt_font_bold {
+#dryphqbdsb .gt_font_bold {
   font-weight: bold;
 }
 
-#ircvvitskp .gt_font_italic {
+#dryphqbdsb .gt_font_italic {
   font-style: italic;
 }
 
-#ircvvitskp .gt_super {
+#dryphqbdsb .gt_super {
   font-size: 65%;
 }
 
-#ircvvitskp .gt_footnote_marks {
+#dryphqbdsb .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;ircvvitskp&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;dryphqbdsb&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
@@ -1291,89 +1291,6 @@ plot(ci(x, ci=0.95)) +
     </item>
     
     <item>
-      <title>In defence of the 95% CI</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_95.knit/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_95.knit/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;TLDR:&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;BayestestR&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what?&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/250&#34;&gt;&lt;em&gt;&lt;strong&gt;Join the discussion here.&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, &lt;strong&gt;.05&lt;/strong&gt; (for the &lt;em&gt;p&lt;/em&gt;-value), or the &lt;strong&gt;95%&lt;/strong&gt; range for the &lt;strong&gt;Confidence Interval&lt;/strong&gt; (CI). Indeed, why 95 and not 94 or 90?&lt;/p&gt;
-&lt;p&gt;One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter&amp;rsquo;s value. Almost as if the estimation resulted in a &lt;strong&gt;probability distribution&lt;/strong&gt;, from which the confidence interval is describing the &lt;em&gt;width&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Well the traditional confidence interval is &lt;strong&gt;not that&lt;/strong&gt;, and this probabilistic interpretation pertains in fact to the &lt;em&gt;&lt;strong&gt;Credible&lt;/strong&gt;&lt;/em&gt; &lt;strong&gt;Interval&lt;/strong&gt; obtained via Bayesian methods. Indeed, in the Bayesian framework, parameters of a model are given as probability distributions that we need to describe (see this &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;gentle introduction to Bayes&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;And as you might know, &lt;em&gt;some&lt;/em&gt; Bayesianists tend to think that their philosophy is superior to that of the frequentist empire (&lt;em&gt;could be true though&lt;/em&gt;). Also, as the Bayesian field is growing, people see it as a new world and a promissing opportunity to make things right, and correct the mistakes that have been poisoning the old world.&lt;/p&gt;
-&lt;p&gt;This has led experts to question the validity of this 95% range, which appeared as arbitrary, and closely related to the &lt;em&gt;p&lt;/em&gt;-value and the notion of &lt;strong&gt;significance&lt;/strong&gt; (&lt;em&gt;ewww&lt;/em&gt;). This, as well as because of some computational reasons (related to the stability of the bounds of a distribution in relationship with the number of samples), has led some to move away from 95%, and use for instance 90%. Recently, the great McElreath, in his awesome book &lt;a href=&#34;https://xcelab.net/rm/statistical-rethinking/&#34;&gt;&lt;strong&gt;Statistical Rethinking&lt;/strong&gt;&lt;/a&gt;, made the case for using 89%, to underline the arbitrary nature of such threshold.&lt;/p&gt;
-&lt;p&gt;However, there might be a few arguments that could potentially be made &lt;strong&gt;in favour&lt;/strong&gt; of this &amp;ldquo;magical value&amp;rdquo;.&lt;/p&gt;
-&lt;h2 id=&#34;reproducibility-and-continuation&#34;&gt;Reproducibility and continuation&lt;/h2&gt;
-&lt;p&gt;The scientific landscape, especially in social and neuro- sciences, has been recently shaken by the so-called &lt;strong&gt;reproducibility crisis&lt;/strong&gt;. People realized that the science they trusted was akin to a collossus with clay feet: many &amp;ldquo;facts&amp;rdquo; and published results were not replicable, and most of them were not &lt;strong&gt;reproducible&lt;/strong&gt;. The full steps to go from data to results were either not provided, or not described with enough details to allow other researchers to apply the exact same pipeline, with the end goal of &lt;em&gt;comparing&lt;/em&gt; the results.&lt;/p&gt;
-&lt;p&gt;Indeed, most scientific results, or result numbers, are relative, in the sense that they are to be interpreted in the context of a method, measure, field or context. &lt;strong&gt;People sometimes joke that a correlation of .70 is a disaster in physics but a miracle in psychology&lt;/strong&gt;. As such, it is important that we take this continuity of science into account when making decisions. Let&amp;rsquo;s say everybody, from Newton and Copernicus, used &lt;code&gt;Pi = 3.10&lt;/code&gt;. Should we change that? Sure, because it&amp;rsquo;s a &lt;em&gt;bad&lt;/em&gt; number and a bad approximation, and using &lt;code&gt;Pi = 3.14&lt;/code&gt; is &lt;em&gt;objectively&lt;/em&gt; better. But in the case where there is no strong reason to do so, should we change conventions, just for the sake of change?&lt;/p&gt;
-&lt;p&gt;By switching to reporting 89% intervals, mainly for the sake of heightening the wall between the Bayesian and the frequentist worlds, it seems like it kind of goes against this idea of continuity and additivity of scientific results. And I&amp;rsquo;m not sure the benefits outweight the drawbacks.&lt;/p&gt;
-&lt;h2 id=&#34;purpose-of-such-interval&#34;&gt;Purpose of such &lt;em&gt;interval&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;People often use the credible interval to describe the &lt;strong&gt;uncertainty&lt;/strong&gt; related to their parameters, because &lt;strong&gt;uncertainty&lt;/strong&gt; is key and should be embraced. But you might ask, why not use another index of uncertainty, - and dispersion, such as for instance the standard deviation &lt;strong&gt;SD&lt;/strong&gt;?&lt;/p&gt;
-&lt;p&gt;Well, some people describe both, but in that case you might also add the MAD, and all ranges of the credible interval. In fact, you might as well return the whole density plot (though if you can, it&amp;rsquo;s the best thing to do. And do check out the great &lt;a href=&#34;https://github.com/mjskay/tidybayes/&#34;&gt;&lt;strong&gt;tidybayes package&lt;/strong&gt; for awesome visualization tools&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;So, what are the advantages of the CI over the SD? Well, one difference is that the CI bounds are often seen as an approximation of the limits of a distribution (or its plausible region). What does it mean? Take this example. Let&amp;rsquo;s imagine this distribution of mean 0 and SD 1 made of a lot of points:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(bayestestR)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Note: The default CI width (currently `ci=0.89`) might change in future versions (see https://github.com/easystats/bayestestR/discussions/250). To prevent any issues, please set it explicitly when using bayestestR functions, via the &#39;ci&#39; argument.
-&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
-
-x &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;distribution_normal&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;^6, mean &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, sd &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;estimate_density&lt;/span&gt;(x)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_modern&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;While this empirical distribution of values has real bounds (it has a minimum and a maximum value), these are merely a computational &amp;ldquo;artifact&amp;rdquo;. In theory, this distribution covers the whole range of real values, extending until infinity (and beyond). All values are &lt;em&gt;possible&lt;/em&gt;, albeit very very very very &lt;strong&gt;unlikely&lt;/strong&gt;. But despite this mathematical fact, our chunking-loving brain understands that the important stuff is happening somewhere between -3 and 3.&lt;/p&gt;
-&lt;p&gt;As such, the uncertainty interval can be used to convey a rough (and artificial) sense of the limits of the likely area. Having edges of plausibility is arguably more intuitive than a single dispersion index, such as SD, facilitating decision making (for instance, if this range covers 0) and interpretations.&lt;/p&gt;
-&lt;h2 id=&#34;relationship-with-the-sd&#34;&gt;Relationship with the SD&lt;/h2&gt;
-&lt;p&gt;Alright, we see how returning a credible interval is useful and provides intuitive information about the &amp;ldquo;limits&amp;rdquo; of a continuous distribution. On the other hand, the SD is such a mathematical marvel, tied with other useful concepts such as &lt;em&gt;z&lt;/em&gt;-scores, standardization etc. It is indeed tempting to return both the CI and the SD. But as we said, reporting too much information can also hinder the readibility of a document, so which one to pick (if we had to)?&lt;/p&gt;
-&lt;p&gt;Moreover, the SD can also be used to describe the width of a distribution. For instance, we know that the bulk of a normal distribution lies within 6 SD around the mean. In the case above, the majority of points fall within -3 SD to 3 SD. When I say the bulk, it&amp;rsquo;s about 99.7% of the values, which arguably includes also quite improbable values.&lt;/p&gt;
-&lt;p&gt;So what if we restricted the range a bit, and took the range from -2 SD to 2 SD? Interestingly, such range includes, &lt;em&gt;you guessed it&lt;/em&gt;, about 95% of the values (95.45).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggplot2)
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ci&lt;/span&gt;(x, ci&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.95&lt;/span&gt;)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_x_continuous&lt;/span&gt;(breaks &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;-3&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_modern&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;That means that we can roughly approximate the 95% range from the SD&amp;hellip; and &lt;em&gt;vice versa&lt;/em&gt;. If a 95% range is [2, 10], it means that the SD is probably somewhere around &lt;code&gt;(10 - 2) / 4 = 2&lt;/code&gt;. And this means that there is a rough correspondance between the 95% CI and the SD, connecting these two concepts in a more general and intuitive understanding of a distribution&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;I see you coming&lt;/strong&gt;. &lt;em&gt;&amp;ldquo;But this approximation is only true for normal distributions and posterior distributions are not (or should not be) always normal&amp;rdquo;&lt;/em&gt;. &lt;em&gt;&amp;ldquo;This is misguided and will create more confusion in the minds of the padawan&amp;rdquo;&lt;/em&gt;. It&amp;rsquo;s true that this relationship is not an absolute mathematical truth, but merely a heuristic that could foster the embrace of a deeper understanding of uncertainty. Could it be misleading? I&amp;rsquo;m not sure.&lt;/p&gt;
-&lt;p&gt;All in all, these are some elements that could be made to support the usage of the 95% range. They might not be the strongest arguments, which opens up a debate.&lt;/p&gt;
-&lt;h2 id=&#34;what-do-you-think&#34;&gt;What do you think?&lt;/h2&gt;
-&lt;p&gt;In our package &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;, we previously used &lt;code&gt;0.89&lt;/code&gt; by default, that returned the 89% CI. But as we like to challenge ourselves, we are looking for arguments in favour, or against, its change.&lt;/p&gt;
-&lt;p&gt;Thus, we&amp;rsquo;d like to invite you to give your opinion or vote on the &lt;a href=&#34;https://github.com/easystats/bayestestR/issues/250&#34;&gt;dedicated issue&lt;/a&gt;. Thanks :)&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note: this is an opinion article written by me and that it does not necessarily reflect the opinions of the other easystats members, nor the opinion of my family, my people and that of the Human species.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
-&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>bayestestR</category>
-      
-      
-            <category>R</category>
-      
-            <category>bayestestR</category>
-      
-    </item>
-    
-    <item>
       <title>Multilevel Correlations: A New Method for Common Problems</title>
       <link>https://easystats.github.io/blog/posts/correlation_multilevel/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
@@ -1560,11 +1477,11 @@ iris %&amp;gt;%
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, bayesian=TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |              Prior |           Method | n_Obs
 ## ----------------------------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.07% |    43.20% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.89] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.05% |    43.45% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.90] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
 ## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  | Petal.Length | -0.42 | [-0.51, -0.30] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Width  | Petal.Length | -0.42 | [-0.52, -0.31] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |     0.07% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
 ## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;tetrachoric-polychoric-biserial-biweight&#34; class=&#34;section level2&#34;&gt;
@@ -1643,162 +1560,6 @@ mtcars %&amp;gt;%
 &lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>correlation</category>
-      
-      
-            <category>R</category>
-      
-            <category>correlation</category>
-      
-    </item>
-    
-    <item>
-      <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</link>
-      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;the-correlation-package&#34;&gt;The correlation package&lt;/h2&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt; continues to grow with its more recent addition, a package devoted to &lt;strong&gt;correlations&lt;/strong&gt;. Check-out its &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;webpage here&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as &lt;strong&gt;partial&lt;/strong&gt; correlations, &lt;strong&gt;Bayesian&lt;/strong&gt; correlations, &lt;strong&gt;multilevel&lt;/strong&gt; correlations, &lt;strong&gt;polychoric&lt;/strong&gt; correlations, &lt;strong&gt;biweight&lt;/strong&gt;, &lt;strong&gt;percentage bend&lt;/strong&gt; or &lt;strong&gt;Sheperd&amp;rsquo;s Pi&lt;/strong&gt; correlations (types of &lt;strong&gt;robust&lt;/strong&gt; correlation), &lt;strong&gt;distance&lt;/strong&gt; correlation (a type of &lt;strong&gt;non-linear&lt;/strong&gt; correlation) and more, also allowing for combinations between them (for instance, &lt;em&gt;Bayesian partial multilevel correlation&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;You can install and load the package as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;correlation&amp;#34;&lt;/span&gt;)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(correlation)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;The main function is &lt;a href=&#34;https://easystats.github.io/correlation/reference/correlation.html&#34;&gt;&lt;code&gt;correlation()&lt;/code&gt;&lt;/a&gt;, which builds on top of &lt;a href=&#34;https://easystats.github.io/correlation/reference/cor_test.html&#34;&gt;&lt;code&gt;cor_test()&lt;/code&gt;&lt;/a&gt; and comes with a number of possible options.&lt;/p&gt;
-&lt;h2 id=&#34;correlation-details-and-matrix&#34;&gt;Correlation details and matrix&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;cor &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris)
-cor
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |     r |         95% CI | t(148) |      p |  Method | n_Obs
-## ----------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.12 | [-0.27,  0.04] |  -1.44 | 0.152  | Pearson |   150
-## Sepal.Length | Petal.Length |  0.87 | [ 0.83,  0.91] |  21.65 | &amp;lt; .001 | Pearson |   150
-## Sepal.Length |  Petal.Width |  0.82 | [ 0.76,  0.86] |  17.30 | &amp;lt; .001 | Pearson |   150
-## Sepal.Width  | Petal.Length | -0.43 | [-0.55, -0.29] |  -5.77 | &amp;lt; .001 | Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.37 | [-0.50, -0.22] |  -4.79 | &amp;lt; .001 | Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |  43.39 | &amp;lt; .001 | Pearson |   150
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output is not a square matrix, but a &lt;strong&gt;(tidy) dataframe with all correlations tests per row&lt;/strong&gt;. One can also obtain a &lt;strong&gt;matrix&lt;/strong&gt; using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;(cor)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
-## -------------------------------------------------------
-## Sepal.Length |     0.82*** |      0.87*** |       -0.12
-## Sepal.Width  |    -0.37*** |     -0.43*** |            
-## Petal.Length |     0.96*** |              |
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that one can also obtain the full, &lt;strong&gt;square&lt;/strong&gt; and redundant matrix using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;as.table&lt;/span&gt;(cor)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Sepal.Length | Sepal.Width | Petal.Length | Petal.Width
-## ----------------------------------------------------------------------
-## Sepal.Length |      1.00*** |       -0.12 |      0.87*** |     0.82***
-## Sepal.Width  |        -0.12 |     1.00*** |     -0.43*** |    -0.37***
-## Petal.Length |      0.87*** |    -0.43*** |      1.00*** |     0.96***
-## Petal.Width  |      0.82*** |    -0.37*** |      0.96*** |     1.00***
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;grouped-dataframes&#34;&gt;Grouped dataframes&lt;/h2&gt;
-&lt;p&gt;The function also supports &lt;strong&gt;stratified correlations&lt;/strong&gt;, all within the &lt;em&gt;tidyverse&lt;/em&gt; workflow!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(dplyr)
-
-iris &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;select&lt;/span&gt;(Species, Petal.Width, Sepal.Length, Sepal.Width) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;group_by&lt;/span&gt;(Species) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Group      |   Parameter1 |   Parameter2 |    r |        95% CI | t(48) |      p |  Method | n_Obs
-## --------------------------------------------------------------------------------------------------
-## setosa     |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] |  2.01 | 0.101  | Pearson |    50
-## setosa     |  Petal.Width |  Sepal.Width | 0.23 | [-0.05, 0.48] |  1.66 | 0.104  | Pearson |    50
-## setosa     | Sepal.Length |  Sepal.Width | 0.74 | [ 0.59, 0.85] |  7.68 | &amp;lt; .001 | Pearson |    50
-## versicolor |  Petal.Width | Sepal.Length | 0.55 | [ 0.32, 0.72] |  4.52 | &amp;lt; .001 | Pearson |    50
-## versicolor |  Petal.Width |  Sepal.Width | 0.66 | [ 0.47, 0.80] |  6.15 | &amp;lt; .001 | Pearson |    50
-## versicolor | Sepal.Length |  Sepal.Width | 0.53 | [ 0.29, 0.70] |  4.28 | &amp;lt; .001 | Pearson |    50
-## virginica  |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] |  2.03 | 0.048  | Pearson |    50
-## virginica  |  Petal.Width |  Sepal.Width | 0.54 | [ 0.31, 0.71] |  4.42 | &amp;lt; .001 | Pearson |    50
-## virginica  | Sepal.Length |  Sepal.Width | 0.46 | [ 0.20, 0.65] |  3.56 | 0.002  | Pearson |    50
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bayesian-correlations&#34;&gt;Bayesian Correlations&lt;/h2&gt;
-&lt;p&gt;It is very easy to switch to a &lt;strong&gt;Bayesian framework&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris, bayesian&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |              Prior |           Method | n_Obs
-## ----------------------------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.07% |    43.20% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.89] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  | Petal.Length | -0.42 | [-0.51, -0.30] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tetrachoric-polychoric-biserial-biweight&#34;&gt;Tetrachoric, Polychoric, Biserial, Biweight&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;correlation&lt;/code&gt; package also supports different types of methods, which can deal with correlations &lt;strong&gt;between factors&lt;/strong&gt;!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris, include_factors &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;, method &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;auto&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1         |         Parameter2 |     r |         95% CI | t(148) |      p |         Method | n_Obs
-## -----------------------------------------------------------------------------------------------------------
-## Sepal.Length       |        Sepal.Width | -0.12 | [-0.27,  0.04] |  -1.44 | 0.452  |        Pearson |   150
-## Sepal.Length       |       Petal.Length |  0.87 | [ 0.83,  0.91] |  21.65 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Length       |        Petal.Width |  0.82 | [ 0.76,  0.86] |  17.30 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Length       |     Species.setosa | -0.72 | [-0.79, -0.63] | -12.53 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Length       | Species.versicolor |  0.08 | [-0.08,  0.24] |   0.97 | 0.452  | Point-biserial |   150
-## Sepal.Length       |  Species.virginica |  0.64 | [ 0.53,  0.72] |  10.08 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        |       Petal.Length | -0.43 | [-0.55, -0.29] |  -5.77 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Width        |        Petal.Width | -0.37 | [-0.50, -0.22] |  -4.79 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Width        |     Species.setosa |  0.60 | [ 0.49,  0.70] |   9.20 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        | Species.versicolor | -0.47 | [-0.58, -0.33] |  -6.44 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        |  Species.virginica | -0.14 | [-0.29,  0.03] |  -1.67 | 0.392  | Point-biserial |   150
-## Petal.Length       |        Petal.Width |  0.96 | [ 0.95,  0.97] |  43.39 | &amp;lt; .001 |        Pearson |   150
-## Petal.Length       |     Species.setosa | -0.92 | [-0.94, -0.89] | -29.13 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Length       | Species.versicolor |  0.20 | [ 0.04,  0.35] |   2.51 | 0.066  | Point-biserial |   150
-## Petal.Length       |  Species.virginica |  0.72 | [ 0.63,  0.79] |  12.66 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Width        |     Species.setosa | -0.89 | [-0.92, -0.85] | -23.41 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Width        | Species.versicolor |  0.12 | [-0.04,  0.27] |   1.44 | 0.452  | Point-biserial |   150
-## Petal.Width        |  Species.virginica |  0.77 | [ 0.69,  0.83] |  14.66 | &amp;lt; .001 | Point-biserial |   150
-## Species.setosa     | Species.versicolor | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## Species.setosa     |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## Species.versicolor |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;partial-correlations&#34;&gt;Partial Correlations&lt;/h2&gt;
-&lt;p&gt;It also supports &lt;strong&gt;partial correlations&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;iris &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(partial &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
-## -------------------------------------------------------
-## Sepal.Length |    -0.34*** |      0.72*** |     0.63***
-## Sepal.Width  |     0.35*** |     -0.62*** |            
-## Petal.Length |     0.87*** |              |
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;gaussian-graphical-models-ggms&#34;&gt;Gaussian Graphical Models (GGMs)&lt;/h2&gt;
-&lt;p&gt;Such partial correlations can also be represented as &lt;strong&gt;Gaussian graphical models&lt;/strong&gt;, an increasingly popular tool in psychology:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see) &lt;span style=&#34;color:#75715e&#34;&gt;# for plotting&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggraph) &lt;span style=&#34;color:#75715e&#34;&gt;# needs to be loaded&lt;/span&gt;
-
-mtcars &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(partial &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
-&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       
             <category>R</category>
@@ -1990,57 +1751,6 @@ plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>easystats: one year already. What&#39;s next?</title>
-      <link>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;happy-birthday-easystats&#34;&gt;Happy birthday easystats!&lt;/h2&gt;
-&lt;p&gt;About a year ago, I &lt;a href=&#34;https://github.com/DominiqueMakowski&#34;&gt;(Dom)&lt;/a&gt; sadly realised that the R package I was maintaining (&lt;a href=&#34;https://github.com/neuropsychology/psycho.R&#34;&gt;&lt;em&gt;psycho&lt;/em&gt;&lt;/a&gt;) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. &lt;strong&gt;Something had to be done.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;I decided to get in touch with &lt;a href=&#34;https://github.com/strengejacke&#34;&gt;Daniel&lt;/a&gt;, &lt;em&gt;aka&lt;/em&gt; &lt;strong&gt;strengejacke&lt;/strong&gt; (for mysterious and very confusing reasons), the author of the &lt;a href=&#34;https://github.com/strengejacke&#34;&gt;&lt;em&gt;sjverse&lt;/em&gt;&lt;/a&gt;, a collection of awesome packages which scope wasn&amp;rsquo;t too distant from my own one. Quickly, we realised that beyond facing similar issues, we shared the same vision: &lt;strong&gt;Make R stats easy again&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;We were also agreeing on a possible way of reaching this goal. Build a new collection of packages that would work together to provide a smooth experience to getting stats, and all that entails, done in R (note that we preferred the workflow to be &lt;em&gt;easy&lt;/em&gt; rather than &lt;em&gt;tidy&lt;/em&gt;&amp;hellip; ;p). Most importantly, we shared the same values, including a commitment to open-science, a desire for collaborative development, a focus on user- and beginner- friendliness, and a dedication to the Force.&lt;/p&gt;
-&lt;p&gt;And just like that, &lt;a href=&#34;https://github.com/orgs/easystats/&#34;&gt;&lt;strong&gt;easystats was born&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;But this project wouldn&amp;rsquo;t have grown, nor still exist, if we hadn&amp;rsquo;t manage to bring in the &lt;strong&gt;most talented people&lt;/strong&gt;, creating an awesome &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;team&lt;/a&gt; which diversity in experience and skills offers an incredibly valuable resource. Shout-out to the ultimate Bayes master &lt;a href=&#34;https://github.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;, to our socio-political expert &lt;a href=&#34;https://github.com/pdwaggoner&#34;&gt;@pdwaggoner&lt;/a&gt;, to &lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;, the compulsive model supporter and author of the famous &lt;a href=&#34;https://github.com/IndrajeetPatil/ggstatsplot&#34;&gt;&lt;em&gt;ggstatsplot&lt;/em&gt;&lt;/a&gt;, to our big-daddy-markdown-mate &lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;, to the best dinosaur stats explainer  &lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt; and to the &lt;a href=&#34;https://github.com/jacob-long/interactions&#34;&gt;&lt;em&gt;interaction&lt;/em&gt;&lt;/a&gt; genius &lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;. A big thank you to this great team. Make sure to check-out their awesome work and research!&lt;/p&gt;
-&lt;p&gt;Together in one year, we created &lt;strong&gt;9 packages&lt;/strong&gt;, pushed 7 of them to &lt;strong&gt;CRAN&lt;/strong&gt; (which have now been downloaded more than &lt;strong&gt;half a million times&lt;/strong&gt; &lt;em&gt;(!!!)&lt;/em&gt;), wrote many &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;blogposts&lt;/strong&gt;&lt;/a&gt;, and made just about a thousand &lt;a href=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/misc/notthememe.jpg&#34;&gt;memes&lt;/a&gt;. But most importantly, we all &lt;strong&gt;learned a lot&lt;/strong&gt;, as this project partly became the opportunity for us to drastically improve our R, stats, programming and light-saber skills. Moreover, it also ended up being a great occasion and place to have &lt;strong&gt;fun&lt;/strong&gt;, contribute to the &lt;strong&gt;community&lt;/strong&gt;, and become part of a &lt;strong&gt;network&lt;/strong&gt; of talented and open-minded people with similar interests. And that is, by far, one of the biggest take-away.&lt;/p&gt;
-&lt;p&gt;And yet, although fun is good, it doesn&amp;rsquo;t make for a living (unless you&amp;rsquo;re Mr Bean). And the &lt;strong&gt;easystats&lt;/strong&gt; project also turned out to be a legit academic research project with legit academic outcomes. This year, we published &lt;strong&gt;3 papers&lt;/strong&gt; (&lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.01412&#34;&gt;&lt;em&gt;insight&lt;/em&gt;&lt;/a&gt;]; &lt;a href=&#34;https://joss.theoj.org/papers/10.21105/joss.01541&#34;&gt;&lt;em&gt;bayestestR&lt;/em&gt;&lt;/a&gt; and &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;another Bayes-related one&lt;/a&gt;) related to easystats, and we plan on keeping up &lt;em&gt;at least&lt;/em&gt; that rhythm for the year to come &lt;em&gt;(now might be your chance to get involved ;)&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Aside from publications, we also plan on releasing the remaining packages (What do I hear? &amp;ldquo;fixing &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;&lt;em&gt;report&lt;/em&gt;&lt;/a&gt;&amp;quot;?), continue improving the existing ones and adding even more awesome features and documentation.&lt;/p&gt;
-&lt;p&gt;All in all, &lt;strong&gt;easystats&lt;/strong&gt; is a living and breathing demonstration of how an open-science project can be born, keep growing and improving like an old wine. And the beauty, and tragedy, lies in the fact that it&amp;rsquo;s arguably against all the odds offered by the current academic system. We have &lt;strong&gt;no funding&lt;/strong&gt; (however, very interested in getting some&amp;hellip; &lt;em&gt;*wink wink*&lt;/em&gt;), no initial publication goals, and no direct obligation or pressure to work to it. We are all contributing to it on our &lt;strong&gt;free time&lt;/strong&gt;, out of &lt;strong&gt;pure enthusiasm&lt;/strong&gt; and interest in making this place a lil&amp;rsquo; bit better.&lt;/p&gt;
-&lt;p&gt;So, as a closing note, because happiness is only useful when it is shared, we&amp;rsquo;d like to thank &lt;strong&gt;you, user of easystats&lt;/strong&gt;, for directly contributing to our passion. Cheers!&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&amp;hellip;And if you&amp;rsquo;re not yet a user or a contributor&amp;hellip; what are you waiting for?!&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
-&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>aniversary</category>
-      
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-    </item>
-    
-    <item>
       <title>Comparison of indices of significance in the Bayesian framework</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
@@ -2062,37 +1772,6 @@ plot(p_direction(model))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In this paper, you’ll also find fancy figures like this one, showing the relationship between Bayesian indices and the frequentist &lt;em&gt;p&lt;/em&gt;-value:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>bayestestR</category>
-      
-      
-            <category>R</category>
-      
-            <category>bayestestR</category>
-      
-    </item>
-    
-    <item>
-      <title>Comparison of indices of significance in the Bayesian framework</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</link>
-      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt; package has several functions to compute indices of effect existence and significance in a Bayesian framework, like &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/p_direction.html&#34;&gt;&lt;code&gt;p_direction()&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/bayesfactor_parameters.html&#34;&gt;&lt;code&gt;bayesfactor_parameters()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. &lt;a href=&#34;https://twitter.com/Dom_Makowski/status/1204027373542203394?s=20&#34;&gt;Using the package&lt;/a&gt;, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/evidence_accumulation.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;If you&amp;rsquo;d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!), demonstrating how such indices behave in the context of different sources of uncertainty:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Makowski, D., Ben-Shachar, M. S., Chen, S. H., &amp;amp; Lüdecke, D. (2019). &lt;em&gt;Indices of Effect Existence and Significance in the Bayesian Framework. Frontiers in Psychology, 10&lt;/em&gt;, 2767. doi: &lt;a href=&#34;https://doi.org/10.3389/fpsyg.2019.02767&#34;&gt;10.3389/fpsyg.2019.02767&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In this paper, you&amp;rsquo;ll also find fancy figures like this one, showing the relationship between Bayesian indices and the frequentist &lt;em&gt;p&lt;/em&gt;-value:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/bayestestR/Figure4-small.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/p&gt;
 </description>
       
             <category>R</category>
@@ -2447,9 +2126,9 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
 ## ---------------------------------------------------------------------------------------------------
-## (Intercept) |  39.69 | [36.99, 42.62] |   100% |        0% | 1.000 | 4502 | Normal (20.09 +- 15.07)
-## wt          |  -3.19 | [-4.44, -1.96] |   100% |     0.10% | 1.001 | 1975 |  Normal (0.00 +- 15.40)
-## cyl         |  -1.51 | [-2.22, -0.85] | 99.95% |     1.90% | 1.002 | 1907 |   Normal (0.00 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.71 | [36.97, 42.46] |   100% |        0% | 1.000 | 5292 | Normal (20.09 +- 15.07)
+## wt          |  -3.17 | [-4.48, -2.03] |   100% |     0.05% | 1.001 | 2092 |  Normal (0.00 +- 15.40)
+## cyl         |  -1.51 | [-2.16, -0.86] | 99.98% |     1.38% | 1.001 | 2132 |   Normal (0.00 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -2964,54 +2643,6 @@ c_color_all
     </item>
     
     <item>
-      <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</link>
-      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;bayestestr-02-is-here&#34;&gt;bayestestR 0.2 is here!&lt;/h2&gt;
-&lt;p&gt;As you might have heard from &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;previous posts&lt;/a&gt;, &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;we&lt;/a&gt; have recently started to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a suite of packages designed to make your life easier. One of the packages, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;, has just been updated on CRAN.&lt;/p&gt;
-&lt;p&gt;And this release is &lt;strong&gt;so packed with new features&lt;/strong&gt; and &lt;strong&gt;improvements&lt;/strong&gt; that it would be impossible to present them all in one post! We have added the computation of different types of &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factors (BF)&lt;/strong&gt;&lt;/a&gt;, new &lt;a href=&#34;https://github.com/easystats/see#bayestestr&#34;&gt;&lt;strong&gt;plotting methods&lt;/strong&gt;&lt;/a&gt; (available in the &lt;code&gt;see&lt;/code&gt; package), a new meta-function, &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/describe_posterior.html&#34;&gt;&lt;code&gt;describe_posterior&lt;/code&gt;&lt;/a&gt;, that computes &lt;strong&gt;everything at once&lt;/strong&gt;, and more&amp;hellip;&lt;/p&gt;
-&lt;p&gt;We also improved the &lt;strong&gt;documentation&lt;/strong&gt;, with new &lt;strong&gt;tutorials&lt;/strong&gt; and &lt;strong&gt;articles&lt;/strong&gt; so that Bayesian analysis can hold no secrets from you. Check them out:&lt;/p&gt;
-&lt;h4 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayestestR.html&#34;&gt;Get Started with Bayesian Analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/example1.html&#34;&gt;Example 1: Initiation to Bayesian models&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;articles&#34;&gt;Articles&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/credible_interval.html&#34;&gt;Credible Intervals (CIs)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/probability_of_direction.html&#34;&gt;Probability of Direction (pd)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/region_of_practical_equivalence.html&#34;&gt;Region of Practical Equivalence (ROPE)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;Bayes Factors (BF)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesEstimationComparison.html&#34;&gt;Comparison of Point-Estimates&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/indicesExistenceComparison.html&#34;&gt;Comparison of Indices of Effect Existence&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR/articles/guidelines.html&#34;&gt;Reporting Guidelines&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are also some &lt;a href=&#34;https://easystats.github.io/bayestestR/news/index.html&#34;&gt;&lt;strong&gt;breaking changes&lt;/strong&gt;&lt;/a&gt;, make sure you check them out!&lt;/p&gt;
-&lt;h2 id=&#34;join-the-team&#34;&gt;Join the team&lt;/h2&gt;
-&lt;p&gt;You&amp;rsquo;ve spotted &lt;strong&gt;an error&lt;/strong&gt;, &lt;strong&gt;a bug&lt;/strong&gt;, &lt;strong&gt;a typo in the documentation&lt;/strong&gt;? Please help us by opening an &lt;a href=&#34;https://github.com/easystats/bayestestR/issues&#34;&gt;issue&lt;/a&gt; or by making a pull request. There is definitely room for improvement. Feel free to let us know how we could further improve this package!&lt;/p&gt;
-&lt;p&gt;Also note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. So don&amp;rsquo;t hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt; (you can send one of &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;us&lt;/a&gt; an email saying, for example, &lt;strong&gt;&amp;ldquo;leeet me iiiin&amp;rdquo;&lt;/strong&gt;)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>bayestestR</category>
-      
-      
-            <category>R</category>
-      
-            <category>bayestestR</category>
-      
-    </item>
-    
-    <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
       <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
@@ -3074,6 +2705,72 @@ plot(result) +
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>see</category>
+      
+      
+            <category>R</category>
+      
+            <category>see</category>
+      
+    </item>
+    
+    <item>
+      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
+      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-see-package&#34;&gt;The see package&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model access&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;visualisation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Without further ado, please let us introduce the latest addition to the easyverse; the see package!&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Essentially, &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;&lt;code&gt;see&lt;/code&gt;&lt;/a&gt; is the visualisation companion to other functions and packages in &lt;strong&gt;easystats&lt;/strong&gt;. See the &lt;strong&gt;list of functions&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/see/reference/index.html&#34;&gt;here&lt;/a&gt;. However, it also includes some nice themes and geoms:&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Better looking points&lt;/strong&gt; with &lt;strong&gt;modern theme&lt;/strong&gt; and &lt;strong&gt;flat design colours&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggplot2)
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Width, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_point2&lt;/span&gt;(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, alpha&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_color_flat_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_modern&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, fill &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_violindot&lt;/span&gt;(fill_dots &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;white&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_material_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_blackboard&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(bayestestR)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
+
+model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; rstanarm&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; gear &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; disp, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
+
+result &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;equivalence_test&lt;/span&gt;(model, ci &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;.89&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;.95&lt;/span&gt;))
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(result) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_abyss&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_flat&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
             <category>R</category>
@@ -3238,7 +2935,7 @@ model_performance(model)&lt;/code&gt;&lt;/pre&gt;
 &amp;gt; 
 &amp;gt; ELPD   | ELPD_SE | LOOIC | LOOIC_SE |  WAIC |   R2 | R2 (marg.) | R2 (adj.) | RMSE | Sigma
 &amp;gt; ------------------------------------------------------------------------------------------
-&amp;gt; -43.35 |   10.16 | 86.69 |    20.31 | 86.62 | 0.47 |       0.68 |      0.45 | 0.31 |  0.32&lt;/code&gt;&lt;/pre&gt;
+&amp;gt; -43.50 |   10.18 | 87.00 |    20.35 | 86.96 | 0.47 |       0.68 |      0.45 | 0.31 |  0.32&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Don’t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/performance/&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -3386,11 +3083,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [26.33 46.80]
-## wt          |  Rejected |      0.00 % | [-4.19 -1.05]
-## cyl         | Undecided |     39.43 % | [-1.91  0.32]
-## gear        | Undecided |     41.73 % | [-2.33  1.66]
-## am          | Undecided |     18.53 % | [-1.21  4.42]
+## (Intercept) |  Rejected |      0.00 % | [27.81 47.51]
+## wt          |  Rejected |      0.00 % | [-4.11 -0.97]
+## cyl         | Undecided |     36.79 % | [-1.87  0.29]
+## gear        | Undecided |     44.68 % | [-2.21  1.65]
+## am          | Undecided |     19.38 % | [-1.18  4.62]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -3432,10 +3129,10 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Bayesian framework&lt;/strong&gt; is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as &lt;a href=&#34;https://github.com/stan-dev/rstanarm&#34;&gt;&lt;code&gt;rstanarm&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://github.com/paul-buerkner/brms&#34;&gt;&lt;code&gt;brms&lt;/code&gt;&lt;/a&gt;. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;To address this, please let us introduce&lt;/strong&gt;&lt;/em&gt;  &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;&lt;code&gt;bayestestR&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;!&lt;/strong&gt;&lt;/p&gt;
@@ -3460,11 +3157,11 @@ model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span 
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [26.33 46.80]
-## wt          |  Rejected |      0.00 % | [-4.19 -1.05]
-## cyl         | Undecided |     39.43 % | [-1.91  0.32]
-## gear        | Undecided |     41.73 % | [-2.33  1.66]
-## am          | Undecided |     18.53 % | [-1.21  4.42]
+## (Intercept) |  Rejected |      0.00 % | [27.81 47.51]
+## wt          |  Rejected |      0.00 % | [-4.11 -0.97]
+## cyl         | Undecided |     36.79 % | [-1.87  0.29]
+## gear        | Undecided |     44.68 % | [-2.21  1.65]
+## am          | Undecided |     19.38 % | [-1.18  4.62]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Do the test and plot results&lt;/span&gt;
@@ -3654,6 +3351,55 @@ library(dplyr)&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>The end of errors in ANOVA reporting</title>
+      <link>https://easystats.github.io/blog/posts/report_anova.utf8/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/report_anova.utf8/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Psychological science is still massively using analysis of variance (ANOVA)&lt;/strong&gt;. Despite its relative simplicity, I am very often confronted to &lt;strong&gt;errors in its reporting&lt;/strong&gt;, for instance in student&amp;rsquo;s theses or manuscripts, or even published papers (See the excellent &lt;a href=&#34;http://statcheck.io/&#34;&gt;statcheck&lt;/a&gt; to quickly check the stats of a paper). Beyond the incomplete or just wrong reporting, one can find a tremendous amount of genuine errors (that could influence the results and their interpretation). This error proneness can be at least partly explained by the fact that copy/pasting the (appropriate) values of any statistical software and formatting them textually is a very annoying and tedious process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to end it?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We believe that this could be solved (at least, partially) by the &lt;strong&gt;default implementation of current best practices of statistical reporting&lt;/strong&gt;. A tool that automatically transforms a statistical result into a copy/pastable text. Of course, this automation cannot be suitable for each and every advanced usage, but could be satisfying for a substantial proportion of use cases. &lt;strong&gt;Implementing this unified, end-user oriented pipeline is the goal of the &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;devtools&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install_github&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;easystats/report&amp;#34;&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# Install the latest psycho version&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(report)  &lt;span style=&#34;color:#75715e&#34;&gt;# Load the package&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(dplyr)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;fit-an-anova&#34;&gt;Fit an anova&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s start by doing a traditional ANOVA with &lt;em&gt;Sepal.Length&lt;/em&gt; (the length of the sepals of some flowers) as dependent variable, and the &lt;em&gt;Species&lt;/em&gt; as categorical predictor.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;aov_results &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;aov&lt;/span&gt;(Sepal.Length &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Species, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;iris)  &lt;span style=&#34;color:#75715e&#34;&gt;# Fit the ANOVA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to an ANOVA object to format its content.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;report&lt;/span&gt;(aov_results)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It formats the results, computes the partial omega-squared as an index of effect size (better than the eta2, see &lt;a href=&#34;https://academic.oup.com/hcr/article-abstract/28/4/612/4331349&#34;&gt;Levine et al. 2002&lt;/a&gt;, &lt;a href=&#34;http://journals.sagepub.com/doi/abs/10.1177/0013164404264848&#34;&gt;Pierce et al. 2004&lt;/a&gt;) as well as its &lt;a href=&#34;http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize&#34;&gt;interpretation&lt;/a&gt; and presents the results in an APA-compatible way.&lt;/p&gt;
+&lt;p&gt;Note that a table-output is also available:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;aov_results &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;report&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;to_table&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>ANOVA</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
+    </item>
+    
+    <item>
       <title>Formatted correlation output with effect sizes</title>
       <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
@@ -3689,6 +3435,49 @@ cor_results &amp;lt;- cor.test(df$Sepal.Length, df$Petal.Length)  # Compute a co
 &lt;h1&gt;Evolution&lt;/h1&gt;
 &lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>report</category>
+      
+            <category>correlations</category>
+      
+            <category>APA</category>
+      
+            <category>results</category>
+      
+      
+            <category>R</category>
+      
+            <category>report</category>
+      
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>https://easystats.github.io/blog/posts/report_correlation.utf8/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/report_correlation.utf8/</guid>
+      <description>&lt;p&gt;One of the most time-consuming part of data analysis in science is the copy-pasting of specific values of some R output to a manuscript or a report. This task is frustrating, prone to errors, and increases the variability of statistical reporting. At the sime time, standardizing practices of what and how to report is crucial for reproducibility and clarity. &lt;strong&gt;The new &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt; package was designed specifically to do this job&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;install-report&#34;&gt;Install report&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;report&lt;/code&gt; is part of the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;easystats&lt;/em&gt;&lt;/a&gt; suite of packages. However, as it is not (yet) on CRAN, you&amp;rsquo;ll need to install it directly from &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;devtools&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install_github&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;easystats/report&amp;#34;&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# Install the latest psycho version&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(report)  &lt;span style=&#34;color:#75715e&#34;&gt;# Load the package&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(dplyr)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;do-a-correlation&#34;&gt;Do a correlation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; iris  &lt;span style=&#34;color:#75715e&#34;&gt;# Load the traditional iris dataset into an object called df (for dataframe)&lt;/span&gt;
+cor_results &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cor.test&lt;/span&gt;(df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Sepal.Length, df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Petal.Length)  &lt;span style=&#34;color:#75715e&#34;&gt;# Compute a correlation and store its result&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;formatted-output&#34;&gt;Formatted output&lt;/h1&gt;
+&lt;p&gt;The &lt;code&gt;report&lt;/code&gt; package include a single function, namely &lt;code&gt;report()&lt;/code&gt;, that can be applied to a correlation to format its content.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;report&lt;/span&gt;(cor_results)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The formatted output includes the &lt;strong&gt;direction&lt;/strong&gt;, &lt;strong&gt;effect size&lt;/strong&gt; (interpreted by default using &lt;strong&gt;&lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#correlation-r&#34;&gt;Cohen&amp;rsquo;s (1988)&lt;/a&gt;&lt;/strong&gt; rules of thumb) and &lt;strong&gt;confidence intervals&lt;/strong&gt;. Now, you can just copy and paste this line into your report and focus on more important things.&lt;/p&gt;
+&lt;h1 id=&#34;evolution&#34;&gt;Evolution&lt;/h1&gt;
+&lt;p&gt;Of course, these reporting standards should change, depending on new expert recommendations or official guidelines. &lt;strong&gt;The goal of this package is to flexibly adaptive to new changes and good practices evolution&lt;/strong&gt;. Therefore, if you have any advices, opinions or such, we encourage you to either let us know by opening an &lt;a href=&#34;https://github.com/easystats/report/issues&#34;&gt;issue&lt;/a&gt;, or even better, try to implement them yourself by &lt;a href=&#34;https://github.com/easystats/report/blob/master/.github/CONTRIBUTING.md&#34;&gt;contributing&lt;/a&gt; to the code.&lt;/p&gt;
 </description>
       
             <category>R</category>

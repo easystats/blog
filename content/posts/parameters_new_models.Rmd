@@ -1,7 +1,7 @@
 ---
 title: "New formatting features in the parameters package"
 author: "easystats"
-date: 2020-10-13
+date: 2021-01-21
 categories: ["R", "parameters"]
 tags: ["R", "easystats", "parameters"]
 ---

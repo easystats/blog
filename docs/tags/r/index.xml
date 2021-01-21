@@ -6,7 +6,7 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>New formatting features in the parameters package</title>
       <link>https://easystats.github.io/blog/posts/parameters_new_models/</link>
-      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_new_models/</guid>
       <description>You probably already have heard of the parameters package, a light-weight package to extract, compute and explore the parameters of statistical models using R (if not, there is a related publication introducing the package’s main features).
@@ -30,17 +30,6 @@ In this post, we like to introduce a new feature that facilitates nicely rendere
       <description>TLDR: BayestestR currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what? Join the discussion here.
 Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, .05 (for the p-value), or the 95% range for the Confidence Interval (CI). Indeed, why 95 and not 94 or 90?
 One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter’s value.</description>
-    </item>
-    
-    <item>
-      <title>In defence of the 95% CI</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_95.knit/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_95.knit/</guid>
-      <description>TLDR: BayestestR currently uses a 89% threshold by default for Credible Intervals (CI). Should we change that? If so, by what? Join the discussion here.
-Magical numbers, or conventional thresholds, have bad press in statistics, and there are many of them. For instance, .05 (for the p-value), or the 95% range for the Confidence Interval (CI). Indeed, why 95 and not 94 or 90?
-One of the issue that traditional confidence intervals are often being interpreted as a description of the uncertainty surrounding a parameter&amp;rsquo;s value.</description>
     </item>
     
     <item>
@@ -65,16 +54,6 @@ It’s lightweight, easy to use, and allows for the computation of many differen
     </item>
     
     <item>
-      <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</link>
-      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</guid>
-      <description>The correlation package The easystats project continues to grow with its more recent addition, a package devoted to correlations. Check-out its webpage here!
-It&amp;rsquo;s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd&amp;rsquo;s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
-    </item>
-    
-    <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_pd/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
@@ -95,16 +74,6 @@ I decided to get in touch with Daniel, aka strengejacke (for mysterious and very
     </item>
     
     <item>
-      <title>easystats: one year already. What&#39;s next?</title>
-      <link>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</guid>
-      <description>Happy birthday easystats! About a year ago, I (Dom) sadly realised that the R package I was maintaining (psycho) was drifting more and more away from its original scope, getting drown under a pile of unrelated and under-documented features that I kept on adding as my R skills improved. Something had to be done.
-I decided to get in touch with Daniel, aka strengejacke (for mysterious and very confusing reasons), the author of the sjverse, a collection of awesome packages which scope wasn&amp;rsquo;t too distant from my own one.</description>
-    </item>
-    
-    <item>
       <title>Comparison of indices of significance in the Bayesian framework</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
@@ -113,17 +82,6 @@ I decided to get in touch with Daniel, aka strengejacke (for mysterious and very
       <description>The bayestestR package has several functions to compute indices of effect existence and significance in a Bayesian framework, like p_direction() or bayesfactor_parameters().
 The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. Using the package, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
 If you’d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!</description>
-    </item>
-    
-    <item>
-      <title>Comparison of indices of significance in the Bayesian framework</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</link>
-      <pubDate>Tue, 17 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</guid>
-      <description>The bayestestR package has several functions to compute indices of effect existence and significance in a Bayesian framework, like p_direction() or bayesfactor_parameters().
-The accuracy of these indices is affected by various sources of uncertainty, such as sample size or noise. Using the package, we have created a small animation that demontrates how new evidence updates the posterior distribution and thereby indices of existence and significance:
-If you&amp;rsquo;d like to know more (statistical) details about these indices, we have recently published a paper with a simulation study (available for free!</description>
     </item>
     
     <item>
@@ -199,22 +157,23 @@ And this release is so packed with new features and improvements that it would b
     </item>
     
     <item>
-      <title>Become a Bayesian master with bayestestR (0.2)</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</link>
-      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</guid>
-      <description>bayestestR 0.2 is here! As you might have heard from previous posts, we have recently started to collaborate around the new easystats project, a suite of packages designed to make your life easier. One of the packages, bayestestR, has just been updated on CRAN.
-And this release is so packed with new features and improvements that it would be impossible to present them all in one post! We have added the computation of different types of Bayes factors (BF), new plotting methods (available in the see package), a new meta-function, describe_posterior, that computes everything at once, and more&amp;hellip;</description>
-    </item>
-    
-    <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
       <link>https://easystats.github.io/blog/posts/see_presentation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
+Without further ado, please let us introduce the latest addition to the easyverse; the see package!
+Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
+    </item>
+    
+    <item>
+      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
+      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
     </item>
@@ -265,10 +224,10 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
     
     <item>
       <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</link>
+      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</link>
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</guid>
+      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</guid>
       <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
 To address this, please let us introduce bayestestR!
 bayestestR We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
@@ -293,11 +252,29 @@ bayestestR We have recently decided to collaborate around the new easystats proj
     </item>
     
     <item>
+      <title>The end of errors in ANOVA reporting</title>
+      <link>https://easystats.github.io/blog/posts/report_anova.utf8/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/report_anova.utf8/</guid>
+      <description>This post shows how to create formatted reports for ANOVAs.</description>
+    </item>
+    
+    <item>
       <title>Formatted correlation output with effect sizes</title>
       <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
+      <description>This post shows how to create formatted reports for correlation tests</description>
+    </item>
+    
+    <item>
+      <title>Formatted correlation output with effect sizes</title>
+      <link>https://easystats.github.io/blog/posts/report_correlation.utf8/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/report_correlation.utf8/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     

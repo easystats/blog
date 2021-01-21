@@ -197,11 +197,11 @@ iris %&amp;gt;%
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;correlation(iris, bayesian=TRUE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |              Prior |           Method | n_Obs
 ## ----------------------------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.07% |    43.20% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.89] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.05% |    43.45% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.90] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
 ## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  | Petal.Length | -0.42 | [-0.51, -0.30] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Width  | Petal.Length | -0.42 | [-0.52, -0.31] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |     0.07% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
 ## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;tetrachoric-polychoric-biserial-biweight&#34; class=&#34;section level2&#34;&gt;
@@ -280,162 +280,6 @@ mtcars %&amp;gt;%
 &lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>correlation</category>
-      
-      
-            <category>R</category>
-      
-            <category>correlation</category>
-      
-    </item>
-    
-    <item>
-      <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</link>
-      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;the-correlation-package&#34;&gt;The correlation package&lt;/h2&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt; continues to grow with its more recent addition, a package devoted to &lt;strong&gt;correlations&lt;/strong&gt;. Check-out its &lt;a href=&#34;https://github.com/easystats/correlation&#34;&gt;&lt;strong&gt;webpage here&lt;/strong&gt;&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as &lt;strong&gt;partial&lt;/strong&gt; correlations, &lt;strong&gt;Bayesian&lt;/strong&gt; correlations, &lt;strong&gt;multilevel&lt;/strong&gt; correlations, &lt;strong&gt;polychoric&lt;/strong&gt; correlations, &lt;strong&gt;biweight&lt;/strong&gt;, &lt;strong&gt;percentage bend&lt;/strong&gt; or &lt;strong&gt;Sheperd&amp;rsquo;s Pi&lt;/strong&gt; correlations (types of &lt;strong&gt;robust&lt;/strong&gt; correlation), &lt;strong&gt;distance&lt;/strong&gt; correlation (a type of &lt;strong&gt;non-linear&lt;/strong&gt; correlation) and more, also allowing for combinations between them (for instance, &lt;em&gt;Bayesian partial multilevel correlation&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;You can install and load the package as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;correlation&amp;#34;&lt;/span&gt;)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(correlation)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;p&gt;The main function is &lt;a href=&#34;https://easystats.github.io/correlation/reference/correlation.html&#34;&gt;&lt;code&gt;correlation()&lt;/code&gt;&lt;/a&gt;, which builds on top of &lt;a href=&#34;https://easystats.github.io/correlation/reference/cor_test.html&#34;&gt;&lt;code&gt;cor_test()&lt;/code&gt;&lt;/a&gt; and comes with a number of possible options.&lt;/p&gt;
-&lt;h2 id=&#34;correlation-details-and-matrix&#34;&gt;Correlation details and matrix&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;cor &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris)
-cor
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |     r |         95% CI | t(148) |      p |  Method | n_Obs
-## ----------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.12 | [-0.27,  0.04] |  -1.44 | 0.152  | Pearson |   150
-## Sepal.Length | Petal.Length |  0.87 | [ 0.83,  0.91] |  21.65 | &amp;lt; .001 | Pearson |   150
-## Sepal.Length |  Petal.Width |  0.82 | [ 0.76,  0.86] |  17.30 | &amp;lt; .001 | Pearson |   150
-## Sepal.Width  | Petal.Length | -0.43 | [-0.55, -0.29] |  -5.77 | &amp;lt; .001 | Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.37 | [-0.50, -0.22] |  -4.79 | &amp;lt; .001 | Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |  43.39 | &amp;lt; .001 | Pearson |   150
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The output is not a square matrix, but a &lt;strong&gt;(tidy) dataframe with all correlations tests per row&lt;/strong&gt;. One can also obtain a &lt;strong&gt;matrix&lt;/strong&gt; using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;(cor)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
-## -------------------------------------------------------
-## Sepal.Length |     0.82*** |      0.87*** |       -0.12
-## Sepal.Width  |    -0.37*** |     -0.43*** |            
-## Petal.Length |     0.96*** |              |
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note that one can also obtain the full, &lt;strong&gt;square&lt;/strong&gt; and redundant matrix using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;as.table&lt;/span&gt;(cor)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Sepal.Length | Sepal.Width | Petal.Length | Petal.Width
-## ----------------------------------------------------------------------
-## Sepal.Length |      1.00*** |       -0.12 |      0.87*** |     0.82***
-## Sepal.Width  |        -0.12 |     1.00*** |     -0.43*** |    -0.37***
-## Petal.Length |      0.87*** |    -0.43*** |      1.00*** |     0.96***
-## Petal.Width  |      0.82*** |    -0.37*** |      0.96*** |     1.00***
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;grouped-dataframes&#34;&gt;Grouped dataframes&lt;/h2&gt;
-&lt;p&gt;The function also supports &lt;strong&gt;stratified correlations&lt;/strong&gt;, all within the &lt;em&gt;tidyverse&lt;/em&gt; workflow!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(dplyr)
-
-iris &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;select&lt;/span&gt;(Species, Petal.Width, Sepal.Length, Sepal.Width) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;group_by&lt;/span&gt;(Species) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Group      |   Parameter1 |   Parameter2 |    r |        95% CI | t(48) |      p |  Method | n_Obs
-## --------------------------------------------------------------------------------------------------
-## setosa     |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] |  2.01 | 0.101  | Pearson |    50
-## setosa     |  Petal.Width |  Sepal.Width | 0.23 | [-0.05, 0.48] |  1.66 | 0.104  | Pearson |    50
-## setosa     | Sepal.Length |  Sepal.Width | 0.74 | [ 0.59, 0.85] |  7.68 | &amp;lt; .001 | Pearson |    50
-## versicolor |  Petal.Width | Sepal.Length | 0.55 | [ 0.32, 0.72] |  4.52 | &amp;lt; .001 | Pearson |    50
-## versicolor |  Petal.Width |  Sepal.Width | 0.66 | [ 0.47, 0.80] |  6.15 | &amp;lt; .001 | Pearson |    50
-## versicolor | Sepal.Length |  Sepal.Width | 0.53 | [ 0.29, 0.70] |  4.28 | &amp;lt; .001 | Pearson |    50
-## virginica  |  Petal.Width | Sepal.Length | 0.28 | [ 0.00, 0.52] |  2.03 | 0.048  | Pearson |    50
-## virginica  |  Petal.Width |  Sepal.Width | 0.54 | [ 0.31, 0.71] |  4.42 | &amp;lt; .001 | Pearson |    50
-## virginica  | Sepal.Length |  Sepal.Width | 0.46 | [ 0.20, 0.65] |  3.56 | 0.002  | Pearson |    50
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bayesian-correlations&#34;&gt;Bayesian Correlations&lt;/h2&gt;
-&lt;p&gt;It is very easy to switch to a &lt;strong&gt;Bayesian framework&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris, bayesian&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |              Prior |           Method | n_Obs
-## ----------------------------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.07% |    43.20% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.89] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  | Petal.Length | -0.42 | [-0.51, -0.30] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &amp;gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tetrachoric-polychoric-biserial-biweight&#34;&gt;Tetrachoric, Polychoric, Biserial, Biweight&amp;hellip;&lt;/h2&gt;
-&lt;p&gt;The &lt;code&gt;correlation&lt;/code&gt; package also supports different types of methods, which can deal with correlations &lt;strong&gt;between factors&lt;/strong&gt;!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(iris, include_factors &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;, method &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;auto&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter1         |         Parameter2 |     r |         95% CI | t(148) |      p |         Method | n_Obs
-## -----------------------------------------------------------------------------------------------------------
-## Sepal.Length       |        Sepal.Width | -0.12 | [-0.27,  0.04] |  -1.44 | 0.452  |        Pearson |   150
-## Sepal.Length       |       Petal.Length |  0.87 | [ 0.83,  0.91] |  21.65 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Length       |        Petal.Width |  0.82 | [ 0.76,  0.86] |  17.30 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Length       |     Species.setosa | -0.72 | [-0.79, -0.63] | -12.53 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Length       | Species.versicolor |  0.08 | [-0.08,  0.24] |   0.97 | 0.452  | Point-biserial |   150
-## Sepal.Length       |  Species.virginica |  0.64 | [ 0.53,  0.72] |  10.08 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        |       Petal.Length | -0.43 | [-0.55, -0.29] |  -5.77 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Width        |        Petal.Width | -0.37 | [-0.50, -0.22] |  -4.79 | &amp;lt; .001 |        Pearson |   150
-## Sepal.Width        |     Species.setosa |  0.60 | [ 0.49,  0.70] |   9.20 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        | Species.versicolor | -0.47 | [-0.58, -0.33] |  -6.44 | &amp;lt; .001 | Point-biserial |   150
-## Sepal.Width        |  Species.virginica | -0.14 | [-0.29,  0.03] |  -1.67 | 0.392  | Point-biserial |   150
-## Petal.Length       |        Petal.Width |  0.96 | [ 0.95,  0.97] |  43.39 | &amp;lt; .001 |        Pearson |   150
-## Petal.Length       |     Species.setosa | -0.92 | [-0.94, -0.89] | -29.13 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Length       | Species.versicolor |  0.20 | [ 0.04,  0.35] |   2.51 | 0.066  | Point-biserial |   150
-## Petal.Length       |  Species.virginica |  0.72 | [ 0.63,  0.79] |  12.66 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Width        |     Species.setosa | -0.89 | [-0.92, -0.85] | -23.41 | &amp;lt; .001 | Point-biserial |   150
-## Petal.Width        | Species.versicolor |  0.12 | [-0.04,  0.27] |   1.44 | 0.452  | Point-biserial |   150
-## Petal.Width        |  Species.virginica |  0.77 | [ 0.69,  0.83] |  14.66 | &amp;lt; .001 | Point-biserial |   150
-## Species.setosa     | Species.versicolor | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## Species.setosa     |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## Species.versicolor |  Species.virginica | -0.88 | [-0.91, -0.84] | -22.43 | &amp;lt; .001 |    Tetrachoric |   150
-## 
-## p-value adjustment method: Holm (1979)
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;partial-correlations&#34;&gt;Partial Correlations&lt;/h2&gt;
-&lt;p&gt;It also supports &lt;strong&gt;partial correlations&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;iris &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(partial &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Petal.Width | Petal.Length | Sepal.Width
-## -------------------------------------------------------
-## Sepal.Length |    -0.34*** |      0.72*** |     0.63***
-## Sepal.Width  |     0.35*** |     -0.62*** |            
-## Petal.Length |     0.87*** |              |
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;gaussian-graphical-models-ggms&#34;&gt;Gaussian Graphical Models (GGMs)&lt;/h2&gt;
-&lt;p&gt;Such partial correlations can also be represented as &lt;strong&gt;Gaussian graphical models&lt;/strong&gt;, an increasingly popular tool in psychology:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see) &lt;span style=&#34;color:#75715e&#34;&gt;# for plotting&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggraph) &lt;span style=&#34;color:#75715e&#34;&gt;# needs to be loaded&lt;/span&gt;
-
-mtcars &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;correlation&lt;/span&gt;(partial &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;stay-tuned&#34;&gt;Stay tuned&lt;/h2&gt;
-&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       
             <category>R</category>

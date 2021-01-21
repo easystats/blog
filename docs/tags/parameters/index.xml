@@ -6,7 +6,7 @@
     <description>Recent content in parameters on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/parameters/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>New formatting features in the parameters package</title>
       <link>https://easystats.github.io/blog/posts/parameters_new_models/</link>
-      <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/parameters_new_models/</guid>
       <description>You probably already have heard of the parameters package, a light-weight package to extract, compute and explore the parameters of statistical models using R (if not, there is a related publication introducing the package’s main features).

@@ -32,15 +32,5 @@ install.packages(&amp;quot;correlation&amp;quot;)library(correlation)DataImag
 It’s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd’s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
     </item>
     
-    <item>
-      <title>The ulimate package for correlations (by easystats)</title>
-      <link>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</link>
-      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</guid>
-      <description>The correlation package The easystats project continues to grow with its more recent addition, a package devoted to correlations. Check-out its webpage here!
-It&amp;rsquo;s lightweight, easy to use, and allows for the computation of many different kinds of correlations, such as partial correlations, Bayesian correlations, multilevel correlations, polychoric correlations, biweight, percentage bend or Sheperd&amp;rsquo;s Pi correlations (types of robust correlation), distance correlation (a type of non-linear correlation) and more, also allowing for combinations between them (for instance, Bayesian partial multilevel correlation).</description>
-    </item>
-    
   </channel>
 </rss>

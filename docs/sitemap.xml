@@ -4,52 +4,52 @@
   
   <url>
     <loc>https://easystats.github.io/blog/categories/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/tags/easystats/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/posts/parameters_new_models/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/tags/parameters/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/categories/parameters/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/posts/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/tags/r/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/categories/r/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/tags/</loc>
-    <lastmod>2020-10-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -64,11 +64,6 @@
   
   <url>
     <loc>https://easystats.github.io/blog/posts/bayestestr_95/</loc>
-    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://easystats.github.io/blog/posts/bayestestr_95.knit/</loc>
     <lastmod>2020-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -89,11 +84,6 @@
   
   <url>
     <loc>https://easystats.github.io/blog/posts/correlation_presentation/</loc>
-    <lastmod>2020-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://easystats.github.io/blog/posts/correlation_presentation.utf8/</loc>
     <lastmod>2020-03-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,17 +123,7 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/posts/easystats_oneyear.knit/</loc>
-    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://easystats.github.io/blog/posts/bayestestr_evidence_ani/</loc>
-    <lastmod>2019-12-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://easystats.github.io/blog/posts/bayestestr_evidence_ani.utf8/</loc>
     <lastmod>2019-12-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -228,12 +208,12 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/posts/bayestestr_v2.knit/</loc>
-    <lastmod>2019-06-03T00:00:00+00:00</lastmod>
+    <loc>https://easystats.github.io/blog/posts/see_presentation/</loc>
+    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/posts/see_presentation/</loc>
+    <loc>https://easystats.github.io/blog/posts/see_presentation.utf8/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -303,7 +283,7 @@
   </url>
   
   <url>
-    <loc>https://easystats.github.io/blog/posts/bayestestr_presentation.knit/</loc>
+    <loc>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -378,12 +358,22 @@
   </url>
   
   <url>
+    <loc>https://easystats.github.io/blog/posts/report_anova.utf8/</loc>
+    <lastmod>2019-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://easystats.github.io/blog/tags/correlations/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://easystats.github.io/blog/posts/report_correlation/</loc>
+    <lastmod>2019-03-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://easystats.github.io/blog/posts/report_correlation.utf8/</loc>
     <lastmod>2019-03-25T00:00:00+00:00</lastmod>
   </url>
   
