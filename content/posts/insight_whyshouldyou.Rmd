@@ -1,0 +1,107 @@
+---
+title: "You write R packages and functions? This package will change your life!"
+author: "easystats"
+date: 2021-02-01
+categories: ["R", "easystats"]
+tags: ["R", "easystats", "insight"]
+---
+
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(knitr)
+options(knitr.kable.NA = '',
+        digits=2,
+        dpi=450)
+
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+
+library(parameters)
+library(see)
+```
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+include_graphics("https://raw.githubusercontent.com/easystats/insight/master/man/figures/logo.png")
+```
+
+## What is it?
+
+We are talking about the [**insight package**](https://github.com/easystats/insight). It is what allows other packages, like **easystats** ([parameters](https://github.com/easystats/parameters), [effectsize](https://github.com/easystats/effectsize), [performance](https://github.com/easystats/performance), [report](https://github.com/easystats/report), ...) or [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot), [**sjstats**](https://github.com/strengejacke/sjstats/) or  [**modelsummary**](https://github.com/vincentarelbundock/modelsummary) to be as powerful as they are, supporting tons of different R models.
+
+It is made for developers (and users) to do a lot of **postprocessing** (e.g., extracting stuff like parameters, values, data, names, specifications, predictions, priors etc.) of different models, whether it is to nicely display it or to do further computation with it.
+
+If you work with, and around, different R models, then **this package is a must-have that will change your life**.
+
+## What's the problem
+
+Because R has so many different packages, different models were implemented by different people in a different way. As a consequence, there is a different ways of accessing the same stuff from each model.
+
+For example, let's say you want to find the **names of the predictors** (the independent variables) of a linear model. One way would be like this:
+
+```{r message=FALSE, warning=FALSE}
+model_lm <- lm(mpg ~ drat * wt, data=mtcars)
+
+names(model_lm$model)[-1]
+```
+
+But what in the case of a lme4's mixed model? Well the solution is a bit different, plus it's not easy to drop the random factors...
+
+```{r message=FALSE, warning=FALSE}
+model_lmer <- lme4::lmer(mpg ~ drat * wt + (1|cyl), data=mtcars)
+
+names(model_lmer@frame)[-1]
+```
+
+And what in the case of a GAMM4's general additive model?
+
+```{r message=FALSE, warning=FALSE}
+model_gam <- gamm4::gamm4(mpg ~ drat + wt + s(qsec), data=mtcars)
+
+head(names(model_gam$gam$model)[-1], -3)
+```
+
+Maybe something like that, but then you have to account for **all the edgecases** and so on. And trust us, **that's a lot of work** to have a robust and bug-free solution.
+
+
+## How 'insight' addresses it
+
+**insight** allows you to extract stuff from all models in a consistent and robust way. For instance, for the fixed predictors of the examples above, here's how you would do it with insight:
+
+```{r message=FALSE, warning=FALSE}
+library(insight)
+
+find_predictors(model_lm)
+find_predictors(model_lmer)
+find_predictors(model_gam)
+```
+
+**Boom!** One function that works for all the models. And that's not all, it can help you extract data, parameters, intercepts, degrees of freedom, sigma, variance, predicted values, variable names, interaction terms, random factors, smooth terms, etc. etc. Basically, everything you might need. And if what you need is not there, just [**ask for it**](https://github.com/easystats/insight/issues).
+
+You can check all that **insight** can do [**here**](https://easystats.github.io/insight/reference/index.html).
+
+## More reasons to use it
+
+If you're worried about adding a new dependency to your package, don't be! Because **insight** is super light: it itself has **no dependencies**. So it's a safe choice to add and rely on!
+
+It includes other useful **features that you don't know you absolutely need**, like value formatting, nice printing of text, table and data.frames exporting and much more! Check out them [**here**](https://easystats.github.io/insight/reference/index.html).
+
+## Get Involved
+
+*easystats* is a project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if **you want to get involved :)**
+
+- **Check out our other blog posts** [***here***](https://easystats.github.io/blog/posts/)!
+
+## Stay tuned 
+
+To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
+
+- [\@easystats4u](https://twitter.com/easystats4u)
+- [\@strengejacke](https://twitter.com/strengejacke)
+- [\@DominiqueMakowski](https://twitter.com/Dom_Makowski)
+- [\@mattansb](https://twitter.com/mattansb)
+- [\@IndrajeetPatil](https://twitter.com/patilindrajeets)
+- [\@humanfactors](https://twitter.com/humanfactorsio)
+- [\@lindeloev](https://twitter.com/jonaslindeloev)
+- [\@jacob-long](https://twitter.com/jacobandrewlong)
+- [\@pdwaggoner](https://pdwaggoner.github.io/)
+- [\@LeoDutriaux](https://twitter.com/LDtrx)
+
