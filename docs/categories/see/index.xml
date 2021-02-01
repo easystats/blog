@@ -94,16 +94,12 @@ brms_model &amp;lt;- insight::download_model(&amp;quot;brms_zi_2&amp;quot;)
 result &amp;lt;- model_parameters(brms_model, effects = &amp;quot;all&amp;quot;, component = &amp;quot;all&amp;quot;)
 
 result&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed effects (conditional)
-## 
-## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
 ## -------------------------------------------------------------------------
 ## (Intercept) |  -0.86 | [-1.37, -0.34] | 98.22% |     1.30% | 1.002 | 1003
 ## persons     |   0.84 | [ 0.68,  1.01] |   100% |        0% | 1.002 |  878
 ## child       |  -1.15 | [-1.29, -1.00] |   100% |        0% | 1.001 | 2166
 ## camper      |   0.73 | [ 0.58,  0.89] |   100% |        0% | 1.000 | 3528
-## 
-## # Fixed effects (zero-inflated)
 ## 
 ## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
 ## -------------------------------------------------------------------------
@@ -111,13 +107,9 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## child       |   1.86 | [ 1.37,  2.42] |   100% |        0% | 1.002 | 3022
 ## camper      |  -0.84 | [-1.40, -0.24] | 98.95% |     1.68% | 1.000 | 3410
 ## 
-## # Random effects (conditional) SD/Cor: persons
-## 
 ## Parameter   | Median |       89% CI |   pd | % in ROPE |  Rhat | ESS
 ## --------------------------------------------------------------------
 ## (Intercept) |   0.12 | [0.00, 0.39] | 100% |    45.27% | 1.005 | 819
-## 
-## # Random effects (zero-inflated) SD/Cor: persons
 ## 
 ## Parameter   | Median |       89% CI |   pd | % in ROPE |  Rhat |  ESS
 ## ---------------------------------------------------------------------
@@ -267,10 +259,10 @@ plot(result) +
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
       <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;h2 id=&#34;the-see-package&#34;&gt;The see package&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model access&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;visualisation&lt;/a&gt;.&lt;/p&gt;

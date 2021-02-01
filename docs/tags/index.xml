@@ -6,7 +6,7 @@
     <description>Recent content in Tags on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>easystats</title>
       <link>https://easystats.github.io/blog/tags/easystats/</link>
-      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/tags/easystats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>insight</title>
+      <link>https://easystats.github.io/blog/tags/insight/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/tags/insight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://easystats.github.io/blog/tags/r/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/tags/r/</guid>
       <description></description>
     </item>
     
@@ -26,15 +44,6 @@
       <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/tags/parameters/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://easystats.github.io/blog/tags/r/</link>
-      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/tags/r/</guid>
       <description></description>
     </item>
     
@@ -269,15 +278,6 @@
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>insight</title>
-      <link>https://easystats.github.io/blog/tags/insight/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/tags/insight/</guid>
       <description></description>
     </item>
     

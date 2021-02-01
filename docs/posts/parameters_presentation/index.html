@@ -279,13 +279,11 @@ lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&gt;%
 
 model &lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)</code></pre>
-<pre><code>## # Fixed effects
-## 
-## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
+<pre><code>## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
 ## ---------------------------------------------------------------------------------------------------
-## (Intercept) |  39.71 | [36.97, 42.46] |   100% |        0% | 1.000 | 5292 | Normal (20.09 +- 15.07)
-## wt          |  -3.17 | [-4.48, -2.03] |   100% |     0.05% | 1.001 | 2092 |  Normal (0.00 +- 15.40)
-## cyl         |  -1.51 | [-2.16, -0.86] | 99.98% |     1.38% | 1.001 | 2132 |   Normal (0.00 +- 8.44)</code></pre>
+## (Intercept) |  39.67 | [36.93, 42.68] |   100% |        0% | 0.999 | 4960 | Normal (20.09 +- 15.07)
+## wt          |  -3.19 | [-4.44, -1.92] | 99.98% |     0.10% | 1.002 | 2033 |  Normal (0.00 +- 15.40)
+## cyl         |  -1.51 | [-2.18, -0.84] | 99.98% |     1.77% | 1.002 | 2272 |   Normal (0.00 +- 8.44)</code></pre>
 <ul>
 <li><strong>Check out</strong> <a href="https://easystats.github.io/parameters/"><strong>more examples and documentation here!</strong></a></li>
 </ul>
@@ -305,13 +303,13 @@ model_parameters(model)</code></pre>
 
 <div class="navigation navigation-single">
     
-    <a href="/blog/posts/performance_check_collinearity/" class="navigation-prev">
+    <a href="/blog/posts/parameters_presentation.utf8/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
-      <span class="navigation-tittle">Check your (Mixed) Model for Multicollinearity with &#39;performance&#39;</span>
+      <span class="navigation-tittle">parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</span>
     </a>
     
     
-    <a href="/blog/posts/parameters_v2/" class="navigation-next">
+    <a href="/blog/posts/parameters_v2.utf8/" class="navigation-next">
       <span class="navigation-tittle">More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</span>
       <i aria-hidden="true" class="fa fa-chevron-right"></i>
     </a>

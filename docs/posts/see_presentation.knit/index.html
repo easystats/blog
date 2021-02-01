@@ -11,7 +11,7 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.70.0" />
 
     
     
@@ -31,7 +31,7 @@ Essentially, see is the visualisation companion to other functions and packages 
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/posts/see_presentation.knit/" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/see_presentation.knit/" />
 <meta property="article:published_time" content="2019-05-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-05-27T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
 
@@ -48,7 +48,7 @@ Essentially, see is the visualisation companion to other functions and packages 
 
 
 
-<link rel="stylesheet" href="/blog/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
 
 
 <link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -74,14 +74,14 @@ Essentially, see is the visualisation companion to other functions and packages 
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="/blog/">easystats</a>
+        <a href="https://easystats.github.io/blog/">easystats</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -149,7 +149,7 @@ Essentially, see is the visualisation companion to other functions and packages 
     </div>
     
 <div class="copyright">
-  &copy; 2019 easystats
+  &copy; 2021 easystats
   
     <a href="https://github.com/easystats/easystats">GPL-3.0</a>
   
@@ -214,73 +214,50 @@ Essentially, see is the visualisation companion to other functions and packages 
   
   
   <div class="post">
-    
-
-<p><img src="https://github.com/easystats/see/raw/master/man/figures/logo.png" width="200px" /></p>
-
+    <p><!-- raw HTML omitted --></p>
 <h2 id="the-see-package">The see package</h2>
-
 <p><a href="https://github.com/orgs/easystats/people">We</a> have recently decided to collaborate around the new <a href="https://github.com/easystats"><strong>easystats project</strong></a>, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to <a href="https://github.com/easystats/insight">model access</a> or <a href="https://github.com/easystats/bayestestR">Bayesian analysis</a>, <a href="https://github.com/easystats/performance">indices of model performance</a> or <a href="https://github.com/easystats/see">visualisation</a>.</p>
-
-<p><strong><em>Without further ado, please let us introduce the latest addition to the easyverse; the see package!</em></strong></p>
-
+<p><em><strong>Without further ado, please let us introduce the latest addition to the easyverse; the see package!</strong></em></p>
 <p>Essentially, <a href="https://github.com/easystats/see"><code>see</code></a> is the visualisation companion to other functions and packages in <strong>easystats</strong>. See the <strong>list of functions</strong> <a href="https://easystats.github.io/see/reference/index.html">here</a>. However, it also includes some nice themes and geoms:</p>
-
 <h2 id="examples">Examples</h2>
-
 <ul>
-<li><p><strong>Better looking points</strong> with <strong>modern theme</strong> and <strong>flat design colours</strong></p>
-
-<pre><code class="language-r">library(see)
-library(ggplot2)
-
-ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
-geom_point2(size=4, alpha=0.5) +
-scale_color_flat_d() +
-theme_modern()
-</code></pre></li>
+<li><strong>Better looking points</strong> with <strong>modern theme</strong> and <strong>flat design colours</strong></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(see)
+<span style="color:#a6e22e">library</span>(ggplot2)
 
-<p><img src="see_presentation_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-
+<span style="color:#a6e22e">ggplot</span>(iris, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Sepal.Width, y <span style="color:#f92672">=</span> Sepal.Length, color <span style="color:#f92672">=</span> Species)) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">geom_point2</span>(size<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_color_flat_d</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_modern</span>()
+</code></pre></div><p><!-- raw HTML omitted --></p>
 <ul>
-<li><p><strong>Violin plot</strong> with <strong>blackboard theme</strong> and <strong>material design colours</strong></p>
-
-<pre><code class="language-r">ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) + 
-geom_violindot(fill_dots = &quot;white&quot;) + 
-scale_fill_material_d() +
-theme_blackboard()
-</code></pre></li>
+<li><strong>Violin plot</strong> with <strong>blackboard theme</strong> and <strong>material design colours</strong></li>
 </ul>
-
-<p><img src="see_presentation_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">ggplot</span>(iris, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> Species, y <span style="color:#f92672">=</span> Sepal.Length, fill <span style="color:#f92672">=</span> Species)) <span style="color:#f92672">+</span> 
+  <span style="color:#a6e22e">geom_violindot</span>(fill_dots <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>) <span style="color:#f92672">+</span> 
+  <span style="color:#a6e22e">scale_fill_material_d</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_blackboard</span>()
+</code></pre></div><p><!-- raw HTML omitted --></p>
 <ul>
-<li><p><strong>Abyss theme</strong></p>
-
-<pre><code class="language-r">library(bayestestR)
-library(rstanarm)
-
-model &lt;- rstanarm::stan_glm(mpg ~ wt + gear + cyl + disp, data = mtcars)
-
-result &lt;- equivalence_test(model, ci = c(.89, .95))
-
-plot(result) +
-theme_abyss() +
-scale_fill_flat()
-</code></pre></li>
+<li><strong>Abyss theme</strong></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">library</span>(bayestestR)
+<span style="color:#a6e22e">library</span>(rstanarm)
 
-<p><img src="see_presentation_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+model <span style="color:#f92672">&lt;-</span> rstanarm<span style="color:#f92672">::</span><span style="color:#a6e22e">stan_glm</span>(mpg <span style="color:#f92672">~</span> wt <span style="color:#f92672">+</span> gear <span style="color:#f92672">+</span> cyl <span style="color:#f92672">+</span> disp, data <span style="color:#f92672">=</span> mtcars)
 
+result <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">equivalence_test</span>(model, ci <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">.89</span>, <span style="color:#ae81ff">.95</span>))
+
+<span style="color:#a6e22e">plot</span>(result) <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">theme_abyss</span>() <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">scale_fill_flat</span>()
+</code></pre></div><p><!-- raw HTML omitted --></p>
 <h2 id="get-involved">Get Involved</h2>
-
 <p>There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!</p>
-
 <p>To conclude, note that <em>easystats</em> is a new project in active development. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
-
 <ul>
-<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><em><strong>here</strong></em></a>!</li>
 </ul>
 
   </div>

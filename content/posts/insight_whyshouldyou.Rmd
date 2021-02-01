@@ -14,9 +14,6 @@ options(knitr.kable.NA = '',
         dpi=450)
 
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
-
-library(parameters)
-library(see)
 ```
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
@@ -25,15 +22,15 @@ include_graphics("https://raw.githubusercontent.com/easystats/insight/master/man
 
 ## What is it?
 
-We are talking about the [**insight package**](https://github.com/easystats/insight). It is what allows other packages, like **easystats** ([parameters](https://github.com/easystats/parameters), [effectsize](https://github.com/easystats/effectsize), [performance](https://github.com/easystats/performance), [report](https://github.com/easystats/report), ...) or [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot), [**sjstats**](https://github.com/strengejacke/sjstats/) or  [**modelsummary**](https://github.com/vincentarelbundock/modelsummary) to be as powerful as they are, supporting tons of different R models.
+We are talking about the [**insight package**](https://github.com/easystats/insight). It is what allows other packages, like **easystats** ([parameters](https://github.com/easystats/parameters), [effectsize](https://github.com/easystats/effectsize), [performance](https://github.com/easystats/performance), [report](https://github.com/easystats/report), ...) or [**ggstatsplot**](https://github.com/IndrajeetPatil/ggstatsplot), [**sjstats**](https://github.com/strengejacke/sjstats/) or  [**modelsummary**](https://github.com/vincentarelbundock/modelsummary) to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on **insight**?
 
-It is made for developers (and users) to do a lot of **postprocessing** (e.g., extracting stuff like parameters, values, data, names, specifications, predictions, priors etc.) of different models, whether it is to nicely display it or to do further computation with it.
+It is made for developers (and users) that do some **postprocessing** of different models (e.g., extracting stuff like parameters, values, data, names, specifications, predictions, priors, etc.), whether it is to nicely display their results or to do further computation.
 
 If you work with, and around, different R models, then **this package is a must-have that will change your life**.
 
 ## What's the problem
 
-Because R has so many different packages, different models were implemented by different people in a different way. As a consequence, there is a different ways of accessing the same stuff from each model.
+Because R has so many different packages, different models were implemented by different people in a different way. As a consequence, there are different ways of accessing the same stuff from each model.
 
 For example, let's say you want to find the **names of the predictors** (the independent variables) of a linear model. One way would be like this:
 
@@ -59,7 +56,7 @@ model_gam <- gamm4::gamm4(mpg ~ drat + wt + s(qsec), data=mtcars)
 head(names(model_gam$gam$model)[-1], -3)
 ```
 
-Maybe something like that, but then you have to account for **all the edgecases** and so on. And trust us, **that's a lot of work** to have a robust and bug-free solution.
+Again different! Maybe you could do something like that, but then you have to account for **all the edgecases** and so on. And trust us, **that's a lot of work** to have a robust and bug-free solution.
 
 
 ## How 'insight' addresses it
@@ -74,7 +71,7 @@ find_predictors(model_lmer)
 find_predictors(model_gam)
 ```
 
-**Boom!** One function that works for all the models. And that's not all, it can help you extract data, parameters, intercepts, degrees of freedom, sigma, variance, predicted values, variable names, interaction terms, random factors, smooth terms, etc. etc. Basically, everything you might need. And if what you need is not there, just [**ask for it**](https://github.com/easystats/insight/issues).
+**Boom!** One function that works for all the models. And that's not all, **insight** can help you extract data, parameters, intercepts, degrees of freedom, sigma, variance, predicted values, variable names, interaction terms, random factors, smooth terms, etc. etc. Basically, everything you might need. And if what you need is not there, just [**ask for it**](https://github.com/easystats/insight/issues).
 
 You can check all that **insight** can do [**here**](https://easystats.github.io/insight/reference/index.html).
 

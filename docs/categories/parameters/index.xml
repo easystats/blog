@@ -336,7 +336,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#qvwhjhoram .gt_table {
+#bnpcayxojb .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -361,7 +361,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_heading {
+#bnpcayxojb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -373,7 +373,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_title {
+#bnpcayxojb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -383,7 +383,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#qvwhjhoram .gt_subtitle {
+#bnpcayxojb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -393,13 +393,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#qvwhjhoram .gt_bottom_border {
+#bnpcayxojb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_col_headings {
+#bnpcayxojb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -414,7 +414,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_col_heading {
+#bnpcayxojb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -434,7 +434,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#qvwhjhoram .gt_column_spanner_outer {
+#bnpcayxojb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -446,15 +446,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#qvwhjhoram .gt_column_spanner_outer:first-child {
+#bnpcayxojb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qvwhjhoram .gt_column_spanner_outer:last-child {
+#bnpcayxojb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qvwhjhoram .gt_column_spanner {
+#bnpcayxojb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -466,7 +466,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#qvwhjhoram .gt_group_heading {
+#bnpcayxojb .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -488,7 +488,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#qvwhjhoram .gt_empty_group_heading {
+#bnpcayxojb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -503,15 +503,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#qvwhjhoram .gt_from_md &gt; :first-child {
+#bnpcayxojb .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#qvwhjhoram .gt_from_md &gt; :last-child {
+#bnpcayxojb .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#qvwhjhoram .gt_row {
+#bnpcayxojb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +530,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#qvwhjhoram .gt_stub {
+#bnpcayxojb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -542,7 +542,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#qvwhjhoram .gt_summary_row {
+#bnpcayxojb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -552,7 +552,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#qvwhjhoram .gt_first_summary_row {
+#bnpcayxojb .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -562,7 +562,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_grand_summary_row {
+#bnpcayxojb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -572,7 +572,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#qvwhjhoram .gt_first_grand_summary_row {
+#bnpcayxojb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -582,11 +582,11 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_striped {
+#bnpcayxojb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qvwhjhoram .gt_table_body {
+#bnpcayxojb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -595,7 +595,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_footnotes {
+#bnpcayxojb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -609,13 +609,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_footnote {
+#bnpcayxojb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qvwhjhoram .gt_sourcenotes {
+#bnpcayxojb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,46 +629,46 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#qvwhjhoram .gt_sourcenote {
+#bnpcayxojb .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qvwhjhoram .gt_left {
+#bnpcayxojb .gt_left {
   text-align: left;
 }
 
-#qvwhjhoram .gt_center {
+#bnpcayxojb .gt_center {
   text-align: center;
 }
 
-#qvwhjhoram .gt_right {
+#bnpcayxojb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qvwhjhoram .gt_font_normal {
+#bnpcayxojb .gt_font_normal {
   font-weight: normal;
 }
 
-#qvwhjhoram .gt_font_bold {
+#bnpcayxojb .gt_font_bold {
   font-weight: bold;
 }
 
-#qvwhjhoram .gt_font_italic {
+#bnpcayxojb .gt_font_italic {
   font-style: italic;
 }
 
-#qvwhjhoram .gt_super {
+#bnpcayxojb .gt_super {
   font-size: 65%;
 }
 
-#qvwhjhoram .gt_footnote_marks {
+#bnpcayxojb .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;qvwhjhoram&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;bnpcayxojb&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
@@ -746,7 +746,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#dryphqbdsb .gt_table {
+#pkgjjiaexd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -771,7 +771,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_heading {
+#pkgjjiaexd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -783,7 +783,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_title {
+#pkgjjiaexd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -793,7 +793,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#dryphqbdsb .gt_subtitle {
+#pkgjjiaexd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -803,13 +803,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#dryphqbdsb .gt_bottom_border {
+#pkgjjiaexd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_col_headings {
+#pkgjjiaexd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -824,7 +824,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_col_heading {
+#pkgjjiaexd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -844,7 +844,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#dryphqbdsb .gt_column_spanner_outer {
+#pkgjjiaexd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -856,15 +856,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#dryphqbdsb .gt_column_spanner_outer:first-child {
+#pkgjjiaexd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dryphqbdsb .gt_column_spanner_outer:last-child {
+#pkgjjiaexd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dryphqbdsb .gt_column_spanner {
+#pkgjjiaexd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -876,7 +876,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#dryphqbdsb .gt_group_heading {
+#pkgjjiaexd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -898,7 +898,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#dryphqbdsb .gt_empty_group_heading {
+#pkgjjiaexd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -913,15 +913,15 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#dryphqbdsb .gt_from_md &gt; :first-child {
+#pkgjjiaexd .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#dryphqbdsb .gt_from_md &gt; :last-child {
+#pkgjjiaexd .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#dryphqbdsb .gt_row {
+#pkgjjiaexd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,7 +940,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#dryphqbdsb .gt_stub {
+#pkgjjiaexd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -952,7 +952,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#dryphqbdsb .gt_summary_row {
+#pkgjjiaexd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -962,7 +962,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#dryphqbdsb .gt_first_summary_row {
+#pkgjjiaexd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -972,7 +972,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_grand_summary_row {
+#pkgjjiaexd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -982,7 +982,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#dryphqbdsb .gt_first_grand_summary_row {
+#pkgjjiaexd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -992,11 +992,11 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_striped {
+#pkgjjiaexd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dryphqbdsb .gt_table_body {
+#pkgjjiaexd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1005,7 +1005,7 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_footnotes {
+#pkgjjiaexd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1019,13 +1019,13 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_footnote {
+#pkgjjiaexd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dryphqbdsb .gt_sourcenotes {
+#pkgjjiaexd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1039,46 +1039,46 @@ cat(export_table(mtcars[1:8, 1:5]))&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#dryphqbdsb .gt_sourcenote {
+#pkgjjiaexd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dryphqbdsb .gt_left {
+#pkgjjiaexd .gt_left {
   text-align: left;
 }
 
-#dryphqbdsb .gt_center {
+#pkgjjiaexd .gt_center {
   text-align: center;
 }
 
-#dryphqbdsb .gt_right {
+#pkgjjiaexd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dryphqbdsb .gt_font_normal {
+#pkgjjiaexd .gt_font_normal {
   font-weight: normal;
 }
 
-#dryphqbdsb .gt_font_bold {
+#pkgjjiaexd .gt_font_bold {
   font-weight: bold;
 }
 
-#dryphqbdsb .gt_font_italic {
+#pkgjjiaexd .gt_font_italic {
   font-style: italic;
 }
 
-#dryphqbdsb .gt_super {
+#pkgjjiaexd .gt_super {
   font-size: 65%;
 }
 
-#dryphqbdsb .gt_footnote_marks {
+#pkgjjiaexd .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;dryphqbdsb&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;pkgjjiaexd&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;6&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;Regression Model&lt;/th&gt;
@@ -1273,16 +1273,12 @@ brms_model &amp;lt;- insight::download_model(&amp;quot;brms_zi_2&amp;quot;)
 result &amp;lt;- model_parameters(brms_model, effects = &amp;quot;all&amp;quot;, component = &amp;quot;all&amp;quot;)
 
 result&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed effects (conditional)
-## 
-## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
 ## -------------------------------------------------------------------------
 ## (Intercept) |  -0.86 | [-1.37, -0.34] | 98.22% |     1.30% | 1.002 | 1003
 ## persons     |   0.84 | [ 0.68,  1.01] |   100% |        0% | 1.002 |  878
 ## child       |  -1.15 | [-1.29, -1.00] |   100% |        0% | 1.001 | 2166
 ## camper      |   0.73 | [ 0.58,  0.89] |   100% |        0% | 1.000 | 3528
-## 
-## # Fixed effects (zero-inflated)
 ## 
 ## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS
 ## -------------------------------------------------------------------------
@@ -1290,13 +1286,9 @@ result&lt;/code&gt;&lt;/pre&gt;
 ## child       |   1.86 | [ 1.37,  2.42] |   100% |        0% | 1.002 | 3022
 ## camper      |  -0.84 | [-1.40, -0.24] | 98.95% |     1.68% | 1.000 | 3410
 ## 
-## # Random effects (conditional) SD/Cor: persons
-## 
 ## Parameter   | Median |       89% CI |   pd | % in ROPE |  Rhat | ESS
 ## --------------------------------------------------------------------
 ## (Intercept) |   0.12 | [0.00, 0.39] | 100% |    45.27% | 1.005 | 819
-## 
-## # Random effects (zero-inflated) SD/Cor: persons
 ## 
 ## Parameter   | Median |       89% CI |   pd | % in ROPE |  Rhat |  ESS
 ## ---------------------------------------------------------------------
@@ -1460,6 +1452,93 @@ result&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
+      <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
+      <link>https://easystats.github.io/blog/posts/parameters_v2.utf8/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_v2.utf8/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/parameters/raw/master/man/figures/figure1.png&#34; alt=&#34;&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt; continues to grow, expanding its capabilities and features, and the &lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; package 0.2.0 update is now on CRAN.&lt;/p&gt;
+&lt;p&gt;The primary goal of this package is to provide utilities for &lt;strong&gt;processing the parameters&lt;/strong&gt; of various statistical models. It is useful for end-users as well as developers, as it is a &lt;strong&gt;lightweight&lt;/strong&gt; and open-developed package.&lt;/p&gt;
+&lt;p&gt;The main function, &lt;a href=&#34;https://easystats.github.io/parameters/articles/model_parameters.html&#34;&gt;&lt;code&gt;model_parameters()&lt;/code&gt;&lt;/a&gt;, can be seen as an alternative to &lt;code&gt;broom::tidy()&lt;/code&gt;. However, the package also include many more useful &lt;a href=&#34;https://easystats.github.io/parameters/reference/index.html&#34;&gt;features&lt;/a&gt;, some of which are described in our &lt;strong&gt;improved documentation&lt;/strong&gt;:&lt;/p&gt;
+&lt;h2 id=&#34;improved-documentation&#34;&gt;Improved Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parameters Description&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/model_parameters.html&#34;&gt;Guide to parameters description&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parameters Engineering&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/bootstrapping.html&#34;&gt;Guide to bootstrapped parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/standardization.html&#34;&gt;Guide to standardized parameters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parameters Selection&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/parameters_selection.html&#34;&gt;Guide to parameters selection&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dimension Reduction&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/parameters_reduction.html&#34;&gt;Guide to feature reduction (PCA, cMDS, ICA&amp;hellip;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/efa_cfa.html&#34;&gt;Guide to structural models (EFA, CFA, SEM&amp;hellip;)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;improved-support&#34;&gt;Improved Support&lt;/h2&gt;
+&lt;p&gt;Besides stabilizing and improving the functions for the most popular models (&lt;code&gt;glm()&lt;/code&gt;, &lt;code&gt;glmer()&lt;/code&gt;, &lt;code&gt;stan_glm()&lt;/code&gt;, &lt;code&gt;psych&lt;/code&gt; and &lt;code&gt;lavaan&lt;/code&gt;&amp;hellip;), the functions &lt;code&gt;p_value()&lt;/code&gt;, &lt;code&gt;ci()&lt;/code&gt;, &lt;code&gt;standard_error()&lt;/code&gt;, &lt;code&gt;standardize()&lt;/code&gt; and most importantly &lt;code&gt;model_parameters()&lt;/code&gt; now support many more model objects, including mixed models from packages &lt;em&gt;nlme&lt;/em&gt;, &lt;em&gt;glmmTMB&lt;/em&gt; or &lt;em&gt;GLMMadaptive&lt;/em&gt;, zero-inflated models from package &lt;em&gt;pscl&lt;/em&gt;, other regression types from packages &lt;em&gt;gam&lt;/em&gt; or &lt;em&gt;mgcv&lt;/em&gt;, fixed effects regression models from &lt;em&gt;panelr&lt;/em&gt;, &lt;em&gt;lfe&lt;/em&gt;, &lt;em&gt;feisr&lt;/em&gt; or &lt;em&gt;plm&lt;/em&gt;, and structural models from &lt;em&gt;FactoMineR&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;improved-printing&#34;&gt;Improved Printing&lt;/h2&gt;
+&lt;p&gt;For models with special components, in particular zero-inflated models, &lt;code&gt;model_parameters()&lt;/code&gt; separates these components for a clearer output.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## # Fixed Effects
+## 
+## Parameter   | Log-Mean |   SE |         95% CI |     z |      p
+## ---------------------------------------------------------------
+## (Intercept) |    -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 0.194 
+## spp [PR]    |    -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | &amp;lt; .001
+## spp [DM]    |     0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 0.051 
+## spp [EC-A]  |    -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 0.006 
+## spp [EC-L]  |     0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | &amp;lt; .001
+## spp [DES-L] |     0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | &amp;lt; .001
+## spp [DF]    |     0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 0.435 
+## mined [no]  |     1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | &amp;lt; .001
+## 
+## # Zero-Inflated
+## 
+## Parameter   | Log-Odds |   SE |         95% CI |     z |      p
+## ---------------------------------------------------------------
+## (Intercept) |     0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 0.004 
+## mined [no]  |    -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | &amp;lt; .001
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;join-the-team&#34;&gt;Join the team&lt;/h2&gt;
+&lt;p&gt;There is still room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact one of &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;us&lt;/a&gt; if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>parameters</category>
+      
+            <category>broom</category>
+      
+            <category>coefficients</category>
+      
+      
+            <category>R</category>
+      
+            <category>parameters</category>
+      
+    </item>
+    
+    <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
@@ -1524,13 +1603,11 @@ lmer(Sepal.Width ~ Petal.Length * Petal.Width + (1|Species), data = iris) %&amp;
 
 model &amp;lt;- stan_glm(mpg ~ wt + cyl, data = mtcars)
 model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed effects
-## 
-## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
 ## ---------------------------------------------------------------------------------------------------
-## (Intercept) |  39.71 | [36.97, 42.46] |   100% |        0% | 1.000 | 5292 | Normal (20.09 +- 15.07)
-## wt          |  -3.17 | [-4.48, -2.03] |   100% |     0.05% | 1.001 | 2092 |  Normal (0.00 +- 15.40)
-## cyl         |  -1.51 | [-2.16, -0.86] | 99.98% |     1.38% | 1.001 | 2132 |   Normal (0.00 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
+## (Intercept) |  39.67 | [36.93, 42.68] |   100% |        0% | 0.999 | 4960 | Normal (20.09 +- 15.07)
+## wt          |  -3.19 | [-4.44, -1.92] | 99.98% |     0.10% | 1.002 | 2033 |  Normal (0.00 +- 15.40)
+## cyl         |  -1.51 | [-2.18, -0.84] | 99.98% |     1.77% | 1.002 | 2272 |   Normal (0.00 +- 8.44)&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1544,6 +1621,90 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>parameters</category>
+      
+            <category>standardize</category>
+      
+            <category>coefficients</category>
+      
+      
+            <category>R</category>
+      
+            <category>parameters</category>
+      
+    </item>
+    
+    <item>
+      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Okay, &lt;em&gt;&amp;ldquo;an alternative to broom&amp;rdquo;&lt;/em&gt; might be a bit of an &lt;strong&gt;overstatement&lt;/strong&gt; &lt;em&gt;(at least for now&amp;hellip;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;But the &lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; package, finally on CRAN, already has some cool features!&lt;/p&gt;
+&lt;h2 id=&#34;parameters&#34;&gt;parameters&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life &lt;em&gt;easier&lt;/em&gt;. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model internal access&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, as well as &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance and quality&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&#39;&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; primary goal is to provide utilities for processing the parameters of various statistical models. Beyond computing &lt;strong&gt;&lt;em&gt;p&lt;/em&gt;-values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, &lt;strong&gt;Bayesian indices&lt;/strong&gt; and other measures for a wide variety of models, this package implements features like &lt;strong&gt;standardization&lt;/strong&gt; or &lt;strong&gt;bootstrapping&lt;/strong&gt; of parameters and models, &lt;strong&gt;feature reduction&lt;/strong&gt; (feature extraction and variable selection) as well as conversion between indices of &lt;strong&gt;effect size&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The main function of the package is &lt;code&gt;model_parameters()&lt;/code&gt;, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to &lt;a href=&#34;https://github.com/tidymodels/broom&#34;&gt;&lt;code&gt;broom::tidy()&lt;/code&gt;&lt;/a&gt;, with some notable differences:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The names of the returned dataframe are &lt;strong&gt;specific&lt;/strong&gt; to their content. For instance, the column containing the statistic is named following the statistic name, i.e., &lt;em&gt;t&lt;/em&gt;, &lt;em&gt;z&lt;/em&gt;, etc., instead of a generic name such as &lt;em&gt;statistic&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;It is able to compute or extract indices not available by default, such as &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, etc.&lt;/li&gt;
+&lt;li&gt;It includes &lt;strong&gt;feature engineering&lt;/strong&gt; capabilities, including &lt;a href=&#34;https://easystats.github.io/parameters/articles/bootstrapping.html&#34;&gt;&lt;strong&gt;bootstrapping&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/parameters/articles/standardization.html&#34;&gt;&lt;strong&gt;standardization&lt;/strong&gt;&lt;/a&gt; of parameters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;h3 id=&#34;anovas&#34;&gt;ANOVAs&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; iris
+df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Sepal.Big &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ifelse&lt;/span&gt;(df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Yes&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;No&amp;#34;&lt;/span&gt;)
+
+model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;aov&lt;/span&gt;(Sepal.Length &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Sepal.Big, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model, eta_squared &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;partial&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta2
+## -----------------------------------------------------------------
+## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 | 0.01
+## Residuals |      101.07 | 148 |        0.68 |      |       |
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;mixed-models&#34;&gt;Mixed models&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(lme4)
+
+model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lmer&lt;/span&gt;(Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Petal.Length &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Petal.Width &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;Species), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iris)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model, standardize &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;refit&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |        95% CI |   t(145) |      p
+## ---------------------------------------------------------------------
+## (Intercept)  |    3.53e-13 | 1.51 | [-2.96, 2.96] | 2.33e-13 | &amp;gt; .999
+## Petal.Length |        0.59 | 0.26 | [ 0.08, 1.10] |     2.26 | 0.024 
+## Petal.Width  |        1.07 | 0.24 | [ 0.60, 1.53] |     4.49 | &amp;lt; .001
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;lmer&lt;/span&gt;(Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Petal.Length &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; Petal.Width &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;Species), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iris) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bayesian-models&#34;&gt;Bayesian models&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
+
+model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
+## ---------------------------------------------------------------------------------------------------
+## (Intercept) |  39.67 | [36.93, 42.68] |   100% |        0% | 0.999 | 4960 | Normal (20.09 +- 15.07)
+## wt          |  -3.19 | [-4.44, -1.92] | 99.98% |     0.10% | 1.002 | 2033 |  Normal (0.00 +- 15.40)
+## cyl         |  -1.51 | [-2.18, -0.84] | 99.98% |     1.77% | 1.002 | 2272 |   Normal (0.00 +- 8.44)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
             <category>R</category>

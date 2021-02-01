@@ -5,10 +5,109 @@
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://easystats.github.io/blog/categories/easystats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>You write R packages and functions? This package will change your life!</title>
+      <link>https://easystats.github.io/blog/posts/insight_whyshouldyou/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/insight_whyshouldyou/</guid>
+      <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/insight/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;what-is-it&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What is it?&lt;/h2&gt;
+&lt;p&gt;We are talking about the &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;&lt;strong&gt;insight package&lt;/strong&gt;&lt;/a&gt;. It is what allows other packages, like &lt;strong&gt;easystats&lt;/strong&gt; (&lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;parameters&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/effectsize&#34;&gt;effectsize&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;performance&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/report&#34;&gt;report&lt;/a&gt;, …) or &lt;a href=&#34;https://github.com/IndrajeetPatil/ggstatsplot&#34;&gt;&lt;strong&gt;ggstatsplot&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://github.com/strengejacke/sjstats/&#34;&gt;&lt;strong&gt;sjstats&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://github.com/vincentarelbundock/modelsummary&#34;&gt;&lt;strong&gt;modelsummary&lt;/strong&gt;&lt;/a&gt; to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on &lt;strong&gt;insight&lt;/strong&gt;?&lt;/p&gt;
+&lt;p&gt;It is made for developers (and users) that do some &lt;strong&gt;postprocessing&lt;/strong&gt; of different models (e.g., extracting stuff like parameters, values, data, names, specifications, predictions, priors, etc.), whether it is to nicely display their results or to do further computation.&lt;/p&gt;
+&lt;p&gt;If you work with, and around, different R models, then &lt;strong&gt;this package is a must-have that will change your life&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;whats-the-problem&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What’s the problem&lt;/h2&gt;
+&lt;p&gt;Because R has so many different packages, different models were implemented by different people in a different way. As a consequence, there are different ways of accessing the same stuff from each model.&lt;/p&gt;
+&lt;p&gt;For example, let’s say you want to find the &lt;strong&gt;names of the predictors&lt;/strong&gt; (the independent variables) of a linear model. One way would be like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_lm &amp;lt;- lm(mpg ~ drat * wt, data=mtcars)
+
+names(model_lm$model)[-1]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But what in the case of a lme4’s mixed model? Well the solution is a bit different, plus it’s not easy to drop the random factors…&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_lmer &amp;lt;- lme4::lmer(mpg ~ drat * wt + (1|cyl), data=mtcars)
+
+names(model_lmer@frame)[-1]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;   &amp;quot;cyl&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And what in the case of a GAMM4’s general additive model?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_gam &amp;lt;- gamm4::gamm4(mpg ~ drat + wt + s(qsec), data=mtcars)
+
+head(names(model_gam$gam$model)[-1], -3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;   &amp;quot;qsec&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again different! Maybe you could do something like that, but then you have to account for &lt;strong&gt;all the edgecases&lt;/strong&gt; and so on. And trust us, &lt;strong&gt;that’s a lot of work&lt;/strong&gt; to have a robust and bug-free solution.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-insight-addresses-it&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;How ‘insight’ addresses it&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;insight&lt;/strong&gt; allows you to extract stuff from all models in a consistent and robust way. For instance, for the fixed predictors of the examples above, here’s how you would do it with insight:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(insight)
+
+find_predictors(model_lm)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $conditional
+## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_predictors(model_lmer)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $conditional
+## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;find_predictors(model_gam)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $conditional
+## [1] &amp;quot;drat&amp;quot; &amp;quot;wt&amp;quot;   &amp;quot;qsec&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Boom!&lt;/strong&gt; One function that works for all the models. And that’s not all, &lt;strong&gt;insight&lt;/strong&gt; can help you extract data, parameters, intercepts, degrees of freedom, sigma, variance, predicted values, variable names, interaction terms, random factors, smooth terms, etc. etc. Basically, everything you might need. And if what you need is not there, just &lt;a href=&#34;https://github.com/easystats/insight/issues&#34;&gt;&lt;strong&gt;ask for it&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can check all that &lt;strong&gt;insight&lt;/strong&gt; can do &lt;a href=&#34;https://easystats.github.io/insight/reference/index.html&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-reasons-to-use-it&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;More reasons to use it&lt;/h2&gt;
+&lt;p&gt;If you’re worried about adding a new dependency to your package, don’t be! Because &lt;strong&gt;insight&lt;/strong&gt; is super light: it itself has &lt;strong&gt;no dependencies&lt;/strong&gt;. So it’s a safe choice to add and rely on!&lt;/p&gt;
+&lt;p&gt;It includes other useful &lt;strong&gt;features that you don’t know you absolutely need&lt;/strong&gt;, like value formatting, nice printing of text, table and data.frames exporting and much more! Check out them &lt;a href=&#34;https://easystats.github.io/insight/reference/index.html&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;easystats&lt;/em&gt; is a project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-tuned&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay tuned&lt;/h2&gt;
+&lt;p&gt;To be updated about the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;strong&gt;easystats team on twitter and online&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/humanfactorsio&#34;&gt;@humanfactors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jonaslindeloev&#34;&gt;@lindeloev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jacobandrewlong&#34;&gt;@jacob-long&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pdwaggoner.github.io/&#34;&gt;@pdwaggoner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/LDtrx&#34;&gt;@LeoDutriaux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+            <category>insight</category>
+      
+      
+            <category>R</category>
+      
+            <category>easystats</category>
+      
+    </item>
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>
