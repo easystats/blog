@@ -288,14 +288,14 @@ iris %&gt;%
 <h2>Bayesian Correlations</h2>
 <p>It is very easy to switch to a <strong>Bayesian framework</strong>.</p>
 <pre class="r"><code>correlation(iris, bayesian=TRUE)</code></pre>
-<pre><code>## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |              Prior |           Method | n_Obs
-## ----------------------------------------------------------------------------------------------------------------------------------
-## Sepal.Length |  Sepal.Width | -0.11 | [-0.24,  0.01] | 92.05% |    43.45% |  0.509 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.90] |   100% |        0% | &gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Length |  Petal.Width |  0.81 | [ 0.76,  0.85] |   100% |        0% | &gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  | Petal.Length | -0.42 | [-0.52, -0.31] |   100% |        0% | &gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Sepal.Width  |  Petal.Width | -0.35 | [-0.46, -0.24] |   100% |     0.07% | &gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150
-## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &gt; 1000 | Cauchy (0 +- 0.33) | Bayesian Pearson |   150</code></pre>
+<pre><code>## Parameter1   |   Parameter2 |   rho |         95% CI |     pd | % in ROPE |     BF |         Prior |           Method | n_Obs
+## -----------------------------------------------------------------------------------------------------------------------------
+## Sepal.Length |  Sepal.Width | -0.11 | [-0.25,  0.02] | 90.77% |    44.17% |  0.509 | Beta (3 +- 3) | Bayesian Pearson |   150
+## Sepal.Length | Petal.Length |  0.86 | [ 0.83,  0.89] |   100% |        0% | &gt; 1000 | Beta (3 +- 3) | Bayesian Pearson |   150
+## Sepal.Length |  Petal.Width |  0.80 | [ 0.76,  0.85] |   100% |        0% | &gt; 1000 | Beta (3 +- 3) | Bayesian Pearson |   150
+## Sepal.Width  | Petal.Length | -0.41 | [-0.52, -0.30] |   100% |        0% | &gt; 1000 | Beta (3 +- 3) | Bayesian Pearson |   150
+## Sepal.Width  |  Petal.Width | -0.35 | [-0.47, -0.24] |   100% |     0.02% | &gt; 1000 | Beta (3 +- 3) | Bayesian Pearson |   150
+## Petal.Length |  Petal.Width |  0.96 | [ 0.95,  0.97] |   100% |        0% | &gt; 1000 | Beta (3 +- 3) | Bayesian Pearson |   150</code></pre>
 </div>
 <div id="tetrachoric-polychoric-biserial-biweight" class="section level2">
 <h2>Tetrachoric, Polychoric, Biserial, Biweight…</h2>

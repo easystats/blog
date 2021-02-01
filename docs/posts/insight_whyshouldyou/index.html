@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.70.0" />
+
+    
+    
+    
+
+<title>You write R packages and functions? This package will change your life! • easystats</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="You write R packages and functions? This package will change your life!"/>
+<meta name="twitter:description" content="What is it?We are talking about the insight package. It is what allows other packages, like easystats (parameters, effectsize, performance, report, …) or ggstatsplot, sjstats or modelsummary to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on insight?
+It is made for developers (and users) that do some postprocessing of different models (e."/>
+
+<meta property="og:title" content="You write R packages and functions? This package will change your life!" />
+<meta property="og:description" content="What is it?We are talking about the insight package. It is what allows other packages, like easystats (parameters, effectsize, performance, report, …) or ggstatsplot, sjstats or modelsummary to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on insight?
+It is made for developers (and users) that do some postprocessing of different models (e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://easystats.github.io/blog/posts/insight_whyshouldyou/" />
+<meta property="article:published_time" content="2021-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-01T00:00:00+00:00" /><meta property="og:site_name" content="easystats" />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/scss/hyde-hyde.a3bdc37d9526f67538a8c6f647c86cfb8b5c0c50c4a1b0adf763b347e53bb98a.css" integrity="sha256-o73DfZUm9nU4qMb2R8hs&#43;4tcDFDEobCt92OzR&#43;U7uYo=">
+
+
+<link rel="stylesheet" href="/blog/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://easystats.github.io/blog/">easystats</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://easystats.github.io/blog/img/logo.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">easystats</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/blog/posts/">
+						<span>Posts</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/portfolio/">
+						<span>About</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/blog/resources/">
+						<span>Resources</span>
+					</a>
+				</li>
+			 
+		
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/easystats/easystats" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2021 easystats
+  
+    <a href="https://github.com/easystats/easystats">GPL-3.0</a>
+  
+</div>
+
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    <article>
+  <header>
+    <h1>You write R packages and functions? This package will change your life!</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Feb 1, 2021
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/blog/categories/easystats">EASYSTATS</a>
+              •
+          
+              <a class="badge badge-category" href="/blog/categories/r">R</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/blog/tags/r">r</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/easystats">easystats</a>
+           
+      
+          <a class="badge badge-tag" href="/blog/tags/insight">insight</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    
+<script src="/blog/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<link href="/blog/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/blog/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p><img src="https://raw.githubusercontent.com/easystats/insight/master/man/figures/logo.png" width="200px" /></p>
+<div id="what-is-it" class="section level2">
+<h2>What is it?</h2>
+<p>We are talking about the <a href="https://github.com/easystats/insight"><strong>insight package</strong></a>. It is what allows other packages, like <strong>easystats</strong> (<a href="https://github.com/easystats/parameters">parameters</a>, <a href="https://github.com/easystats/effectsize">effectsize</a>, <a href="https://github.com/easystats/performance">performance</a>, <a href="https://github.com/easystats/report">report</a>, …) or <a href="https://github.com/IndrajeetPatil/ggstatsplot"><strong>ggstatsplot</strong></a>, <a href="https://github.com/strengejacke/sjstats/"><strong>sjstats</strong></a> or <a href="https://github.com/vincentarelbundock/modelsummary"><strong>modelsummary</strong></a> to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on <strong>insight</strong>?</p>
+<p>It is made for developers (and users) that do some <strong>postprocessing</strong> of different models (e.g., extracting stuff like parameters, values, data, names, specifications, predictions, priors, etc.), whether it is to nicely display their results or to do further computation.</p>
+<p>If you work with, and around, different R models, then <strong>this package is a must-have that will change your life</strong>.</p>
+</div>
+<div id="whats-the-problem" class="section level2">
+<h2>What’s the problem</h2>
+<p>Because R has so many different packages, different models were implemented by different people in a different way. As a consequence, there are different ways of accessing the same stuff from each model.</p>
+<p>For example, let’s say you want to find the <strong>names of the predictors</strong> (the independent variables) of a linear model. One way would be like this:</p>
+<pre class="r"><code>model_lm &lt;- lm(mpg ~ drat * wt, data=mtcars)
+
+names(model_lm$model)[-1]</code></pre>
+<pre><code>## [1] &quot;drat&quot; &quot;wt&quot;</code></pre>
+<p>But what in the case of a lme4’s mixed model? Well the solution is a bit different, plus it’s not easy to drop the random factors…</p>
+<pre class="r"><code>model_lmer &lt;- lme4::lmer(mpg ~ drat * wt + (1|cyl), data=mtcars)
+
+names(model_lmer@frame)[-1]</code></pre>
+<pre><code>## [1] &quot;drat&quot; &quot;wt&quot;   &quot;cyl&quot;</code></pre>
+<p>And what in the case of a GAMM4’s general additive model?</p>
+<pre class="r"><code>model_gam &lt;- gamm4::gamm4(mpg ~ drat + wt + s(qsec), data=mtcars)
+
+head(names(model_gam$gam$model)[-1], -3)</code></pre>
+<pre><code>## [1] &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot;</code></pre>
+<p>Again different! Maybe you could do something like that, but then you have to account for <strong>all the edgecases</strong> and so on. And trust us, <strong>that’s a lot of work</strong> to have a robust and bug-free solution.</p>
+</div>
+<div id="how-insight-addresses-it" class="section level2">
+<h2>How ‘insight’ addresses it</h2>
+<p><strong>insight</strong> allows you to extract stuff from all models in a consistent and robust way. For instance, for the fixed predictors of the examples above, here’s how you would do it with insight:</p>
+<pre class="r"><code>library(insight)
+
+find_predictors(model_lm)</code></pre>
+<pre><code>## $conditional
+## [1] &quot;drat&quot; &quot;wt&quot;</code></pre>
+<pre class="r"><code>find_predictors(model_lmer)</code></pre>
+<pre><code>## $conditional
+## [1] &quot;drat&quot; &quot;wt&quot;</code></pre>
+<pre class="r"><code>find_predictors(model_gam)</code></pre>
+<pre><code>## $conditional
+## [1] &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot;</code></pre>
+<p><strong>Boom!</strong> One function that works for all the models. And that’s not all, <strong>insight</strong> can help you extract data, parameters, intercepts, degrees of freedom, sigma, variance, predicted values, variable names, interaction terms, random factors, smooth terms, etc. etc. Basically, everything you might need. And if what you need is not there, just <a href="https://github.com/easystats/insight/issues"><strong>ask for it</strong></a>.</p>
+<p>You can check all that <strong>insight</strong> can do <a href="https://easystats.github.io/insight/reference/index.html"><strong>here</strong></a>.</p>
+</div>
+<div id="more-reasons-to-use-it" class="section level2">
+<h2>More reasons to use it</h2>
+<p>If you’re worried about adding a new dependency to your package, don’t be! Because <strong>insight</strong> is super light: it itself has <strong>no dependencies</strong>. So it’s a safe choice to add and rely on!</p>
+<p>It includes other useful <strong>features that you don’t know you absolutely need</strong>, like value formatting, nice printing of text, table and data.frames exporting and much more! Check out them <a href="https://easystats.github.io/insight/reference/index.html"><strong>here</strong></a>.</p>
+</div>
+<div id="get-involved" class="section level2">
+<h2>Get Involved</h2>
+<p><em>easystats</em> is a project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if <strong>you want to get involved :)</strong></p>
+<ul>
+<li><strong>Check out our other blog posts</strong> <a href="https://easystats.github.io/blog/posts/"><strong><em>here</em></strong></a>!</li>
+</ul>
+</div>
+<div id="stay-tuned" class="section level2">
+<h2>Stay tuned</h2>
+<p>To be updated about the <em>upcoming features</em> and cool R or data science stuff, you can <strong>follow the packages on GitHub</strong> (click on one <a href="https://github.com/easystats">of the easystats package</a>) and then on the <strong>Watch</strong> button on the top right corner) as well as the <strong>easystats team on twitter and online</strong>:</p>
+<ul>
+<li><a href="https://twitter.com/easystats4u">@easystats4u</a></li>
+<li><a href="https://twitter.com/strengejacke">@strengejacke</a></li>
+<li><a href="https://twitter.com/Dom_Makowski">@DominiqueMakowski</a></li>
+<li><a href="https://twitter.com/mattansb">@mattansb</a></li>
+<li><a href="https://twitter.com/patilindrajeets">@IndrajeetPatil</a></li>
+<li><a href="https://twitter.com/humanfactorsio">@humanfactors</a></li>
+<li><a href="https://twitter.com/jonaslindeloev">@lindeloev</a></li>
+<li><a href="https://twitter.com/jacobandrewlong">@jacob-long</a></li>
+<li><a href="https://pdwaggoner.github.io/">@pdwaggoner</a></li>
+<li><a href="https://twitter.com/LDtrx">@LeoDutriaux</a></li>
+</ul>
+</div>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/blog/posts/parameters_new_models/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">New formatting features in the parameters package</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97457476-9', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

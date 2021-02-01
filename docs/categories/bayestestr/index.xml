@@ -157,9 +157,7 @@ model &amp;lt;-
     prior_intercept = NULL
   )&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;parameters(model)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed effects
-## 
-## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
+&lt;pre&gt;&lt;code&gt;## Parameter   | Median |          89% CI |     pd | % in ROPE |  Rhat |   ESS |                Prior
 ## --------------------------------------------------------------------------------------------------
 ## (Intercept) | 145.87 | [77.91, 215.41] | 99.94% |     0.14% | 1.000 | 52545 |       Uniform ( +- )
 ## carb        |  30.22 | [ 9.10,  51.92] | 98.68% |     8.89% | 1.000 | 52711 | Normal (0 +- 191.83)&lt;/code&gt;&lt;/pre&gt;
@@ -431,131 +429,6 @@ c_color_all&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</link>
-      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</guid>
-      <description>&lt;h1 id=&#34;the-problem-with-null-effects&#34;&gt;The Problem with Null Effects&lt;/h1&gt;
-&lt;p&gt;Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; = 1.00&lt;/strong&gt;!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;options&lt;/span&gt;(contrasts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;contr.sum&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;contr.poly&amp;#39;&lt;/span&gt;))
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;puzzles&amp;#34;&lt;/span&gt;, package &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;BayesFactor&amp;#34;&lt;/span&gt;)
-aov_model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;aov&lt;/span&gt;(RT &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; shape&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;color &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Error&lt;/span&gt;(ID&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;(shape&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;color)), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; puzzles)
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;(aov_model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## 
-## Error: ID
-##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
-## Residuals 11    226    20.6               
-## 
-## Error: ID:shape
-##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)  
-## shape      1   12.0   12.00    7.54  0.019 *
-## Residuals 11   17.5    1.59                 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Error: ID:color
-##           Df Sum Sq Mean Sq F value Pr(&amp;gt;F)   
-## color      1   12.0   12.00    13.9 0.0033 **
-## Residuals 11    9.5    0.86                  
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Error: ID:shape:color
-##             Df Sum Sq Mean Sq F value Pr(&amp;gt;F)
-## shape:color  1    0.0    0.00       0      1
-## Residuals   11   30.5    2.77
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You look at your data, as you were taught to do, and it really does seems like the effect of color &lt;em&gt;is not&lt;/em&gt; moderated by shape (and vice versa):
-&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;But what does this mean? &lt;strong&gt;Can you infer that there isn&amp;rsquo;t interaction?&lt;/strong&gt; Are the two simple effects of color truly identical?&lt;/p&gt;
-&lt;p&gt;Classical statistics has no answer for us here - when the &lt;em&gt;p&lt;/em&gt;-value is less than alpha (typically 5%) we can reject the null hypothesis, but when &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; &amp;gt; .05&lt;/strong&gt;, even a lot bigger than 5%, classical (frequentists) statistics &lt;strong&gt;do not allow to infer that the null is true&lt;/strong&gt;. For this, we need to go Bayesian!&lt;/p&gt;
-&lt;h1 id=&#34;going-bayesian&#34;&gt;Going Bayesian&lt;/h1&gt;
-&lt;p&gt;One of the (many) strengths of Bayesian statistics is its ability to support the null hypothesis. Let us fit a &lt;strong&gt;Bayesian mixed model equivalent to the repeated measures ANOVA&lt;/strong&gt; above, manually specifying weakly informative priors on its effects:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
-stan_model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stan_lmer&lt;/span&gt;(RT &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; shape&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;color &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; ID), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; puzzles,
-                        prior &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;cauchy&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.707&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0.707&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;),          &lt;span style=&#34;color:#75715e&#34;&gt;# as per Rouder et al., 2012&lt;/span&gt;
-                        prior_intercept &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;student_t&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;),          &lt;span style=&#34;color:#75715e&#34;&gt;# weakly informative&lt;/span&gt;
-                        prior_aux &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;exponential&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;.1&lt;/span&gt;),                  &lt;span style=&#34;color:#75715e&#34;&gt;# weakly informative&lt;/span&gt;
-                        prior_covariance &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;decov&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))            &lt;span style=&#34;color:#75715e&#34;&gt;# weakly informative&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using the fantastic &lt;strong&gt;&lt;code&gt;emmeans&lt;/code&gt;&lt;/strong&gt; package, we can explore and extract marginal effects and estimates from our fitted model. For example, we can estimate the main effect for color:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;c_color_main &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pairs&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;emmeans&lt;/span&gt;(stan_model, &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; color))
-c_color_main
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.894     -1.67    -0.147
-## 
-## Point estimate displayed: median 
-## HPD interval probability: 0.95
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We can also estimate (based on posterior draws) the difference between the two simple effects for color between the levels of shape:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;em_color_simple &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;emmeans&lt;/span&gt;(stan_model, &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt;color &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; shape)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;pairs&lt;/span&gt;(em_color_simple, by &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;shape&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# simple effects for color&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## shape = round:
-##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.898     -1.96     0.107
-## 
-## shape = square:
-##  contrast              estimate lower.HPD upper.HPD
-##  color - monochromatic   -0.887     -1.89     0.212
-## 
-## Point estimate displayed: median 
-## HPD interval probability: 0.95
-&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;c_color_shape_interaction &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;contrast&lt;/span&gt;(em_color_simple, interaction &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pairwise&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pairwise&amp;#34;&lt;/span&gt;))
-c_color_shape_interaction
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##  color_pairwise        shape_pairwise estimate lower.HPD upper.HPD
-##  color - monochromatic round - square   0.0108     -1.36      1.38
-## 
-## Point estimate displayed: median 
-## HPD interval probability: 0.95
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As we can see, the simple effects are indeed similar, and the difference between them seems very close to 0. Can we quantify the evidence &lt;em&gt;for the null&lt;/em&gt;?&lt;/p&gt;
-&lt;h2 id=&#34;quantifying-evidence-for-the-null&#34;&gt;Quantifying Evidence for the Null&lt;/h2&gt;
-&lt;p&gt;One way to quantify evidence in the Bayesian framework is to calculate a &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/bayes_factors.html&#34;&gt;&lt;strong&gt;Bayes factor&lt;/strong&gt;&lt;/a&gt; - a measure of relative evidence in favor of one model over another. In our case, we would like to compare a model with an interaction to a model without an interaction. Though we could fit the model without the interaction and compare the two with &lt;code&gt;bayesfactor_models()&lt;/code&gt;, we&amp;rsquo;ll use a close approximation using the Savage-Dickey density ratio, which allows for more flexibility. To this end we can use (from &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;version 0.2.1, available on GitHub&lt;/a&gt;) &lt;code&gt;describe_posterior()&lt;/code&gt; to&amp;hellip; well&amp;hellip; describe our &lt;code&gt;emmeans&lt;/code&gt; estimates&amp;rsquo; posterior distribution, and by comparing the density of the null value (here 0) between the prior and posterior, we can compute the Savage-Dickey Bayes factor! (Note that we will need to pass the original model via &lt;code&gt;bf_prior&lt;/code&gt; to allow the extraction or prior draw.)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# combine all estimates of interest to one object:&lt;/span&gt;
-c_color_all &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rbind&lt;/span&gt;(c_color_main,
-                     c_color_shape_interaction)
-c_color_all
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;##  contrast              color_pairwise        shape_pairwise estimate lower.HPD
-##  color - monochromatic .                     .                -0.894     -1.67
-##  .                     color - monochromatic round - square    0.011     -1.36
-##  upper.HPD
-##     -0.147
-##      1.378
-## 
-## Point estimate displayed: median 
-## HPD interval probability: 0.95
-&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;describe_posterior&lt;/span&gt;(c_color_all,
-                   estimate &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;median&amp;#34;&lt;/span&gt;, dispersion &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TRUE&lt;/span&gt;,
-                   ci &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;.9&lt;/span&gt;, ci_method &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hdi&amp;#34;&lt;/span&gt;,
-                   test &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bayesfactor&amp;#34;&lt;/span&gt;),
-                   bf_prior &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; stan_model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt; Parameter                                   Median     MAD   CI   CI_low   CI_high      BF
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;p&gt;2    color - monochromatic, ., .                 -0.894   0.395   90    -1.50    -0.227   3.128
-1    ., color - monochromatic, round - square     0.011   0.700   90    -1.16     1.145   0.272&lt;/p&gt;
-&lt;p&gt;These Bayes factors reveal that a model with a main effect for color is &lt;strong&gt;~3&lt;/strong&gt; times more likely than a model without this effect, &lt;strong&gt;and&lt;/strong&gt; that a model &lt;em&gt;without&lt;/em&gt; an interaction is &lt;strong&gt;~1/0.22 = 4.5&lt;/strong&gt; times more likely than a model &lt;em&gt;with&lt;/em&gt; an interaction! But&amp;hellip; note that a Bayes factor of 4.5 is considered only &lt;a href=&#34;https://easystats.github.io/report/articles/interpret_metrics.html#bayes-factor-bf&#34;&gt;moderate evidence in favor of the null effect&lt;/a&gt;. As we can see, &lt;strong&gt;a &lt;em&gt;p&lt;/em&gt;-value of 1.0 does not necessarily mean the data strongly supports the null&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Happy Bayesing!&lt;/p&gt;
-&lt;h2 id=&#34;join-easystats&#34;&gt;join easystats&lt;/h2&gt;
-&lt;p&gt;Note that &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;em&gt;&lt;strong&gt;easystats&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; is a new project in active development, and feedback, suggestions, comments are very welcome! Do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>bayestestR</category>
-      
-      
-            <category>R</category>
-      
-            <category>bayestestR</category>
-      
-    </item>
-    
-    <item>
       <title>Become a Bayesian master with bayestestR (0.2)</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_v2/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
@@ -808,11 +681,11 @@ equivalence_test(model)&lt;/code&gt;&lt;/pre&gt;
 ## 
 ## Parameter   |        H0 | inside ROPE |       89% HDI
 ## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [27.81 47.51]
-## wt          |  Rejected |      0.00 % | [-4.11 -0.97]
-## cyl         | Undecided |     36.79 % | [-1.87  0.29]
-## gear        | Undecided |     44.68 % | [-2.21  1.65]
-## am          | Undecided |     19.38 % | [-1.18  4.62]
+## (Intercept) |  Rejected |      0.00 % | [27.11 47.28]
+## wt          |  Rejected |      0.00 % | [-4.21 -1.05]
+## cyl         | Undecided |     37.29 % | [-1.92  0.29]
+## gear        | Undecided |     41.56 % | [-2.30  1.74]
+## am          | Undecided |     20.13 % | [-1.29  4.73]
 ## hp          |  Accepted |    100.00 % | [-0.05  0.00]&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Do the test and plot results
@@ -831,77 +704,6 @@ plot(equivalence_test(model))&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-      
-            <category>R</category>
-      
-            <category>easystats</category>
-      
-            <category>bayestestR</category>
-      
-            <category>posterior</category>
-      
-            <category>rstanarm</category>
-      
-            <category>brms</category>
-      
-      
-            <category>R</category>
-      
-            <category>bayestestR</category>
-      
-    </item>
-    
-    <item>
-      <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;strong&gt;Bayesian framework&lt;/strong&gt; is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as &lt;a href=&#34;https://github.com/stan-dev/rstanarm&#34;&gt;&lt;code&gt;rstanarm&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;https://github.com/paul-buerkner/brms&#34;&gt;&lt;code&gt;brms&lt;/code&gt;&lt;/a&gt;. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;To address this, please let us introduce&lt;/strong&gt;&lt;/em&gt;  &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;strong&gt;&lt;code&gt;bayestestR&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;!&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;bayestestr&#34;&gt;bayestestR&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;project&lt;/strong&gt;, a set of packages designed to make your life &lt;em&gt;easier&lt;/em&gt; (currently very WIP). As we are also Bayesian enthusiasts, we decided to focus on the development of a package devoted to Bayesian post-processing.&lt;/p&gt;
-&lt;p&gt;The goal of &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;&lt;code&gt;bayestestR&lt;/code&gt;&lt;/a&gt; is to provide lightweight tools to help &lt;strong&gt;processing and understanding Bayesian models and posterior distributions&lt;/strong&gt;. It includes several functions used to report and characterise them, such as &lt;a href=&#34;https://github.com/easystats/bayestestR#highest-density-interval-hdi---the-credible-interval-ci&#34;&gt;&lt;strong&gt;Highest Density Interval (&lt;code&gt;hdi&lt;/code&gt;)&lt;/strong&gt;&lt;/a&gt;, the &lt;a href=&#34;https://github.com/easystats/bayestestR#map-estimate&#34;&gt;&lt;strong&gt;highest Maximum A Posteriori (&lt;code&gt;MAP&lt;/code&gt;)&lt;/strong&gt;&lt;/a&gt; or functions to find a suitable &lt;a href=&#34;https://github.com/easystats/bayestestR#find-ropes-appropriate-range&#34;&gt;&lt;strong&gt;ROPE range&lt;/strong&gt;&lt;/a&gt;, compute the &lt;a href=&#34;https://github.com/easystats/bayestestR#rope&#34;&gt;&lt;strong&gt;ROPE percentage&lt;/strong&gt;&lt;/a&gt; or do an &lt;a href=&#34;https://github.com/easystats/bayestestR#equivalence-test&#34;&gt;&lt;strong&gt;Equivalence Test&lt;/strong&gt;&lt;/a&gt;. It also includes more exploratory indices, such as the &lt;a href=&#34;https://github.com/easystats/bayestestR#probability-of-direction-pd&#34;&gt;&lt;strong&gt;Probability of Direction (&lt;code&gt;pd&lt;/code&gt;)&lt;/strong&gt;&lt;/a&gt;, a &lt;a href=&#34;https://easystats.github.io/bayestestR/articles/guidelines.html&#34;&gt;numeric &lt;em&gt;equivalent&lt;/em&gt;&lt;/a&gt; of the frequentist &lt;em&gt;p&lt;/em&gt; value.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bayestestR&lt;/code&gt; can be installed as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bayestestR&amp;#34;&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# Install the package&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(bayestestR)  &lt;span style=&#34;color:#75715e&#34;&gt;# Load it&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s check whether the effects of my Bayesian regression can be considered as non-negligible. This can be done via the &lt;a href=&#34;https://easystats.github.io/bayestestR/reference/equivalence_test.html#details&#34;&gt;&lt;strong&gt;equivalence test&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Load the rstanarm package&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
-
-&lt;span style=&#34;color:#75715e&#34;&gt;# Fit a Bayesian model&lt;/span&gt;
-model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; gear &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; am &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; hp, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Do the test&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;equivalence_test&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## # Test for Practical Equivalence
-## 
-##   ROPE: [-0.60 0.60]
-## 
-## Parameter   |        H0 | inside ROPE |       89% HDI
-## -----------------------------------------------------
-## (Intercept) |  Rejected |      0.00 % | [27.81 47.51]
-## wt          |  Rejected |      0.00 % | [-4.11 -0.97]
-## cyl         | Undecided |     36.79 % | [-1.87  0.29]
-## gear        | Undecided |     44.68 % | [-2.21  1.65]
-## am          | Undecided |     19.38 % | [-1.18  4.62]
-## hp          |  Accepted |    100.00 % | [-0.05  0.00]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Results can also be plotted, to get a better impression of the posterior distributions and the ROPE-coverage.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Do the test and plot results&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;equivalence_test&lt;/span&gt;(model))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Don&amp;rsquo;t forget to check out the&lt;/strong&gt; &lt;a href=&#34;https://github.com/easystats/bayestestR#documentation&#34;&gt;&lt;strong&gt;documentation here&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;for more!&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;More details about &lt;code&gt;bayestestR&lt;/code&gt;&#39;s features are comming soon, stay tuned ;)&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned (BayesFactor objects support, better visualisation methods, etc.). Feel free to let us know how we could further improve this package!&lt;/p&gt;
-&lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
 </description>
       
             <category>R</category>

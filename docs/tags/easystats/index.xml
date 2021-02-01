@@ -6,10 +6,20 @@
     <description>Recent content on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/easystats/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>You write R packages and functions? This package will change your life!</title>
+      <link>https://easystats.github.io/blog/posts/insight_whyshouldyou/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/insight_whyshouldyou/</guid>
+      <description>What is it?We are talking about the insight package. It is what allows other packages, like easystats (parameters, effectsize, performance, report, …) or ggstatsplot, sjstats or modelsummary to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on insight?
+It is made for developers (and users) that do some postprocessing of different models (e.</description>
+    </item>
     
     <item>
       <title>New formatting features in the parameters package</title>
@@ -106,6 +116,17 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
     </item>
     
     <item>
+      <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
+      <link>https://easystats.github.io/blog/posts/parameters_v2.utf8/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_v2.utf8/</guid>
+      <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
+The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
+The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>
+    </item>
+    
+    <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
@@ -114,6 +135,17 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
       <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
+    </item>
+    
+    <item>
+      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
+      <link>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</guid>
+      <description>Okay, &amp;ldquo;an alternative to broom&amp;rdquo; might be a bit of an overstatement (at least for now&amp;hellip;)
+But the parameters package, finally on CRAN, already has some cool features!
+parameters We have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
     </item>
     
     <item>
@@ -134,16 +166,6 @@ In this posting, we want to focus on multicollinearity. Multicollinearity “is 
       <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans/</guid>
       <description>The Problem with Null EffectsSay you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
 options(contrasts = c(&amp;#39;contr.</description>
-    </item>
-    
-    <item>
-      <title>Testing Contrasts from Bayesian Models with &#39;emmeans&#39; and &#39;bayestestR&#39;</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</link>
-      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_emmeans.utf8/</guid>
-      <description>The Problem with Null Effects Say you fit an ANOVA model, predicting the time it takes to solve a puzzle from its shape (round / square) and whether it was colored or black and white, and you found that one of the estimated effects, in this case the interaction, was not significant. Say even that it was as non-significant as can be, with p = 1.00!
-options(contrasts = c(&amp;#39;contr.sum&amp;#39;, &amp;#39;contr.poly&amp;#39;)) data(&amp;#34;puzzles&amp;#34;, package = &amp;#34;BayesFactor&amp;#34;) aov_model &amp;lt;- aov(RT ~ shape*color + Error(ID/(shape*color)), data = puzzles) summary(aov_model) ## ## Error: ID## Df Sum Sq Mean Sq F value Pr(&amp;gt;F)## Residuals 11 226 20.</description>
     </item>
     
     <item>
@@ -169,10 +191,10 @@ Essentially, see is the visualisation companion to other functions and packages 
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
       <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
@@ -223,23 +245,21 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
     </item>
     
     <item>
-      <title>Describe and understand Bayesian models and posteriors using bayestestR</title>
-      <link>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/bayestestr_presentation.utf8/</guid>
-      <description>The Bayesian framework is quickly gaining popularity among scientists, leading to the growing popularity of packages to fit Bayesian models, such as rstanarm or brms. However, extracting summary indices from these models to report them in your manuscript can be quite challenging, especially for new users.
-To address this, please let us introduce bayestestR!
-bayestestR We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier (currently very WIP).</description>
-    </item>
-    
-    <item>
       <title>A unified syntax for accessing models&#39; information</title>
       <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
       <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
+    </item>
+    
+    <item>
+      <title>A unified syntax for accessing models&#39; information</title>
+      <link>https://easystats.github.io/blog/posts/insight_presentation.utf8/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/insight_presentation.utf8/</guid>
+      <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language&amp;rsquo;s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models&amp;rsquo; internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
     <item>
@@ -252,29 +272,11 @@ bayestestR We have recently decided to collaborate around the new easystats proj
     </item>
     
     <item>
-      <title>The end of errors in ANOVA reporting</title>
-      <link>https://easystats.github.io/blog/posts/report_anova.utf8/</link>
-      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/report_anova.utf8/</guid>
-      <description>This post shows how to create formatted reports for ANOVAs.</description>
-    </item>
-    
-    <item>
       <title>Formatted correlation output with effect sizes</title>
       <link>https://easystats.github.io/blog/posts/report_correlation/</link>
       <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://easystats.github.io/blog/posts/report_correlation/</guid>
-      <description>This post shows how to create formatted reports for correlation tests</description>
-    </item>
-    
-    <item>
-      <title>Formatted correlation output with effect sizes</title>
-      <link>https://easystats.github.io/blog/posts/report_correlation.utf8/</link>
-      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/report_correlation.utf8/</guid>
       <description>This post shows how to create formatted reports for correlation tests</description>
     </item>
     

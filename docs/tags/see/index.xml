@@ -34,10 +34,10 @@ Essentially, see is the visualisation companion to other functions and packages 
     
     <item>
       <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.utf8/</link>
+      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://easystats.github.io/blog/posts/see_presentation.utf8/</guid>
+      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
       <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>

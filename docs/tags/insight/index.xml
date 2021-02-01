@@ -6,10 +6,20 @@
     <description>Recent content in insight on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://easystats.github.io/blog/tags/insight/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>You write R packages and functions? This package will change your life!</title>
+      <link>https://easystats.github.io/blog/posts/insight_whyshouldyou/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/insight_whyshouldyou/</guid>
+      <description>What is it?We are talking about the insight package. It is what allows other packages, like easystats (parameters, effectsize, performance, report, …) or ggstatsplot, sjstats or modelsummary to be as powerful as they are, supporting tons of different R models. So why make you life hard when you can be like them, and rely on insight?
+It is made for developers (and users) that do some postprocessing of different models (e.</description>
+    </item>
     
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
@@ -18,6 +28,15 @@
       
       <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
+    </item>
+    
+    <item>
+      <title>A unified syntax for accessing models&#39; information</title>
+      <link>https://easystats.github.io/blog/posts/insight_presentation.utf8/</link>
+      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/insight_presentation.utf8/</guid>
+      <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language&amp;rsquo;s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models&amp;rsquo; internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
   </channel>
