@@ -25,17 +25,20 @@ include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/m
 
 ## Happy birthday easystats!
 
-Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://github.com/easystats/easystats) collection of packages [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). These were simpler times, when one could travel around, party and speak to each other face-to-face (or more exactly, *mouth-to-mouth*)... Just kidding, we're open-source geeks, so as long as GitHub is up we have no excuses for not developing our software, right? 
+Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://github.com/easystats/easystats) collection of packages' [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). These were simpler times, when one could travel around, party and speak to each other face-to-face (or more exactly, *mouth-to-mouth*)... Just kidding, we're open-source geeks, so as long as GitHub is up we have no excuses for not developing our software, right? 
 
 **What happened since? A lot!** 
 
-### It has 10 packages
+<!-- Maybe we can say something about... us? Who the team is, what we do, how we work? -->
 
-**easystats** refers to 10 packages. Although each of them has a specific scope, they are meant to be working together. They are actually used by each-other, forming layers of bricks that aim at creating a space in which doing stats with R is easy.
+
+### It now has 10 packages!
+
+**easystats** is comprised of 10 packages. Although each of them has a specific scope, they are meant to be used together. The packages themselves actually use each-other, forming layers of bricks that aim at creating a space in which doing stats with R is easy.
 
 Let's see this structure. First, at the bottom, we have the foundation upon which the ecosystem is built:
 
-- [**insight**](https://github.com/easystats/insight): 🔮 This package serves as the foundation of the ecosystem as it allows manipulating objects from different R packages. It is very useful for developers, helping them to make their own packages flexible.
+- [**insight**](https://github.com/easystats/insight): 🔮 This package serves as the foundation of the ecosystem as it allows manipulating objects from different R packages. It is very useful for developers, helping them make their own packages flexibly.
 - [**datawizard**](https://github.com/easystats/datawizard): 🧙 The most recent addition! Encompasses utility functions to work with data. *Sounds like the tidyverse to you?* Well kind of, but it has the advantage of being dependency free! Again, a great toolbox to use in your packages.
 
 We then have specialized packages to work with specific types of analyses or compute additional information from statistical models.
@@ -56,7 +59,7 @@ Finally, the two high-level packages are using the rest to help users communicat
 - [**report**](https://github.com/easystats/report): 📜 🎉 This packages aims at implementing an automated reporting of statistical models.
 
 
-
+<!-- Add something about the package papers? -->
 
 ### It is used by a lot of people 
 
