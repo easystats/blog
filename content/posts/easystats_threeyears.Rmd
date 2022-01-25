@@ -1,7 +1,7 @@
 ---
 title: "Happy birthday easystats! A retrospective"
 author: "easystats"
-date: 2022-01-25
+date: 2022-01-27
 categories: ["R", "easystats"]
 tags: ["R", "easystats", "aniversary"]
 ---
@@ -9,9 +9,11 @@ tags: ["R", "easystats", "aniversary"]
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(knitr)
-options(knitr.kable.NA = '',
-        digits=2,
-        dpi=450)
+options(
+  knitr.kable.NA = "",
+  digits = 2,
+  dpi = 450
+)
 
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 
@@ -19,22 +21,31 @@ library(parameters)
 library(see)
 ```
 
-```{r message=FALSE, warning=FALSE, echo=FALSE, out.width = "200px"}
+```{r echo=FALSE, out.width = "200px"}
 include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo.png")
 ```
 
 ## Happy birthday easystats!
 
-Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://github.com/easystats/easystats) collection of packages' [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). These were simpler times, when one could travel around, party and speak to each other face-to-face (or more exactly, *mouth-to-mouth*)... Just kidding, we're open-source geeks, so as long as GitHub is up we have no excuses for not developing our software, right? 
+Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://github.com/easystats/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). 
+
+Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread around the globe like a wildfire was people's obsession with The Weeknd's *Blinding Lights*! 
+
+At any rate, since the pandemic did not affect GitHub in anyway, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as the white cloud in the sky.
 
 **What happened since? A lot!** 
 
 <!-- Maybe we can say something about... us? Who the team is, what we do, how we work? -->
 
 
-### It now has 10 packages!
+### We are now in double figures!
 
-**easystats** is comprised of 10 packages. Although each of them has a specific scope, they are meant to be used together. The packages themselves actually use each-other, forming layers of bricks that aim at creating a space in which doing stats with R is easy.
+**easystats** project, which started out as a single R package, now comprises of a whopping 10 packages! These modular packages, each with its own, unique purview, connect with each other to form a web of packages that provide a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R!
+
+<!-- ```{r, echo=FALSE} -->
+<!-- knitr::include_graphics("https://github.com/easystats/easystats/blob/master/man/figures/logo_wall.png") -->
+<!-- ``` -->
+
 
 Let's see this structure. First, at the bottom, we have the foundation upon which the ecosystem is built:
 
