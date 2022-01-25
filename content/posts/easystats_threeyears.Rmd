@@ -31,7 +31,32 @@ Two years ago, which feels like yesterday, we celebrated the [**easystats**](htt
 
 ### It has 10 packages
 
-list and describe?
+**easystats** refers to 10 packages. Although each of them has a specific scope, they are meant to be working together. They are actually used by each-other, forming layers of bricks that aim at creating a space in which doing stats with R is easy.
+
+Let's see this structure. First, at the bottom, we have the foundation upon which the ecosystem is built:
+
+- [**insight**](https://github.com/easystats/insight): 🔮 This package serves as the foundation of the ecosystem as it allows manipulating objects from different R packages. It is very useful for developers, helping them to make their own packages flexible.
+- [**datawizard**](https://github.com/easystats/datawizard): 🧙 The most recent addition! Encompasses utility functions to work with data. *Sounds like the tidyverse to you?* Well kind of, but it has the advantage of being dependency free! Again, a great toolbox to use in your packages.
+
+We then have specialized packages to work with specific types of analyses or compute additional information from statistical models.
+
+- [**bayestestR**](https://github.com/easystats/bayestestR): 👻 Utility tools for dealing with Bayesian statistics.
+- [**effectsize**](https://github.com/easystats/effectsize): 🐉 Compute, convert, and interpret effect sizes.
+- [**correlation**](https://github.com/easystats/correlation): 🔗 A package dedicated at running and visualizing many types of correlations.
+- [**modelbased**](https://github.com/easystats/modelbased): 📈 This package works with predictions from statistical models, and can be used to compute marginal means or run contrast analyses.
+
+The information about statistical models are extracted and aggregated in the following two packages. One of them is made for information about the model as a whole, the other one for information about the parameters within a model.
+
+- [**performance**](https://github.com/easystats/performance): 💪 Compute, analyze and test the performance of a statistical model.
+- [**parameters**](https://github.com/easystats/parameters): 📊 Understand your model's parameters and put them in a nice table.
+
+Finally, the two high-level packages are using the rest to help users communicate their statistics, either graphically or textually.
+
+- [**see**](https://github.com/easystats/see): 🎨 This package interfaces with ggplot2 to create visual plots. Most of the time, it is actually used silently in the other packages when calling the `plot()` function on easystats objects.
+- [**report**](https://github.com/easystats/report): 📜 🎉 This packages aims at implementing an automated reporting of statistical models.
+
+
+
 
 ### It is used by a lot of people 
 
@@ -74,6 +99,7 @@ Note that *easystats* is a new project in active development, looking for contri
 
 To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
 
+- [\@easystats4u](https://twitter.com/easystats4u)
 - [\@strengejacke](https://twitter.com/strengejacke)
 - [\@DominiqueMakowski](https://twitter.com/Dom_Makowski)
 - [\@mattansb](https://twitter.com/mattansb)
