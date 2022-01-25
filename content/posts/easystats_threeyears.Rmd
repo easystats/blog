@@ -27,7 +27,7 @@ include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/m
 
 ## Happy birthday easystats!
 
-Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://github.com/easystats/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). 
+Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://easystats.github.io/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). 
 
 Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread around the globe like a wildfire was people's obsession with The Weeknd's *Blinding Lights*! 
 
@@ -38,65 +38,73 @@ At any rate, since the pandemic did not affect GitHub in anyway, our free and op
 <!-- Maybe we can say something about... us? Who the team is, what we do, how we work? -->
 
 
-### We are now in double figures!
+### "Go Forth and Multiply"
 
-**easystats** project, which started out as a single R package, now comprises of a whopping 10 packages! These modular packages, each with its own, unique purview, connect with each other to form a web of packages that provide a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R!
+**easystats** project, which started out as a single R package, now comprises of a whopping 10 packages! These modular packages, each with its own, unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R! 🕸️
 
-<!-- ```{r, echo=FALSE} -->
-<!-- knitr::include_graphics("https://github.com/easystats/easystats/blob/master/man/figures/logo_wall.png") -->
-<!-- ``` -->
+```{r, echo=FALSE, out.width="70%"}
+knitr::include_graphics("assets/logo_wall.png")
+```
 
+Let's take a closer look at this structure. First, at the bottom, we have the foundation packages upon which the ecosystem is built:
 
-Let's see this structure. First, at the bottom, we have the foundation upon which the ecosystem is built:
+- [**insight**](https://easystats.github.io/insight): 🔮 This dependency-free low-level helper package provides a unified portal to extract information about a wide range of statistical models. If you (as a user or a developer) have ever felt frustrated by the diversity of objects in R and the APIs they provide, this is the package for you! 
 
-- [**insight**](https://github.com/easystats/insight): 🔮 This package serves as the foundation of the ecosystem as it allows manipulating objects from different R packages. It is very useful for developers, helping them make their own packages flexibly.
-- [**datawizard**](https://github.com/easystats/datawizard): 🧙 The most recent addition! Encompasses utility functions to work with data. *Sounds like the tidyverse to you?* Well kind of, but it has the advantage of being dependency free! Again, a great toolbox to use in your packages.
+- [**datawizard**](https://easystats.github.io/datawizard): 🧙 The most recent addition to the ecosystem! This package form the data wrangling backend for the entire ecosystem and can be just what you are looking for if you want to do `{tidyverse}`-like data wrangling but without gaining dependencies.
 
 We then have specialized packages to work with specific types of analyses or compute additional information from statistical models.
 
-- [**bayestestR**](https://github.com/easystats/bayestestR): 👻 Utility tools for dealing with Bayesian statistics.
-- [**effectsize**](https://github.com/easystats/effectsize): 🐉 Compute, convert, and interpret effect sizes.
-- [**correlation**](https://github.com/easystats/correlation): 🔗 A package dedicated at running and visualizing many types of correlations.
-- [**modelbased**](https://github.com/easystats/modelbased): 📈 This package works with predictions from statistical models, and can be used to compute marginal means or run contrast analyses.
+- [**bayestestR**](https://easystats.github.io/bayestestR): 👻 Utility tools for manipulating and visualizing Bayesian statistical models.
 
-The information about statistical models are extracted and aggregated in the following two packages. One of them is made for information about the model as a whole, the other one for information about the parameters within a model.
+- [**effectsize**](https://easystats.github.io/effectsize): 🐉 A one-stop solution for computing pretty much every effect size know to the mankind, well, almost every 😅
 
-- [**performance**](https://github.com/easystats/performance): 💪 Compute, analyze and test the performance of a statistical model.
-- [**parameters**](https://github.com/easystats/parameters): 📊 Understand your model's parameters and put them in a nice table.
+- [**correlation**](https://easystats.github.io/correlation): 🔗 A package dedicated for computing and visualizing probably the most comprehensive suite of correlations.
 
-Finally, the two high-level packages are using the rest to help users communicate their statistics, either graphically or textually.
+- [**modelbased**](https://easystats.github.io/modelbased): 📈 A utility package to work with predictions from statistical models, and can be used to compute and visualize marginal means or contrast analyses.
 
-- [**see**](https://github.com/easystats/see): 🎨 This package interfaces with ggplot2 to create visual plots. Most of the time, it is actually used silently in the other packages when calling the `plot()` function on easystats objects.
-- [**report**](https://github.com/easystats/report): 📜 🎉 This packages aims at implementing an automated reporting of statistical models.
+The information about statistical models are extracted and aggregated in the following two packages:
 
+- [**performance**](https://easystats.github.io/performance): 💪 Computes, analyzes, and tests the performance of statistical model(s).
 
-<!-- Add something about the package papers? -->
+- [**parameters**](https://easystats.github.io/parameters): 📊 Extracts a comprehensive dataframe of almost any statistical model's parameters and provides helpers to present them in elegant tables and plots.
+
+Finally, the two high-level packages utilize other packages to communicate results from statistical analyses, either graphically or textually.
+
+- [**see**](https://easystats.github.io/see): 🎨 This package forms the visualization backend for the entire ecosystem and interfaces with *ggplot2* to support plotting methods for various *easystats* objects.
+
+- [**report**](https://easystats.github.io/report): 📜 🎉 This packages provides an automated way to create text reports of statistical analyses.
+
+Except for *datawizard*, *report*, and *modelbased* packages, which are still in their teenage years, the rest of the packages are legally permitted to drive your statistical analyse as they have been published in peer-reviewed journals^[You can use `citation()` function to see reference for each package.] and enjoy a regular health checkup with a large suite of unit tests.
 
 ### It is used by a lot of people 
 
-Usage and its growing popularity
+To our utmost delight, these package have already been downloaded over 6 million times! It has been an overwhelming experience to see the warm welcome that some of these packages have received in the #rstats community on Twitter and LinkedIn.
 
 ### It is used by other packages
 
-List some of the popular packages that are using us to highlight how useful we are
+Not only is it popular among users, but other developers have also started to take a note of this project for the following primary reasons:
+
+- It has 0 external, non-base hard dependencies.
+
+- Rapid response from our developer team in fixing bugs or supporting feature requests, sometimes even in a matter of hours.
+
+- Great documentation with a plenty of examples and richly detailed tutorials.
+
+So if you have been in two minds thus far about whether you want to use these packages in your package development, we would highly recommends that you get in touch and communicate your concerns with us. We will do our best to assuage them.
 
 ### Some things we learnt
 
-what did we learn?
+* We choose to believe that **easystats** is a rags-to-riches story. An open-science project, conceived by a PhD student, born and nursed in the academic environment with neither funding nor part of anyone's research program, and with no direct obligation or pressure to work on it, has now a global community of many thousands of users. They say necessity is the mother of invention and boy we have tried to be inventive in terms of managing our resources to push out high-quality software in quick period with $0 in funding. Even if we get any funding some day, we will carry these hard-earned lessons with us.
 
-**easystats** demonstrates how an open-science project and be born and grow outside the academic system, without funding and publication goals, and with no direct obligation or pressure to work to it. We're all contributing on our free time, with as guiding light an interest in making data science a little bit better.
+* All of us contribute to this project in our free time and have surprisingly never met each other. This has also taught us about the value, fruitfulness, and the sheer joy of online global collaboration, although all of us live in the West and do enjoy the privilege of good internet connectivity.
 
 ### Future plans
 
-- V1
-- Get funding?
-- Polish modelbased
-- Polish and add more features to datawizard
-- Polish report
-- book?
+This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry-point to access the entire ecosystem's functionality. 
 
+After that, we will be ready to release the first stable version (`1.0`) of most - if not all - of our packages. This means there will be less focus on actively adding new features and we will concentrate more on dissemination of the existing features. We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. 
 
-
+### Acknowledgments
 
 As a closing note, we'd like to thank **you, user of easystats**, for directly contributing to our passion. Cheers!
 
@@ -111,7 +119,7 @@ Note that *easystats* is a new project in active development, looking for contri
 
 ## Stay tuned 
 
-To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://github.com/easystats)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
+To be updated about the *upcoming features* and cool R or data science stuff, you can **follow the packages on GitHub** (click on one [of the easystats package](https://easystats.github.io/)) and then on the **Watch** button on the top right corner) as well as the **easystats team on twitter and online**:
 
 - [\@easystats4u](https://twitter.com/easystats4u)
 - [\@strengejacke](https://twitter.com/strengejacke)
