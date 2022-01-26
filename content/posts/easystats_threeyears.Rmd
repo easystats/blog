@@ -114,7 +114,7 @@ If you also want to make your laptops pretties, [get in touch](https://twitter.c
 
 ### Future plans
 
-This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality. It won't be easy though, as CRAN typically doesn't like this type of meta packages, but we have already some ideas to make it work.
+This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality. This also means you won't have to update several packages every morning to get the ecosystem working woohoo!
 
 Afterwards, we will be ready to release the first stable version (`1.0`) of most - if not all - of our packages. This means that there will be less focus on actively adding new features (or making breaking changes) and concentrating more on the dissemination - and training - of the existing functionality (If your institution or local group of R users are interested in hearing more about these packages, please let us know. We will be happy to organize workshops and give talks!).
 
