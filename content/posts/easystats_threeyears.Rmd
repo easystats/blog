@@ -29,16 +29,16 @@ include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/m
 
 Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://easystats.github.io/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). 
 
-Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone's obsession with The Weeknd's *Blinding Lights*! 
+Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone's obsession with The Weeknd's [*Blinding Lights*](https://www.youtube.com/watch?v=4NRXx6U8ABQ)! 
 
-At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as the white cloud in the sky.
+At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as grey clouds in the sky.
 
 **What has happened since? A lot!** 
 
 
 ### "Go Forth and Multiply"
 
-**easystats** project, which started out as a single R package, now comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R programming language! 🕸️
+The **easystats** project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R programming language! 🕸️
 
 ```{r, echo=FALSE, out.width="70%"}
 knitr::include_graphics("assets/logo_wall.png")
