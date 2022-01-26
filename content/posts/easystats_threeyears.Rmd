@@ -106,6 +106,14 @@ So in case you have been in two minds thus far about whether you want to use the
 
 * All of us contribute to this project in our free time and have surprisingly never met each other. This has also taught us the value, fruitfulness, and the sheer joy of online global collaboration, although we are well aware that all of us live in developed countries and enjoy the privilege of good internet connectivity.
 
+* Another thing we learned is that our laptops look prettier with *easystats* package stickers. 😊
+
+```{r, echo=FALSE}
+knitr::include_graphics("assets/stickers.jpg")
+```
+
+If you also want to make your laptops pretties, [get in touch](https://twitter.com/easystats4u/status/1461674060283269123?s=20)!
+
 ### Future plans
 
 This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality.
