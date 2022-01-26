@@ -35,12 +35,10 @@ At any rate, since the pandemic did not affect GitHub in any way, our free and o
 
 **What has happened since? A lot!** 
 
-<!-- Maybe we can say something about... us? Who the team is, what we do, how we work? -->
-
 
 ### "Go Forth and Multiply"
 
-**easystats** project, which started out as a single R package, now comprises a whopping 10 packages! These modular packages, each with its own, unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R programming language! 🕸️
+**easystats** project, which started out as a single R package, now comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R programming language! 🕸️
 
 ```{r, echo=FALSE, out.width="70%"}
 knitr::include_graphics("assets/logo_wall.png")
@@ -92,7 +90,7 @@ We think that other developers may wish to rely on this project for the followin
 
 - 0 external, non-base-R hard dependencies.
 
-- Rapid response from our developer team in fixing bugs or supporting feature requests, sometimes even in a matter of hours.
+- Rapid response from our developer team in fixing bugs or supporting feature requests, sometimes even in a matter of hours (it helps that the team covers a span of 11 time zones!).
 
 - Great documentation with a plenty of examples and richly detailed tutorials.
 
@@ -104,7 +102,7 @@ So in case you have been in two minds thus far about whether you want to use the
 
 * We choose to believe that **easystats** is a rags-to-riches story. An open-science project, conceived by a PhD student, born and nursed in the academic environment with neither funding nor part of anyone's research program, and with no direct obligation or pressure to work on it, now has a global community of many thousands of users. They say necessity is the mother of invention, and boy we have tried to be inventive in terms of managing our resources to push out high-quality software in a quick period with $0 in funding. Even if we get any funding someday, we will carry these hard-earned lessons with us. 💪
 
-* All of us contribute to this project in our free time and have surprisingly never met each other. This has also taught us the value, fruitfulness, and the sheer joy of online global collaboration, although we are well aware that all of us live in developed countries and enjoy the privilege of good internet connectivity.
+* All of us contribute to this project in our free time and have surprisingly never met each other (yet 🤞). This has also taught us the value, fruitfulness, and the sheer joy of online global collaboration, although we are well aware that all of us live in developed countries and enjoy the privilege of good internet connectivity.
 
 * Another thing we learned is that our laptops look prettier with *easystats* package stickers. 😊
 
@@ -118,9 +116,9 @@ If you also want to make your laptops pretties, [get in touch](https://twitter.c
 
 This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality.
 
-Afterwards, we will be ready to release the first stable version (`1.0`) of most - if not all - of our packages. This means that there will be less focus on actively adding new features (or making breaking changes) and concentrating more on the dissemination of the existing functionality^[If your institution or local group of R users are interested in hearing more about these packages, please let us know. We will be happy to organize workshops and give talks.].
+Afterwards, we will be ready to release the first stable version (`1.0`) of most - if not all - of our packages. This means that there will be less focus on actively adding new features (or making breaking changes) and concentrating more on the dissemination of the existing functionality (If your institution or local group of R users are interested in hearing more about these packages, please let us know. We will be happy to organize workshops and give talks!).
 
-We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. As detailed our package websites are and as succinct as the individual journal publications for packages are, none of them yet clearly illustrate end-to-end use of *easystats* project in a statistical analysis project.
+We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. As detailed as our package websites are and as succinct as the individual journal publications for packages are, none of them yet clearly illustrate end-to-end use of *easystats* project in a statistical analysis project.
 
 ### Acknowledgments
 
