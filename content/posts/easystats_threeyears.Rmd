@@ -9,56 +9,50 @@ tags: ["R", "easystats", "aniversary"]
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(knitr)
-options(
-  knitr.kable.NA = "",
-  digits = 2,
-  dpi = 450
+options(dpi = 450)
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE
 )
-
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
-
-library(parameters)
-library(see)
 ```
 
 ```{r echo=FALSE, out.width = "200px"}
-include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo.png")
+knitr::include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo.png")
 ```
 
 ## Happy birthday *easystats*!
 
-Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://easystats.github.io/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/). 
+Two years ago, which feels like yesterday, we celebrated the [**easystats**](https://easystats.github.io/easystats) project's [first anniversary](https://easystats.github.io/blog/posts/easystats_oneyear/).
 
-Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone's obsession with The Weeknd's [*Blinding Lights*](https://www.youtube.com/watch?v=4NRXx6U8ABQ)! 
+Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone's obsession with The Weeknd's [*Blinding Lights*](https://www.youtube.com/watch?v=4NRXx6U8ABQ)!
 
 At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as grey clouds in the sky.
 
-**What has happened since? A lot!** 
-
+**What has happened since? A lot!**
 
 ### "Go Forth and Multiply"
 
-The **easystats** project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in R programming language! 🕸️
+The **easystats** project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in the R programming language! 🕸️
 
 ```{r, echo=FALSE, out.width="70%"}
 knitr::include_graphics("assets/logo_wall.png")
 ```
 
-Let's take a closer look at this structure. 
+Let's take a closer look at this structure.
 
 First, at the bottom, we have the foundation packages upon which this whole edifice rests:
 
-- [**insight**](https://easystats.github.io/insight): 🔮 This dependency-free low-level helper package provides a unified portal to extract information about a wide range of statistical models. If you (as a user or a developer) have ever felt frustrated by the diversity of objects in R and the APIs they provide and how one can create (S3) methods out of this madness, this is just the package for you! 
+- [**insight**](https://easystats.github.io/insight): 🔮 This dependency-free low-level helper package provides a unified portal to extract information about a wide range of statistical models. If you (as a user or a developer) have ever felt frustrated by the diversity of objects in R and the APIs they provide and how one can create (S3) methods out of this madness, this is just the package for you!
 
-- [**datawizard**](https://easystats.github.io/datawizard): 🧙 The most recent addition to the ecosystem! This package form the data wrangling backend for the entire ecosystem and can be just what you are looking for if you want to do *tidyverse*-like data wrangling but wish to avoid adding dependencies to your project.
+- [**datawizard**](https://easystats.github.io/datawizard): 🧙 The most recent addition to the ecosystem! This package forms the data wrangling backend for the entire ecosystem and can be just what you are looking for if you want to do *tidyverse*-like data wrangling but wish to avoid adding dependencies to your project.
 
 We then have specialized packages to extract additional information from statistical models.
 
 - [**bayestestR**](https://easystats.github.io/bayestestR): 👻 A package that provides utility tools for manipulating and visualizing Bayesian statistical models.
 
-- [**effectsize**](https://easystats.github.io/effectsize): 🐉 A one-stop solution for computing pretty much every effect size known to the mankind, well, almost every. 😅
+- [**effectsize**](https://easystats.github.io/effectsize): 🐉 A one-stop solution for computing pretty much every effect size known to mankind, well, almost every. 😅
 
-- [**correlation**](https://easystats.github.io/correlation): 🔗 A package dedicated for computing and visualizing probably the most comprehensive suite of correlations.
+- [**correlation**](https://easystats.github.io/correlation): 🔗 A package dedicated to computing and visualizing probably the most comprehensive suite of correlations.
 
 - [**modelbased**](https://easystats.github.io/modelbased): 📈 A utility package to work with predictions from statistical models, and can be used to compute and visualize marginal means or contrast analyses.
 
@@ -72,9 +66,9 @@ Finally, the two high-level packages utilize all the other packages to communica
 
 - [**see**](https://easystats.github.io/see): 🎨 This package forms the visualization backend for the entire ecosystem and interfaces with *ggplot2* to support plotting methods for various *easystats* objects.
 
-- [**report**](https://easystats.github.io/report): 📜 🎉 This packages provides an automated way to create text reports detailing results from statistical analyses.
+- [**report**](https://easystats.github.io/report): 📜 🎉 This package provides an automated way to create text reports detailing results from statistical analyses.
 
-Except for *datawizard*, *report*, and *modelbased* packages, which are still in their teenage years, the rest of the packages are legally permitted to drive your statistical analyse as they have been published in peer-reviewed journals^[You can use `citation()` function to see reference for each package.] and enjoy a regular health checkup with a large suite of unit tests.
+Except for *datawizard*, *report*, and *modelbased* packages, which are still in their teenage years, the rest of the packages are legally permitted to drive your statistical analysis as they have been published in peer-reviewed journals^[You can use `citation()` function to see reference for each package.] and enjoy a regular health checkup with a large suite of unit tests.
 
 ### Soaring Like an Eagle!
 
@@ -92,7 +86,7 @@ We think that other developers may wish to rely on this project for the followin
 
 - Rapid response from our developer team in fixing bugs or supporting feature requests, sometimes even in a matter of hours (it helps that the team covers a span of 11 time zones!).
 
-- Great documentation with a plenty of examples and richly detailed tutorials.
+- Great documentation with plenty of examples and richly detailed tutorials.
 
 - A diverse developer team of statisticians, researchers, and software engineers that pay attention to the holistic development of the packages.
 
@@ -110,15 +104,15 @@ So in case you have been in two minds thus far about whether you want to use the
 knitr::include_graphics("assets/stickers.jpg")
 ```
 
-If you also want to make your laptops pretties, [get in touch](https://twitter.com/easystats4u/status/1461674060283269123?s=20)!
+If you also want to make your laptops prettier, [get in touch](https://twitter.com/easystats4u/status/1461674060283269123?s=20)!
 
 ### Future plans
 
-This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality. This also means you won't have to update several packages every morning to get the ecosystem working woohoo!
+This project is now approaching a stage where we can start thinking about finally publishing the meta-package *easystats* on CRAN, which will give users a single entry point to access the entire ecosystem's functionality. This also means you won't have to update several packages every morning to get the ecosystem working, woohoo!
 
 Afterwards, we will be ready to release the first stable version (`1.0`) of most - if not all - of our packages. This means that there will be less focus on actively adding new features (or making breaking changes) and concentrating more on the dissemination - and training - of the existing functionality (If your institution or local group of R users are interested in hearing more about these packages, please let us know. We will be happy to organize workshops and give talks!).
 
-We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. As detailed as our package websites are and as succinct as the individual journal publications for packages are, none of them yet clearly illustrate end-to-end use of *easystats* project in a statistical analysis project. That's a longer term goal, which requires time and support. Again, we welcome all good souls to contact us if they're interested by contributing.
+We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. As detailed as our package websites are and as succinct as the individual journal publications for packages are, none of them yet clearly illustrate end-to-end use of *easystats* project in a statistical analysis project. That's a longer-term goal, which requires time and support. Again, we welcome all good souls to contact us if they're interested in contributing.
 
 ### Acknowledgments
 
