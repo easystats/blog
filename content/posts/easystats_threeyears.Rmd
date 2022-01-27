@@ -82,9 +82,9 @@ To our utmost delight, these packages have already been downloaded in total **ov
 
 It has been an overwhelming experience to see the warm welcome this project has received in the `#rstats` community on [Twitter](https://twitter.com/easystats4u) and LinkedIn.
 
-### "Let brotherly love continue"
+### Brotherly love: *easystats* is now used in many packages
 
-Not only have the packages gained popularity among users, but also fellow R developers have started to rely on *easystats* packages for their own project.
+Not only have the packages gained popularity among users, but also fellow R developers have started to rely on *easystats* packages for their own project (e.g., *marginaleffects*, *dotwhisker*, *ggstatsplot*, *sjPlot*, *cvms*, *jsmodule*, *neatStats*, etc.).
 
 We think that other developers may wish to rely on this project for the following (primary) reasons:
 
