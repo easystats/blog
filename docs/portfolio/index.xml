@@ -6,11 +6,7 @@
     <description>Recent content in About on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>People</title>
       <link>https://easystats.github.io/blog/portfolio/people/</link>

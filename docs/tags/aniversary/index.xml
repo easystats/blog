@@ -6,10 +6,17 @@
     <description>Recent content in aniversary on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/aniversary/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/aniversary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Happy birthday easystats! A retrospective</title>
+      <link>https://easystats.github.io/blog/posts/easystats_threeyears/</link>
+      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/easystats_threeyears/</guid>
+      <description>Happy birthday easystats!Two years ago, which feels like yesterday, we celebrated the easystats project’s first anniversary.
+Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone’s obsession with The Weeknd’s Blinding Lights!
+At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as grey clouds in the sky.</description>
+    </item>
     
     <item>
       <title>easystats: one year already. What&#39;s next?</title>

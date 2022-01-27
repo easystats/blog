@@ -5,10 +5,123 @@
     <description>Recent content in Posts on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://easystats.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy birthday easystats! A retrospective</title>
+      <link>https://easystats.github.io/blog/posts/easystats_threeyears/</link>
+      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/easystats_threeyears/</guid>
+      <description>
+&lt;script src=&#34;https://easystats.github.io/blog/blog/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo.png&#34; width=&#34;200px&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;happy-birthday-easystats&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Happy birthday &lt;em&gt;easystats&lt;/em&gt;!&lt;/h2&gt;
+&lt;p&gt;Two years ago, which feels like yesterday, we celebrated the &lt;a href=&#34;https://easystats.github.io/easystats&#34;&gt;&lt;strong&gt;easystats&lt;/strong&gt;&lt;/a&gt; project’s &lt;a href=&#34;https://easystats.github.io/blog/posts/easystats_oneyear/&#34;&gt;first anniversary&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone’s obsession with The Weeknd’s &lt;a href=&#34;https://www.youtube.com/watch?v=4NRXx6U8ABQ&#34;&gt;&lt;em&gt;Blinding Lights&lt;/em&gt;&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as grey clouds in the sky.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What has happened since? A lot!&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;go-forth-and-multiply&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;“Go Forth and Multiply”&lt;/h3&gt;
+&lt;p&gt;The &lt;strong&gt;easystats&lt;/strong&gt; project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, &lt;strong&gt;easy-to-use&lt;/strong&gt; framework for statistical modeling, visualization, and reporting in the R programming language! 🕸️&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;assets/logo_wall.png&#34; width=&#34;70%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Let’s take a closer look at this structure.&lt;/p&gt;
+&lt;p&gt;First, at the bottom, we have the foundation packages upon which this whole edifice rests:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/insight&#34;&gt;&lt;strong&gt;insight&lt;/strong&gt;&lt;/a&gt;: 🔮 This dependency-free low-level helper package provides a unified portal to extract information about a wide range of statistical models. If you (as a user or a developer) have ever felt frustrated by the diversity of objects in R and the APIs they provide and how one can create (S3) methods out of this madness, this is just the package for you!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/datawizard&#34;&gt;&lt;strong&gt;datawizard&lt;/strong&gt;&lt;/a&gt;: 🧙 The most recent addition to the ecosystem! This package forms the data wrangling backend for the entire ecosystem and can be just what you are looking for if you want to do &lt;em&gt;tidyverse&lt;/em&gt;-like data wrangling but wish to avoid adding dependencies to your project.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We then have specialized packages to extract additional information from statistical models.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/bayestestR&#34;&gt;&lt;strong&gt;bayestestR&lt;/strong&gt;&lt;/a&gt;: 👻 A package that provides utility tools for manipulating and visualizing Bayesian statistical models.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/effectsize&#34;&gt;&lt;strong&gt;effectsize&lt;/strong&gt;&lt;/a&gt;: 🐉 A one-stop solution for computing pretty much every effect size known to mankind, well, almost every. 😅&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/correlation&#34;&gt;&lt;strong&gt;correlation&lt;/strong&gt;&lt;/a&gt;: 🔗 A package dedicated to computing and visualizing probably the most comprehensive suite of correlations.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/modelbased&#34;&gt;&lt;strong&gt;modelbased&lt;/strong&gt;&lt;/a&gt;: 📈 A utility package to work with predictions from statistical models, and can be used to compute and visualize marginal means or contrast analyses.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The information about statistical models are extracted and aggregated by the following two packages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/performance&#34;&gt;&lt;strong&gt;performance&lt;/strong&gt;&lt;/a&gt;: 💪 Computes, analyzes, and tests the performance of statistical model(s).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/parameters&#34;&gt;&lt;strong&gt;parameters&lt;/strong&gt;&lt;/a&gt;: 📊 Extracts a comprehensive dataframe of almost any statistical model’s parameters and provides helpers to present them in elegant tables and plots.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, the two high-level packages utilize all the other packages to communicate results from statistical analyses, either graphically or textually.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/see&#34;&gt;&lt;strong&gt;see&lt;/strong&gt;&lt;/a&gt;: 🎨 This package forms the visualization backend for the entire ecosystem and interfaces with &lt;em&gt;ggplot2&lt;/em&gt; to support plotting methods for various &lt;em&gt;easystats&lt;/em&gt; objects.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://easystats.github.io/report&#34;&gt;&lt;strong&gt;report&lt;/strong&gt;&lt;/a&gt;: 📜 🎉 This package provides an automated way to create text reports detailing results from statistical analyses.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Except for &lt;em&gt;datawizard&lt;/em&gt;, &lt;em&gt;report&lt;/em&gt;, and &lt;em&gt;modelbased&lt;/em&gt; packages, which are still in their teenage years, the rest of the packages are legally permitted to drive your statistical analysis as they have been published in peer-reviewed journals&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; and enjoy a regular health checkup with a large suite of unit tests.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;soaring-like-an-eagle&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Soaring Like an Eagle!&lt;/h3&gt;
+&lt;p&gt;To our utmost delight, these packages have already been downloaded in total &lt;strong&gt;over 6 million times&lt;/strong&gt;! 🤯&lt;/p&gt;
+&lt;p&gt;It has been an overwhelming experience to see the warm welcome this project has received in the &lt;code&gt;#rstats&lt;/code&gt; community on &lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;Twitter&lt;/a&gt; and LinkedIn.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;brotherly-love-easystats-is-now-used-in-many-packages&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Brotherly love: &lt;em&gt;easystats&lt;/em&gt; is now used in many packages&lt;/h3&gt;
+&lt;p&gt;Not only have the packages gained popularity among users, but also fellow R developers have started to rely on &lt;em&gt;easystats&lt;/em&gt; packages for their own project (e.g., &lt;em&gt;marginaleffects&lt;/em&gt;, &lt;em&gt;dotwhisker&lt;/em&gt;, &lt;em&gt;ggstatsplot&lt;/em&gt;, &lt;em&gt;sjPlot&lt;/em&gt;, &lt;em&gt;cvms&lt;/em&gt;, &lt;em&gt;jsmodule&lt;/em&gt;, &lt;em&gt;neatStats&lt;/em&gt;, etc.).&lt;/p&gt;
+&lt;p&gt;We think that other developers may wish to rely on this project for the following (primary) reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;0 external, non-base-R hard dependencies.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rapid response from our developer team in fixing bugs or supporting feature requests, sometimes even in a matter of hours (it helps that the team covers a span of 11 time zones!).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Great documentation with plenty of examples and richly detailed tutorials.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A diverse developer team of statisticians, researchers, and software engineers that pay attention to the holistic development of the packages.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So in case you have been in two minds thus far about whether you want to use these packages in your own package development, we would highly recommend that you get in touch and communicate your concerns with us. We will do our best to assuage them. 🤗&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;things-we-learned&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Things we learned&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We choose to believe that &lt;strong&gt;easystats&lt;/strong&gt; is a rags-to-riches story. An open-science project, conceived by early career researchers, born and nursed in the academic environment with neither funding nor part of anyone’s research program, and with no direct obligation or pressure to work on it, now has a global community of many thousands of users. They say necessity is the mother of invention, and boy we have tried to be inventive in terms of managing our resources to push out high-quality software in a quick period with $0 in funding. Even if we get any funding someday, we will carry these hard-earned lessons with us. 💪&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;All of us contribute to this project in our free time and have surprisingly never met each other (yet 🤞). This has also taught us the value, fruitfulness, and the sheer joy of online global collaboration, although we are well aware that all of us live in developed countries and enjoy the privilege of good internet connectivity.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Another thing we learned is that our laptops look prettier with &lt;em&gt;easystats&lt;/em&gt; package stickers. 😊&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;assets/stickers.jpg&#34; width=&#34;1024&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;If you also want to make your laptops prettier, &lt;a href=&#34;https://twitter.com/easystats4u/status/1461674060283269123?s=20&#34;&gt;get in touch&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;future-plans&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Future plans&lt;/h3&gt;
+&lt;p&gt;This project is now approaching a stage where we can start thinking about finally publishing the meta-package &lt;em&gt;easystats&lt;/em&gt; on CRAN, which will give users a single entry point to access the entire ecosystem’s functionality. This also means you won’t have to update several packages every morning to get the ecosystem working, woohoo!&lt;/p&gt;
+&lt;p&gt;Afterwards, we will be ready to release the first stable version (&lt;code&gt;1.0&lt;/code&gt;) of most - if not all - of our packages. This means that there will be less focus on actively adding new features (or making breaking changes) and concentrating more on the dissemination - and training - of the existing functionality (If your institution or local group of R users are interested in hearing more about these packages, please let us know. We will be happy to organize workshops and give talks!).&lt;/p&gt;
+&lt;p&gt;We are also considering the possibility of writing a book to give a more comprehensive and cohesive account of the project. As detailed as our package websites are and as succinct as the individual journal publications for packages are, none of them yet clearly illustrate end-to-end use of &lt;em&gt;easystats&lt;/em&gt; project in a statistical analysis project. That’s a longer-term goal, which requires time and support. Again, we welcome all good souls to contact us if they’re interested in contributing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;acknowledgments&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Acknowledgments&lt;/h3&gt;
+&lt;p&gt;Last but not the least, we want to finish this post by thanking &lt;strong&gt;you, the &lt;em&gt;easystats&lt;/em&gt; user&lt;/strong&gt;, for encouraging us to continue to pursue our passion project. We couldn’t have done this without your constant feedback and love. Cheers!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;And if you’re not yet a user or a contributor, what are you waiting for?!&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-involved&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a project under active development, and is always on the lookout for new contributors. Thus, do not hesitate to &lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;contact us&lt;/a&gt; if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stay-updated&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stay updated&lt;/h2&gt;
+&lt;p&gt;To keep yourself apprised of the &lt;em&gt;upcoming features&lt;/em&gt; and cool R or data science stuff, you can &lt;strong&gt;follow the packages on GitHub&lt;/strong&gt; (click on one &lt;a href=&#34;https://github.com/easystats&#34;&gt;of the easystats package&lt;/a&gt;) and then on the &lt;strong&gt;Watch&lt;/strong&gt; button on the top right corner) as well as the &lt;em&gt;easystats&lt;/em&gt; team on Twitter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/easystats4u&#34;&gt;@easystats4u&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/strengejacke&#34;&gt;@strengejacke&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/Dom_Makowski&#34;&gt;@DominiqueMakowski&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/mattansb&#34;&gt;@mattansb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/patilindrajeets&#34;&gt;@IndrajeetPatil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/bwiernik&#34;&gt;@bmwiernik&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes footnotes-end-of-document&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;You can use &lt;code&gt;citation()&lt;/code&gt; function to see reference for each package.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>You write R packages and functions? This package will change your life!</title>
@@ -2009,77 +2122,6 @@ result&lt;/code&gt;&lt;/pre&gt;
     </item>
     
     <item>
-      <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>https://easystats.github.io/blog/posts/parameters_v2.utf8/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/parameters_v2.utf8/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://github.com/easystats/parameters/raw/master/man/figures/figure1.png&#34; alt=&#34;&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt; continues to grow, expanding its capabilities and features, and the &lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; package 0.2.0 update is now on CRAN.&lt;/p&gt;
-&lt;p&gt;The primary goal of this package is to provide utilities for &lt;strong&gt;processing the parameters&lt;/strong&gt; of various statistical models. It is useful for end-users as well as developers, as it is a &lt;strong&gt;lightweight&lt;/strong&gt; and open-developed package.&lt;/p&gt;
-&lt;p&gt;The main function, &lt;a href=&#34;https://easystats.github.io/parameters/articles/model_parameters.html&#34;&gt;&lt;code&gt;model_parameters()&lt;/code&gt;&lt;/a&gt;, can be seen as an alternative to &lt;code&gt;broom::tidy()&lt;/code&gt;. However, the package also include many more useful &lt;a href=&#34;https://easystats.github.io/parameters/reference/index.html&#34;&gt;features&lt;/a&gt;, some of which are described in our &lt;strong&gt;improved documentation&lt;/strong&gt;:&lt;/p&gt;
-&lt;h2 id=&#34;improved-documentation&#34;&gt;Improved Documentation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Parameters Description&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/model_parameters.html&#34;&gt;Guide to parameters description&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Parameters Engineering&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/bootstrapping.html&#34;&gt;Guide to bootstrapped parameters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/standardization.html&#34;&gt;Guide to standardized parameters&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Parameters Selection&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/parameters_selection.html&#34;&gt;Guide to parameters selection&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Dimension Reduction&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/parameters_reduction.html&#34;&gt;Guide to feature reduction (PCA, cMDS, ICA&amp;hellip;)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://easystats.github.io/parameters/articles/efa_cfa.html&#34;&gt;Guide to structural models (EFA, CFA, SEM&amp;hellip;)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;improved-support&#34;&gt;Improved Support&lt;/h2&gt;
-&lt;p&gt;Besides stabilizing and improving the functions for the most popular models (&lt;code&gt;glm()&lt;/code&gt;, &lt;code&gt;glmer()&lt;/code&gt;, &lt;code&gt;stan_glm()&lt;/code&gt;, &lt;code&gt;psych&lt;/code&gt; and &lt;code&gt;lavaan&lt;/code&gt;&amp;hellip;), the functions &lt;code&gt;p_value()&lt;/code&gt;, &lt;code&gt;ci()&lt;/code&gt;, &lt;code&gt;standard_error()&lt;/code&gt;, &lt;code&gt;standardize()&lt;/code&gt; and most importantly &lt;code&gt;model_parameters()&lt;/code&gt; now support many more model objects, including mixed models from packages &lt;em&gt;nlme&lt;/em&gt;, &lt;em&gt;glmmTMB&lt;/em&gt; or &lt;em&gt;GLMMadaptive&lt;/em&gt;, zero-inflated models from package &lt;em&gt;pscl&lt;/em&gt;, other regression types from packages &lt;em&gt;gam&lt;/em&gt; or &lt;em&gt;mgcv&lt;/em&gt;, fixed effects regression models from &lt;em&gt;panelr&lt;/em&gt;, &lt;em&gt;lfe&lt;/em&gt;, &lt;em&gt;feisr&lt;/em&gt; or &lt;em&gt;plm&lt;/em&gt;, and structural models from &lt;em&gt;FactoMineR&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;improved-printing&#34;&gt;Improved Printing&lt;/h2&gt;
-&lt;p&gt;For models with special components, in particular zero-inflated models, &lt;code&gt;model_parameters()&lt;/code&gt; separates these components for a clearer output.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## # Fixed Effects
-## 
-## Parameter   | Log-Mean |   SE |         95% CI |     z |      p
-## ---------------------------------------------------------------
-## (Intercept) |    -0.36 | 0.28 | [-0.90,  0.18] | -1.30 | 0.194 
-## spp [PR]    |    -1.27 | 0.24 | [-1.74, -0.80] | -5.27 | &amp;lt; .001
-## spp [DM]    |     0.27 | 0.14 | [ 0.00,  0.54] |  1.95 | 0.051 
-## spp [EC-A]  |    -0.57 | 0.21 | [-0.97, -0.16] | -2.75 | 0.006 
-## spp [EC-L]  |     0.67 | 0.13 | [ 0.41,  0.92] |  5.20 | &amp;lt; .001
-## spp [DES-L] |     0.63 | 0.13 | [ 0.38,  0.87] |  4.96 | &amp;lt; .001
-## spp [DF]    |     0.12 | 0.15 | [-0.17,  0.40] |  0.78 | 0.435 
-## mined [no]  |     1.27 | 0.27 | [ 0.74,  1.80] |  4.72 | &amp;lt; .001
-## 
-## # Zero-Inflated
-## 
-## Parameter   | Log-Odds |   SE |         95% CI |     z |      p
-## ---------------------------------------------------------------
-## (Intercept) |     0.79 | 0.27 | [ 0.26,  1.32] |  2.90 | 0.004 
-## mined [no]  |    -1.84 | 0.31 | [-2.46, -1.23] | -5.87 | &amp;lt; .001
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;join-the-team&#34;&gt;Join the team&lt;/h2&gt;
-&lt;p&gt;There is still room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
-&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact one of &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;us&lt;/a&gt; if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
@@ -2162,74 +2204,6 @@ model_parameters(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;Okay, &lt;em&gt;&amp;ldquo;an alternative to broom&amp;rdquo;&lt;/em&gt; might be a bit of an &lt;strong&gt;overstatement&lt;/strong&gt; &lt;em&gt;(at least for now&amp;hellip;)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;But the &lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; package, finally on CRAN, already has some cool features!&lt;/p&gt;
-&lt;h2 id=&#34;parameters&#34;&gt;parameters&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life &lt;em&gt;easier&lt;/em&gt;. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model internal access&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, as well as &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance and quality&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/easystats/parameters&#34;&gt;&lt;strong&gt;&lt;code&gt;parameters&#39;&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; primary goal is to provide utilities for processing the parameters of various statistical models. Beyond computing &lt;strong&gt;&lt;em&gt;p&lt;/em&gt;-values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, &lt;strong&gt;Bayesian indices&lt;/strong&gt; and other measures for a wide variety of models, this package implements features like &lt;strong&gt;standardization&lt;/strong&gt; or &lt;strong&gt;bootstrapping&lt;/strong&gt; of parameters and models, &lt;strong&gt;feature reduction&lt;/strong&gt; (feature extraction and variable selection) as well as conversion between indices of &lt;strong&gt;effect size&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The main function of the package is &lt;code&gt;model_parameters()&lt;/code&gt;, which allows you to extract the parameters and their characteristics from various models in a consistent way. It can be considered as a lightweight alternative to &lt;a href=&#34;https://github.com/tidymodels/broom&#34;&gt;&lt;code&gt;broom::tidy()&lt;/code&gt;&lt;/a&gt;, with some notable differences:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The names of the returned dataframe are &lt;strong&gt;specific&lt;/strong&gt; to their content. For instance, the column containing the statistic is named following the statistic name, i.e., &lt;em&gt;t&lt;/em&gt;, &lt;em&gt;z&lt;/em&gt;, etc., instead of a generic name such as &lt;em&gt;statistic&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;It is able to compute or extract indices not available by default, such as &lt;strong&gt;&lt;em&gt;p&lt;/em&gt; values&lt;/strong&gt;, &lt;strong&gt;CIs&lt;/strong&gt;, etc.&lt;/li&gt;
-&lt;li&gt;It includes &lt;strong&gt;feature engineering&lt;/strong&gt; capabilities, including &lt;a href=&#34;https://easystats.github.io/parameters/articles/bootstrapping.html&#34;&gt;&lt;strong&gt;bootstrapping&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://easystats.github.io/parameters/articles/standardization.html&#34;&gt;&lt;strong&gt;standardization&lt;/strong&gt;&lt;/a&gt; of parameters.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;h3 id=&#34;anovas&#34;&gt;ANOVAs&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;df &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; iris
-df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Sepal.Big &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ifelse&lt;/span&gt;(df&lt;span style=&#34;color:#f92672&#34;&gt;$&lt;/span&gt;Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Yes&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;No&amp;#34;&lt;/span&gt;)
-
-model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;aov&lt;/span&gt;(Sepal.Length &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Sepal.Big, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; df)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model, eta_squared &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;partial&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter | Sum_Squares |  df | Mean_Square |    F |     p | Eta2
-## -----------------------------------------------------------------
-## Sepal.Big |        1.10 |   1 |        1.10 | 1.61 | 0.207 | 0.01
-## Residuals |      101.07 | 148 |        0.68 |      |       |
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;mixed-models&#34;&gt;Mixed models&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(lme4)
-
-model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lmer&lt;/span&gt;(Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Petal.Length &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Petal.Width &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;Species), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iris)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model, standardize &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;refit&amp;#34;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter    | Coefficient |   SE |        95% CI |   t(145) |      p
-## ---------------------------------------------------------------------
-## (Intercept)  |    3.53e-13 | 1.51 | [-2.96, 2.96] | 2.33e-13 | &amp;gt; .999
-## Petal.Length |        0.59 | 0.26 | [ 0.08, 1.10] |     2.26 | 0.024 
-## Petal.Width  |        1.07 | 0.24 | [ 0.60, 1.53] |     4.49 | &amp;lt; .001
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And you can also &lt;strong&gt;directly plot the parameters&lt;/strong&gt; with the see package!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;lmer&lt;/span&gt;(Sepal.Width &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Petal.Length &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; Petal.Width &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;Species), data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; iris) &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h3 id=&#34;bayesian-models&#34;&gt;Bayesian models&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
-
-model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;model_parameters&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;## Parameter   | Median |         89% CI |     pd | % in ROPE |  Rhat |  ESS |                   Prior
-## ---------------------------------------------------------------------------------------------------
-## (Intercept) |  39.67 | [36.93, 42.68] |   100% |        0% | 0.999 | 4960 | Normal (20.09 +- 15.07)
-## wt          |  -3.19 | [-4.44, -1.92] | 99.98% |     0.10% | 1.002 | 2033 |  Normal (0.00 +- 15.40)
-## cyl         |  -1.51 | [-2.18, -0.84] | 99.98% |     1.77% | 1.002 | 2272 |   Normal (0.00 +- 8.44)
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/parameters/&#34;&gt;&lt;strong&gt;more examples and documentation here!&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
-&lt;p&gt;Note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, looking for contributors and supporters. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
@@ -2618,60 +2592,6 @@ plot(result) +
     </item>
     
     <item>
-      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;the-see-package&#34;&gt;The see package&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;We&lt;/a&gt; have recently decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;&lt;strong&gt;easystats project&lt;/strong&gt;&lt;/a&gt;, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;model access&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/bayestestR&#34;&gt;Bayesian analysis&lt;/a&gt;, &lt;a href=&#34;https://github.com/easystats/performance&#34;&gt;indices of model performance&lt;/a&gt; or &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;visualisation&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Without further ado, please let us introduce the latest addition to the easyverse; the see package!&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Essentially, &lt;a href=&#34;https://github.com/easystats/see&#34;&gt;&lt;code&gt;see&lt;/code&gt;&lt;/a&gt; is the visualisation companion to other functions and packages in &lt;strong&gt;easystats&lt;/strong&gt;. See the &lt;strong&gt;list of functions&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/see/reference/index.html&#34;&gt;here&lt;/a&gt;. However, it also includes some nice themes and geoms:&lt;/p&gt;
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Better looking points&lt;/strong&gt; with &lt;strong&gt;modern theme&lt;/strong&gt; and &lt;strong&gt;flat design colours&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(see)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(ggplot2)
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Width, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_point2&lt;/span&gt;(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, alpha&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_color_flat_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_modern&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Violin plot&lt;/strong&gt; with &lt;strong&gt;blackboard theme&lt;/strong&gt; and &lt;strong&gt;material design colours&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ggplot&lt;/span&gt;(iris, &lt;span style=&#34;color:#a6e22e&#34;&gt;aes&lt;/span&gt;(x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species, y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Sepal.Length, fill &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Species)) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;geom_violindot&lt;/span&gt;(fill_dots &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;white&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; 
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_material_d&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_blackboard&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Abyss theme&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(bayestestR)
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(rstanarm)
-
-model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; rstanarm&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stan_glm&lt;/span&gt;(mpg &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; wt &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; gear &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cyl &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; disp, data &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; mtcars)
-
-result &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;equivalence_test&lt;/span&gt;(model, ci &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;.89&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;.95&lt;/span&gt;))
-
-&lt;span style=&#34;color:#a6e22e&#34;&gt;plot&lt;/span&gt;(result) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;theme_abyss&lt;/span&gt;() &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;scale_fill_flat&lt;/span&gt;()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;get-involved&#34;&gt;Get Involved&lt;/h2&gt;
-&lt;p&gt;There is definitely room for improvement, and some new exciting features are already planned. Feel free to let us know how we could further improve this package!&lt;/p&gt;
-&lt;p&gt;To conclude, note that &lt;em&gt;easystats&lt;/em&gt; is a new project in active development. Thus, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A perfectly normally distributed sample: another post?</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_distribution/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
@@ -3008,67 +2928,6 @@ library(insight)  # Load the package&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;strong&gt;&lt;em&gt;here&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation.utf8/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/insight_presentation.utf8/</guid>
-      <description>&lt;p&gt;The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language&amp;rsquo;s popularity. However, &lt;strong&gt;this diversity makes it hard for developpers&lt;/strong&gt; that want to create tools that work with different types of models. Indeed, the way to access models&amp;rsquo; internal information (such as &lt;strong&gt;parameters names&lt;/strong&gt;, &lt;strong&gt;formulae&lt;/strong&gt;, &lt;strong&gt;data&lt;/strong&gt;, etc.) is &lt;strong&gt;not unified&lt;/strong&gt;, forcing the developers to spend some time figuring out how to do it for each model type.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;This time is over!&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;insight&#34;&gt;Insight&lt;/h2&gt;
-&lt;p&gt;Recently, &lt;a href=&#34;https://github.com/orgs/easystats/people&#34;&gt;we&lt;/a&gt; have decided to collaborate around the new &lt;a href=&#34;https://github.com/easystats&#34;&gt;easystats&lt;/a&gt; project, a set of packages designed to make your life easier (currently very work in progress). However, in order to create these packages and functions, &lt;strong&gt;we needed a basis&lt;/strong&gt;, a stable cornerstone, that would allow the unified way of accessing models information.&lt;/p&gt;
-&lt;p&gt;And &lt;a href=&#34;https://github.com/easystats/insight&#34;&gt;&lt;strong&gt;&lt;code&gt;insight&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt; was born.&lt;/p&gt;
-&lt;p&gt;The goal of insight is to provide tools to help an &lt;strong&gt;easy, intuitive and consistent accesss&lt;/strong&gt; to information contained in various models. Indeed, although there are generic functions to get information and data from models, many modelling-functions from different packages do not provide such methods to access these information. The insight package aims at closing this gap by providing functions that work for (almost) any model.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; can be installed as follows:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;insight&amp;#34;&lt;/span&gt;)  &lt;span style=&#34;color:#75715e&#34;&gt;# Install from CRAN&lt;/span&gt;
-&lt;span style=&#34;color:#a6e22e&#34;&gt;library&lt;/span&gt;(insight)  &lt;span style=&#34;color:#75715e&#34;&gt;# Load the package&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s see how it works on a very simple regression model:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;model &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lm&lt;/span&gt;(Sepal.Length &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; Species, data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;iris)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Find the &lt;strong&gt;parameters&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;find_parameters&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; $conditional
-&amp;gt; [1] &amp;quot;(Intercept)&amp;quot;       &amp;quot;Speciesversicolor&amp;quot; &amp;quot;Speciesvirginica&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Find the &lt;strong&gt;outcome&amp;rsquo;s name&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;find_response&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; [1] &amp;quot;Sepal.Length&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Find the &lt;strong&gt;formula&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;find_formula&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; $conditional
-&amp;gt; Sepal.Length ~ Species
-&amp;gt; 
-&amp;gt; attr(,&amp;quot;class&amp;quot;)
-&amp;gt; [1] &amp;quot;insight_formula&amp;quot; &amp;quot;list&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Find the &lt;strong&gt;variables in the formula&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;find_variables&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; $response
-&amp;gt; [1] &amp;quot;Sepal.Length&amp;quot;
-&amp;gt; 
-&amp;gt; $conditional
-&amp;gt; [1] &amp;quot;Species&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Find the &lt;strong&gt;algorithm&lt;/strong&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;find_algorithm&lt;/span&gt;(model)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;&amp;gt; $algorithm
-&amp;gt; [1] &amp;quot;OLS&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Moreover, &lt;code&gt;insight&lt;/code&gt; also includes functions to deal with &lt;strong&gt;Bayesian&lt;/strong&gt; (&lt;code&gt;get_priors()&lt;/code&gt;) and &lt;strong&gt;mixed models&lt;/strong&gt; (&lt;code&gt;find_random()&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;insight&lt;/code&gt; works on a high number of models (see the &lt;a href=&#34;https://github.com/easystats/insight/blob/master/README.md#list-of-supported-packages-and-models&#34;&gt;&lt;strong&gt;list here&lt;/strong&gt;&lt;/a&gt;), and &lt;strong&gt;continue to grow thanks to your suggestions&lt;/strong&gt;! As &lt;em&gt;easystats&lt;/em&gt; is a new project in active development, do not hesitate to contact us if &lt;strong&gt;you want to get involved :)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Check out our other blog posts&lt;/strong&gt; &lt;a href=&#34;https://easystats.github.io/blog/posts/&#34;&gt;&lt;em&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;!&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

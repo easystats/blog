@@ -6,11 +6,7 @@
     <description>Recent content in standardize on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/standardize/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/standardize/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
@@ -20,17 +16,6 @@
       <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
-    </item>
-    
-    <item>
-      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</guid>
-      <description>Okay, &amp;ldquo;an alternative to broom&amp;rdquo; might be a bit of an overstatement (at least for now&amp;hellip;)
-But the parameters package, finally on CRAN, already has some cool features!
-parameters We have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
     </item>
     
   </channel>

@@ -6,11 +6,7 @@
     <description>Recent content in visualization on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>

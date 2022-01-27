@@ -1,3 +1,4 @@
+theme = "hyde-hyde"
 ## Basic Configuration
 baseURL = "https://easystats.github.io/blog/"
 languageCode = "en"
@@ -8,7 +9,7 @@ canonifyURLs = false
 enableEmoji = true
 math = false
 title = "easystats"
-theme = "hyde-hyde"
+#theme = "hyde-hyde"
 
 ## Hugo Built-in Features
 # disqusShortname = "your-disqus-shortname"

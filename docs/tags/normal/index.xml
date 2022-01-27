@@ -6,11 +6,7 @@
     <description>Recent content in normal on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/normal/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 24 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/normal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to easily generate a perfectly normal distribution</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_rnorm_perfect/</link>

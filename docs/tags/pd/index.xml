@@ -6,11 +6,7 @@
     <description>Recent content in pd on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/pd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/pd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The p-direction: A Bayesian equivalent of the p-value?</title>
       <link>https://easystats.github.io/blog/posts/bayestestr_pd/</link>

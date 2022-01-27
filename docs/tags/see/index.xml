@@ -6,11 +6,7 @@
     <description>Recent content in see on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/see/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/see/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>News from easystats: updated parameters and see packages.</title>
       <link>https://easystats.github.io/blog/posts/parameters_and_see_update/</link>
@@ -28,17 +24,6 @@ Before we start introducing some of the new features, we’d like to explain why
       
       <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
-Without further ado, please let us introduce the latest addition to the easyverse; the see package!
-Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
-    </item>
-    
-    <item>
-      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
-      <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
     </item>

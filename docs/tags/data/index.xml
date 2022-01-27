@@ -6,11 +6,7 @@
     <description>Recent content in data on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/data/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 02 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A unified syntax for accessing models&#39; information</title>
       <link>https://easystats.github.io/blog/posts/insight_presentation/</link>
@@ -18,15 +14,6 @@
       
       <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
-    </item>
-    
-    <item>
-      <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation.utf8/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/insight_presentation.utf8/</guid>
-      <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language&amp;rsquo;s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models&amp;rsquo; internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
   </channel>

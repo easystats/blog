@@ -6,10 +6,17 @@
     <description>Recent content in R on easystats</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://easystats.github.io/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 27 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://easystats.github.io/blog/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Happy birthday easystats! A retrospective</title>
+      <link>https://easystats.github.io/blog/posts/easystats_threeyears/</link>
+      <pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://easystats.github.io/blog/posts/easystats_threeyears/</guid>
+      <description>Happy birthday easystats!Two years ago, which feels like yesterday, we celebrated the easystats project’s first anniversary.
+Wow, those were simpler times! One could travel for pleasure, party with dozens of people and have a face-to-face conversation, and the thing that spread like a wildfire around the globe was everyone’s obsession with The Weeknd’s Blinding Lights!
+At any rate, since the pandemic did not affect GitHub in any way, our free and open-source fanatic souls have made sure that this project keeps progressing, sometimes in leaps and bounds, while other times slow as grey clouds in the sky.</description>
+    </item>
     
     <item>
       <title>You write R packages and functions? This package will change your life!</title>
@@ -116,17 +123,6 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
     </item>
     
     <item>
-      <title>More models, more features: what&#39;s new in &#39;parameters&#39; 0.2.0</title>
-      <link>https://easystats.github.io/blog/posts/parameters_v2.utf8/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/parameters_v2.utf8/</guid>
-      <description>The easystats project continues to grow, expanding its capabilities and features, and the parameters package 0.2.0 update is now on CRAN.
-The primary goal of this package is to provide utilities for processing the parameters of various statistical models. It is useful for end-users as well as developers, as it is a lightweight and open-developed package.
-The main function, model_parameters(), can be seen as an alternative to broom::tidy(). However, the package also include many more useful features, some of which are described in our improved documentation:</description>
-    </item>
-    
-    <item>
       <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
       <link>https://easystats.github.io/blog/posts/parameters_presentation/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
@@ -135,17 +131,6 @@ The main function, model_parameters(), can be seen as an alternative to broom::t
       <description>Okay, “an alternative to broom” might be a bit of an overstatement (at least for now…)
 But the parameters package, finally on CRAN, already has some cool features!
 parametersWe have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
-    </item>
-    
-    <item>
-      <title>parameters: a powerful and lightweight alternative to broom to describe your models&#39; coefficients</title>
-      <link>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</link>
-      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/parameters_presentation.utf8/</guid>
-      <description>Okay, &amp;ldquo;an alternative to broom&amp;rdquo; might be a bit of an overstatement (at least for now&amp;hellip;)
-But the parameters package, finally on CRAN, already has some cool features!
-parameters We have recently decided to collaborate around the easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model internal access, Bayesian analysis, as well as indices of model performance and quality.</description>
     </item>
     
     <item>
@@ -185,17 +170,6 @@ And this release is so packed with new features and improvements that it would b
       
       <guid>https://easystats.github.io/blog/posts/see_presentation/</guid>
       <description>The see packageWe have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
-Without further ado, please let us introduce the latest addition to the easyverse; the see package!
-Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
-    </item>
-    
-    <item>
-      <title>The &#39;see&#39; package: beautiful figures for easystats</title>
-      <link>https://easystats.github.io/blog/posts/see_presentation.knit/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/see_presentation.knit/</guid>
-      <description>The see package We have recently decided to collaborate around the new easystats project, a set of packages designed to make your life easier. This project encompasses several packages, devoted for instance to model access or Bayesian analysis, indices of model performance or visualisation.
 Without further ado, please let us introduce the latest addition to the easyverse; the see package!
 Essentially, see is the visualisation companion to other functions and packages in easystats.</description>
     </item>
@@ -251,15 +225,6 @@ bayestestRWe have recently decided to collaborate around the new easystats proj
       
       <guid>https://easystats.github.io/blog/posts/insight_presentation/</guid>
       <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language’s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models’ internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
-    </item>
-    
-    <item>
-      <title>A unified syntax for accessing models&#39; information</title>
-      <link>https://easystats.github.io/blog/posts/insight_presentation.utf8/</link>
-      <pubDate>Tue, 02 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://easystats.github.io/blog/posts/insight_presentation.utf8/</guid>
-      <description>The richness and variety of packages for building and fitting statistical models in R is absolutely astonishing and contributes to the language&amp;rsquo;s popularity. However, this diversity makes it hard for developpers that want to create tools that work with different types of models. Indeed, the way to access models&amp;rsquo; internal information (such as parameters names, formulae, data, etc.) is not unified, forcing the developers to spend some time figuring out how to do it for each model type.</description>
     </item>
     
     <item>
