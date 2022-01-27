@@ -35,7 +35,7 @@ At any rate, since the pandemic did not affect GitHub in any way, our free and o
 The **easystats** project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, **easy-to-use** framework for statistical modeling, visualization, and reporting in the R programming language! 🕸️
 
 ```{r, echo=FALSE, out.width="70%"}
-knitr::include_graphics("assets/logo_wall.png")
+knitr::include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo_wall.png")
 ```
 
 Let's take a closer look at this structure.
@@ -101,7 +101,7 @@ So in case you have been in two minds thus far about whether you want to use the
 * Another thing we learned is that our laptops look prettier with *easystats* package stickers. 😊
 
 ```{r, echo=FALSE}
-knitr::include_graphics("assets/stickers.jpg")
+knitr::include_graphics("https://raw.githubusercontent.com/easystats/easystats/master/man/figures/stickers.jpg")
 ```
 
 If you also want to make your laptops prettier, [get in touch](https://twitter.com/easystats4u/status/1461674060283269123?s=20)!

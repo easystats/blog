@@ -30,7 +30,7 @@
 &lt;div id=&#34;go-forth-and-multiply&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;“Go Forth and Multiply”&lt;/h3&gt;
 &lt;p&gt;The &lt;strong&gt;easystats&lt;/strong&gt; project has evolved a lot, and currently comprises a whopping 10 packages! These modular packages, each with its own unique purview, connect with each other to form a unifying, consistent, and most importantly, &lt;strong&gt;easy-to-use&lt;/strong&gt; framework for statistical modeling, visualization, and reporting in the R programming language! 🕸️&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;assets/logo_wall.png&#34; width=&#34;70%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/logo_wall.png&#34; width=&#34;70%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Let’s take a closer look at this structure.&lt;/p&gt;
 &lt;p&gt;First, at the bottom, we have the foundation packages upon which this whole edifice rests:&lt;/p&gt;
 &lt;ul&gt;
@@ -80,7 +80,7 @@
 &lt;li&gt;&lt;p&gt;All of us contribute to this project in our free time and have surprisingly never met each other (yet 🤞). This has also taught us the value, fruitfulness, and the sheer joy of online global collaboration, although we are well aware that all of us live in developed countries and enjoy the privilege of good internet connectivity.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Another thing we learned is that our laptops look prettier with &lt;em&gt;easystats&lt;/em&gt; package stickers. 😊&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;assets/stickers.jpg&#34; width=&#34;1024&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/easystats/easystats/master/man/figures/stickers.jpg&#34; /&gt;&lt;!-- --&gt;&lt;/p&gt;
 &lt;p&gt;If you also want to make your laptops prettier, &lt;a href=&#34;https://twitter.com/easystats4u/status/1461674060283269123?s=20&#34;&gt;get in touch&lt;/a&gt;!&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;future-plans&#34; class=&#34;section level3&#34;&gt;
